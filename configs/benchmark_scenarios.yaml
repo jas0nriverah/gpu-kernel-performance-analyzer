@@ -1,0 +1,27 @@
+version: 1
+description: MVP benchmark sweeps for core kernels.
+sweeps:
+  - kernel: vector_add
+    problem_sizes: [1048576, 4194304]
+    block_sizes: [128, 256]
+    warmups: 10
+    repeats: 30
+    verify: true
+  - kernel: reduction
+    problem_sizes: [1048576, 4194304]
+    block_sizes: [128, 256]
+    warmups: 10
+    repeats: 30
+    verify: true
+  - kernel: gemm_naive
+    problem_sizes: [256, 512]
+    block_sizes: [16]
+    warmups: 5
+    repeats: 15
+    verify: true
+  - kernel: gemm_tiled
+    problem_sizes: [256, 512]
+    block_sizes: [16]
+    warmups: 5
+    repeats: 15
+    verify: true

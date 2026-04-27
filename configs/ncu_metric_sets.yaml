@@ -1,0 +1,18 @@
+version: 1
+description: Optional Nsight Compute metrics recognized by this project.
+supported_metrics:
+  - occupancy
+  - sm_utilization
+  - l2_cache_hit_rate
+import_contract:
+  required_columns:
+    - kernel
+    - problem_size
+    - block_size
+    - metric_name
+    - metric_value
+  required_provenance_fields:
+    - source_tool
+    - source_file
+    - metric_set
+    - import_timestamp
