@@ -68,8 +68,10 @@ python -m gpu_kernel_analyzer analyze full --run-dir outputs/run_mvp
 This writes:
 
 - `analysis_heuristics.csv`
-- `plots/runtime_vs_size.png`
-- `plots/effective_gflops_vs_size.png`
+- `plots/runtime_vs_size_vector_reduction.png`
+- `plots/runtime_vs_size_gemm.png`
+- `plots/effective_gflops_vs_size_gemm.png`
+- `plots/effective_bandwidth_vs_size_vector_reduction.png`
 - `REPORT.md`
 
 ## Optional Nsight Compute import
@@ -120,6 +122,24 @@ python -m pytest -q
 - If CUDA toolkit (`nvcc`) is unavailable, benchmark build will fail; artifact validation and analysis can still be tested with fixture-generated data.
 - Occupancy/cache/SM metrics remain unavailable by default and only become measured after successful Nsight metric import.
 - Real CUDA validation requires `nvcc` + NVIDIA GPU + successful benchmark binary build.
+
+## Real GPU validation (A100 run)
+
+- GPU: NVIDIA A100 80GB PCIe
+- CUDA toolkit: 13.0
+- Python: 3.11.9
+- scenarios: 12
+- validation: passed
+- pytest: 17 passed
+- Nsight Compute: detected but not used
+
+Key result: tiled GEMM at `512x512` achieved about `3840` GFLOPs versus naive GEMM about `2589` GFLOPs, roughly `1.48x` faster.
+
+Metric integrity for this run:
+
+- `runtime_ms` is measured with CUDA events.
+- `effective_bandwidth_GBps`, `effective_GFLOPs`, and `arithmetic_intensity` are derived estimates.
+- occupancy/cache/SM metrics are unavailable because Nsight Compute was not run.
 
 ## TODO: Real-GPU validation pass
 

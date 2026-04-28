@@ -89,14 +89,34 @@
   - `metrics_provenance.csv`
   - `analysis_heuristics.csv`
   - `REPORT.md`
-  - `plots/runtime_vs_size.png`
-  - `plots/effective_gflops_vs_size.png`
+  - `plots/runtime_vs_size_vector_reduction.png`
+  - `plots/runtime_vs_size_gemm.png`
+  - `plots/effective_gflops_vs_size_gemm.png`
+  - `plots/effective_bandwidth_vs_size_vector_reduction.png`
 
 ## Known limitations
 
 - `git` is unavailable in this shell environment; branch creation could not be completed here.
 - `nvcc` is unavailable; no real CUDA build/run validation possible in this environment.
 - Fixture outputs are explicitly non-real-GPU artifacts and must not be used as real performance evidence.
+
+## Real GPU validation snapshot
+
+- GPU: NVIDIA A100 80GB PCIe
+- CUDA toolkit: 13.0
+- Python: 3.11.9
+- scenarios: 12
+- validation: passed
+- pytest: 17 passed
+- Nsight Compute: detected but not used
+
+Key result: tiled GEMM at `512x512` achieved about `3840` GFLOPs versus naive GEMM about `2589` GFLOPs, roughly `1.48x` faster.
+
+Metric integrity notes:
+
+- `runtime_ms` is measured with CUDA events.
+- `effective_bandwidth_GBps`, `effective_GFLOPs`, and `arithmetic_intensity` are derived estimates.
+- occupancy/cache/SM metrics are unavailable because Nsight Compute was not run.
 
 ## Exact next steps for real CUDA validation
 

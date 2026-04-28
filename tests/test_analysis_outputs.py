@@ -85,7 +85,11 @@ def test_generate_plots_and_report(tmp_path: Path):
     run_dir = tmp_path / "run"
     _seed_run_dir(run_dir)
     plots = generate_basic_plots(run_dir)
-    assert len(plots) >= 2
+    expected_plot_names = {
+        "runtime_vs_size_vector_reduction.png",
+        "effective_bandwidth_vs_size_vector_reduction.png",
+    }
+    assert expected_plot_names.issubset({p.name for p in plots})
     for path in plots:
         assert path.exists()
 
@@ -94,3 +98,4 @@ def test_generate_plots_and_report(tmp_path: Path):
     text = report_path.read_text(encoding="utf-8")
     assert "GPU Kernel Performance Report" in text
     assert "Profiler Metrics Status" in text
+    assert "runtime_vs_size_vector_reduction.png" in text
