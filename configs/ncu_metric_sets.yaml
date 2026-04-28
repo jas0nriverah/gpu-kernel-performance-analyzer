@@ -18,6 +18,7 @@ metric_sets:
     # Logical metric -> preferred raw Nsight metric columns (first available wins).
     normalized_metric_sources:
       occupancy:
+        # Achieved occupancy proxy: active warps as % of peak sustained active warps.
         - sm__warps_active.avg.pct_of_peak_sustained_active
       sm_utilization:
         - sm__throughput.avg.pct_of_peak_sustained_elapsed
@@ -27,6 +28,7 @@ metric_sets:
       l2_throughput_pct:
         - lts__throughput.avg.pct_of_peak_sustained_elapsed
       l2_cache_hit_rate:
+        # Cache hit-rate proxy; imported only when explicitly captured in raw Nsight output.
         - lts__t_sector_hit_rate.pct
     # Use `ncu --query-metrics` on the target system to verify metric availability.
     # These metric IDs are intended for Ampere/A100 and may vary by Nsight/CUDA version.

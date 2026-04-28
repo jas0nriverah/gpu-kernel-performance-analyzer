@@ -6,6 +6,7 @@
 - Run warmup iterations before timed iterations.
 - Run repeated timed samples and retain all raw samples in `timing_samples.csv`.
 - Compute summary statistics per scenario (`mean`, `median`, `p95`, `stddev`, `cv`).
+- Nsight Compute profiling overhead is not used for benchmark timing claims.
 
 ## Derived estimates
 
@@ -28,4 +29,8 @@ Scenarios are expanded from `configs/benchmark_scenarios.yaml`:
 
 ## Verification
 
-Kernel correctness checks are optional via `verify=true` scenarios. Verification failures are recorded in `benchmark_summary.csv`.
+Kernel correctness checks are optional via `verify=true` scenarios. Verification results are recorded in `benchmark_summary.csv`.
+
+## Profiler metrics
+
+Profiler metrics are imported only from real Nsight Compute CSV output. Imported rows must map to an exact benchmark scenario by `kernel + problem_size + block_size` and include source provenance.
