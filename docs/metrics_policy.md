@@ -12,11 +12,11 @@ This project enforces explicit metric provenance for every reported value.
 
 ## Profiler-dependent metrics
 
-- `occupancy`
+- `occupancy` (achieved occupancy / active warps percentage, imported from `sm__warps_active.avg.pct_of_peak_sustained_active`)
 - `sm_utilization`
 - `memory_throughput_pct`
 - `l2_throughput_pct`
-- `l2_cache_hit_rate`
+- `l2_cache_hit_rate` (only when directly measured from `lts__t_sector_hit_rate.pct`; otherwise remains `unavailable`)
 
 These are `unavailable` in MVP unless Nsight Compute data is explicitly collected and parsed.
 Use:
@@ -32,9 +32,10 @@ Import requirements:
 - provenance metadata (`source_tool`, `source_file`, `metric_set`, `import_timestamp`) is required
 - imported profiler metrics are scenario-specific; unprofiled scenarios remain unavailable
 - Nsight profiling runtime overhead is not used for benchmark `runtime_ms` claims (CUDA events remain source of truth)
+- profiler metric values are taken from Nsight counters only; benchmark timing claims remain based on CUDA-event artifacts
 
 ## Enforcement
 
-- Artifact validation fails if profiler-dependent metrics are marked as measured without profiler integration.
-- Missing or malformed required artifact files fail validation.
+- Artifact validation rejects profiler-dependent metrics marked as measured without profiler integration.
+- Missing or malformed required artifact files do not pass validation.
 - Profiler metrics marked measured without required provenance metadata are rejected by validation.
