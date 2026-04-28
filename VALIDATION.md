@@ -108,7 +108,7 @@
 - scenarios: 12
 - validation: passed
 - pytest: 17 passed
-- Nsight Compute: detected but not used
+- Nsight Compute: run only for `vector_add` (`4194304`, `256`) and `gemm_tiled` (`512`, `16`)
 
 Key result: tiled GEMM at `512x512` achieved about `3840` GFLOPs versus naive GEMM about `2589` GFLOPs, roughly `1.48x` faster.
 
@@ -116,7 +116,8 @@ Metric integrity notes:
 
 - `runtime_ms` is measured with CUDA events.
 - `effective_bandwidth_GBps`, `effective_GFLOPs`, and `arithmetic_intensity` are derived estimates.
-- occupancy/cache/SM metrics are unavailable because Nsight Compute was not run.
+- profiler metrics are scenario-specific; unprofiled scenarios remain unavailable.
+- Nsight timing overhead is not used for benchmark `runtime_ms` claims.
 
 ## Exact next steps for real CUDA validation
 

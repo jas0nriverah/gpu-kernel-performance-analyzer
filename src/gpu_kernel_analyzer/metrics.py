@@ -4,6 +4,8 @@ from dataclasses import dataclass
 import math
 from statistics import mean, median, pstdev
 
+from .schemas import PROFILER_METRICS
+
 
 STATUS_MEASURED = "measured"
 STATUS_DERIVED = "derived_estimate"
@@ -53,8 +55,4 @@ def compute_derived_metrics(bytes_moved: int, flops: float, runtime_ms_mean: flo
 
 
 def default_unavailable_profiler_metrics() -> dict[str, str]:
-    return {
-        "occupancy": STATUS_UNAVAILABLE,
-        "sm_utilization": STATUS_UNAVAILABLE,
-        "l2_cache_hit_rate": STATUS_UNAVAILABLE,
-    }
+    return {metric: STATUS_UNAVAILABLE for metric in sorted(PROFILER_METRICS)}

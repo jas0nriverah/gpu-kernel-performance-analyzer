@@ -242,3 +242,41 @@ def test_ncu_import_rejects_invalid_provenance(tmp_path: Path):
         assert False, "Expected ValueError for invalid source_tool."
     except ValueError as exc:
         assert "Unsupported source_tool" in str(exc)
+
+
+def test_ncu_import_accepts_memory_throughput_metric(tmp_path: Path):
+    run_dir = tmp_path / "run_memory_metric"
+    _seed_run_dir(run_dir)
+    ncu_csv = tmp_path / "ncu_memory_metric.csv"
+    write_csv(
+        ncu_csv,
+        rows=[
+            {
+                "kernel": "vector_add",
+                "problem_size": 1024,
+                "block_size": 128,
+                "metric_name": "memory_throughput_pct",
+                "metric_value": 71.42,
+            }
+        ],
+        fieldnames=["kernel", "problem_size", "block_size", "metric_name", "metric_value"],
+    )
+
+    imported = import_ncu_metrics(
+        run_dir=run_dir,
+        ncu_csv=ncu_csv,
+        source_tool="ncu",
+        source_file="reports/memory.csv",
+        metric_set="default_profiler_set",
+    )
+    assert imported == 1
+    rows = read_csv_rows(run_dir / "metrics_provenance.csv")
+    measured = [
+        row for row in rows
+        if row["kernel"] == "vector_add"
+        and row["problem_size"] == "1024"
+        and row["block_size"] == "128"
+        and row["metric_name"] == "memory_throughput_pct"
+    ]
+    assert len(measured) == 1
+    assert measured[0]["status"] == "measured"

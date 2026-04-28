@@ -63,26 +63,94 @@ python -m gpu_kernel_analyzer analyze full --run-dir outputs/real_gpu_small
 python -m gpu_kernel_analyzer analyze full --run-dir outputs/real_gpu_medium
 ```
 
-## 8) Optional Nsight import (if available)
+## 8) Optional Nsight Compute subset pass (no full sweep rerun required)
 
-Normalized CSV must include:
+Capture only two scenarios for a small, defensible profiler pass:
 
-- `kernel,problem_size,block_size,metric_name,metric_value`
+- `vector_add`, `problem_size=4194304`, `block_size=256`
+- `gemm_tiled`, `problem_size=512`, `block_size=16`
+
+Check metrics on target machine:
+
+```bash
+ncu --version
+ncu --query-metrics | grep -E "sm__warps_active\\.avg\\.pct_of_peak_sustained_active|sm__throughput\\.avg\\.pct_of_peak_sustained_elapsed|gpu__dram_throughput\\.avg\\.pct_of_peak_sustained_elapsed|gpu__compute_memory_throughput\\.avg\\.pct_of_peak_sustained_elapsed|lts__throughput\\.avg\\.pct_of_peak_sustained_elapsed"
+```
+
+Optional helper to print exact commands:
+
+```bash
+python -m gpu_kernel_analyzer profile ncu-plan \
+  --binary build/gpu_benchmark \
+  --kernel vector_add \
+  --problem-size 4194304 \
+  --block-size 256 \
+  --warmups 10 \
+  --repeats 30 \
+  --verify \
+  --raw-csv-out outputs/demo_real_gpu/ncu_raw_vector_add_4194304_256.csv \
+  --normalized-csv outputs/demo_real_gpu/ncu_normalized_vector_add_4194304_256.csv \
+  --run-dir outputs/demo_real_gpu
+```
+
+Run Nsight raw capture for each selected scenario:
+
+```bash
+ncu --target-processes all --csv --page raw --metrics sm__warps_active.avg.pct_of_peak_sustained_active,sm__throughput.avg.pct_of_peak_sustained_elapsed,gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,lts__throughput.avg.pct_of_peak_sustained_elapsed \
+  build/gpu_benchmark --kernel vector_add --problem-size 4194304 --block-size 256 --warmups 10 --repeats 30 --verify \
+  > outputs/demo_real_gpu/ncu_raw_vector_add_4194304_256.csv
+
+ncu --target-processes all --csv --page raw --metrics sm__warps_active.avg.pct_of_peak_sustained_active,sm__throughput.avg.pct_of_peak_sustained_elapsed,gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed,gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed,lts__throughput.avg.pct_of_peak_sustained_elapsed \
+  build/gpu_benchmark --kernel gemm_tiled --problem-size 512 --block-size 16 --warmups 5 --repeats 15 --verify \
+  > outputs/demo_real_gpu/ncu_raw_gemm_tiled_512_16.csv
+```
+
+Normalize each raw CSV:
+
+```bash
+python -m gpu_kernel_analyzer profile ncu-normalize \
+  --raw-csv outputs/demo_real_gpu/ncu_raw_vector_add_4194304_256.csv \
+  --out-csv outputs/demo_real_gpu/ncu_normalized_vector_add_4194304_256.csv \
+  --kernel vector_add \
+  --problem-size 4194304 \
+  --block-size 256 \
+  --metric-set default_profiler_set
+
+python -m gpu_kernel_analyzer profile ncu-normalize \
+  --raw-csv outputs/demo_real_gpu/ncu_raw_gemm_tiled_512_16.csv \
+  --out-csv outputs/demo_real_gpu/ncu_normalized_gemm_tiled_512_16.csv \
+  --kernel gemm_tiled \
+  --problem-size 512 \
+  --block-size 16 \
+  --metric-set default_profiler_set
+```
+
+Import normalized CSV files:
 
 ```bash
 python -m gpu_kernel_analyzer profile ncu-import \
-  --run-dir outputs/real_gpu_small \
+  --run-dir outputs/demo_real_gpu \
   --source-tool ncu \
-  --source-file reports/ncu_small_raw.csv \
+  --source-file vector_add_4194304_b256_raw.csv \
   --metric-set default_profiler_set \
-  --ncu-csv reports/ncu_small_normalized.csv
+  --ncu-csv outputs/demo_real_gpu/ncu_normalized_vector_add_4194304_256.csv
+
+python -m gpu_kernel_analyzer profile ncu-import \
+  --run-dir outputs/demo_real_gpu \
+  --source-tool ncu \
+  --source-file gemm_tiled_512_b16_raw.csv \
+  --metric-set default_profiler_set \
+  --ncu-csv outputs/demo_real_gpu/ncu_normalized_gemm_tiled_512_16.csv
 ```
 
-Re-validate after import:
+Re-validate and regenerate report:
 
 ```bash
-python -m gpu_kernel_analyzer artifacts validate --run-dir outputs/real_gpu_small
+python -m gpu_kernel_analyzer artifacts validate --run-dir outputs/demo_real_gpu
+python -m gpu_kernel_analyzer analyze full --run-dir outputs/demo_real_gpu
 ```
+
+Do not commit raw Nsight output unless intentionally included as a tiny, clearly labeled sample.
 
 ## Expected output folders
 

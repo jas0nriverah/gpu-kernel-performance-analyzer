@@ -5,6 +5,7 @@ import csv
 from datetime import datetime, timezone
 import json
 from pathlib import Path
+import shlex
 import subprocess
 from typing import Any
 
@@ -31,7 +32,12 @@ from .runner import run_binary_for_scenario
 from .scenarios import load_and_expand_scenarios
 from .plotting import generate_basic_plots
 from .report import write_markdown_report
-from .ncu import import_ncu_metrics
+from .ncu import (
+    build_ncu_raw_csv_command,
+    get_metric_queries_for_set,
+    import_ncu_metrics,
+    normalize_ncu_raw_csv,
+)
 from .system_info import detect_ncu, runtime_environment
 
 
@@ -298,6 +304,62 @@ def profile_ncu_import(args: argparse.Namespace) -> int:
     return 0
 
 
+def profile_ncu_normalize(args: argparse.Namespace) -> int:
+    normalized_rows = normalize_ncu_raw_csv(
+        raw_csv=Path(args.raw_csv),
+        normalized_csv=Path(args.out_csv),
+        kernel=args.kernel,
+        problem_size=int(args.problem_size),
+        block_size=int(args.block_size),
+        metric_set=args.metric_set,
+        metric_config_path=Path(args.metric_config),
+    )
+    metrics = ",".join(row["metric_name"] for row in normalized_rows)
+    print(f"Wrote {len(normalized_rows)} normalized Nsight rows to {Path(args.out_csv).resolve()}")
+    print(f"Extracted metrics: {metrics}")
+    return 0
+
+
+def profile_ncu_plan(args: argparse.Namespace) -> int:
+    metric_config = Path(args.metric_config)
+    metric_queries = get_metric_queries_for_set(args.metric_set, metric_config)
+    raw_cmd = build_ncu_raw_csv_command(
+        binary=Path(args.binary),
+        kernel=args.kernel,
+        problem_size=int(args.problem_size),
+        block_size=int(args.block_size),
+        warmups=int(args.warmups),
+        repeats=int(args.repeats),
+        verify=bool(args.verify),
+        metric_queries=metric_queries,
+        raw_csv_out=Path(args.raw_csv_out),
+    )
+    source_file = args.source_file if args.source_file else str(Path(args.raw_csv_out))
+    import_cmd = " ".join(
+        [
+            "python -m gpu_kernel_analyzer profile ncu-import",
+            f"--run-dir {shlex.quote(args.run_dir)}",
+            "--source-tool ncu",
+            f"--source-file {shlex.quote(source_file)}",
+            f"--metric-set {shlex.quote(args.metric_set)}",
+            f"--ncu-csv {shlex.quote(args.normalized_csv)}",
+        ]
+    )
+    print("NCU raw capture command:")
+    print(raw_cmd)
+    print()
+    print("Normalized import command:")
+    print(import_cmd)
+    print()
+    print("Normalization contract:")
+    print("kernel,problem_size,block_size,metric_name,metric_value")
+    print(
+        "Allowed metric_name values: occupancy,sm_utilization,memory_throughput_pct,"
+        "l2_throughput_pct,l2_cache_hit_rate"
+    )
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="GPU Kernel Performance Analyzer CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -359,6 +421,72 @@ def build_parser() -> argparse.ArgumentParser:
         help="Profiler metric set identifier.",
     )
     ncu_import.set_defaults(func=profile_ncu_import)
+    ncu_normalize = profile_sub.add_parser(
+        "ncu-normalize",
+        help="Normalize raw Nsight CSV into import format for one scenario.",
+    )
+    ncu_normalize.add_argument("--raw-csv", required=True, help="Raw Nsight CSV path from ncu --page raw.")
+    ncu_normalize.add_argument(
+        "--out-csv",
+        required=True,
+        help="Output normalized CSV path with kernel,problem_size,block_size,metric_name,metric_value.",
+    )
+    ncu_normalize.add_argument("--kernel", required=True, help="Scenario kernel identifier.")
+    ncu_normalize.add_argument("--problem-size", required=True, type=int, help="Scenario problem size.")
+    ncu_normalize.add_argument("--block-size", required=True, type=int, help="Scenario block size.")
+    ncu_normalize.add_argument(
+        "--metric-set",
+        default="default_profiler_set",
+        help="Metric-set name from configs/ncu_metric_sets.yaml.",
+    )
+    ncu_normalize.add_argument(
+        "--metric-config",
+        default="configs/ncu_metric_sets.yaml",
+        help="Path to ncu metric-set config YAML.",
+    )
+    ncu_normalize.set_defaults(func=profile_ncu_normalize)
+    ncu_plan = profile_sub.add_parser(
+        "ncu-plan",
+        help="Print exact Nsight raw capture and import commands for one benchmark scenario.",
+    )
+    ncu_plan.add_argument("--binary", required=True, help="Path to benchmark binary on CUDA machine.")
+    ncu_plan.add_argument("--kernel", required=True, help="Kernel name (e.g. vector_add, gemm_tiled).")
+    ncu_plan.add_argument("--problem-size", required=True, type=int, help="Scenario problem size.")
+    ncu_plan.add_argument("--block-size", required=True, type=int, help="Scenario block size.")
+    ncu_plan.add_argument("--warmups", required=True, type=int, help="Warmup count for selected scenario.")
+    ncu_plan.add_argument("--repeats", required=True, type=int, help="Repeat count for selected scenario.")
+    ncu_plan.add_argument("--verify", action="store_true", help="Append --verify to benchmark command.")
+    ncu_plan.add_argument(
+        "--metric-set",
+        default="default_profiler_set",
+        help="Metric-set name from configs/ncu_metric_sets.yaml.",
+    )
+    ncu_plan.add_argument(
+        "--metric-config",
+        default="configs/ncu_metric_sets.yaml",
+        help="Path to ncu metric-set config YAML.",
+    )
+    ncu_plan.add_argument(
+        "--raw-csv-out",
+        required=True,
+        help="Output path for Nsight raw CSV capture.",
+    )
+    ncu_plan.add_argument(
+        "--normalized-csv",
+        required=True,
+        help="Path to normalized CSV (kernel,problem_size,block_size,metric_name,metric_value).",
+    )
+    ncu_plan.add_argument(
+        "--run-dir",
+        required=True,
+        help="Existing run directory where imported metrics will be attached.",
+    )
+    ncu_plan.add_argument(
+        "--source-file",
+        default=None,
+        help="Optional source-file metadata override for ncu-import (defaults to --raw-csv-out).",
+    )
+    ncu_plan.set_defaults(func=profile_ncu_plan)
     return parser
 
 

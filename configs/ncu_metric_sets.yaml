@@ -3,7 +3,40 @@ description: Optional Nsight Compute metrics recognized by this project.
 supported_metrics:
   - occupancy
   - sm_utilization
+  - memory_throughput_pct
+  - l2_throughput_pct
   - l2_cache_hit_rate
+metric_sets:
+  default_profiler_set:
+    description: Small resume-defensible metric set for single-scenario Nsight validation.
+    normalized_metrics:
+      - occupancy
+      - sm_utilization
+      - memory_throughput_pct
+      - l2_throughput_pct
+      - l2_cache_hit_rate
+    # Logical metric -> preferred raw Nsight metric columns (first available wins).
+    normalized_metric_sources:
+      occupancy:
+        - sm__warps_active.avg.pct_of_peak_sustained_active
+      sm_utilization:
+        - sm__throughput.avg.pct_of_peak_sustained_elapsed
+      memory_throughput_pct:
+        - gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed
+        - gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed
+      l2_throughput_pct:
+        - lts__throughput.avg.pct_of_peak_sustained_elapsed
+      l2_cache_hit_rate:
+        - lts__t_sector_hit_rate.pct
+    # Use `ncu --query-metrics` on the target system to verify metric availability.
+    # These metric IDs are intended for Ampere/A100 and may vary by Nsight/CUDA version.
+    ncu_metrics:
+      - sm__warps_active.avg.pct_of_peak_sustained_active
+      - sm__throughput.avg.pct_of_peak_sustained_elapsed
+      - gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed
+      - gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed
+      - lts__throughput.avg.pct_of_peak_sustained_elapsed
+      - lts__t_sector_hit_rate.pct
 import_contract:
   required_columns:
     - kernel

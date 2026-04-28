@@ -19,7 +19,7 @@ Current scope:
 - `arithmetic_intensity` - derived estimate
 - device metadata - measured from CUDA runtime when available
 
-Occupancy/cache/SM metrics are marked unavailable unless a future Nsight Compute integration provides them.
+Profiler metrics are unavailable by default and only become measured for scenarios with imported Nsight Compute CSV rows.
 The sweep manifest records whether `ncu` is detected on PATH, but MVP runs do not require or invoke Nsight Compute.
 
 ## Repository layout
@@ -82,9 +82,33 @@ Detect availability:
 python -m gpu_kernel_analyzer profile ncu-detect
 ```
 
+Print exact raw-capture/import commands for a selected scenario:
+
+```bash
+python -m gpu_kernel_analyzer profile ncu-plan \
+  --binary build/gpu_benchmark \
+  --kernel vector_add \
+  --problem-size 4194304 \
+  --block-size 256 \
+  --warmups 10 \
+  --repeats 30 \
+  --verify \
+  --raw-csv-out outputs/demo_real_gpu/ncu_raw_vector_add_4194304_256.csv \
+  --normalized-csv outputs/demo_real_gpu/ncu_normalized_vector_add_4194304_256.csv \
+  --run-dir outputs/demo_real_gpu
+```
+
 Import profiler metrics from a normalized CSV (`kernel,problem_size,block_size,metric_name,metric_value`):
 
 ```bash
+python -m gpu_kernel_analyzer profile ncu-normalize \
+  --raw-csv reports/ncu/vector_add_4194304_b256_raw.csv \
+  --out-csv outputs/demo_real_gpu/ncu_normalized_vector_add_4194304_256.csv \
+  --kernel vector_add \
+  --problem-size 4194304 \
+  --block-size 256 \
+  --metric-set default_profiler_set
+
 python -m gpu_kernel_analyzer profile ncu-import \
   --run-dir outputs/run_mvp \
   --source-tool ncu \
@@ -94,6 +118,7 @@ python -m gpu_kernel_analyzer profile ncu-import \
 ```
 
 `ncu-import` will reject rows that do not map to an exact benchmark scenario (`kernel + problem_size + block_size`) or missing provenance metadata.
+Imported profiler metrics are scenario-specific and do not replace CUDA-event benchmark timing.
 
 ## Non-CUDA fixture demo (sample only)
 
@@ -131,7 +156,7 @@ python -m pytest -q
 - scenarios: 12
 - validation: passed
 - pytest: 17 passed
-- Nsight Compute: detected but not used
+- Nsight Compute: run for two scenarios only (`vector_add` 4194304/256 and `gemm_tiled` 512/16)
 
 Key result: tiled GEMM at `512x512` achieved about `3840` GFLOPs versus naive GEMM about `2589` GFLOPs, roughly `1.48x` faster.
 
@@ -139,7 +164,8 @@ Metric integrity for this run:
 
 - `runtime_ms` is measured with CUDA events.
 - `effective_bandwidth_GBps`, `effective_GFLOPs`, and `arithmetic_intensity` are derived estimates.
-- occupancy/cache/SM metrics are unavailable because Nsight Compute was not run.
+- Nsight profiler metrics are scenario-specific; unprofiled scenarios remain unavailable.
+- Nsight timing overhead is not used for benchmark timing claims.
 
 ## TODO: Real-GPU validation pass
 

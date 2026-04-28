@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from .io import read_csv
+from .schemas import PROFILER_METRICS
 
 
 def _markdown_table(rows: list[dict[str, str]], columns: list[str], max_rows: int | None = 10) -> str:
@@ -38,13 +40,34 @@ def _compute_key_result(summary: list[dict[str, str]]) -> str:
     )
 
 
+def _metric_integrity_notes(provenance: list[dict[str, str]], manifest: dict[str, object]) -> list[str]:
+    notes = [
+        "- `runtime_ms` is measured with CUDA events.",
+        "- `effective_bandwidth_GBps`, `effective_GFLOPs`, and `arithmetic_intensity` are derived estimates.",
+        "- Nsight Compute timing overhead is not used for benchmark `runtime_ms` claims.",
+    ]
+    measured_profiler = [
+        row for row in provenance
+        if row.get("metric_name") in PROFILER_METRICS and row.get("status") == "measured"
+    ]
+    nsight = manifest.get("nsight_compute", {}) if isinstance(manifest, dict) else {}
+    nsight_enabled = isinstance(nsight, dict) and bool(nsight.get("enabled")) and str(nsight.get("status")) == "parsed_metrics"
+    if nsight_enabled and measured_profiler:
+        notes.append("- Profiler metrics are scenario-specific and only measured for scenarios with imported Nsight CSV rows.")
+    else:
+        notes.append("- Profiler metrics remain unavailable unless Nsight Compute CSV metrics are imported.")
+    return notes
+
+
 def write_markdown_report(run_dir: Path) -> Path:
     summary = read_csv(run_dir / "benchmark_summary.csv")
     provenance = read_csv(run_dir / "metrics_provenance.csv")
     heuristics_path = run_dir / "analysis_heuristics.csv"
     heuristics = read_csv(heuristics_path) if heuristics_path.exists() else []
-    manifest = (run_dir / "run_manifest.json").read_text(encoding="utf-8")
+    manifest_text = (run_dir / "run_manifest.json").read_text(encoding="utf-8")
+    manifest_data = json.loads(manifest_text)
     key_result = _compute_key_result(summary)
+    metric_notes = _metric_integrity_notes(provenance, manifest_data)
 
     default_metrics = [row for row in provenance if row.get("metric_name") in {
         "runtime_ms",
@@ -53,11 +76,7 @@ def write_markdown_report(run_dir: Path) -> Path:
         "arithmetic_intensity",
         "device_metadata",
     }]
-    profiler_metrics = [row for row in provenance if row.get("metric_name") in {
-        "occupancy",
-        "sm_utilization",
-        "l2_cache_hit_rate",
-    }]
+    profiler_metrics = [row for row in provenance if row.get("metric_name") in PROFILER_METRICS]
 
     text = "\n".join(
         [
@@ -65,7 +84,7 @@ def write_markdown_report(run_dir: Path) -> Path:
             "",
             "## Run Manifest Snapshot",
             "```json",
-            manifest.strip(),
+            manifest_text.strip(),
             "```",
             "",
             "## Benchmark Summary",
@@ -87,9 +106,7 @@ def write_markdown_report(run_dir: Path) -> Path:
             key_result,
             "",
             "## Metric Integrity Notes",
-            "- `runtime_ms` is measured with CUDA events.",
-            "- `effective_bandwidth_GBps`, `effective_GFLOPs`, and `arithmetic_intensity` are derived estimates.",
-            "- Occupancy/cache/SM metrics are unavailable because Nsight Compute was not run.",
+            *metric_notes,
             "",
             "## Metrics Provenance (Default Metrics)",
             _markdown_table(
@@ -100,7 +117,8 @@ def write_markdown_report(run_dir: Path) -> Path:
             "## Profiler Metrics Status",
             _markdown_table(
                 profiler_metrics,
-                ["kernel", "problem_size", "block_size", "metric_name", "status", "source"],
+                ["kernel", "problem_size", "block_size", "metric_name", "status", "metric_value", "source"],
+                max_rows=None,
             ),
             "",
             "## Bottleneck Heuristics",

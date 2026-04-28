@@ -9,7 +9,13 @@ METRIC_EFFECTIVE_GFLOPS = "effective_GFLOPs"
 METRIC_ARITHMETIC_INTENSITY = "arithmetic_intensity"
 METRIC_DEVICE_METADATA = "device_metadata"
 
-PROFILER_METRICS = {"occupancy", "sm_utilization", "l2_cache_hit_rate"}
+PROFILER_METRICS = {
+    "occupancy",
+    "sm_utilization",
+    "memory_throughput_pct",
+    "l2_throughput_pct",
+    "l2_cache_hit_rate",
+}
 
 
 @dataclass(frozen=True)
