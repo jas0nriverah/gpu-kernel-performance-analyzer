@@ -9,7 +9,7 @@ import shlex
 import subprocess
 from typing import Any
 
-from .analysis import classify_bottleneck
+from .analysis import classify_bottleneck, compute_speedups
 from .artifacts import (
     PROVENANCE_COLUMNS,
     SUMMARY_COLUMNS,
@@ -29,8 +29,8 @@ from .metrics import (
     summarize_runtime,
 )
 from .runner import run_binary_for_scenario
-from .scenarios import load_and_expand_scenarios
-from .plotting import generate_basic_plots
+from .scenarios import load_and_expand_scenarios, scenario_warnings
+from .plotting import generate_basic_plots, generate_roofline_plot
 from .report import write_markdown_report
 from .ncu import (
     build_ncu_raw_csv_command,
@@ -79,6 +79,8 @@ def run_sweep(args: argparse.Namespace) -> int:
     run_dir.mkdir(parents=True, exist_ok=True)
 
     scenarios = load_and_expand_scenarios(scenario_file)
+    for warning in scenario_warnings(scenarios):
+        print(f"WARNING: {warning}")
     if args.dry_run:
         print(f"Scenarios expanded: {len(scenarios)}")
         for scenario in scenarios:
@@ -127,6 +129,8 @@ def run_sweep(args: argparse.Namespace) -> int:
                 "verification_passed": bool(raw.get("verification_passed", True)),
                 "runtime_ms_mean": stats.runtime_ms_mean,
                 "runtime_ms_median": stats.runtime_ms_median,
+                "runtime_ms_min": stats.runtime_ms_min,
+                "runtime_ms_max": stats.runtime_ms_max,
                 "runtime_ms_p95": stats.runtime_ms_p95,
                 "runtime_ms_stddev": stats.runtime_ms_stddev,
                 "runtime_ms_cv": stats.runtime_ms_cv,
@@ -271,12 +275,65 @@ def analyze_quick(args: argparse.Namespace) -> int:
     return 0
 
 
+SPEEDUP_COLUMNS = [
+    "optimized_kernel",
+    "baseline_kernel",
+    "problem_size",
+    "block_size",
+    "baseline_runtime_ms_mean",
+    "optimized_runtime_ms_mean",
+    "speedup_runtime",
+    "baseline_GFLOPs",
+    "optimized_GFLOPs",
+    "gflops_ratio",
+]
+
+
+def _write_speedup_csv(run_dir: Path) -> None:
+    """Write analysis_speedup.csv pairing optimized kernels vs their baselines."""
+    summary_path = run_dir / "benchmark_summary.csv"
+    if not summary_path.exists():
+        return
+    with summary_path.open("r", encoding="utf-8", newline="") as fh:
+        rows = list(csv.DictReader(fh))
+    speedups = compute_speedups(rows)
+    out_rows = [
+        {
+            "optimized_kernel": s.optimized_kernel,
+            "baseline_kernel": s.baseline_kernel,
+            "problem_size": s.problem_size,
+            "block_size": s.block_size,
+            "baseline_runtime_ms_mean": s.baseline_runtime_ms_mean,
+            "optimized_runtime_ms_mean": s.optimized_runtime_ms_mean,
+            "speedup_runtime": s.speedup_runtime,
+            "baseline_GFLOPs": s.baseline_GFLOPs,
+            "optimized_GFLOPs": s.optimized_GFLOPs,
+            "gflops_ratio": s.gflops_ratio,
+        }
+        for s in speedups
+    ]
+    write_csv(run_dir / "analysis_speedup.csv", rows=out_rows, fieldnames=SPEEDUP_COLUMNS)
+    for s in speedups:
+        print(
+            f"speedup {s.optimized_kernel} vs {s.baseline_kernel} "
+            f"size={s.problem_size}: {s.speedup_runtime:.2f}x faster (runtime mean)"
+        )
+
+
 def analyze_full(args: argparse.Namespace) -> int:
     run_dir = Path(args.run_dir)
     # Reuse quick analysis output.
     quick_args = argparse.Namespace(run_dir=str(run_dir))
     analyze_quick(quick_args)
+    _write_speedup_csv(run_dir)
     plot_paths = generate_basic_plots(run_dir)
+    roofline_path = generate_roofline_plot(
+        run_dir,
+        peak_gflops=getattr(args, "peak_gflops", None),
+        peak_bandwidth_GBps=getattr(args, "peak_bandwidth_gbps", None),
+    )
+    if roofline_path is not None:
+        plot_paths.append(roofline_path)
     report_path = write_markdown_report(run_dir)
     print(f"Generated report: {report_path}")
     for path in plot_paths:
@@ -388,6 +445,18 @@ def build_parser() -> argparse.ArgumentParser:
     quick.set_defaults(func=analyze_quick)
     full = analyze_sub.add_parser("full", help="Generate heuristics, plots, and markdown report.")
     full.add_argument("--run-dir", required=True, help="Run directory with generated artifacts.")
+    full.add_argument(
+        "--peak-gflops",
+        type=float,
+        default=None,
+        help="Optional real peak FP32 GFLOPs for this GPU; draws a compute roof on the roofline plot.",
+    )
+    full.add_argument(
+        "--peak-bandwidth-gbps",
+        type=float,
+        default=None,
+        help="Optional real peak DRAM bandwidth (GB/s) for this GPU; draws a memory roof on the roofline plot.",
+    )
     full.set_defaults(func=analyze_full)
 
     profile = sub.add_parser("profile", help="Optional profiler integration workflows.")

@@ -1,0 +1,15 @@
+version: 1
+description: Fast smoke test for the newer memcpy_bandwidth and stencil_1d kernels.
+sweeps:
+  - kernel: memcpy_bandwidth
+    problem_sizes: [1048576]
+    block_sizes: [256]
+    warmups: 5
+    repeats: 10
+    verify: true
+  - kernel: stencil_1d
+    problem_sizes: [1048576]
+    block_sizes: [256]
+    warmups: 5
+    repeats: 10
+    verify: true

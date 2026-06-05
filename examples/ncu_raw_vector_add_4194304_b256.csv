@@ -1,0 +1,9 @@
+==PROF== SAMPLE Nsight Compute raw CSV (sanitized). Values below are the real
+==PROF== A100 80GB vector_add measurement documented in README "Real GPU Validation
+==PROF== Snapshot"; this file is committed only as a reusable import/normalize input
+==PROF== for GPU-less demos and tests. It is NOT a substitute for re-profiling.
+==PROF== Connected to process 0 (/path/to/gpu_benchmark)
+==PROF== Disconnected from process 0
+"ID","Kernel Name","Block Size","sm__warps_active.avg.pct_of_peak_sustained_active","sm__throughput.avg.pct_of_peak_sustained_elapsed","gpu__dram_throughput.avg.pct_of_peak_sustained_elapsed","gpu__compute_memory_throughput.avg.pct_of_peak_sustained_elapsed","lts__throughput.avg.pct_of_peak_sustained_elapsed"
+"","","","%","%","%","%","%"
+"0","vector_add_kernel(const float *, const float *, float *, unsigned long)","(256, 1, 1)","76.72","21.36","71.42","75.34","77.37"

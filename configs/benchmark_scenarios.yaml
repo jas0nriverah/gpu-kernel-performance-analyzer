@@ -25,3 +25,15 @@ sweeps:
     warmups: 5
     repeats: 15
     verify: true
+  - kernel: memcpy_bandwidth
+    problem_sizes: [1048576, 4194304]
+    block_sizes: [256]
+    warmups: 10
+    repeats: 30
+    verify: true
+  - kernel: stencil_1d
+    problem_sizes: [1048576, 4194304]
+    block_sizes: [256]
+    warmups: 10
+    repeats: 30
+    verify: true

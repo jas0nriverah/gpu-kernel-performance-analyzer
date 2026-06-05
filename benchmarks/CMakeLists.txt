@@ -13,6 +13,8 @@ add_executable(gpu_benchmark
     src/kernels/reduction.cu
     src/kernels/gemm_naive.cu
     src/kernels/gemm_tiled.cu
+    src/kernels/memcpy_bandwidth.cu
+    src/kernels/stencil_1d.cu
 )
 
 target_include_directories(gpu_benchmark PRIVATE include)

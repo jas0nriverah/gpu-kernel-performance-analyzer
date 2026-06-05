@@ -64,6 +64,8 @@ def write_markdown_report(run_dir: Path) -> Path:
     provenance = read_csv(run_dir / "metrics_provenance.csv")
     heuristics_path = run_dir / "analysis_heuristics.csv"
     heuristics = read_csv(heuristics_path) if heuristics_path.exists() else []
+    speedup_path = run_dir / "analysis_speedup.csv"
+    speedups = read_csv(speedup_path) if speedup_path.exists() else []
     manifest_text = (run_dir / "run_manifest.json").read_text(encoding="utf-8")
     manifest_data = json.loads(manifest_text)
     key_result = _compute_key_result(summary)
@@ -95,6 +97,9 @@ def write_markdown_report(run_dir: Path) -> Path:
                     "problem_size",
                     "block_size",
                     "runtime_ms_mean",
+                    "runtime_ms_min",
+                    "runtime_ms_max",
+                    "runtime_ms_cv",
                     "effective_bandwidth_GBps",
                     "effective_GFLOPs",
                     "arithmetic_intensity",
@@ -104,6 +109,20 @@ def write_markdown_report(run_dir: Path) -> Path:
             "",
             "## Key Result",
             key_result,
+            "",
+            "## Speedup vs Baseline",
+            _markdown_table(
+                speedups,
+                [
+                    "optimized_kernel",
+                    "baseline_kernel",
+                    "problem_size",
+                    "speedup_runtime",
+                    "baseline_GFLOPs",
+                    "optimized_GFLOPs",
+                ],
+                max_rows=None,
+            ),
             "",
             "## Metric Integrity Notes",
             *metric_notes,
@@ -132,6 +151,8 @@ def write_markdown_report(run_dir: Path) -> Path:
             "- `plots/runtime_vs_size_gemm.png`",
             "- `plots/effective_gflops_vs_size_gemm.png`",
             "- `plots/effective_bandwidth_vs_size_vector_reduction.png`",
+            "- `plots/effective_bandwidth_vs_size_memory_kernels.png`",
+            "- `plots/roofline.png`",
         ]
     )
     out = run_dir / "REPORT.md"

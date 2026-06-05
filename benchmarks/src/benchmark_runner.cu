@@ -24,7 +24,7 @@ void print_usage() {
     std::cerr
         << "Usage: gpu_benchmark --kernel <name> --problem-size <N> --block-size <B>"
         << " --warmups <W> --repeats <R> [--verify]\n"
-        << "Kernels: vector_add, reduction, gemm_naive, gemm_tiled\n";
+        << "Kernels: vector_add, reduction, gemm_naive, gemm_tiled, memcpy_bandwidth, stencil_1d\n";
 }
 
 CliArgs parse_args(int argc, char** argv) {
@@ -101,6 +101,10 @@ int run_benchmark_cli(int argc, char** argv) {
             result = run_gemm_naive(args.problem_size, args.block_size, args.warmups, args.repeats, args.verify);
         } else if (args.kernel == "gemm_tiled") {
             result = run_gemm_tiled(args.problem_size, args.block_size, args.warmups, args.repeats, args.verify);
+        } else if (args.kernel == "memcpy_bandwidth") {
+            result = run_memcpy_bandwidth(args.problem_size, args.block_size, args.warmups, args.repeats, args.verify);
+        } else if (args.kernel == "stencil_1d") {
+            result = run_stencil_1d(args.problem_size, args.block_size, args.warmups, args.repeats, args.verify);
         } else {
             throw std::runtime_error("Unsupported kernel: " + args.kernel);
         }

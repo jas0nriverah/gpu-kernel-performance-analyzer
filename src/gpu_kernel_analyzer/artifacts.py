@@ -31,6 +31,8 @@ SUMMARY_COLUMNS = [
     "verification_passed",
     "runtime_ms_mean",
     "runtime_ms_median",
+    "runtime_ms_min",
+    "runtime_ms_max",
     "runtime_ms_p95",
     "runtime_ms_stddev",
     "runtime_ms_cv",

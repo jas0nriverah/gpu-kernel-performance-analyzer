@@ -6,3 +6,5 @@ BenchmarkRunOutput run_vector_add(std::size_t problem_size, int block_size, int 
 BenchmarkRunOutput run_reduction(std::size_t problem_size, int block_size, int warmups, int repeats, bool verify);
 BenchmarkRunOutput run_gemm_naive(std::size_t problem_size, int block_size, int warmups, int repeats, bool verify);
 BenchmarkRunOutput run_gemm_tiled(std::size_t problem_size, int block_size, int warmups, int repeats, bool verify);
+BenchmarkRunOutput run_memcpy_bandwidth(std::size_t problem_size, int block_size, int warmups, int repeats, bool verify);
+BenchmarkRunOutput run_stencil_1d(std::size_t problem_size, int block_size, int warmups, int repeats, bool verify);
