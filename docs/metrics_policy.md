@@ -34,6 +34,14 @@ Import requirements:
 - Nsight profiling runtime overhead is not used for benchmark `runtime_ms` claims (CUDA events remain source of truth)
 - profiler metric values are taken from Nsight counters only; benchmark timing claims remain based on CUDA-event artifacts
 
+## Predicted metrics
+
+The performance model (`model predict`, `model recommend-block-size`) produces values with
+a distinct `predicted` status. These are written only to `model_predictions.csv` and are
+never injected into the measured run artifacts. `predicted` is intentionally excluded from
+the set of statuses allowed in `metrics_provenance.csv`, so artifact validation rejects a
+`predicted` row if one ever appears in the measured provenance file.
+
 ## Enforcement
 
 - Artifact validation rejects profiler-dependent metrics marked as measured without profiler integration.

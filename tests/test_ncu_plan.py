@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import os
-from pathlib import Path
 import subprocess
 import sys
+from pathlib import Path
 
 from gpu_kernel_analyzer.ncu import get_metric_queries_for_set
 

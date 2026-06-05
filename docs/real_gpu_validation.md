@@ -7,9 +7,13 @@ This page summarizes the real GPU validation snapshot for the project. Fixture o
 - GPU: NVIDIA A100 80GB PCIe
 - CUDA Toolkit: 13.0
 - Python: 3.11.9
-- Scenarios executed: 12
 - Artifact validation: passed
-- Test suite: 22 passed
+
+This snapshot was captured with an earlier scenario set. The current default config
+(`configs/benchmark_scenarios.yaml`) expands to 24 scenarios and the CPU-only test suite
+has grown to 68 tests. The newer `memcpy_bandwidth` and `stencil_1d` kernels build and
+pass local correctness checks but have not yet been folded into this measured A100
+snapshot; their numbers will be added after a dedicated GPU run.
 
 ## Metrics Policy
 

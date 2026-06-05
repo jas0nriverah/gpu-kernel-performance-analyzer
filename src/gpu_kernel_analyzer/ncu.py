@@ -4,8 +4,8 @@ import csv
 import json
 import re
 import shlex
-from pathlib import Path
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any
 
 from .io import read_csv, write_csv

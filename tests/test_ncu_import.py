@@ -145,7 +145,7 @@ def test_ncu_import_rejects_missing_scenario_fields(tmp_path: Path):
             source_file="reports/file.csv",
             metric_set="default",
         )
-        assert False, "Expected ValueError for missing scenario fields."
+        raise AssertionError("Expected ValueError for missing scenario fields.")
     except ValueError as exc:
         assert "must contain columns" in str(exc)
 
@@ -179,7 +179,7 @@ def test_ncu_import_rejects_ambiguous_match(tmp_path: Path):
             source_file="reports/file.csv",
             metric_set="default",
         )
-        assert False, "Expected RuntimeError for ambiguous match."
+        raise AssertionError("Expected RuntimeError for ambiguous match.")
     except RuntimeError as exc:
         assert "Ambiguous Nsight metric mapping" in str(exc)
 
@@ -209,7 +209,7 @@ def test_ncu_import_rejects_no_match(tmp_path: Path):
             source_file="reports/file.csv",
             metric_set="default",
         )
-        assert False, "Expected RuntimeError for no scenario match."
+        raise AssertionError("Expected RuntimeError for no scenario match.")
     except RuntimeError as exc:
         assert "No matching benchmark scenario" in str(exc)
 
@@ -239,7 +239,7 @@ def test_ncu_import_rejects_invalid_provenance(tmp_path: Path):
             source_file="reports/file.csv",
             metric_set="default",
         )
-        assert False, "Expected ValueError for invalid source_tool."
+        raise AssertionError("Expected ValueError for invalid source_tool.")
     except ValueError as exc:
         assert "Unsupported source_tool" in str(exc)
 

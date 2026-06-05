@@ -9,14 +9,43 @@ description = "CUDA/C++ kernel benchmarking with Python artifact validation and 
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Portfolio Project" }]
+authors = [{ name = "Jason Rivera-Hernandez" }]
+keywords = [
+    "cuda",
+    "gpu",
+    "benchmarking",
+    "performance",
+    "roofline",
+    "nsight-compute",
+    "hpc",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Testing",
+    "Topic :: System :: Benchmark",
+]
 dependencies = [
     "matplotlib>=3.8",
+    "numpy>=1.24",
     "PyYAML>=6.0",
 ]
 
+[project.urls]
+Homepage = "https://github.com/jas0nriverah/gpu-kernel-performance-analyzer"
+Repository = "https://github.com/jas0nriverah/gpu-kernel-performance-analyzer"
+Issues = "https://github.com/jas0nriverah/gpu-kernel-performance-analyzer/issues"
+
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+lint = ["ruff>=0.6"]
+ml = ["scikit-learn>=1.3"]
 
 [project.scripts]
 gpu-kernel-analyzer = "gpu_kernel_analyzer.cli:main"
@@ -29,3 +58,11 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]

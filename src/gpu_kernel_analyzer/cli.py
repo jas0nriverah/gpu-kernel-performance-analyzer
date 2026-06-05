@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import argparse
 import csv
-from datetime import datetime, timezone
 import json
-from pathlib import Path
 import shlex
 import subprocess
+from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any
 
+from .advisor import build_recommendations, maybe_llm_summary, write_advisor_report
 from .analysis import classify_bottleneck, compute_speedups
 from .artifacts import (
     PROVENANCE_COLUMNS,
@@ -28,16 +29,26 @@ from .metrics import (
     default_unavailable_profiler_metrics,
     summarize_runtime,
 )
-from .runner import run_binary_for_scenario
-from .scenarios import load_and_expand_scenarios, scenario_warnings
-from .plotting import generate_basic_plots, generate_roofline_plot
-from .report import write_markdown_report
 from .ncu import (
     build_ncu_raw_csv_command,
     get_metric_queries_for_set,
     import_ncu_metrics,
     normalize_ncu_raw_csv,
 )
+from .perf_model import (
+    MIN_ROWS_FOR_CV,
+    PREDICTION_COLUMNS,
+    PerfModel,
+    cross_validate,
+    load_training_rows,
+    prediction_rows,
+    recommend_block_size,
+    train_perf_model,
+)
+from .plotting import generate_basic_plots, generate_roofline_plot
+from .report import write_markdown_report
+from .runner import run_binary_for_scenario
+from .scenarios import load_and_expand_scenarios, scenario_warnings
 from .system_info import detect_ncu, runtime_environment
 
 
@@ -417,6 +428,110 @@ def profile_ncu_plan(args: argparse.Namespace) -> int:
     return 0
 
 
+_GPU_DATA_HINT = (
+    "To add real measured data, run a sweep on a GPU machine, e.g.:\n"
+    "  python -m gpu_kernel_analyzer benchmark sweep --binary build/gpu_benchmark "
+    "--scenarios configs/benchmark_scenarios.yaml --outdir outputs/run_gpu"
+)
+
+
+def model_train(args: argparse.Namespace) -> int:
+    run_dirs = [Path(d) for d in args.run_dir]
+    rows = load_training_rows(run_dirs)
+    if not rows:
+        print("No usable benchmark_summary rows found in the given run directories.")
+        print(_GPU_DATA_HINT)
+        return 1
+
+    model = train_perf_model(rows)
+    model_out = Path(args.model_out)
+    write_json(model_out, model.to_dict())
+    print(f"Trained ridge_log_linear model (backend={model.backend}) on {model.training_rows} rows.")
+    print(f"Saved model to: {model_out.resolve()}")
+
+    cv = cross_validate(rows)
+    if not cv["enough_data"]:
+        print(
+            f"WARNING: only {cv['n_rows']} training rows (< {MIN_ROWS_FOR_CV}). "
+            "Cross-validation metrics below are not statistically meaningful; treat the model as a demonstration."
+        )
+        print(_GPU_DATA_HINT)
+    for target, metrics in cv["targets"].items():
+        r2 = metrics["r2"]
+        r2_text = "nan" if r2 != r2 else f"{r2:.3f}"
+        print(f"CV[{target}]: MAE={metrics['mae']:.5f} R2={r2_text} (n={metrics['n']}, leave-one-out)")
+    return 0
+
+
+def _write_predictions(predictions_out: str | None, rows: list[dict[str, Any]]) -> None:
+    if not predictions_out:
+        return
+    write_csv(Path(predictions_out), rows=rows, fieldnames=PREDICTION_COLUMNS)
+    print(f"Wrote {len(rows)} predicted rows to: {Path(predictions_out).resolve()}")
+
+
+def model_predict(args: argparse.Namespace) -> int:
+    model = PerfModel.from_dict(json.loads(Path(args.model).read_text(encoding="utf-8")))
+    predicted = model.predict(args.kernel, args.problem_size, args.block_size)
+    source = f"perf_model:{model.backend};model={Path(args.model).name}"
+    payload = {
+        "kernel": args.kernel,
+        "problem_size": args.problem_size,
+        "block_size": args.block_size,
+        "status": "predicted",
+        "predicted": predicted,
+        "model_source": source,
+    }
+    print(json.dumps(payload, indent=2, sort_keys=True))
+    _write_predictions(
+        args.predictions_out,
+        prediction_rows(args.kernel, args.problem_size, args.block_size, predicted, source),
+    )
+    return 0
+
+
+def model_recommend_block_size(args: argparse.Namespace) -> int:
+    model = PerfModel.from_dict(json.loads(Path(args.model).read_text(encoding="utf-8")))
+    candidates = [int(c.strip()) for c in args.candidates.split(",") if c.strip()]
+    rec = recommend_block_size(model, args.kernel, args.problem_size, candidates)
+    print(
+        f"Recommended block_size for {rec.kernel} size={rec.problem_size}: {rec.recommended_block_size} "
+        f"(predicted runtime {rec.predicted_runtime_ms:.5f} ms)"
+    )
+    for block_size, runtime in sorted(rec.candidates, key=lambda item: item[1]):
+        print(f"  block={block_size}: predicted runtime {runtime:.5f} ms")
+    if not rec.data_backed:
+        print(
+            f"WARNING: training data did not vary block_size for '{rec.kernel}', so this recommendation is "
+            "an extrapolation rather than a data-backed choice. Add runs that sweep block sizes."
+        )
+        print(_GPU_DATA_HINT)
+    source = f"perf_model:{model.backend};model={Path(args.model).name}"
+    pred_rows: list[dict[str, Any]] = []
+    for block_size, _ in rec.candidates:
+        predicted = model.predict(rec.kernel, rec.problem_size, block_size)
+        pred_rows.extend(prediction_rows(rec.kernel, rec.problem_size, block_size, predicted, source))
+    _write_predictions(args.predictions_out, pred_rows)
+    return 0
+
+
+def advise(args: argparse.Namespace) -> int:
+    run_dir = Path(args.run_dir)
+    recommendations = build_recommendations(run_dir)
+    if getattr(args, "llm", False):
+        summary = maybe_llm_summary(recommendations)
+        if summary is None:
+            print("LLM summary requested but no LLM backend is configured. Using rule-based recommendations.")
+        else:  # pragma: no cover - no bundled backend
+            print(summary)
+            print()
+    for rec in recommendations:
+        print(rec)
+    report_path = write_advisor_report(run_dir, recommendations)
+    print(f"Wrote advisor report: {report_path.resolve()}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="GPU Kernel Performance Analyzer CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -556,6 +671,66 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional source-file metadata override for ncu-import (defaults to --raw-csv-out).",
     )
     ncu_plan.set_defaults(func=profile_ncu_plan)
+
+    model = sub.add_parser("model", help="Train and use the performance prediction model.")
+    model_sub = model.add_subparsers(dest="model_command", required=True)
+
+    model_train_parser = model_sub.add_parser(
+        "train",
+        help="Train a performance model from one or more run directories.",
+    )
+    model_train_parser.add_argument(
+        "--run-dir",
+        action="append",
+        required=True,
+        help="Run directory containing benchmark_summary.csv (repeatable to pool runs).",
+    )
+    model_train_parser.add_argument("--model-out", required=True, help="Output path for the trained model JSON.")
+    model_train_parser.set_defaults(func=model_train)
+
+    model_predict_parser = model_sub.add_parser(
+        "predict",
+        help="Predict runtime and bandwidth for a kernel configuration.",
+    )
+    model_predict_parser.add_argument("--model", required=True, help="Path to a trained model JSON.")
+    model_predict_parser.add_argument("--kernel", required=True, help="Kernel name.")
+    model_predict_parser.add_argument("--problem-size", required=True, type=int, help="Problem size.")
+    model_predict_parser.add_argument("--block-size", required=True, type=int, help="Block size.")
+    model_predict_parser.add_argument(
+        "--predictions-out",
+        default=None,
+        help="Optional path to write predicted rows (model_predictions.csv).",
+    )
+    model_predict_parser.set_defaults(func=model_predict)
+
+    model_recommend_parser = model_sub.add_parser(
+        "recommend-block-size",
+        help="Rank candidate block sizes by predicted runtime.",
+    )
+    model_recommend_parser.add_argument("--model", required=True, help="Path to a trained model JSON.")
+    model_recommend_parser.add_argument("--kernel", required=True, help="Kernel name.")
+    model_recommend_parser.add_argument("--problem-size", required=True, type=int, help="Problem size.")
+    model_recommend_parser.add_argument(
+        "--candidates",
+        required=True,
+        help="Comma-separated candidate block sizes, e.g. 64,128,256,512.",
+    )
+    model_recommend_parser.add_argument(
+        "--predictions-out",
+        default=None,
+        help="Optional path to write predicted rows (model_predictions.csv).",
+    )
+    model_recommend_parser.set_defaults(func=model_recommend_block_size)
+
+    advise_parser = sub.add_parser("advise", help="Generate rule-based tuning recommendations for a run.")
+    advise_parser.add_argument("--run-dir", required=True, help="Run directory with generated artifacts.")
+    advise_parser.add_argument(
+        "--llm",
+        action="store_true",
+        help="Optional: request an LLM summary if a backend is configured (no backend bundled; falls back to rules).",
+    )
+    advise_parser.set_defaults(func=advise)
+
     return parser
 
 

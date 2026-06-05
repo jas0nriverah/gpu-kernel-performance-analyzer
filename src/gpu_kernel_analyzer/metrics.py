@@ -1,15 +1,21 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 import math
+from dataclasses import dataclass
 from statistics import mean, median, pstdev
 
 from .schemas import PROFILER_METRICS
 
-
 STATUS_MEASURED = "measured"
 STATUS_DERIVED = "derived_estimate"
 STATUS_UNAVAILABLE = "unavailable"
+
+# Model outputs use a distinct provenance status. It is intentionally NOT part of
+# VALID_STATUSES: predicted values live in their own artifact (model_predictions.csv)
+# and must never appear in the measured run provenance, so the artifact validator
+# rejects a "predicted" row if one ever leaks into metrics_provenance.csv.
+STATUS_PREDICTED = "predicted"
+
 VALID_STATUSES = {STATUS_MEASURED, STATUS_DERIVED, STATUS_UNAVAILABLE}
 
 

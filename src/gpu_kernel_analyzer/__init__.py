@@ -13,4 +13,6 @@ __all__ = [
     "report",
     "system_info",
     "ncu",
+    "perf_model",
+    "advisor",
 ]

@@ -29,4 +29,23 @@ def test_repo_example_yaml_config_loads():
     repo_root = Path(__file__).resolve().parents[1]
     config_path = repo_root / "configs" / "benchmark_scenarios.yaml"
     expanded = load_and_expand_scenarios(config_path)
-    assert len(expanded) > 0
+    # Lock the expanded scenario count so config edits cannot silently desync the
+    # documented validation snapshot (vector_add 2x4 + reduction 2x4 + gemm_naive 2 +
+    # gemm_tiled 2 + memcpy_bandwidth 2 + stencil_1d 2 = 24).
+    assert len(expanded) == 24
+    kernels = {s.kernel for s in expanded}
+    assert kernels == {
+        "vector_add",
+        "reduction",
+        "gemm_naive",
+        "gemm_tiled",
+        "memcpy_bandwidth",
+        "stencil_1d",
+    }
+
+
+def test_repo_smoke_config_loads():
+    repo_root = Path(__file__).resolve().parents[1]
+    config_path = repo_root / "configs" / "smoke_new_kernels.yaml"
+    expanded = load_and_expand_scenarios(config_path)
+    assert {s.kernel for s in expanded} == {"memcpy_bandwidth", "stencil_1d"}

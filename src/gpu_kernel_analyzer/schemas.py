@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-
 METRIC_RUNTIME_MS = "runtime_ms"
 METRIC_EFFECTIVE_BANDWIDTH = "effective_bandwidth_GBps"
 METRIC_EFFECTIVE_GFLOPS = "effective_GFLOPs"

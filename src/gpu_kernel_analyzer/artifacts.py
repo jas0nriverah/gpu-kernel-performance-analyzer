@@ -1,16 +1,15 @@
 from __future__ import annotations
 
 import csv
-from dataclasses import dataclass
-from datetime import datetime, timezone
 import hashlib
 import json
+from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from .metrics import VALID_STATUSES
 from .schemas import PROFILER_METRICS
-
 
 TIMING_COLUMNS = [
     "run_id",

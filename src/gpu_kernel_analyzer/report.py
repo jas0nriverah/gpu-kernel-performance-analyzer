@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from .analysis import compute_speedups
 from .io import read_csv
 from .schemas import PROFILER_METRICS
 
@@ -21,22 +22,19 @@ def _markdown_table(rows: list[dict[str, str]], columns: list[str], max_rows: in
 
 
 def _compute_key_result(summary: list[dict[str, str]]) -> str:
-    naive = [
-        r for r in summary
-        if r.get("kernel") == "gemm_naive" and r.get("problem_size") == "512" and r.get("block_size") == "16"
-    ]
-    tiled = [
-        r for r in summary
-        if r.get("kernel") == "gemm_tiled" and r.get("problem_size") == "512" and r.get("block_size") == "16"
-    ]
-    if not naive or not tiled:
-        return "GEMM 512x512 comparison unavailable in current summary."
-    naive_gflops = float(naive[0]["effective_GFLOPs"])
-    tiled_gflops = float(tiled[0]["effective_GFLOPs"])
-    speedup = tiled_gflops / naive_gflops if naive_gflops > 0 else 0.0
+    """Summarize the strongest optimized-vs-baseline speedup found in the run.
+
+    Derived from the same ``compute_speedups`` pairing used for ``analysis_speedup.csv``
+    rather than a hardcoded problem size, so it stays correct as the scenario set changes.
+    """
+    speedups = compute_speedups(summary)
+    if not speedups:
+        return "No optimized-vs-baseline kernel pair was found in this run."
+    best = max(speedups, key=lambda s: s.speedup_runtime)
     return (
-        f"Tiled GEMM at 512x512 achieved about {tiled_gflops:.0f} GFLOPs versus naive GEMM about "
-        f"{naive_gflops:.0f} GFLOPs, roughly {speedup:.2f}x faster."
+        f"{best.optimized_kernel} at {best.problem_size}x{best.problem_size} ran about "
+        f"{best.speedup_runtime:.2f}x faster than {best.baseline_kernel} "
+        f"(about {best.optimized_GFLOPs:.0f} vs {best.baseline_GFLOPs:.0f} effective GFLOPs)."
     )
 
 
