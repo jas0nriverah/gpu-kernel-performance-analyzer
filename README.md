@@ -1,4 +1,4 @@
-#GPU Kernel Performance Analyzer
+GPU Kernel Performance Analyzer
 
 Benchmarks CUDA kernels with CUDA-event timing, derives bandwidth, GFLOPs, and arithmetic intensity, classifies kernels as memory- or compute-bound, and optionally overlays Nsight Compute profiler metrics.
 
