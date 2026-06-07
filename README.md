@@ -1,150 +1,160 @@
-# GPU Kernel Performance Analyzer
+GPU Kernel Performance Analyzer
 
-Benchmarks CUDA kernels with CUDA-event timing, derives bandwidth / GFLOPs / arithmetic
-intensity, classifies each kernel as memory- or compute-bound, and optionally overlays
-real Nsight Compute profiler metrics. Every number is tagged by how it was produced, so
-estimates are never presented as measurements.
+Benchmarks CUDA kernels with CUDA-event timing, derives bandwidth, GFLOPs, and arithmetic intensity, classifies kernels as memory- or compute-bound, and optionally overlays Nsight Compute profiler metrics.
 
-It also includes a small performance-prediction model and a tuning advisor built on top
-of the measured data: predict a kernel's runtime for a configuration it has not run, rank
-candidate block sizes, and generate plain-language tuning recommendations.
+The project also includes a performance-prediction model and tuning advisor built on measured benchmark data. It can predict runtime for unseen configurations, rank candidate block sizes, and generate plain-language tuning recommendations.
 
-```text
-CUDA kernels -> benchmark harness -> JSON/CSV artifacts -> analysis -> reports, plots, model
-                (CUDA-event timing)   (per-run, validated)  (bandwidth/GFLOPs/roofline)
-```
+Architecture
 
-## What this demonstrates
+flowchart LR
+    A[CUDA Kernels] --> B[Benchmark Harness]
+    B --> C[JSON/CSV Artifacts]
+    C --> D[Analysis Pipeline]
+    C --> E[Performance Model]
+    C --> F[Tuning Advisor]
+    D --> G[Reports]
+    D --> H[Plots]
+    D --> I[Roofline Analysis]
+    E --> J[Runtime Prediction]
+    E --> K[Block-size Ranking]
+    F --> L[Optimization Recommendations]
+    M[Nsight Compute CSV] -. optional import .-> C
+    subgraph CUDA Layer
+        A
+        B
+    end
+    subgraph Artifact Layer
+        C
+        M
+    end
+    subgraph Python Layer
+        D
+        E
+        F
+    end
+    subgraph Outputs
+        G
+        H
+        I
+        J
+        K
+        L
+    end
 
-- CUDA/C++ kernels and a timing harness, with Python for orchestration, analysis, plotting, and reporting.
-- Honest measurement: every metric is tagged `measured`, `derived_estimate`, `predicted`, or `unavailable`, and the validator refuses to mark profiler metrics as measured unless real Nsight data was imported.
-- ML on the project's own data: a runtime/bandwidth model and block-size autotuning, with leave-one-out cross-validation and an explicit small-data warning.
-- Runs without a GPU: the full Python layer (analysis, model, advisor) is tested on CPU-only CI using committed sample artifacts and a fake benchmark binary.
+What this demonstrates
 
-## Supported kernels
+* CUDA/C++ kernels with a timing harness, plus Python orchestration, analysis, plotting, and reporting.
+* Metric provenance: each metric is tagged as measured, derived_estimate, predicted, or unavailable.
+* Nsight Compute integration with validation that only imported profiler metrics are marked as measured.
+* ML on the project’s own benchmark data: runtime and bandwidth prediction, block-size autotuning, leave-one-out cross-validation, and small-data warnings.
+* CPU-only testing support through committed sample artifacts and a fake benchmark binary.
 
-| Kernel | Computes | Behavior it shows |
-|--------|----------|-------------------|
-| `vector_add` | `c[i] = a[i] + b[i]` | Classic memory-bound kernel; effective bandwidth is the headline metric. |
-| `memcpy_bandwidth` | `out[i] = in[i]` | Pure streaming copy; closest single-kernel proxy for achievable DRAM bandwidth. |
-| `stencil_1d` | 3-point weighted stencil | Modest data reuse and boundary handling; between copy and GEMM, still memory-bound. |
-| `reduction` | block-wise tree sum | Shared memory, `__syncthreads()`, and the tree-reduction pattern. |
-| `gemm_naive` | dense `C = A*B` | Compute-heavy but un-tiled; re-reads global memory. |
-| `gemm_tiled` | dense `C = A*B`, 16x16 tiles | Shared-memory tiling that cuts DRAM traffic; the optimized baseline for the speedup comparison. |
+Supported kernels
 
-## Metrics and provenance
+Kernel	Computes	Behavior it shows
+vector_add	c[i] = a[i] + b[i]	Classic memory-bound kernel; effective bandwidth is the headline metric.
+memcpy_bandwidth	out[i] = in[i]	Pure streaming copy; closest single-kernel proxy for achievable DRAM bandwidth.
+stencil_1d	3-point weighted stencil	Modest data reuse and boundary handling; between copy and GEMM, still memory-bound.
+reduction	block-wise tree sum	Shared memory, __syncthreads(), and the tree-reduction pattern.
+gemm_naive	dense C = A*B	Compute-heavy but un-tiled; re-reads global memory.
+gemm_tiled	dense C = A*B, 16x16 tiles	Shared-memory tiling that cuts DRAM traffic; optimized baseline for the speedup comparison.
 
-Every value carries a provenance status so estimates are never confused with measurements.
+Metrics and provenance
 
-| Metric | Status | Source |
-|--------|--------|--------|
-| `runtime_ms` | `measured` | CUDA events (`cudaEventElapsedTime`) |
-| `effective_bandwidth_GBps` | `derived_estimate` | `bytes_moved / runtime` |
-| `effective_GFLOPs` | `derived_estimate` | `flops / runtime` |
-| `arithmetic_intensity` | `derived_estimate` | `flops / bytes_moved` |
-| `device_metadata` | `measured` | CUDA runtime API |
-| `occupancy`, `sm_utilization`, `memory_throughput_pct`, `l2_throughput_pct`, `l2_cache_hit_rate` | `unavailable` until imported, then `measured` | Nsight Compute CSV import only |
-| model predictions | `predicted` | performance model, written to `model_predictions.csv` |
+Each value records how it was produced, so measured data, derived metrics, profiler counters, and model predictions remain separate.
 
-Nsight Compute timing overhead is never used for `runtime_ms`; CUDA-event timing is the
-single source of truth. Profiler metrics only become `measured` for the exact scenarios
-where a real Nsight CSV was imported. Predicted values live in their own artifact and are
-never written into the measured run files; the validator rejects a `predicted` row if one
-ever appears in the measured provenance.
+Metric	Status	Source
+runtime_ms	measured	CUDA events (cudaEventElapsedTime)
+effective_bandwidth_GBps	derived_estimate	bytes_moved / runtime
+effective_GFLOPs	derived_estimate	flops / runtime
+arithmetic_intensity	derived_estimate	flops / bytes_moved
+device_metadata	measured	CUDA runtime API
+occupancy, sm_utilization, memory_throughput_pct, l2_throughput_pct, l2_cache_hit_rate	unavailable until imported, then measured	Nsight Compute CSV import
+model predictions	predicted	Performance model, written to model_predictions.csv
 
-## Quickstart
+CUDA-event timing is the source of truth for runtime_ms. Nsight Compute is used for hardware counters, not benchmark timing. Predicted values are written to separate artifacts and are never inserted into measured benchmark files.
 
-### 1. Build the CUDA harness (requires an NVIDIA GPU and `nvcc`)
+Quickstart
 
-```bash
+1. Build the CUDA harness
+
+Requires an NVIDIA GPU and nvcc.
+
 cmake -S benchmarks -B build
 cmake --build build --config Release
-```
 
-Binary: `build/gpu_benchmark` (Linux) or `build/Release/gpu_benchmark.exe` (Windows).
-Set `CUDAToolkit_ROOT` if CMake cannot find the toolkit.
+Binary:
 
-### 2. Run a benchmark sweep
+build/gpu_benchmark
 
-```bash
+On Windows:
+
+build/Release/gpu_benchmark.exe
+
+Set CUDAToolkit_ROOT if CMake cannot find the CUDA Toolkit.
+
+2. Run a benchmark sweep
+
 python -m gpu_kernel_analyzer benchmark sweep \
   --binary build/gpu_benchmark \
   --scenarios configs/benchmark_scenarios.yaml \
   --outdir outputs/run
-```
 
-### 3. Validate artifacts (schema and metric policy)
+3. Validate artifacts
 
-```bash
 python -m gpu_kernel_analyzer artifacts validate --run-dir outputs/run
-```
 
-### 4. Analyze: heuristics, speedup, plots, roofline, report
+4. Analyze results
 
-```bash
 python -m gpu_kernel_analyzer analyze full --run-dir outputs/run \
   --peak-gflops <real_fp32_peak> --peak-bandwidth-gbps <real_dram_peak>
-```
 
-`--peak-*` are optional. If omitted, the roofline shows only your measured operating
-points and no fabricated hardware ceilings. Supply your GPU's real peaks to draw the roofs.
+--peak-* values are optional. If omitted, the roofline plot shows only measured operating points. Supplying real GPU peak FP32 throughput and DRAM bandwidth adds roofline ceilings.
 
-### No GPU? Run the CPU-only fixture demo
+CPU-only fixture demo
 
-This validates the full Python pipeline using a fake benchmark binary. Fixture outputs are
-sample-only and must not be cited as real GPU performance.
+The Python pipeline can run without a GPU using a fake benchmark binary. Fixture outputs are sample-only and should not be cited as real GPU performance.
 
-```bash
 python -m gpu_kernel_analyzer benchmark sweep \
   --binary tests/fixtures/fake_benchmark.py --binary-interpreter python \
   --scenarios configs/benchmark_scenarios.yaml --outdir outputs/sample_fixture
 python -m gpu_kernel_analyzer artifacts validate --run-dir outputs/sample_fixture
 python -m gpu_kernel_analyzer analyze full --run-dir outputs/sample_fixture
-```
 
-## Performance model and autotuning
+Performance model and autotuning
 
-A ridge regression in log space predicts `runtime_ms` and `effective_bandwidth_GBps` from
-a configuration (kernel, problem size, block size). It uses scikit-learn when the optional
-`[ml]` extra is installed and falls back to a NumPy solver otherwise; both produce the same
-JSON model file. The intent is performance prediction and block-size autotuning, which are
-standard problems in GPU performance engineering.
+The model predicts runtime_ms and effective_bandwidth_GBps from kernel name, problem size, and block size. It uses ridge regression in log space, with scikit-learn when the optional [ml] extra is installed and a NumPy fallback otherwise.
 
-```bash
-# Train from one or more run directories (more runs -> better model)
+# Train from one or more run directories
 python -m gpu_kernel_analyzer model train \
   --run-dir outputs/run --model-out perf_model.json
-
 # Predict runtime and bandwidth for a configuration without running it
 python -m gpu_kernel_analyzer model predict \
   --model perf_model.json --kernel gemm_tiled --problem-size 512 --block-size 16
-
 # Rank candidate block sizes by predicted runtime
 python -m gpu_kernel_analyzer model recommend-block-size \
   --model perf_model.json --kernel vector_add --problem-size 4194304 \
   --candidates 64,128,256,512
-
-# Rule-based tuning recommendations from a run's measured artifacts
+# Generate rule-based tuning recommendations from measured artifacts
 python -m gpu_kernel_analyzer advise --run-dir outputs/run
-```
 
-Provenance and limitations:
+Model behavior and limitations:
 
-- Predictions are tagged `predicted` and written to `model_predictions.csv`. They are never mixed into the measured benchmark artifacts.
-- The model only learns from real runs you provide. `model train` accepts multiple `--run-dir` flags and pools them, so recommendations improve as you add benchmark runs.
-- With few rows, `model train` prints a clear warning that cross-validation metrics are not statistically meaningful, and a block-size recommendation for a kernel whose training data did not vary block size is flagged as an extrapolation rather than a data-backed choice.
-- The `advise` command is deterministic and offline. An optional `--llm` flag exists as a stub; no LLM dependency or API key is required for normal use or tests.
+* Predictions are tagged predicted and written to model_predictions.csv.
+* Training accepts multiple --run-dir flags and pools the results.
+* With limited data, training prints a warning that cross-validation metrics are not statistically meaningful.
+* Block-size recommendations are flagged as extrapolations when the training data does not contain varied block sizes for that kernel.
+* The advise command is deterministic and offline. The optional --llm flag is a stub; no LLM dependency or API key is required for normal use or tests.
 
-## Sample output
+Sample output
 
-`analyze full` writes a self-contained run directory:
+analyze full writes a self-contained run directory:
 
-```text
 outputs/run/
-├── run_manifest.json            # git commit, device, env, scenario hashes, Nsight status
+├── run_manifest.json            # git commit, device, environment, scenario hashes, Nsight status
 ├── timing_samples.csv           # every raw CUDA-event sample
-├── benchmark_summary.csv        # per-scenario mean/median/min/max/p95/stddev/cv + derived metrics
-├── metrics_provenance.csv       # one row per metric with measured/derived/unavailable status
+├── benchmark_summary.csv        # per-scenario statistics and derived metrics
+├── metrics_provenance.csv       # metric status: measured, derived, predicted, or unavailable
 ├── analysis_heuristics.csv      # memory- vs compute-bound classification
 ├── analysis_speedup.csv         # tiled vs naive GEMM speedup
 ├── plots/
@@ -154,118 +164,125 @@ outputs/run/
 │   ├── effective_bandwidth_vs_size_memory_kernels.png
 │   └── roofline.png
 └── REPORT.md                    # human-readable summary of the run
-```
 
-### Real GPU validation snapshot (NVIDIA A100 80GB PCIe)
+Real GPU validation snapshot
 
-These are real measured numbers from a validation run, not estimates or examples. They
-were captured with an earlier scenario set; the newer `memcpy_bandwidth` and `stencil_1d`
-kernels have not yet been re-validated on a GPU (see Future work).
+Validation run: NVIDIA A100 80GB PCIe.
 
-- GPU: NVIDIA A100 80GB PCIe, CUDA Toolkit 13.0, Python 3.11.9
-- Artifact validation: passed. Nsight imported only for selected scenarios.
+The numbers below were captured with an earlier scenario set. The newer memcpy_bandwidth and stencil_1d kernels have not yet been re-validated on a GPU.
 
-| Comparison (512x512 GEMM) | Effective GFLOPs (derived) |
-|---------------------------|----------------------------|
-| `gemm_tiled` | ~3840 |
-| `gemm_naive` | ~2589 |
-| Speedup (tiled vs naive) | ~1.48x |
+* GPU: NVIDIA A100 80GB PCIe
+* CUDA Toolkit: 13.0
+* Python: 3.11.9
+* Artifact validation: passed
+* Nsight Compute: imported for selected scenarios only
 
-Nsight Compute metrics for `vector_add` (size 4194304, block 256), imported from a real
-profiler CSV: occupancy ~76.72%, SM utilization ~21.36%, memory throughput ~71.42%, L2
-throughput ~77.37%. `l2_cache_hit_rate` stays `unavailable` because it was not captured. A
-sanitized copy of this capture is committed at
-`examples/ncu_raw_vector_add_4194304_b256.csv` for GPU-less demos and tests.
+Comparison, 512x512 GEMM	Effective GFLOPs
+gemm_tiled	~3840
+gemm_naive	~2589
+Speedup, tiled vs naive	~1.48x
 
-## Optional Nsight Compute workflow
+Imported Nsight Compute metrics for vector_add, size 4194304, block size 256:
 
-```bash
+Metric	Value
+Occupancy	~76.72%
+SM utilization	~21.36%
+Memory throughput	~71.42%
+L2 throughput	~77.37%
+L2 cache hit rate	unavailable
+
+A sanitized copy of this capture is committed at:
+
+examples/ncu_raw_vector_add_4194304_b256.csv
+
+Optional Nsight Compute workflow
+
 # Detect Nsight Compute
 python -m gpu_kernel_analyzer profile ncu-detect
-
-# Print the exact raw-capture and import commands for one scenario
+# Print raw-capture and import commands for one scenario
 python -m gpu_kernel_analyzer profile ncu-plan --binary build/gpu_benchmark \
   --kernel vector_add --problem-size 4194304 --block-size 256 --warmups 10 --repeats 30 --verify \
   --raw-csv-out outputs/run/ncu_raw_vector_add.csv \
   --normalized-csv outputs/run/ncu_norm_vector_add.csv --run-dir outputs/run
-
-# Normalize a raw Nsight CSV into import format (works on the committed sample)
+# Normalize a raw Nsight CSV into import format
 python -m gpu_kernel_analyzer profile ncu-normalize \
   --raw-csv examples/ncu_raw_vector_add_4194304_b256.csv \
   --out-csv outputs/run/ncu_norm_vector_add.csv \
   --kernel vector_add --problem-size 4194304 --block-size 256 --metric-set default_profiler_set
-
-# Import normalized metrics (rejected unless they map to an exact benchmark scenario)
+# Import normalized metrics
 python -m gpu_kernel_analyzer profile ncu-import --run-dir outputs/run \
   --source-tool ncu --source-file ncu_raw_vector_add.csv \
   --metric-set default_profiler_set --ncu-csv outputs/run/ncu_norm_vector_add.csv
-```
 
-## Project structure
+Profiler metrics are rejected unless they map to an exact benchmark scenario.
 
-```text
+Project structure
+
 benchmarks/                 CUDA/C++ harness
-├── include/                kernel + harness headers
+├── include/                kernel and harness headers
 └── src/
-    ├── benchmark_runner.cu CLI parsing + JSON output
-    ├── cuda_utils.cu       device query + CUDA error checks
-    └── kernels/            one .cu per kernel
+    ├── benchmark_runner.cu CLI parsing and JSON output
+    ├── cuda_utils.cu       device query and CUDA error checks
+    └── kernels/            one .cu file per kernel
 configs/
 ├── benchmark_scenarios.{yaml,json}  sweep definitions
 └── ncu_metric_sets.yaml             Nsight metric-set mappings
 src/gpu_kernel_analyzer/    Python package
 ├── cli.py                  command-line interface
-├── scenarios.py            config loading, expansion, validation + warnings
-├── runner.py               invokes the benchmark binary
-├── metrics.py              summary stats + derived metrics + provenance status
-├── analysis.py             bottleneck heuristics + speedup
-├── plotting.py             matplotlib plots + roofline
+├── scenarios.py            config loading, expansion, validation, and warnings
+├── runner.py               benchmark binary invocation
+├── metrics.py              summary statistics, derived metrics, and provenance
+├── analysis.py             bottleneck heuristics and speedup analysis
+├── plotting.py             matplotlib plots and roofline analysis
 ├── report.py               Markdown report generation
-├── perf_model.py           performance prediction model + autotuning
+├── perf_model.py           performance prediction and autotuning
 ├── advisor.py              rule-based tuning recommendations
-├── ncu.py                  Nsight capture-plan / normalize / import
-├── artifacts.py            artifact schema + provenance validation
+├── ncu.py                  Nsight capture plan, normalization, and import
+├── artifacts.py            artifact schema and validation
 └── ...
 examples/                   sanitized sample Nsight raw CSV
-tests/                      pytest suite (CPU-only) + fixtures
-docs/                       methodology, metrics policy, reproducibility
-```
+tests/                      pytest suite and CPU-only fixtures
+docs/                       methodology, metrics policy, and reproducibility notes
 
-## Design notes
+Design notes
 
-- CUDA-event timing: `cudaEvent` timestamps are recorded on the GPU stream, so they measure device-side kernel execution without host-launch and CPU-clock noise. Wall-clock timers around an async launch mostly measure launch overhead.
-- Warmups and repeated trials: the first launches pay one-time costs (context/JIT, allocation, cold caches, clock ramp-up). Warmups absorb those, and repeated timed trials give a distribution (min/median/mean/p95) plus a coefficient of variation that signals whether a result is stable enough to trust.
-- Profiler overhead: Nsight Compute serializes and replays kernels, so its timing is not representative. Nsight is used only for hardware counters and never overrides the CUDA-event `runtime_ms`; the validator enforces this.
-- Tiled vs naive GEMM: naive GEMM re-reads A and B from global memory for every output element. Tiled GEMM stages 16x16 tiles in shared memory so each loaded value is reused across a tile, cutting DRAM traffic and raising arithmetic intensity, which is why effective GFLOPs go up.
-- Derived metrics: each kernel declares the bytes it moves and FLOPs it performs, then `bandwidth = bytes/runtime`, `GFLOPs = flops/runtime`, `intensity = flops/bytes`. These are labeled `derived_estimate`, never `measured`.
+* CUDA-event timing: cudaEvent timestamps are recorded on the GPU stream, measuring device-side kernel execution without host-launch or CPU-clock noise.
+* Warmups and repeated trials: warmups absorb one-time costs such as context setup, JIT compilation, allocation, cold caches, and clock ramp-up. Repeated trials produce min, median, mean, p95, standard deviation, and coefficient of variation.
+* Profiler overhead: Nsight Compute can serialize and replay kernels, so its timing is not used for runtime_ms. Nsight is used for hardware counters only.
+* Tiled vs naive GEMM: naive GEMM re-reads A and B from global memory for every output element. Tiled GEMM stages 16x16 tiles in shared memory, reuses each loaded value across a tile, reduces DRAM traffic, and raises arithmetic intensity.
+* Derived metrics: each kernel declares bytes moved and FLOPs performed. The analyzer computes bandwidth, GFLOPs, and arithmetic intensity from those declarations and the measured runtime.
 
-## Validating on a real GPU
+Validating on a real GPU
 
-On a machine with an NVIDIA GPU and the CUDA Toolkit, one script builds the harness,
-smoke-tests the kernels with correctness checks, runs the full sweep, validates artifacts,
-and runs the test suite:
+On a machine with an NVIDIA GPU and the CUDA Toolkit, this script builds the harness, smoke-tests the kernels, runs the benchmark sweep, validates artifacts, and runs the test suite:
 
-```bash
 pip install -e ".[dev]"
 bash scripts/validate_gpu.sh
-```
 
-Optional roofline ceilings (supply your GPU's real peak FP32 and DRAM bandwidth):
+Optional roofline ceilings:
 
-```bash
 PEAK_GFLOPS=19500 PEAK_BW_GBPS=1935 bash scripts/validate_gpu.sh
-```
 
-The script honors `BUILD_DIR`, `OUT_DIR`, `PYTHON`, and `SKIP_PIP_INSTALL` overrides. Set
-`CUDAToolkit_ROOT` if CMake cannot locate the toolkit.
+The script honors BUILD_DIR, OUT_DIR, PYTHON, and SKIP_PIP_INSTALL overrides. Set CUDAToolkit_ROOT if CMake cannot locate the CUDA Toolkit.
 
-## Testing and CI
+Testing and CI
 
-```bash
 pip install -e ".[dev]"
-python -m pytest -q          # 68 CPU-only tests
-```
+python -m pytest -q
 
-- Tests cover config parsing and validation, summary statistics, derived metrics, speedup, artifact-schema validation, report and plot generation, roofline, Nsight normalize/import, the performance model, autotuning, predicted-provenance separation, and the advisor.
-- CI runs on CPU-only GitHub Actions across Python 3.10 to 3.12, plus a `ruff` lint job. It exercises everything except the CUDA kernels, using committed sample artifacts and a fake benchmark binary.
-- The CUDA benchmarks require a CUDA-capable GPU and `nvcc` locally; they cannot run in standard GitHub Actions.
+The CPU-only test suite covers:
+
+* config parsing and validation
+* summary statistics
+* derived metrics
+* speedup analysis
+* artifact-schema validation
+* report and plot generation
+* roofline analysis
+* Nsight normalization and import
+* performance modeling
+* autotuning
+* predicted-provenance separation
+* tuning recommendations
+
+CI runs on CPU-only GitHub Actions across Python 3.10 to 3.12, plus a ruff lint job. It exercises the Python pipeline using committed sample artifacts and a fake benchmark binary. CUDA benchmarks require a CUDA-capable GPU and nvcc locally.
