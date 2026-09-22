@@ -1,0 +1,63 @@
+diff --git a/benchmarks/CMakeLists.txt b/benchmarks/CMakeLists.txt
+index 29c3ca4..8814ab4 100644
+--- a/benchmarks/CMakeLists.txt
++++ b/benchmarks/CMakeLists.txt
+@@ -22,5 +22,9 @@ target_include_directories(gpu_benchmark PRIVATE include)
+ if(MSVC)
+   target_compile_options(gpu_benchmark PRIVATE /W3)
+ else()
+-  target_compile_options(gpu_benchmark PRIVATE -Wall -Wextra -Wpedantic)
++  # nvcc-generated host code uses line directives that trigger -Wpedantic.
++  target_compile_options(gpu_benchmark PRIVATE
++      $<$<COMPILE_LANGUAGE:CXX>:-Wall;-Wextra;-Wpedantic>
++      $<$<COMPILE_LANGUAGE:CUDA>:-Xcompiler=-Wall,-Wextra>
++  )
+ endif()
+diff --git a/benchmarks/src/benchmark_runner.cu b/benchmarks/src/benchmark_runner.cu
+index 851961f..4207269 100644
+--- a/benchmarks/src/benchmark_runner.cu
++++ b/benchmarks/src/benchmark_runner.cu
+@@ -108,6 +108,9 @@ int run_benchmark_cli(int argc, char** argv) {
+         } else {
+             throw std::runtime_error("Unsupported kernel: " + args.kernel);
+         }
++        if (args.verify && !result.verification_passed) {
++            throw std::runtime_error("Kernel correctness verification failed.");
++        }
+         result.device_info = query_device_info();
+         write_json_output(result);
+         return 0;
+diff --git a/benchmarks/src/kernels/gemm_naive.cu b/benchmarks/src/kernels/gemm_naive.cu
+index 12c5905..faafc72 100644
+--- a/benchmarks/src/kernels/gemm_naive.cu
++++ b/benchmarks/src/kernels/gemm_naive.cu
+@@ -84,9 +84,9 @@ BenchmarkRunOutput run_gemm_naive(std::size_t problem_size, int block_size, int
+         require_cuda_success(cudaMemcpy(h_c.data(), d_c, matrix_bytes, cudaMemcpyDeviceToHost), "copy C");
+         const float expected = static_cast<float>(n);
+         out.verification_passed = true;
+-        for (int i = 0; i < 8 && i < n; ++i) {
+-            const float value = h_c[static_cast<std::size_t>(i) * n + i];
+-            if (std::fabs(value - expected) > 1e-2f) {
++        for (std::size_t i = 0; i < matrix_elems; ++i) {
++            const float value = h_c[i];
++            if (!std::isfinite(value) || std::fabs(value - expected) > 1e-2f) {
+                 out.verification_passed = false;
+                 break;
+             }
+diff --git a/benchmarks/src/kernels/gemm_tiled.cu b/benchmarks/src/kernels/gemm_tiled.cu
+index 79b2a35..eeeaf5c 100644
+--- a/benchmarks/src/kernels/gemm_tiled.cu
++++ b/benchmarks/src/kernels/gemm_tiled.cu
+@@ -107,9 +107,9 @@ BenchmarkRunOutput run_gemm_tiled(std::size_t problem_size, int block_size, int
+         require_cuda_success(cudaMemcpy(h_c.data(), d_c, matrix_bytes, cudaMemcpyDeviceToHost), "copy C");
+         const float expected = static_cast<float>(n);
+         out.verification_passed = true;
+-        for (int i = 0; i < 8 && i < n; ++i) {
+-            const float value = h_c[static_cast<std::size_t>(i) * n + i];
+-            if (std::fabs(value - expected) > 1e-2f) {
++        for (std::size_t i = 0; i < matrix_elems; ++i) {
++            const float value = h_c[i];
++            if (!std::isfinite(value) || std::fabs(value - expected) > 1e-2f) {
+                 out.verification_passed = false;
+                 break;
+             }

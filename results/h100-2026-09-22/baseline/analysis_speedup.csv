@@ -1,0 +1,3 @@
+optimized_kernel,baseline_kernel,problem_size,block_size,baseline_runtime_ms_mean,optimized_runtime_ms_mean,speedup_runtime,baseline_GFLOPs,optimized_GFLOPs,gflops_ratio
+gemm_tiled,gemm_naive,256,16,0.0138496,0.011837866666666667,1.1699405298251937,2422.772643253235,2834.4999098936746,1.1699405298251937
+gemm_tiled,gemm_naive,512,16,0.0605568,0.042254933333333335,1.4331297016206392,4432.787994081589,6352.7601353057,1.4331297016206392

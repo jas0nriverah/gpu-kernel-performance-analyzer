@@ -35,7 +35,7 @@ Requirements:
 Build:
 
 ```bash
-cmake -S benchmarks -B build
+cmake -S benchmarks -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
 ```
 

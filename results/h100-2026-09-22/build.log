@@ -1,0 +1,14 @@
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/build
+[ 10%] Building CUDA object CMakeFiles/gpu_benchmark.dir/src/main.cu.o
+[ 20%] Building CUDA object CMakeFiles/gpu_benchmark.dir/src/cuda_utils.cu.o
+[ 40%] Building CUDA object CMakeFiles/gpu_benchmark.dir/src/benchmark_runner.cu.o
+[ 40%] Building CUDA object CMakeFiles/gpu_benchmark.dir/src/kernels/vector_add.cu.o
+[ 50%] Building CUDA object CMakeFiles/gpu_benchmark.dir/src/kernels/reduction.cu.o
+[ 60%] Building CUDA object CMakeFiles/gpu_benchmark.dir/src/kernels/gemm_naive.cu.o
+[ 70%] Building CUDA object CMakeFiles/gpu_benchmark.dir/src/kernels/gemm_tiled.cu.o
+[ 80%] Building CUDA object CMakeFiles/gpu_benchmark.dir/src/kernels/memcpy_bandwidth.cu.o
+[ 90%] Building CUDA object CMakeFiles/gpu_benchmark.dir/src/kernels/stencil_1d.cu.o
+[100%] Linking CUDA executable gpu_benchmark
+[100%] Built target gpu_benchmark

@@ -44,3 +44,11 @@ Kernel correctness checks are optional via `verify=true` scenarios. Verification
 ## Profiler metrics
 
 Profiler metrics are imported only from real Nsight Compute CSV output. Imported rows must map to an exact benchmark scenario by `kernel + problem_size + block_size` and include source provenance.
+
+## Interpretation and repeated trials
+
+Published H100 aggregate values use the median of three independent run means. The range is the minimum/maximum of those means, not a confidence interval. Every raw sample is retained; no outliers are trimmed. Comparison gates use the median within a run by default, or the mean with `--statistic mean`.
+
+Byte counts represent logical work, not measured DRAM traffic. Both GEMM implementations declare `3*N*N*sizeof(float)` even though global load behavior differs. Do not infer actual arithmetic intensity or cache traffic from that estimate. Hardware counters are collected separately. Reduction timing covers only device block partial sums, not the final host aggregation.
+
+Correctness uses deterministic inputs. GEMM now checks all output elements; the historical A100 capture used the older eight-diagonal-element check. Boundary sweeps exercise sizes that do not divide the block/tile. Broader seeded numerical-reference tests remain future work.

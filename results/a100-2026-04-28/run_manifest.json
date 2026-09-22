@@ -1,0 +1,30 @@
+{
+  "benchmark_binary": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer/build/gpu_benchmark",
+  "benchmark_binary_sha256": "d36a8932a6985416938b99e181a2805d6dbf881b994d4229a5c1a4a6c2873774",
+  "created_at_utc": "2026-04-28T15:43:36.926005+00:00",
+  "device": {
+    "compute_capability_major": 8,
+    "compute_capability_minor": 0,
+    "metadata_available": true,
+    "multiprocessor_count": 108,
+    "name": "NVIDIA A100 80GB PCIe",
+    "total_global_mem_bytes": 85094825984
+  },
+  "git_commit": "d16d45ab00d07080564cf41db5e9a68fcd0c9cb6",
+  "metrics_policy_version": "mvp_v1",
+  "nsight_compute": {
+    "available": true,
+    "enabled": false,
+    "path": "/usr/local/pace-apps/spack/packages/linux-rhel9-x86_64_v3/none-none/cuda-13.0.1-ne4hey4ce57lmd34nixeikyfribdqln3/bin/ncu",
+    "status": "detected_not_used_in_mvp"
+  },
+  "run_id": "run_20260428T154333Z",
+  "runtime_environment": {
+    "machine": "x86_64",
+    "platform": "Linux-5.14.0-570.62.1.el9_6.x86_64-x86_64-with-glibc2.34",
+    "python_version": "3.11.9"
+  },
+  "scenario_count": 12,
+  "scenario_file": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer/configs/benchmark_scenarios.yaml",
+  "scenario_file_sha256": "b03c8a6363b5b4fad046634973a955e709a13643d04c1cb2575ea9a5748fa767"
+}

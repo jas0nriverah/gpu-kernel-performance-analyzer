@@ -1,0 +1,39 @@
+version: 1
+description: Repeat this identical suite on each GPU; 74 scenarios, 50 timing samples each.
+sweeps:
+  - kernel: vector_add
+    problem_sizes: [1048576, 4194304, 16777216, 67108864]
+    block_sizes: [64, 128, 256, 512]
+    warmups: 20
+    repeats: 50
+    verify: true
+  - kernel: memcpy_bandwidth
+    problem_sizes: [1048576, 4194304, 16777216, 67108864]
+    block_sizes: [64, 128, 256, 512]
+    warmups: 20
+    repeats: 50
+    verify: true
+  - kernel: stencil_1d
+    problem_sizes: [1048576, 4194304, 16777216, 67108864]
+    block_sizes: [64, 128, 256, 512]
+    warmups: 20
+    repeats: 50
+    verify: true
+  - kernel: reduction
+    problem_sizes: [1048576, 4194304, 16777216, 67108864]
+    block_sizes: [64, 128, 256, 512]
+    warmups: 20
+    repeats: 50
+    verify: true
+  - kernel: gemm_naive
+    problem_sizes: [128, 256, 512, 1024, 2048]
+    block_sizes: [16]
+    warmups: 20
+    repeats: 50
+    verify: true
+  - kernel: gemm_tiled
+    problem_sizes: [128, 256, 512, 1024, 2048]
+    block_sizes: [16]
+    warmups: 20
+    repeats: 50
+    verify: true

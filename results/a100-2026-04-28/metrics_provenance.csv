@@ -1,0 +1,97 @@
+run_id,kernel,problem_size,block_size,metric_name,metric_value,status,source
+run_20260428T154333Z,vector_add,1048576,128,runtime_ms,0.011707733333333333,measured,cuda_events
+run_20260428T154333Z,vector_add,1048576,128,effective_bandwidth_GBps,1074.7521865889214,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,vector_add,1048576,128,effective_GFLOPs,89.56268221574345,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,vector_add,1048576,128,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,vector_add,1048576,128,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,vector_add,1048576,128,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,1048576,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,1048576,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,1048576,256,runtime_ms,0.009045333333333334,measured,cuda_events
+run_20260428T154333Z,vector_add,1048576,256,effective_bandwidth_GBps,1391.0943396226412,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,vector_add,1048576,256,effective_GFLOPs,115.92452830188678,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,vector_add,1048576,256,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,vector_add,1048576,256,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,vector_add,1048576,256,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,1048576,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,1048576,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,4194304,128,runtime_ms,0.03792213333333334,measured,cuda_events
+run_20260428T154333Z,vector_add,4194304,128,effective_bandwidth_GBps,1327.2367236723671,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,vector_add,4194304,128,effective_GFLOPs,110.60306030603061,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,vector_add,4194304,128,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,vector_add,4194304,128,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,vector_add,4194304,128,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,4194304,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,4194304,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,4194304,256,runtime_ms,0.037853866666666666,measured,cuda_events
+run_20260428T154333Z,vector_add,4194304,256,effective_bandwidth_GBps,1329.6302975653741,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,vector_add,4194304,256,effective_GFLOPs,110.80252479711453,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,vector_add,4194304,256,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,vector_add,4194304,256,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,vector_add,4194304,256,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,4194304,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,vector_add,4194304,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,1048576,128,runtime_ms,0.013824,measured,cuda_events
+run_20260428T154333Z,reduction,1048576,128,effective_bandwidth_GBps,305.77777777777777,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,reduction,1048576,128,effective_GFLOPs,75.85177951388889,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,reduction,1048576,128,arithmetic_intensity,0.2480617789335029,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,reduction,1048576,128,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,reduction,1048576,128,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,1048576,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,1048576,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,1048576,256,runtime_ms,0.0136192,measured,cuda_events
+run_20260428T154333Z,reduction,1048576,256,effective_bandwidth_GBps,309.17293233082705,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,reduction,1048576,256,effective_GFLOPs,76.99240777725564,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,reduction,1048576,256,arithmetic_intensity,0.24902699986320526,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,reduction,1048576,256,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,reduction,1048576,256,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,1048576,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,1048576,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,4194304,128,runtime_ms,0.035805866666666665,measured,cuda_events
+run_20260428T154333Z,reduction,4194304,128,effective_bandwidth_GBps,472.2211630123928,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,reduction,4194304,128,effective_GFLOPs,117.14010553205435,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,reduction,4194304,128,arithmetic_intensity,0.2480619563612827,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,reduction,4194304,128,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,reduction,4194304,128,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,4194304,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,4194304,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,4194304,256,runtime_ms,0.035225599999999996,measured,cuda_events
+run_20260428T154333Z,reduction,4194304,256,effective_bandwidth_GBps,478.13953488372096,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,reduction,4194304,256,effective_GFLOPs,119.0697390534157,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,reduction,4194304,256,arithmetic_intensity,0.2490271779813655,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,reduction,4194304,256,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,reduction,4194304,256,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,4194304,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,reduction,4194304,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_naive,256,16,runtime_ms,0.021777066666666664,measured,cuda_events
+run_20260428T154333Z,gemm_naive,256,16,effective_bandwidth_GBps,36.112852664576806,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,gemm_naive,256,16,effective_GFLOPs,1540.8150470219439,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,gemm_naive,256,16,arithmetic_intensity,42.666666666666664,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,gemm_naive,256,16,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,gemm_naive,256,16,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_naive,256,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_naive,256,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_naive,512,16,runtime_ms,0.10369706666666667,measured,cuda_events
+run_20260428T154333Z,gemm_naive,512,16,effective_bandwidth_GBps,30.335747202106646,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,gemm_naive,512,16,effective_GFLOPs,2588.650427913101,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,gemm_naive,512,16,arithmetic_intensity,85.33333333333333,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,gemm_naive,512,16,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,gemm_naive,512,16,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_naive,512,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_naive,512,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_tiled,256,16,runtime_ms,0.0178176,measured,cuda_events
+run_20260428T154333Z,gemm_tiled,256,16,effective_bandwidth_GBps,44.137931034482754,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,gemm_tiled,256,16,effective_GFLOPs,1883.2183908045977,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,gemm_tiled,256,16,arithmetic_intensity,42.666666666666664,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,gemm_tiled,256,16,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,gemm_tiled,256,16,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_tiled,256,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_tiled,256,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_tiled,512,16,runtime_ms,0.06990506666666667,measured,cuda_events
+run_20260428T154333Z,gemm_tiled,512,16,effective_bandwidth_GBps,45.0,derived_estimate,bytes_moved/runtime_ms
+run_20260428T154333Z,gemm_tiled,512,16,effective_GFLOPs,3840.0,derived_estimate,flops/runtime_ms
+run_20260428T154333Z,gemm_tiled,512,16,arithmetic_intensity,85.33333333333333,derived_estimate,flops/bytes_moved
+run_20260428T154333Z,gemm_tiled,512,16,device_metadata,"{""compute_capability_major"": 8, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 108, ""name"": ""NVIDIA A100 80GB PCIe"", ""total_global_mem_bytes"": 85094825984}",measured,cuda_runtime_api
+run_20260428T154333Z,gemm_tiled,512,16,occupancy,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_tiled,512,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20260428T154333Z,gemm_tiled,512,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run

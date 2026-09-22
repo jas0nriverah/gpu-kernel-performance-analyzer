@@ -1,0 +1,258 @@
+{
+  "added_scenarios": [
+    [
+      "memcpy_bandwidth",
+      1048576,
+      256
+    ],
+    [
+      "memcpy_bandwidth",
+      4194304,
+      256
+    ],
+    [
+      "reduction",
+      1048576,
+      64
+    ],
+    [
+      "reduction",
+      1048576,
+      512
+    ],
+    [
+      "reduction",
+      4194304,
+      64
+    ],
+    [
+      "reduction",
+      4194304,
+      512
+    ],
+    [
+      "stencil_1d",
+      1048576,
+      256
+    ],
+    [
+      "stencil_1d",
+      4194304,
+      256
+    ],
+    [
+      "vector_add",
+      1048576,
+      64
+    ],
+    [
+      "vector_add",
+      1048576,
+      512
+    ],
+    [
+      "vector_add",
+      4194304,
+      64
+    ],
+    [
+      "vector_add",
+      4194304,
+      512
+    ]
+  ],
+  "baseline_device": "NVIDIA A100 80GB PCIe",
+  "baseline_run_id": "run_20260428T154333Z",
+  "candidate_device": "NVIDIA H100 80GB HBM3",
+  "candidate_run_id": "run_20260922T232026Z",
+  "device_mismatch": true,
+  "gate_passed": false,
+  "gate_reasons": [
+    "GPU metadata differs",
+    "1 matched scenarios exceed the CV limit (0.1)"
+  ],
+  "max_cv": 0.1,
+  "missing_scenarios": [],
+  "noisy_scenarios": 1,
+  "regressions": 0,
+  "rows": [
+    {
+      "baseline_cv": 0.02696653688728098,
+      "baseline_ms": 0.021777066666666664,
+      "block_size": 16,
+      "candidate_cv": 0.026588906182776612,
+      "candidate_ms": 0.0138496,
+      "change_pct": -36.40282131661441,
+      "kernel": "gemm_naive",
+      "noisy": false,
+      "problem_size": 256,
+      "protocol_changed": false,
+      "speedup": 1.572396796056685,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.008430709990036643,
+      "baseline_ms": 0.10369706666666667,
+      "block_size": 16,
+      "candidate_cv": 0.009084890252775058,
+      "candidate_ms": 0.0605568,
+      "change_pct": -41.60220539828835,
+      "kernel": "gemm_naive",
+      "noisy": false,
+      "problem_size": 512,
+      "protocol_changed": false,
+      "speedup": 1.7123934333826534,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.03511552256671144,
+      "baseline_ms": 0.0178176,
+      "block_size": 16,
+      "candidate_cv": 0.03938955530490521,
+      "candidate_ms": 0.011837866666666667,
+      "change_pct": -33.56082375478927,
+      "kernel": "gemm_tiled",
+      "noisy": false,
+      "problem_size": 256,
+      "protocol_changed": false,
+      "speedup": 1.5051360605514505,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.006477782793662872,
+      "baseline_ms": 0.06990506666666667,
+      "block_size": 16,
+      "candidate_cv": 0.010114591381342875,
+      "candidate_ms": 0.042254933333333335,
+      "change_pct": -39.5538330078125,
+      "kernel": "gemm_tiled",
+      "noisy": false,
+      "problem_size": 512,
+      "protocol_changed": false,
+      "speedup": 1.6543646185691927,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.07590333900710816,
+      "baseline_ms": 0.013824,
+      "block_size": 128,
+      "candidate_cv": 0.020145753025052157,
+      "candidate_ms": 0.010541866666666667,
+      "change_pct": -23.74228395061728,
+      "kernel": "reduction",
+      "noisy": false,
+      "problem_size": 1048576,
+      "protocol_changed": false,
+      "speedup": 1.3113427097035313,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.039548205107918566,
+      "baseline_ms": 0.0136192,
+      "block_size": 256,
+      "candidate_cv": 0.03468085786233235,
+      "candidate_ms": 0.0096256,
+      "change_pct": -29.323308270676694,
+      "kernel": "reduction",
+      "noisy": false,
+      "problem_size": 1048576,
+      "protocol_changed": false,
+      "speedup": 1.4148936170212767,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.015635099587089352,
+      "baseline_ms": 0.035805866666666665,
+      "block_size": 128,
+      "candidate_cv": 0.024901494362486492,
+      "candidate_ms": 0.025425066666666666,
+      "change_pct": -28.99189704480457,
+      "kernel": "reduction",
+      "noisy": false,
+      "problem_size": 4194304,
+      "protocol_changed": false,
+      "speedup": 1.408289981540527,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.016098108261469114,
+      "baseline_ms": 0.035225599999999996,
+      "block_size": 256,
+      "candidate_cv": 0.010925874217775203,
+      "candidate_ms": 0.022027733333333334,
+      "change_pct": -37.466690891472865,
+      "kernel": "reduction",
+      "noisy": false,
+      "problem_size": 4194304,
+      "protocol_changed": false,
+      "speedup": 1.5991477410294899,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.048871879341808214,
+      "baseline_ms": 0.011707733333333333,
+      "block_size": 128,
+      "candidate_cv": 0.024367402263243895,
+      "candidate_ms": 0.009963733333333334,
+      "change_pct": -14.896137026239064,
+      "kernel": "vector_add",
+      "noisy": false,
+      "problem_size": 1048576,
+      "protocol_changed": false,
+      "speedup": 1.1750347928487312,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.20056878891952168,
+      "baseline_ms": 0.009045333333333334,
+      "block_size": 256,
+      "candidate_cv": 0.038184735923022094,
+      "candidate_ms": 0.0074624,
+      "change_pct": -17.500000000000004,
+      "kernel": "vector_add",
+      "noisy": true,
+      "problem_size": 1048576,
+      "protocol_changed": false,
+      "speedup": 1.2121212121212122,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.043251174713713654,
+      "baseline_ms": 0.03792213333333334,
+      "block_size": 128,
+      "candidate_cv": 0.009989197839014755,
+      "candidate_ms": 0.025179733333333332,
+      "change_pct": -33.60148514851487,
+      "kernel": "vector_add",
+      "noisy": false,
+      "problem_size": 4194304,
+      "protocol_changed": false,
+      "speedup": 1.506057781919851,
+      "status": "improvement"
+    },
+    {
+      "baseline_cv": 0.030830155089772344,
+      "baseline_ms": 0.037853866666666666,
+      "block_size": 256,
+      "candidate_cv": 0.013638920523542814,
+      "candidate_ms": 0.0232608,
+      "change_pct": -38.55105951307484,
+      "kernel": "vector_add",
+      "noisy": false,
+      "problem_size": 4194304,
+      "protocol_changed": false,
+      "speedup": 1.6273673591048745,
+      "status": "improvement"
+    }
+  ],
+  "statistic": "mean",
+  "threshold_pct": 5.0,
+  "warnings": [
+    "Different GPUs; ratios describe these runs, not an isolated hardware speedup or a CI regression.",
+    "Run metadata differs: git_commit.",
+    "Run metadata differs: benchmark_binary_sha256.",
+    "Run metadata differs: scenario_file_sha256.",
+    "Run metadata differs: runtime_environment.",
+    "Run metadata differs: source_sha256."
+  ]
+}

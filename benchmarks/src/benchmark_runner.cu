@@ -108,6 +108,9 @@ int run_benchmark_cli(int argc, char** argv) {
         } else {
             throw std::runtime_error("Unsupported kernel: " + args.kernel);
         }
+        if (args.verify && !result.verification_passed) {
+            throw std::runtime_error("Kernel correctness verification failed.");
+        }
         result.device_info = query_device_info();
         write_json_output(result);
         return 0;

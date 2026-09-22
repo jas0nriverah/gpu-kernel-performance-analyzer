@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="820" viewBox="0 0 960 820" role="img" aria-labelledby="title description">
+  <title id="title">GPU Kernel Performance Analyzer architecture</title>
+  <desc id="description">The Python system expands scenario configurations into jobs. Its runner launches a CUDA worker with a timeout, validates returned JSON, and persists raw samples, summaries, hashes, and metric provenance. Offline analysis reads artifacts to compare runs and generate reports. Across the subprocess boundary, scenario requests travel to the CUDA system and timing samples with correctness results return to Python. The CUDA harness allocates data, warms up kernels, records CUDA events, and checks outputs while the GPU executes six kernels.</desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#047857"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-slate-reverse" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 10 0 L 0 5 L 10 10 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+      .heading { font-size: 19px; font-weight: 700; letter-spacing: 1.6px; }
+      .label { font-size: 20px; font-weight: 600; fill: #0f172a; }
+      .body { font-size: 16px; fill: #475569; }
+      .edge { font-size: 15px; font-weight: 500; fill: #475569; }
+      .connector { fill: none; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="960" height="820" rx="16" fill="#ffffff"/>
+
+  <!-- Python owns orchestration, the evidence contract, and offline evaluation. -->
+  <rect x="24" y="24" width="912" height="410" rx="14" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="48" y="62" class="heading" fill="#1d4ed8">PYTHON SYSTEM</text>
+  <text x="48" y="87" class="body">Experiment control, durable evidence, and regression analysis</text>
+  <text x="912" y="61" text-anchor="end" font-size="13" font-weight="600" fill="#64748b">SYSTEM ARCHITECTURE</text>
+
+  <rect x="48" y="112" width="330" height="108" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="70" y="146" class="label">Scenario configuration</text>
+  <text x="70" y="174" class="body">YAML / JSON · sizes · block sizes</text>
+  <text x="70" y="198" class="body">Warmups · repeats · verification</text>
+
+  <rect x="48" y="300" width="330" height="108" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="70" y="334" class="label">CLI + process runner</text>
+  <text x="70" y="362" class="body">Timeouts · response contract checks</text>
+  <text x="70" y="386" class="body">Fail fast on incorrect outputs</text>
+
+  <path d="M 213 232 V 288" class="connector" stroke="#64748b" marker-end="url(#arrow-slate)"/>
+  <text x="233" y="255" class="edge">Validate + expand</text>
+  <text x="233" y="277" class="edge">into scenario jobs</text>
+
+  <rect x="582" y="112" width="330" height="108" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="604" y="146" class="label">Run artifact store</text>
+  <text x="604" y="174" class="body">Raw samples + summaries · CSV</text>
+  <text x="604" y="198" class="body">Manifest + hashes + provenance</text>
+
+  <rect x="582" y="300" width="330" height="108" rx="10" fill="#ffffff" stroke="#bfdbfe"/>
+  <text x="604" y="334" class="label">Analysis + comparison</text>
+  <text x="604" y="362" class="body">Charts · reports · CI regression gate</text>
+  <text x="604" y="386" class="body">Match scenarios across saved runs</text>
+
+  <path d="M 390 354 H 468 V 166 H 570" class="connector" stroke="#64748b" marker-end="url(#arrow-slate)"/>
+  <text x="482" y="247" class="edge">Persist</text>
+  <text x="482" y="269" class="edge">validated</text>
+  <text x="482" y="291" class="edge">results</text>
+
+  <path d="M 747 232 V 288" class="connector" stroke="#64748b" marker-end="url(#arrow-slate)"/>
+  <text x="767" y="255" class="edge">Read evidence</text>
+  <text x="767" y="277" class="edge">No GPU needed</text>
+
+  <!-- The subprocess interface has separate request and response directions. -->
+  <path d="M 218 444 V 548" class="connector" stroke="#2563eb" marker-end="url(#arrow-blue)"/>
+  <text x="240" y="481" font-size="18" font-weight="600" fill="#1d4ed8">Scenario request</text>
+  <text x="240" y="506" class="body">Launch parameters</text>
+  <path d="M 742 548 V 444" class="connector" stroke="#047857" marker-end="url(#arrow-green)"/>
+  <text x="720" y="481" text-anchor="end" font-size="18" font-weight="600" fill="#047857">JSON result</text>
+  <text x="720" y="506" text-anchor="end" class="body">Timings + checks + device</text>
+  <text x="480" y="541" text-anchor="middle" font-size="12" font-weight="600" letter-spacing="1" fill="#64748b">BOUNDED SUBPROCESS INTERFACE</text>
+
+  <!-- Device execution is separate from Python analysis and artifact storage. -->
+  <rect x="24" y="560" width="912" height="236" rx="14" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="48" y="598" class="heading" fill="#047857">CUDA BENCHMARK SYSTEM</text>
+  <text x="48" y="623" class="body">C++ / CUDA worker · validated on NVIDIA A100 and H100</text>
+
+  <rect x="48" y="648" width="330" height="116" rx="10" fill="#ffffff" stroke="#a7f3d0"/>
+  <text x="70" y="682" class="label">Benchmark harness</text>
+  <text x="70" y="710" class="body">Allocate · warm up · verify outputs</text>
+  <text x="70" y="734" class="body">CUDA events measure kernel time</text>
+
+  <rect x="582" y="648" width="330" height="116" rx="10" fill="#ffffff" stroke="#a7f3d0"/>
+  <text x="604" y="682" class="label">GPU kernels</text>
+  <text x="604" y="710" class="body">Vector add · copy · stencil · reduction</text>
+  <text x="604" y="734" class="body">Naive + shared-memory tiled GEMM</text>
+
+  <path d="M 390 715 H 570" class="connector" stroke="#64748b" marker-start="url(#arrow-slate-reverse)" marker-end="url(#arrow-slate)"/>
+  <text x="480" y="691" text-anchor="middle" class="edge">Launch / complete</text>
+</svg>

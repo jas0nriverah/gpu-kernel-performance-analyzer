@@ -1,0 +1,6 @@
+kernel,problem_size,block_size,metric_name,metric_value
+vector_add,4194304,256,occupancy,74.98
+vector_add,4194304,256,sm_utilization,18.90
+vector_add,4194304,256,memory_throughput_pct,66.87
+vector_add,4194304,256,l2_throughput_pct,74.11
+vector_add,4194304,256,l2_cache_hit_rate,34.44

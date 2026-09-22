@@ -1,0 +1,25 @@
+kernel,problem_size,block_size,likely_bottleneck,explanation
+vector_add,1048576,64,memory_bound_likely,vector_add: low arithmetic intensity (0.083) suggests memory pressure dominates.
+vector_add,1048576,128,memory_bound_likely,vector_add: low arithmetic intensity (0.083) suggests memory pressure dominates.
+vector_add,1048576,256,memory_bound_likely,vector_add: low arithmetic intensity (0.083) suggests memory pressure dominates.
+vector_add,1048576,512,memory_bound_likely,vector_add: low arithmetic intensity (0.083) suggests memory pressure dominates.
+vector_add,4194304,64,memory_bound_likely,vector_add: low arithmetic intensity (0.083) suggests memory pressure dominates.
+vector_add,4194304,128,memory_bound_likely,vector_add: low arithmetic intensity (0.083) suggests memory pressure dominates.
+vector_add,4194304,256,memory_bound_likely,vector_add: low arithmetic intensity (0.083) suggests memory pressure dominates.
+vector_add,4194304,512,memory_bound_likely,vector_add: low arithmetic intensity (0.083) suggests memory pressure dominates.
+reduction,1048576,64,memory_bound_likely,reduction: low arithmetic intensity (0.246) suggests memory pressure dominates.
+reduction,1048576,128,memory_bound_likely,reduction: low arithmetic intensity (0.248) suggests memory pressure dominates.
+reduction,1048576,256,memory_bound_likely,reduction: low arithmetic intensity (0.249) suggests memory pressure dominates.
+reduction,1048576,512,memory_bound_likely,reduction: low arithmetic intensity (0.250) suggests memory pressure dominates.
+reduction,4194304,64,memory_bound_likely,reduction: low arithmetic intensity (0.246) suggests memory pressure dominates.
+reduction,4194304,128,memory_bound_likely,reduction: low arithmetic intensity (0.248) suggests memory pressure dominates.
+reduction,4194304,256,memory_bound_likely,reduction: low arithmetic intensity (0.249) suggests memory pressure dominates.
+reduction,4194304,512,memory_bound_likely,reduction: low arithmetic intensity (0.250) suggests memory pressure dominates.
+gemm_naive,256,16,balanced_or_unknown,gemm_naive: no strong single bottleneck signal from MVP heuristics.
+gemm_naive,512,16,balanced_or_unknown,gemm_naive: no strong single bottleneck signal from MVP heuristics.
+gemm_tiled,256,16,balanced_or_unknown,gemm_tiled: no strong single bottleneck signal from MVP heuristics.
+gemm_tiled,512,16,balanced_or_unknown,gemm_tiled: no strong single bottleneck signal from MVP heuristics.
+memcpy_bandwidth,1048576,256,memory_bound_likely,memcpy_bandwidth: low arithmetic intensity (0.000) suggests memory pressure dominates.
+memcpy_bandwidth,4194304,256,memory_bound_likely,memcpy_bandwidth: low arithmetic intensity (0.000) suggests memory pressure dominates.
+stencil_1d,1048576,256,memory_bound_likely,stencil_1d: low arithmetic intensity (0.625) suggests memory pressure dominates.
+stencil_1d,4194304,256,memory_bound_likely,stencil_1d: low arithmetic intensity (0.625) suggests memory pressure dominates.

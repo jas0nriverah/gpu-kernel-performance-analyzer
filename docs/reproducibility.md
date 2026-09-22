@@ -16,7 +16,7 @@ python -m pip install -e ".[dev]"
 ## Build benchmark binary
 
 ```bash
-cmake -S benchmarks -B build
+cmake -S benchmarks -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
 ```
 
@@ -93,4 +93,34 @@ Nsight Compute timings are not used for benchmark `runtime_ms` claims.
 If `nvcc` and an NVIDIA GPU are unavailable, use the fixture demo in `docs/demo.md` for non-CUDA workflow validation only.
 Do not treat fixture outputs as real benchmark evidence.
 
-See `docs/demo.md` for demo workflows and `docs/real_gpu_validation.md` for the real A100 validation snapshot.
+See `docs/demo.md` for demo workflows and `docs/real_gpu_validation.md` for the H100 study and historical A100 comparison.
+
+## Repeat the expanded cross-GPU study
+
+Install the package first. The published H100 capture used architecture 90; use the matching architecture for your target GPU (the A100 is 80). Keep the source revision, optimization policy, configurations, and trial count consistent across machines.
+
+```bash
+PYTHON=python CUDA_ARCHITECTURES=90 OUT_DIR=outputs/h100 \
+  bash scripts/cross_validate_gpu.sh
+```
+
+This builds in Release mode, captures tool versions/dependencies and GPU telemetry, runs the 24-scenario baseline, repeats the 74-scenario suite three times, executes 18 boundary checks, validates each artifact directory, and generates aggregate tables/charts. Run on an otherwise idle GPU; the script does not reserve the device or change clocks. It refuses an existing output directory. Separate captures for Nsight counters are described in the [published profiler notes](../results/h100-2026-09-22/profiler/README.md).
+
+The published capture was built explicitly with:
+
+```bash
+cmake -S benchmarks -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_ARCHITECTURES=90
+cmake --build build --config Release -j 4
+```
+
+To regenerate the publication artifacts without running GPU kernels:
+
+```bash
+python scripts/summarize_results.py --results results/h100-2026-09-22
+python -m gpu_kernel_analyzer compare \
+  --baseline results/a100-2026-04-28 \
+  --candidate results/h100-2026-09-22/baseline \
+  --allow-device-mismatch --statistic mean --outdir outputs/a100-h100
+```
+
+`results/h100-2026-09-22/requirements-lock.txt` records the captured Python dependencies. Install the repository separately after installing those requirements if recreating that environment. Current run manifests also record source SHA-256 values. The published H100 base commit had local changes; see [capture provenance](../results/README.md), including the CUDA source patch. Absolute paths in historical manifests are capture-time provenance, not paths required on your machine.

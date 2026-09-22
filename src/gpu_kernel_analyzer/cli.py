@@ -21,6 +21,7 @@ from .artifacts import (
     write_csv,
     write_json,
 )
+from .comparison import compare_command
 from .metrics import (
     STATUS_DERIVED,
     STATUS_MEASURED,
@@ -101,6 +102,9 @@ def run_sweep(args: argparse.Namespace) -> int:
             )
         return 0
 
+    if any(run_dir.iterdir()):
+        raise ValueError(f"Output directory is not empty; choose a new run directory: {run_dir}")
+
     run_id = args.run_id or _new_run_id()
     timing_rows: list[dict[str, Any]] = []
     summary_rows: list[dict[str, Any]] = []
@@ -108,7 +112,10 @@ def run_sweep(args: argparse.Namespace) -> int:
     first_device: dict[str, Any] | None = None
 
     for scenario in scenarios:
-        binary_result = run_binary_for_scenario(binary=binary, scenario=scenario, interpreter=args.binary_interpreter)
+        binary_result = run_binary_for_scenario(
+            binary=binary, scenario=scenario, interpreter=args.binary_interpreter,
+            timeout_seconds=args.timeout_seconds,
+        )
         raw = binary_result.raw
 
         samples = binary_result.runtime_ms_samples
@@ -137,7 +144,7 @@ def run_sweep(args: argparse.Namespace) -> int:
                 "block_size": scenario.block_size,
                 "warmups": scenario.warmups,
                 "repeats": scenario.repeats,
-                "verification_passed": bool(raw.get("verification_passed", True)),
+                "verification_passed": scenario.verify and raw.get("verification_passed") is True,
                 "runtime_ms_mean": stats.runtime_ms_mean,
                 "runtime_ms_median": stats.runtime_ms_median,
                 "runtime_ms_min": stats.runtime_ms_min,
@@ -224,6 +231,12 @@ def run_sweep(args: argparse.Namespace) -> int:
         "scenario_file_sha256": sha256_file(scenario_file),
         "scenario_count": len(scenarios),
         "git_commit": _get_git_commit(),
+        "source_sha256": {
+            str(path): sha256_file(path)
+            for root in (Path("benchmarks"), Path("src/gpu_kernel_analyzer"))
+            for path in sorted(root.rglob("*"))
+            if path.is_file() and path.suffix in {".py", ".cu", ".h", ".txt"}
+        },
         "runtime_environment": runtime_environment(),
         "device": first_device or {"metadata_available": False},
         "nsight_compute": detect_ncu(),
@@ -545,7 +558,19 @@ def build_parser() -> argparse.ArgumentParser:
     sweep.add_argument("--outdir", required=True, help="Output run directory.")
     sweep.add_argument("--run-id", default=None, help="Optional run id override.")
     sweep.add_argument("--dry-run", action="store_true", help="Expand scenarios without executing benchmark binary.")
+    sweep.add_argument("--timeout-seconds", type=float, default=120.0, help="Per-scenario subprocess timeout (default: 120s).")
     sweep.set_defaults(func=run_sweep)
+
+    compare = sub.add_parser("compare", help="Compare measured runs and optionally gate performance regressions.")
+    compare.add_argument("--baseline", required=True)
+    compare.add_argument("--candidate", required=True)
+    compare.add_argument("--outdir", required=True)
+    compare.add_argument("--statistic", choices=["mean", "median"], default="median")
+    compare.add_argument("--threshold-pct", type=float, default=5.0)
+    compare.add_argument("--max-cv", type=float, default=0.10)
+    compare.add_argument("--allow-device-mismatch", action="store_true")
+    compare.add_argument("--fail-on-regression", action="store_true", help="Exit 1 for regression, noise, missing coverage, or incompatible protocol/device.")
+    compare.set_defaults(func=compare_command)
 
     artifacts = sub.add_parser("artifacts", help="Validate or inspect run artifacts.")
     artifacts_sub = artifacts.add_subparsers(dest="artifacts_command", required=True)

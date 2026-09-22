@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "description": "Boundary correctness smoke tests, not performance evidence.",
+  "sweeps": [
+    {
+      "kernel": "vector_add",
+      "problem_sizes": [
+        1
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "vector_add",
+      "problem_sizes": [
+        33
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "vector_add",
+      "problem_sizes": [
+        1003
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "memcpy_bandwidth",
+      "problem_sizes": [
+        1
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "memcpy_bandwidth",
+      "problem_sizes": [
+        33
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "memcpy_bandwidth",
+      "problem_sizes": [
+        1003
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "stencil_1d",
+      "problem_sizes": [
+        1
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "stencil_1d",
+      "problem_sizes": [
+        33
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "stencil_1d",
+      "problem_sizes": [
+        1003
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "reduction",
+      "problem_sizes": [
+        1
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "reduction",
+      "problem_sizes": [
+        33
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "reduction",
+      "problem_sizes": [
+        1003
+      ],
+      "block_sizes": [
+        128
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "gemm_naive",
+      "problem_sizes": [
+        1
+      ],
+      "block_sizes": [
+        16
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "gemm_naive",
+      "problem_sizes": [
+        17
+      ],
+      "block_sizes": [
+        16
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "gemm_naive",
+      "problem_sizes": [
+        257
+      ],
+      "block_sizes": [
+        16
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "gemm_tiled",
+      "problem_sizes": [
+        1
+      ],
+      "block_sizes": [
+        16
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "gemm_tiled",
+      "problem_sizes": [
+        17
+      ],
+      "block_sizes": [
+        16
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    },
+    {
+      "kernel": "gemm_tiled",
+      "problem_sizes": [
+        257
+      ],
+      "block_sizes": [
+        16
+      ],
+      "warmups": 3,
+      "repeats": 5,
+      "verify": true
+    }
+  ]
+}

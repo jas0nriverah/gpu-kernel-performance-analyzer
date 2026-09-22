@@ -1,0 +1,86 @@
+{
+  "benchmark_binary": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/build/gpu_benchmark",
+  "benchmark_binary_sha256": "e592bb4171a1c4d46dab2368920936de3a0ff922be5798b8b1d0c83d0f1ad0f9",
+  "created_at_utc": "2026-09-22T23:20:37.806330+00:00",
+  "device": {
+    "compute_capability_major": 9,
+    "compute_capability_minor": 0,
+    "metadata_available": true,
+    "multiprocessor_count": 132,
+    "name": "NVIDIA H100 80GB HBM3",
+    "total_global_mem_bytes": 85019590656
+  },
+  "git_commit": "31388b9dca9099fd2d229bfa4520ab2e7b45f590",
+  "metrics_policy_version": "mvp_v1",
+  "nsight_compute": {
+    "available": true,
+    "enabled": true,
+    "import_timestamp": "2026-09-22T23:27:56.215768+00:00",
+    "imported_metric_rows": 5,
+    "imported_metric_rows_total": 10,
+    "imports": [
+      {
+        "import_timestamp": "2026-09-22T23:27:55.121350+00:00",
+        "imported_metric_rows": 5,
+        "metric_set": "default_profiler_set",
+        "source_csv": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/results/h100-2026-09-22/profiler/vector_add.csv",
+        "source_file": "results/h100-2026-09-22/profiler/vector_add_raw.csv",
+        "source_tool": "ncu"
+      },
+      {
+        "import_timestamp": "2026-09-22T23:27:56.215768+00:00",
+        "imported_metric_rows": 5,
+        "metric_set": "default_profiler_set",
+        "source_csv": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/results/h100-2026-09-22/profiler/gemm_tiled.csv",
+        "source_file": "results/h100-2026-09-22/profiler/gemm_tiled_raw.csv",
+        "source_tool": "ncu"
+      }
+    ],
+    "metric_set": "default_profiler_set",
+    "source_csv": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/results/h100-2026-09-22/profiler/gemm_tiled.csv",
+    "source_file": "results/h100-2026-09-22/profiler/gemm_tiled_raw.csv",
+    "source_tool": "ncu",
+    "status": "parsed_metrics"
+  },
+  "run_id": "run_20260922T232026Z",
+  "runtime_environment": {
+    "machine": "x86_64",
+    "platform": "Linux-5.14.0-570.128.1.el9_6.x86_64-x86_64-with-glibc2.34",
+    "python_version": "3.11.9"
+  },
+  "scenario_count": 24,
+  "scenario_file": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/configs/benchmark_scenarios.yaml",
+  "scenario_file_sha256": "939c299649d41c1bf8d425897373171110afbfc759d265f83a3ba6326cd0b012",
+  "source_sha256": {
+    "benchmarks/CMakeLists.txt": "ceae6d75ccf2d56082fa63def2ea3513a9f275ceb1e2560a580de8514fb7e8e9",
+    "benchmarks/include/benchmark_runner.h": "0889eca0572d793d629911dde5eda3451610304bc38b45759ea4ff30cdc50a68",
+    "benchmarks/include/benchmark_types.h": "b9336f02dd9b3762329477352f07db8f07bc2be22328871b279d1cda5730c55a",
+    "benchmarks/include/cuda_utils.h": "ac2e6bb575e1b2d13e248de3b9823b24bad3e042581a4213386015a3049ba62d",
+    "benchmarks/include/kernel_ops.h": "c4c358faa52276606eac0906f8fdf7739df6d5a05d415286381af09e7704e883",
+    "benchmarks/src/benchmark_runner.cu": "625f2342fd30f2e5c357569456ad15dccf88c53e095f10dc86eda2a6206009c9",
+    "benchmarks/src/cuda_utils.cu": "43d851be8f86c65aee1fbf06261c470f3de71586221b39c4f2e0c5f7223f5239",
+    "benchmarks/src/kernels/gemm_naive.cu": "67729ad789877492c01fd8f06e5fe937a0b7105a83ba0e45140688bf4db5c8f3",
+    "benchmarks/src/kernels/gemm_tiled.cu": "bbb39ec587516a462adad4fd666b0ed24c3ab2f9021f703898966e5e392b67dc",
+    "benchmarks/src/kernels/memcpy_bandwidth.cu": "789d0ebc8e0e609553f8af5af99f90be306b496211016033ba61d642722c36db",
+    "benchmarks/src/kernels/reduction.cu": "563ce1159a0e4db1d67d84b24ffb40f8e8f46e0ded8720dcef1f40a18e2c346c",
+    "benchmarks/src/kernels/stencil_1d.cu": "5f3bf1e0ebca5c59b3dd0ecbef635d2946fd5572f8f612c13a9dcb9d2662f3fb",
+    "benchmarks/src/kernels/vector_add.cu": "203342f0a5677e137b460a0941b94470ee04327ed429f3ae3a1636962ea1099a",
+    "benchmarks/src/main.cu": "2e3ac45cea731b4c59ddea6ed4cc3b81ef02db0c91ba32f51904184aa0cf75cc",
+    "src/gpu_kernel_analyzer/__init__.py": "f8dbbda778b3a0da3f3ff01b590cbf656f9315015ed01dc6e8fc23e9bc2ca9f7",
+    "src/gpu_kernel_analyzer/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "src/gpu_kernel_analyzer/advisor.py": "18f7bccfd2b7d6f93213ac6020955e371b7acc1ebb07eae37d34e3d5d4cce228",
+    "src/gpu_kernel_analyzer/analysis.py": "2bc5fb9b07335fee524647047deac20c6c6ca96ec293f69e07d9ef46a950ddd9",
+    "src/gpu_kernel_analyzer/artifacts.py": "58a00ff917586295feb85bf75340836f65a8c53174cab46ff1607b9e8784c8bd",
+    "src/gpu_kernel_analyzer/cli.py": "5267c7dce41cacd703ed474fe689934b5a8fa7a4ac6c1897bc9f69c6c97c5b13",
+    "src/gpu_kernel_analyzer/io.py": "56dcb6e4e0cabe4434a43deab926b21460b94eb11ddc348f6abcf75f3b0b1698",
+    "src/gpu_kernel_analyzer/metrics.py": "03a0648f899d7765327f614ce75cda44bd7b0ab1af64ccd61fcd31a081482b57",
+    "src/gpu_kernel_analyzer/ncu.py": "09af1af41703b25f3a55d2ba4c7289c8ed2a8dd12fe0dd789ca5918716c529d5",
+    "src/gpu_kernel_analyzer/perf_model.py": "57d4e68211745118af2dafb897d004119b806aabba2185e7994544d82b0000b1",
+    "src/gpu_kernel_analyzer/plotting.py": "0c5674354eb99df518652af3d30ffa5b67e387b84f41759fccbb5db9df4eab91",
+    "src/gpu_kernel_analyzer/report.py": "4c17784ded3436f281fb5471b21f74252e14e19521eec091c11a174322317988",
+    "src/gpu_kernel_analyzer/runner.py": "2d80af3a84977204bcc890da2a6e96d35dc24363b0f98a3e1a5315803247820b",
+    "src/gpu_kernel_analyzer/scenarios.py": "97dc8a160f30408913f158d64074b5a6653c70c5612300425e3e6534189fc728",
+    "src/gpu_kernel_analyzer/schemas.py": "0d36a13d1835f63e49938ecd369b5d43b9bf6b5b1fb1448bddebf70024c67d6b",
+    "src/gpu_kernel_analyzer/system_info.py": "853fd91be7da5126d38101b108a61c696160f3a9b9cebed75ac388340c5405eb"
+  }
+}

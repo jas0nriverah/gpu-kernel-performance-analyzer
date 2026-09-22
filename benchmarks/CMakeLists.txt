@@ -22,5 +22,9 @@ target_include_directories(gpu_benchmark PRIVATE include)
 if(MSVC)
   target_compile_options(gpu_benchmark PRIVATE /W3)
 else()
-  target_compile_options(gpu_benchmark PRIVATE -Wall -Wextra -Wpedantic)
+  # nvcc-generated host code uses line directives that trigger -Wpedantic.
+  target_compile_options(gpu_benchmark PRIVATE
+      $<$<COMPILE_LANGUAGE:CXX>:-Wall;-Wextra;-Wpedantic>
+      $<$<COMPILE_LANGUAGE:CUDA>:-Xcompiler=-Wall,-Wextra>
+  )
 endif()

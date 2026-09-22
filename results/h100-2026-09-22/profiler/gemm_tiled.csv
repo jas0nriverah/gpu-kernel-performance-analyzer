@@ -1,0 +1,6 @@
+kernel,problem_size,block_size,metric_name,metric_value
+gemm_tiled,512,16,occupancy,71.72
+gemm_tiled,512,16,sm_utilization,56.46
+gemm_tiled,512,16,memory_throughput_pct,1.46
+gemm_tiled,512,16,l2_throughput_pct,13.78
+gemm_tiled,512,16,l2_cache_hit_rate,89.89

@@ -84,9 +84,9 @@ BenchmarkRunOutput run_gemm_naive(std::size_t problem_size, int block_size, int 
         require_cuda_success(cudaMemcpy(h_c.data(), d_c, matrix_bytes, cudaMemcpyDeviceToHost), "copy C");
         const float expected = static_cast<float>(n);
         out.verification_passed = true;
-        for (int i = 0; i < 8 && i < n; ++i) {
-            const float value = h_c[static_cast<std::size_t>(i) * n + i];
-            if (std::fabs(value - expected) > 1e-2f) {
+        for (std::size_t i = 0; i < matrix_elems; ++i) {
+            const float value = h_c[i];
+            if (!std::isfinite(value) || std::fabs(value - expected) > 1e-2f) {
                 out.verification_passed = false;
                 break;
             }

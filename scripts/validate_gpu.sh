@@ -61,7 +61,7 @@ BIN="$BUILD_DIR/gpu_benchmark"
 [ -f "$BIN" ] || BIN="$BUILD_DIR/gpu_benchmark.exe"
 
 echo "==> [3/7] Building CUDA harness"
-cmake -S benchmarks -B "$BUILD_DIR"
+cmake -S benchmarks -B "$BUILD_DIR" -DCMAKE_BUILD_TYPE=Release
 cmake --build "$BUILD_DIR" --config Release
 
 BIN="$BUILD_DIR/gpu_benchmark"
