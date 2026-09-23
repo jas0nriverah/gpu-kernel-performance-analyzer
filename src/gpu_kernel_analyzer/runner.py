@@ -71,6 +71,11 @@ def run_binary_for_scenario(
         raise RuntimeError("Benchmark binary produced empty output.")
 
     raw = json.loads(stdout_lines[-1])
+    validate_binary_output(raw, scenario)
+    return BinaryResult(raw=raw)
+
+
+def validate_binary_output(raw: dict, scenario: Scenario) -> None:
     if not isinstance(raw, dict):
         raise RuntimeError("Benchmark binary JSON output must be an object.")
     for field in ("kernel", "problem_size", "block_size", "warmups", "repeats", "verify"):
@@ -87,4 +92,3 @@ def run_binary_for_scenario(
         raise RuntimeError("Benchmark sample count does not match requested repeats")
     if any(isinstance(v, bool) or not isinstance(v, (int, float)) or not math.isfinite(v) or v <= 0 for v in samples):
         raise RuntimeError("Benchmark timings must be finite positive numbers")
-    return BinaryResult(raw=raw)

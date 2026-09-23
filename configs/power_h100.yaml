@@ -1,0 +1,39 @@
+version: 1
+description: Sustained FP32 and streaming workloads for board-power measurement.
+sweeps:
+  - kernel: vector_add
+    problem_sizes: [67108864]
+    block_sizes: [128, 256, 512]
+    warmups: 10
+    repeats: 50
+    verify: true
+  - kernel: memcpy_bandwidth
+    problem_sizes: [67108864]
+    block_sizes: [256]
+    warmups: 10
+    repeats: 50
+    verify: true
+  - kernel: stencil_1d
+    problem_sizes: [67108864]
+    block_sizes: [256]
+    warmups: 10
+    repeats: 50
+    verify: true
+  - kernel: reduction
+    problem_sizes: [67108864]
+    block_sizes: [256]
+    warmups: 10
+    repeats: 50
+    verify: true
+  - kernel: gemm_naive
+    problem_sizes: [2048]
+    block_sizes: [16]
+    warmups: 10
+    repeats: 50
+    verify: true
+  - kernel: gemm_tiled
+    problem_sizes: [2048]
+    block_sizes: [16]
+    warmups: 10
+    repeats: 50
+    verify: true

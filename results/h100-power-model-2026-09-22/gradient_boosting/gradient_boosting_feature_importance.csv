@@ -1,0 +1,13 @@
+feature,importance
+num__memory_utilization_pct,0.2784940571149515
+cat__workload_type_stencil_1d,0.24962340463240706
+cat__workload_type_vector_add,0.13198530330388836
+cat__workload_type_gemm_naive,0.09119010784460464
+num__temperature_c,0.08012882316304239
+cat__workload_type_gemm_tiled,0.07494030858765578
+cat__workload_type_reduction,0.06913422028974413
+cat__workload_type_memcpy_bandwidth,0.024503775063706084
+num__graphics_clock_mhz,0.0
+num__gpu_utilization_pct,0.0
+num__memory_clock_mhz,0.0
+cat__gpu_name_NVIDIA H100 80GB HBM3,0.0

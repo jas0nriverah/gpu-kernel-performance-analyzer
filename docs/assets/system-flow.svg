@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="820" viewBox="0 0 960 820" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1170" viewBox="0 0 960 1170" role="img" aria-labelledby="title description">
   <title id="title">GPU Kernel Performance Analyzer architecture</title>
-  <desc id="description">The Python system expands scenario configurations into jobs. Its runner launches a CUDA worker with a timeout, validates returned JSON, and persists raw samples, summaries, hashes, and metric provenance. Offline analysis reads artifacts to compare runs and generate reports. Across the subprocess boundary, scenario requests travel to the CUDA system and timing samples with correctness results return to Python. The CUDA harness allocates data, warms up kernels, records CUDA events, and checks outputs while the GPU executes six kernels.</desc>
+  <desc id="description">The Python system expands scenario configurations into jobs. Its runner launches a CUDA worker with a timeout, validates returned JSON, and persists raw samples, summaries, hashes, and metric provenance. Offline analysis reads artifacts to compare runs and generate reports. Across the subprocess boundary, scenario requests travel to the CUDA system and timing samples with correctness results return to Python. The CUDA harness allocates data, warms up kernels, records CUDA events, and checks outputs while the GPU executes six kernels. Independent NVIDIA telemetry samples sustained workload windows. Validated telemetry feeds grouped power-model evaluation, saved models, and an optional inference API.</desc>
   <defs>
     <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M 0 0 L 10 5 L 0 10 Z" fill="#2563eb"/>
@@ -24,7 +24,7 @@
     </style>
   </defs>
 
-  <rect width="960" height="820" rx="16" fill="#ffffff"/>
+  <rect width="960" height="1170" rx="16" fill="#ffffff"/>
 
   <!-- Python owns orchestration, the evidence contract, and offline evaluation. -->
   <rect x="24" y="24" width="912" height="410" rx="14" fill="#eff6ff" stroke="#bfdbfe"/>
@@ -91,4 +91,23 @@
 
   <path d="M 390 715 H 570" class="connector" stroke="#64748b" marker-start="url(#arrow-slate-reverse)" marker-end="url(#arrow-slate)"/>
   <text x="480" y="691" text-anchor="middle" class="edge">Launch / complete</text>
+  <path d="M 218 806 V 892" class="connector" stroke="#047857" marker-end="url(#arrow-green)"/>
+  <text x="240" y="842" class="label">Board telemetry + workload windows</text>
+  <text x="240" y="868" class="body">Independent sampling during sustained execution</text>
+
+  <rect x="24" y="904" width="912" height="242" rx="14" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="48" y="942" class="heading" fill="#9a3412">POWER MEASUREMENT + MODELING</text>
+  <text x="48" y="967" class="body">Measured watts · derived energy · predictions kept separate</text>
+  <rect x="48" y="992" width="330" height="124" rx="10" fill="#ffffff" stroke="#fed7aa"/>
+  <text x="70" y="1026" class="label">Telemetry + evidence</text>
+  <text x="70" y="1054" class="body">GPU UUID · trial · scenario · timestamp</text>
+  <text x="70" y="1078" class="body">Raw CSV · hashes · energy integration</text>
+  <text x="70" y="1102" class="body">Coverage checks · workload reports</text>
+  <rect x="582" y="992" width="330" height="124" rx="10" fill="#ffffff" stroke="#fed7aa"/>
+  <text x="604" y="1026" class="label">Power models + serving</text>
+  <text x="604" y="1054" class="body">Hold out whole trials · evaluate errors</text>
+  <text x="604" y="1078" class="body">Model registry · prediction · drift</text>
+  <text x="604" y="1102" class="body">Optional FastAPI inference service</text>
+  <path d="M 390 1056 H 570" class="connector" stroke="#64748b" marker-end="url(#arrow-slate)"/>
+  <text x="480" y="1035" text-anchor="middle" class="edge">Steady telemetry</text>
 </svg>

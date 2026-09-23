@@ -91,6 +91,8 @@ BenchmarkRunOutput run_gemm_tiled(std::size_t problem_size, int block_size, int 
     require_cuda_success(cudaGetLastError(), "gemm_tiled warmup launch");
     require_cuda_success(cudaDeviceSynchronize(), "warmup sync");
 
+    run_sustained([&]() { gemm_tiled_kernel<<<grid, block>>>(d_a, d_b, d_c, n); });
+
     out.runtime_ms_samples.reserve(static_cast<std::size_t>(repeats));
     for (int i = 0; i < repeats; ++i) {
         require_cuda_success(cudaEventRecord(start), "event start");

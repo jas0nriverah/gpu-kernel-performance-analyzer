@@ -58,6 +58,8 @@ BenchmarkRunOutput run_memcpy_bandwidth(std::size_t problem_size, int block_size
     require_cuda_success(cudaGetLastError(), "memcpy_bandwidth warmup launch");
     require_cuda_success(cudaDeviceSynchronize(), "warmup sync");
 
+    run_sustained([&]() { copy_kernel<<<grid, block_size>>>(d_in, d_out, problem_size); });
+
     out.runtime_ms_samples.reserve(static_cast<std::size_t>(repeats));
     for (int i = 0; i < repeats; ++i) {
         require_cuda_success(cudaEventRecord(start), "event start");

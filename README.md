@@ -1,8 +1,8 @@
-# GPU Kernel Performance Analyzer
+# GPU Performance & Power Analyzer
 
-A reproducible CUDA benchmarking pipeline with a Python CLI, traceable measurement artifacts, and a performance regression gate. Run experiments, explain where time goes, and compare changes without losing the raw evidence.
+A reproducible GPU benchmarking toolkit that connects kernel speed, measured board power, and power-model validation. Run CUDA experiments, compare performance and energy tradeoffs, and retain the raw evidence behind every result.
 
-[Results](docs/real_gpu_validation.md) · [Engineering decisions](docs/engineering.md) · [Compare runs](docs/comparisons.md) · [Reproduce](docs/reproducibility.md)
+[Timing results](docs/real_gpu_validation.md) · [Power results](results/h100-power-2026-09-22/REPORT.md) · [Engineering decisions](docs/engineering.md) · [Compare runs](docs/comparisons.md) · [Reproduce](docs/reproducibility.md)
 
 ## Results you can inspect
 
@@ -18,6 +18,19 @@ Validated on **NVIDIA H100 80GB HBM3**, with recovered **A100 80GB PCIe** eviden
 Cross-GPU ratios describe the captured runs: compiler versions, source revisions, and dates differ. Effective throughput is derived, not a hardware counter. Two configurations exceeded 10% within-run CV in at least one trial; the comparison report flags that noise. [Methodology, counters, and limitations →](docs/real_gpu_validation.md)
 
 ![H100 GEMM scaling and effective bandwidth across workload sizes](results/h100-2026-09-22/charts/scaling.png)
+
+## Measured power and optimization
+
+The H100 power study covers **8 configurations × 3 randomized trials**, with **2,023 raw telemetry readings**. All 24 workloads passed correctness checks.
+
+| FP32 GEMM, 2048 × 2048 | Sustained throughput | Measured board power | Estimated energy / launch |
+| --- | ---: | ---: | ---: |
+| Naive | 5.41 TFLOP/s | 471.4 W | 1.496 J |
+| Tiled | 8.19 TFLOP/s | 408.0 W | 0.856 J |
+
+Tiled GEMM achieved **1.51× throughput and 42.8% lower estimated energy per launch**. Power is sampled board telemetry; energy per launch combines steady mean power with sustained launch rate. [Raw evidence, all workloads, and sampling limits →](results/h100-power-2026-09-22/REPORT.md)
+
+Power models use separate artifacts and hold out entire trials. Linear regression achieved **3.11 W mean held-out RMSE** across three folds. This validates repeat-session behavior on one H100; cross-GPU generalization remains future work. [Model evidence →](results/h100-power-model-2026-09-22/REPORT.md) [Methodology and commands](docs/power_measurement.md) · [Integration review](docs/repository_integration.md) · [GPU validation plan](docs/gpu_validation_plan.md)
 
 ## How it works
 
@@ -100,7 +113,8 @@ Nsight Compute supplies optional hardware counters for exact scenarios. Model pr
 
 ```text
 benchmarks/                CUDA kernels, event timing, JSON worker
-src/gpu_kernel_analyzer/   CLI, runner, statistics, comparison, reporting
+src/gpu_kernel_analyzer/   Timing, sustained power capture, comparison, reporting
+src/gpu_power_pipeline/    Power models, telemetry adapters, registry, API
 configs/                   Baseline, scaling, and boundary suites
 results/                   Captured A100/H100 evidence and generated charts
 scripts/                   GPU validation and result regeneration
@@ -109,11 +123,11 @@ docs/                     Methodology, design, reproduction, and results
 ```
 
 ```bash
+python -m pip install -e ".[dev,power,api,lint]"
 python -m pytest -q
-python -m pip install -e ".[lint]"
 ruff check .
 ```
 
 GitHub Actions runs CPU tests on Python 3.10–3.12 and lint checks. The published H100 capture was validated locally; GPU performance is not tested by hosted CPU CI.
 
-[MIT license](LICENSE)
+[MIT license](LICENSE) · [Power-pipeline attribution](third_party/gpu-power-modeling/ORIGIN.md)

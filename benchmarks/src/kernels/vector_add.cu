@@ -55,6 +55,8 @@ BenchmarkRunOutput run_vector_add(std::size_t problem_size, int block_size, int 
     require_cuda_success(cudaGetLastError(), "vector_add warmup launch");
     require_cuda_success(cudaDeviceSynchronize(), "warmup sync");
 
+    run_sustained([&]() { vector_add_kernel<<<grid, block_size>>>(d_a, d_b, d_c, problem_size); });
+
     out.runtime_ms_samples.reserve(static_cast<std::size_t>(repeats));
     for (int i = 0; i < repeats; ++i) {
         require_cuda_success(cudaEventRecord(start), "event start");

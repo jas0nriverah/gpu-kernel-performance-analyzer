@@ -67,6 +67,8 @@ BenchmarkRunOutput run_reduction(std::size_t problem_size, int block_size, int w
     require_cuda_success(cudaGetLastError(), "reduction warmup launch");
     require_cuda_success(cudaDeviceSynchronize(), "warmup sync");
 
+    run_sustained([&]() { reduce_sum_block<<<grid, block_size, shared_mem>>>(d_in, d_block, problem_size); });
+
     out.runtime_ms_samples.reserve(static_cast<std::size_t>(repeats));
     for (int i = 0; i < repeats; ++i) {
         require_cuda_success(cudaEventRecord(start), "event start");
