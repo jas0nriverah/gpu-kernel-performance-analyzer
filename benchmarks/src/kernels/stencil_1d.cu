@@ -65,6 +65,8 @@ BenchmarkRunOutput run_stencil_1d(std::size_t problem_size, int block_size, int 
     require_cuda_success(cudaGetLastError(), "stencil_1d warmup launch");
     require_cuda_success(cudaDeviceSynchronize(), "warmup sync");
 
+    run_sustained([&]() { stencil_1d_kernel<<<grid, block_size>>>(d_in, d_out, problem_size); });
+
     out.runtime_ms_samples.reserve(static_cast<std::size_t>(repeats));
     for (int i = 0; i < repeats; ++i) {
         require_cuda_success(cudaEventRecord(start), "event start");

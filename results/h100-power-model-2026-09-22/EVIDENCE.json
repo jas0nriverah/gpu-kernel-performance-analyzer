@@ -1,0 +1,31 @@
+{
+  "dataset": "../h100-power-2026-09-22/steady_telemetry.csv",
+  "dataset_sha256": "ae69eaf4b0c2ed794cdc8177380d7c732963eb3b3df812fd85d2ed91d98c768d",
+  "evaluation_scope": "Three held-out-trial folds on one H100; not cross-GPU or unseen-workload validation.",
+  "source_dirty": true,
+  "power_source_sha256": {
+    "src/gpu_power_pipeline/__init__.py": "07e77f03c2c96c8855080e195a04d332281143241f1d6d2eadfcda6a4af847db",
+    "src/gpu_power_pipeline/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "src/gpu_power_pipeline/api.py": "87c8233349bf8b10a8bfafec40a7f3d0ef67aa169771dc04f696447bb17392bc",
+    "src/gpu_power_pipeline/audit.py": "c237c1df83b960666b1e51533d3125d4698114a7da10713e7defaf3115fb96b4",
+    "src/gpu_power_pipeline/cli.py": "86cafe627ea5196736fe34b150776d569bfbbfa21614c4675b45b9ac11c47142",
+    "src/gpu_power_pipeline/collection.py": "2e451a26daf066f4ad8fbfb53f054cbc616f86556ff4d33db28aa54bd518018b",
+    "src/gpu_power_pipeline/config.py": "b68eea6db7a149411bb0f9af269eaeb5d913159f1fa500747432847c9af048cb",
+    "src/gpu_power_pipeline/data.py": "d5deeb47b4249c1375ce5c8c242c4689ac3486423cf5192d76756aa6fcbd3fb8",
+    "src/gpu_power_pipeline/data_validation.py": "7334e528d330b7cab7fdce922a7f1771ff2aaf553f2ffe409414b8e3f911ada9",
+    "src/gpu_power_pipeline/evaluation.py": "76bb09c3d047db472158bfeb6119ee4c8fb3bc3d5cba77cf45ab19b67d86757b",
+    "src/gpu_power_pipeline/experiments.py": "e48d1601bcda3b437575e89d648f5d5b88d063fd5e18f3403719608372d272e6",
+    "src/gpu_power_pipeline/explainability.py": "fe9b2e2a70325144cd00e4243ca223a91cfe49f297b6b8f0e72ba828b253ce7a",
+    "src/gpu_power_pipeline/inference.py": "6b007ce5e77f31906ecaff522fa39180ee7456423780170ef46528c4304ccc6b",
+    "src/gpu_power_pipeline/monitoring.py": "e23d56d8bf032191926af1126e766808907063db8ddec151f8cf9456d4dad185",
+    "src/gpu_power_pipeline/persistence.py": "4a05b9fcb11e4262165d64a9cb1bad7750791de7dffeb1b63a6ee0402e46578c",
+    "src/gpu_power_pipeline/plotting.py": "5e91f18e058ec8884fd75c777dbb5e1556f9f6e7917859923172ce26fc01cc8c",
+    "src/gpu_power_pipeline/preprocessing.py": "5d8d41d7cc90caa6ae2f7ccf8e041ce114194205ca6ab919482590435e73609f",
+    "src/gpu_power_pipeline/quality.py": "1ffd87e2caa40e6c2c1f3061eb50559522841c4911cc5b9aecd8f436464edba1",
+    "src/gpu_power_pipeline/report.py": "fa01ba651970751c1e803c936dd6892c2aaa9fbc39611ce768a9135f79c31d52",
+    "src/gpu_power_pipeline/tracking.py": "e0509e13b5b419072a8e612c3b54d77d9ccf64211a3c1bcd0c715173a00e6cd1",
+    "src/gpu_power_pipeline/train.py": "a064a90ddfff52c4e64ec859fa7f06588dc4e5b55183160eceb76dab7bc2a361"
+  },
+  "model_bundle_location": "outputs/merge-review/h100-power-registry/linear_regression/20260923T024941Z",
+  "model_bundle_sha256": "0b392a8e21c5df2d5b23f5d10058fd5282ed9a1869154a37c2b7d1679836e86a"
+}

@@ -47,6 +47,7 @@ from .perf_model import (
     train_perf_model,
 )
 from .plotting import generate_basic_plots, generate_roofline_plot
+from .power import add_power_parser
 from .report import write_markdown_report
 from .runner import run_binary_for_scenario
 from .scenarios import load_and_expand_scenarios, scenario_warnings
@@ -756,6 +757,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     advise_parser.set_defaults(func=advise)
 
+    add_power_parser(sub)
     return parser
 
 

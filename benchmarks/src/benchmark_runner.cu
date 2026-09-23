@@ -18,12 +18,13 @@ struct CliArgs {
     int warmups = 0;
     int repeats = 0;
     bool verify = false;
+    double sustain_seconds = 0.0;
 };
 
 void print_usage() {
     std::cerr
         << "Usage: gpu_benchmark --kernel <name> --problem-size <N> --block-size <B>"
-        << " --warmups <W> --repeats <R> [--verify]\n"
+        << " --warmups <W> --repeats <R> [--verify] [--sustain-seconds <seconds>]\n"
         << "Kernels: vector_add, reduction, gemm_naive, gemm_tiled, memcpy_bandwidth, stencil_1d\n";
 }
 
@@ -41,6 +42,8 @@ CliArgs parse_args(int argc, char** argv) {
             args.warmups = std::stoi(argv[++i]);
         } else if (token == "--repeats" && i + 1 < argc) {
             args.repeats = std::stoi(argv[++i]);
+        } else if (token == "--sustain-seconds" && i + 1 < argc) {
+            args.sustain_seconds = std::stod(argv[++i]);
         } else if (token == "--verify") {
             args.verify = true;
         } else if (token == "--help" || token == "-h") {
@@ -92,6 +95,7 @@ void write_json_output(const BenchmarkRunOutput& result) {
 int run_benchmark_cli(int argc, char** argv) {
     try {
         const CliArgs args = parse_args(argc, argv);
+        set_sustain_seconds(args.sustain_seconds);
         BenchmarkRunOutput result{};
         if (args.kernel == "vector_add") {
             result = run_vector_add(args.problem_size, args.block_size, args.warmups, args.repeats, args.verify);

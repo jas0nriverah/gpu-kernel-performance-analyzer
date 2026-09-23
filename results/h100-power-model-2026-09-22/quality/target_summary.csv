@@ -1,0 +1,2 @@
+count,missing_targets,min,max,mean,median,p95,p99,outlier_ratio_p99_over_p50,invalid_grouped_metric_risk
+1123,0,403.86,483.86,441.6091807658059,441.12,481.818,483.2612,1.0955322814653607,False

@@ -1,0 +1,19 @@
+{
+  "health": {
+    "status": "ok",
+    "model_loaded": true,
+    "model_name": "linear_regression",
+    "model_version": "20260923T024941Z"
+  },
+  "prediction": {
+    "model_name": "linear_regression",
+    "model_version": "20260923T024941Z",
+    "predictions": [
+      {
+        "index": 0,
+        "predicted_power_watts": 405.84611269699866
+      }
+    ]
+  },
+  "batch_matches_api": true
+}
