@@ -2,7 +2,7 @@
 
 A reproducible GPU benchmarking toolkit that connects kernel speed, measured board power, and power-model validation. Run CUDA experiments, compare performance and energy tradeoffs, and retain the raw evidence behind every result.
 
-[Timing results](docs/real_gpu_validation.md) · [Power results](results/h100-power-2026-09-22/REPORT.md) · [Engineering decisions](docs/engineering.md) · [Compare runs](docs/comparisons.md) · [Reproduce](docs/reproducibility.md)
+[Timing results](docs/real_gpu_validation.md) · [Power results](results/h100-power-2026-09-22/REPORT.md) · [Correctness validation](docs/correctness.md) · [Engineering decisions](docs/engineering.md) · [Compare runs](docs/comparisons.md) · [Reproduce](docs/reproducibility.md)
 
 ## Results you can inspect
 
@@ -37,11 +37,11 @@ Power models use separate artifacts and hold out entire trials. Linear regressio
 ![System architecture showing Python orchestration, artifact storage, offline analysis, and the CUDA execution boundary](docs/assets/system-flow.svg)
 
 - **Bounded worker execution:** subprocess timeouts, checked JSON responses, exact scenario matching, and fail-fast correctness checks.
-- **Reproducible evidence:** every timing sample, GPU metadata, binary/config/source hashes, and separate metric provenance.
+- **Reproducible evidence:** every timing sample, GPU UUID and metadata, binary/config/source hashes, and separate metric provenance.
 - **Regression checks:** compare matching configurations, flag missing coverage and noisy measurements, export JSON/CSV/Markdown, and return CI exit codes.
 - **Portable validation:** CPU-only fixtures exercise orchestration and analysis; CUDA runs validate kernel behavior separately.
 
-The system uses local files and a CLI. [Design decisions and current limits →](docs/engineering.md)
+The system uses local files and a CLI. [Design decisions and current limits →](docs/engineering.md) · [Resume sweeps safely](docs/resumability.md) · [Tune block sizes](docs/autotuning.md)
 
 ## Try it without a GPU
 
@@ -94,6 +94,10 @@ python -m gpu_kernel_analyzer compare \
 
 The default statistic is median runtime. The gate fails for a slowdown over the threshold, excessive within-run variability, missing baseline coverage, or changed device/warmup/repeat settings. Cross-device comparisons require explicit opt-in and cannot pass a CI gate. [Policy and exit codes →](docs/comparisons.md)
 
+## Tune for measured energy
+
+The `autotune run` command searches existing kernel and block-size choices using correctness-gated sustained board power and runtime measurements. It selects the lowest-energy candidate within 5% of the fastest measured candidate, then independently checks the speed-eligible choices. The H100 vector-add example selected block 256 as the fastest practical recommendation; its unique energy advantage remains unconfirmed under the dispersion screen. [Autotuning guide and evidence →](docs/autotuning.md)
+
 ## Workloads and measurement scope
 
 | Kernel | What it exercises |
@@ -105,7 +109,7 @@ The default statistic is median runtime. The gate fails for a slowdown over the 
 | `gemm_naive` | FP32 matrix multiplication with direct global reads |
 | `gemm_tiled` | FP32 matrix multiplication using 16 × 16 shared-memory tiles |
 
-CUDA events measure kernel execution; allocations, host/device copies, and CPU verification are outside the timed interval. Reduction timing excludes the final CPU aggregation. GEMM uses ordinary FP32 arithmetic, not Tensor Cores or cuBLAS. Simple deterministic inputs provide smoke checks, not exhaustive numerical validation.
+CUDA events measure kernel execution; allocations, host/device copies, and CPU verification are outside the timed interval. Reduction timing excludes the final CPU aggregation. GEMM uses ordinary FP32 arithmetic, not Tensor Cores or cuBLAS. Verification uses seeded nonuniform inputs and checks every output, including every reduction block partial. Small GEMMs use arbitrary dense matrices; large GEMMs use a structured nonuniform input with a closed-form oracle to avoid cubic CPU work. [Oracle coverage and GPU validation details →](docs/correctness.md)
 
 Nsight Compute supplies optional hardware counters for exact scenarios. Model predictions stay in separate files. The optional ridge model and tuning advisor are exploratory; [usage and limitations](docs/modeling.md) are documented separately.
 

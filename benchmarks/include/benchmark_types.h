@@ -6,6 +6,7 @@
 
 struct DeviceInfo {
     std::string name = "unavailable";
+    std::string uuid;
     int compute_capability_major = -1;
     int compute_capability_minor = -1;
     int multiprocessor_count = -1;

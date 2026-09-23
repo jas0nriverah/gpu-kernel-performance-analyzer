@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "status": "unconfirmed",
+  "original_protocol_selection": "vector_add-n67108864-b256",
+  "original_command_exit_status": 0,
+  "selected_confirmation_passed": true,
+  "selected_confirmed_speed_passed": true,
+  "energy_comparison": {
+    "confirmed_lowest_energy_candidate_id": "vector_add-n67108864-b256",
+    "indistinguishable_energy_candidates": [
+      "vector_add-n67108864-b256",
+      "vector_add-n67108864-b512"
+    ],
+    "fastest_practical_recommendation_if_tied": "vector_add-n67108864-b256",
+    "unique_energy_minimum_confirmed": false,
+    "method": "Candidates are treated as indistinguishable if their discovery or confirmation energy median gap is no larger than the sum of the corresponding candidates' median absolute deviations for that phase. This is a descriptive dispersion screen, not a significance test."
+  },
+  "discovery_comparison": {
+    "energy_gap_j_per_launch": 0.0001480910207674324,
+    "summed_energy_mad_j_per_launch": 0.0006431218853829856,
+    "indistinguishable": true
+  },
+  "independent_confirmation_comparison": {
+    "energy_gap_j_per_launch": 0.001234276403787149,
+    "summed_energy_mad_j_per_launch": 0.0002692116474041495,
+    "indistinguishable": false
+  },
+  "confirmed_candidates": [
+    {
+      "candidate_id": "vector_add-n67108864-b256",
+      "runtime_s_per_launch_median": 0.00028835088257197697,
+      "runtime_s_per_launch_mad": 1.1530969725381205e-07,
+      "energy_j_per_launch_median": 0.13698511105417757,
+      "energy_j_per_launch_mad": 5.2273030326732695e-05,
+      "confirmation_passed": true,
+      "capture": "confirmations/vector_add-n67108864-b256"
+    },
+    {
+      "candidate_id": "vector_add-n67108864-b512",
+      "runtime_s_per_launch_median": 0.00029648655205533595,
+      "runtime_s_per_launch_mad": 8.556703557315547e-08,
+      "energy_j_per_launch_median": 0.13821938745796472,
+      "energy_j_per_launch_mad": 0.0002169386170774168,
+      "confirmation_passed": true,
+      "capture": "followup-b512/capture"
+    }
+  ],
+  "binary_sha256": "fe41e52a9d9556642e513d791341e6f98e97d3d72f431f1e3c19b317ff04f5dc",
+  "gpu_uuid": "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
+  "followup_manifest_sha256": "e9c5fcf846469f26966385a9ed5a39246904f78c18af3d02e57105116f525ba2",
+  "interpretation": "The first-run energy gap between b256 and b512 is smaller than their summed discovery MADs, so the original search does not establish a unique energy winner. Independent confirmation medians separate by more than their summed confirmation MADs, but the predeclared follow-up rule treats overlap in either discovery or confirmation as indistinguishable. b256 is the fastest practical recommendation among the indistinguishable speed-eligible pair, without a unique energy claim."
+}

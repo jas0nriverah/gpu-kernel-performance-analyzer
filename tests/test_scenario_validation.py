@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
@@ -37,6 +38,34 @@ def test_gemm_tiled_requires_block_size_16(tmp_path: Path):
         ),
     )
     with pytest.raises(ValueError, match="block_size=16"):
+        load_and_expand_scenarios(path)
+
+
+@pytest.mark.parametrize(
+    ("kernel", "size", "block", "message"),
+    [
+        ("reduction", 1024, 96, "power of two"),
+        ("vector_add", 1024, 2048, "1024 threads"),
+        ("vector_add", 2**63, 1, "allocation"),
+        ("gemm_naive", 46341, 16, "signed linear"),
+        ("gemm_tiled", 1_100_000, 16, "signed linear"),
+    ],
+)
+def test_rejects_invalid_cuda_launch_shapes(tmp_path: Path, kernel: str, size: int, block: int, message: str):
+    path = _write(
+        tmp_path / "invalid.json",
+        json.dumps({"sweeps": [{"kernel": kernel, "problem_sizes": [size], "block_sizes": [block]}]}),
+    )
+    with pytest.raises(ValueError, match=message):
+        load_and_expand_scenarios(path)
+
+
+def test_rejects_non_integer_launch_values(tmp_path: Path):
+    path = _write(
+        tmp_path / "invalid.json",
+        '{"sweeps":[{"kernel":"vector_add","problem_sizes":[1.5],"block_sizes":[64]}]}',
+    )
+    with pytest.raises(ValueError, match="must be an integer"):
         load_and_expand_scenarios(path)
 
 

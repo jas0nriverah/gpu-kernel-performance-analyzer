@@ -1,8 +1,11 @@
 #include "cuda_utils.h"
 
 #include <cuda_runtime.h>
+#include <limits>
 
 #include <stdexcept>
+#include <sstream>
+#include <iomanip>
 #include <string>
 
 void require_cuda_success(int code, const char* operation) {
@@ -10,6 +13,46 @@ void require_cuda_success(int code, const char* operation) {
         const char* error_name = cudaGetErrorString(static_cast<cudaError_t>(code));
         throw std::runtime_error(std::string("CUDA failure during ") + operation + ": " + error_name);
     }
+}
+
+namespace {
+cudaDeviceProp current_properties() {
+    int device = 0;
+    require_cuda_success(cudaGetDevice(&device), "cudaGetDevice for launch validation");
+    cudaDeviceProp prop{};
+    require_cuda_success(cudaGetDeviceProperties(&prop, device), "device properties for launch validation");
+    return prop;
+}
+}
+
+int validate_1d_launch(std::size_t n, int block_size) {
+    if (n == 0 || block_size <= 0) throw std::runtime_error("problem size and block size must be positive");
+    const cudaDeviceProp prop = current_properties();
+    if (block_size > prop.maxThreadsPerBlock || block_size > prop.maxThreadsDim[0])
+        throw std::runtime_error("1D block size exceeds device launch limits");
+    const std::size_t grid = n / static_cast<std::size_t>(block_size) +
+                             (n % static_cast<std::size_t>(block_size) != 0);
+    if (grid > static_cast<std::size_t>(prop.maxGridSize[0]) ||
+        grid > static_cast<std::size_t>(std::numeric_limits<int>::max()))
+        throw std::runtime_error("1D grid dimension exceeds device launch limits");
+    return static_cast<int>(grid);
+}
+
+unsigned int validate_gemm_launch(std::size_t n, int block_size) {
+    if (n == 0 || n > static_cast<std::size_t>(std::numeric_limits<int>::max()) || block_size <= 0)
+        throw std::runtime_error("GEMM size or block size exceeds supported kernel indexing");
+    if (n > static_cast<std::size_t>(std::numeric_limits<int>::max()) / n)
+        throw std::runtime_error("GEMM linear index would overflow signed kernel indexing");
+    const cudaDeviceProp prop = current_properties();
+    if (block_size > prop.maxThreadsDim[0] || block_size > prop.maxThreadsDim[1] ||
+        static_cast<long long>(block_size) * block_size > prop.maxThreadsPerBlock)
+        throw std::runtime_error("GEMM block exceeds device launch limits");
+    const std::size_t grid = n / static_cast<std::size_t>(block_size) +
+                             (n % static_cast<std::size_t>(block_size) != 0);
+    if (grid > static_cast<std::size_t>(prop.maxGridSize[0]) ||
+        grid > static_cast<std::size_t>(prop.maxGridSize[1]))
+        throw std::runtime_error("GEMM grid dimension exceeds device launch limits");
+    return static_cast<unsigned int>(grid);
 }
 
 DeviceInfo query_device_info() {
@@ -30,6 +73,13 @@ DeviceInfo query_device_info() {
     }
 
     info.name = prop.name;
+    std::ostringstream uuid;
+    uuid << std::hex << std::setfill('0');
+    for (unsigned int i = 0; i < sizeof(prop.uuid.bytes); ++i) {
+        if (i == 4 || i == 6 || i == 8 || i == 10) uuid << '-';
+        uuid << std::setw(2) << static_cast<unsigned int>(static_cast<unsigned char>(prop.uuid.bytes[i]));
+    }
+    info.uuid = "GPU-" + uuid.str();
     info.compute_capability_major = prop.major;
     info.compute_capability_minor = prop.minor;
     info.multiprocessor_count = prop.multiProcessorCount;

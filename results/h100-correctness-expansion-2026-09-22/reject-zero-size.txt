@@ -1,0 +1,5 @@
+exit=1
+stdout=
+stderr=ERROR: Missing required arguments or invalid values.
+Usage: gpu_benchmark --kernel <name> --problem-size <N> --block-size <B> --warmups <W> --repeats <R> [--verify] [--sustain-seconds <seconds>]
+Kernels: vector_add, reduction, gemm_naive, gemm_tiled, memcpy_bandwidth, stencil_1d
