@@ -48,5 +48,5 @@
   "binary_sha256": "fe41e52a9d9556642e513d791341e6f98e97d3d72f431f1e3c19b317ff04f5dc",
   "gpu_uuid": "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
   "followup_manifest_sha256": "e9c5fcf846469f26966385a9ed5a39246904f78c18af3d02e57105116f525ba2",
-  "interpretation": "The first-run energy gap between b256 and b512 is smaller than their summed discovery MADs, so the original search does not establish a unique energy winner. Independent confirmation medians separate by more than their summed confirmation MADs, but the prespecified rule treats overlap in either discovery or confirmation as indistinguishable. b256 is the fastest practical recommendation among the indistinguishable speed-eligible pair, without a unique energy claim."
+  "interpretation": "The first-run energy gap between b256 and b512 is smaller than their summed discovery MADs, so the original search does not establish a unique energy winner. Independent confirmation medians separate by more than their summed confirmation MADs, but the predeclared follow-up rule treats overlap in either discovery or confirmation as indistinguishable. b256 is the fastest practical recommendation among the indistinguishable speed-eligible pair, without a unique energy claim."
 }
