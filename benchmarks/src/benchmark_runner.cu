@@ -18,6 +18,7 @@ struct CliArgs {
     int warmups = 0;
     int repeats = 0;
     bool verify = false;
+    bool device_info_only = false;
     double sustain_seconds = 0.0;
 };
 
@@ -46,6 +47,8 @@ CliArgs parse_args(int argc, char** argv) {
             args.sustain_seconds = std::stod(argv[++i]);
         } else if (token == "--verify") {
             args.verify = true;
+        } else if (token == "--device-info") {
+            args.device_info_only = true;
         } else if (token == "--help" || token == "-h") {
             print_usage();
             std::exit(0);
@@ -53,7 +56,7 @@ CliArgs parse_args(int argc, char** argv) {
             throw std::runtime_error("Unknown or incomplete argument: " + token);
         }
     }
-    if (args.kernel.empty() || args.problem_size == 0 || args.block_size <= 0 || args.warmups < 0 || args.repeats <= 0) {
+    if (!args.device_info_only && (args.kernel.empty() || args.problem_size == 0 || args.block_size <= 0 || args.warmups < 0 || args.repeats <= 0)) {
         throw std::runtime_error("Missing required arguments or invalid values.");
     }
     return args;
@@ -82,6 +85,7 @@ void write_json_output(const BenchmarkRunOutput& result) {
     std::cout << "\"device\":{";
     std::cout << "\"metadata_available\":" << (result.device_info.metadata_available ? "true" : "false") << ",";
     std::cout << "\"name\":\"" << result.device_info.name << "\",";
+    std::cout << "\"uuid\":\"" << result.device_info.uuid << "\",";
     std::cout << "\"compute_capability_major\":" << result.device_info.compute_capability_major << ",";
     std::cout << "\"compute_capability_minor\":" << result.device_info.compute_capability_minor << ",";
     std::cout << "\"multiprocessor_count\":" << result.device_info.multiprocessor_count << ",";
@@ -95,6 +99,16 @@ void write_json_output(const BenchmarkRunOutput& result) {
 int run_benchmark_cli(int argc, char** argv) {
     try {
         const CliArgs args = parse_args(argc, argv);
+        if (args.device_info_only) {
+            const DeviceInfo info = query_device_info();
+            std::cout << "{\"device\":{\"metadata_available\":" << (info.metadata_available ? "true" : "false")
+                      << ",\"name\":\"" << info.name << "\",\"uuid\":\"" << info.uuid
+                      << "\",\"compute_capability_major\":" << info.compute_capability_major
+                      << ",\"compute_capability_minor\":" << info.compute_capability_minor
+                      << ",\"multiprocessor_count\":" << info.multiprocessor_count
+                      << ",\"total_global_mem_bytes\":" << info.total_global_mem_bytes << "}}" << std::endl;
+            return info.metadata_available ? 0 : 1;
+        }
         set_sustain_seconds(args.sustain_seconds);
         BenchmarkRunOutput result{};
         if (args.kernel == "vector_add") {

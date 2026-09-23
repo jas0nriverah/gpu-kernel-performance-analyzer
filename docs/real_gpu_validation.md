@@ -66,8 +66,10 @@ Separate Nsight Compute captures profiled one launch after warmup for each scena
 ## Correctness and measurement limits
 
 - All 264 H100 scenario executions requested verification and passed: 24 baseline, 222 repeated scaling, and 18 boundary cases. GEMM checks every output element; the historical implementation checked eight diagonal entries.
-- Boundary cases cover sizes 1, 33, and 1003 for streaming/reduction kernels and 1, 17, and 257 for GEMM. They test partial blocks/tiles, not a comprehensive numeric oracle. Inputs remain simple deterministic values.
+- Boundary cases cover sizes 1, 33, and 1003 for streaming/reduction kernels and 1, 17, and 257 for GEMM. They test partial blocks/tiles, not a comprehensive numeric oracle. Inputs in this historical capture were simple deterministic values.
 - Timings exclude allocation, transfers, and host-side verification. Reduction measures block partial sums; the final host aggregation is not timed.
+
+The published timings above predate the seeded nonuniform correctness inputs. Later H100 checks for the updated source, including full-output CPU references and launch rejection cases, are recorded in [correctness validation](correctness.md) and retained under `outputs/expansion-validation/`.
 - Declared byte counts estimate useful traffic, not actual DRAM transfers. In particular, both GEMMs use the same `3 × N² × sizeof(float)` logical footprint. The arithmetic-intensity estimate does not distinguish their actual traffic. Cached small workloads and stencil reuse further limit DRAM interpretations.
 - Derived GFLOP/s is not a hardware operation count. Roofline points and heuristic classifications are estimates, not proof of a measured bottleneck. Hardware ceilings were not supplied for this capture.
 - Three sequential sweeps show local repeatability, not broad reproducibility across machines, power states, or software versions.

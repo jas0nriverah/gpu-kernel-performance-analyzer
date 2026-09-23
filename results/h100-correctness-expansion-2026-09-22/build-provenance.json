@@ -1,0 +1,26 @@
+{
+  "validated_at_utc": "2026-09-23T03:31:27.183717+00:00",
+  "build_command": "cmake -S benchmarks -B /tmp/gpu-expansion-build -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_ARCHITECTURES=90 && cmake --build /tmp/gpu-expansion-build -j2",
+  "binary": "/tmp/gpu-expansion-build/gpu_benchmark",
+  "binary_sha256": "fe41e52a9d9556642e513d791341e6f98e97d3d72f431f1e3c19b317ff04f5dc",
+  "build_architecture": "SM_90",
+  "compiler_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Tue_Jun_09_02:43:40_PM_PDT_2026\nCuda compilation tools, release 13.3, V13.3.73\nBuild cuda_13.3.r13.3/compiler.38244171_0",
+  "source_sha256": {
+    "benchmarks/CMakeLists.txt": "ceae6d75ccf2d56082fa63def2ea3513a9f275ceb1e2560a580de8514fb7e8e9",
+    "benchmarks/include/benchmark_types.h": "dfb1affc30c3c1e5d0f1bb14125bb9519b813efde2d51810bc01a8773652814e",
+    "benchmarks/include/cuda_utils.h": "bf449221a3eb2ad0431a833f9146a5f50f0164c7e714f09c212efd9864d9c236",
+    "benchmarks/include/kernel_ops.h": "c4c358faa52276606eac0906f8fdf7739df6d5a05d415286381af09e7704e883",
+    "benchmarks/include/validation.h": "fa44dc3644d9b4a644248320fef7f028a488a868ac3ae53c8bf26d600311dff3",
+    "benchmarks/src/benchmark_runner.cu": "d845f2efd43bacea89898e5300698fe94d4513cc7c7846b2e6f1d68f04d8bb05",
+    "benchmarks/src/cuda_utils.cu": "ef9d3146761191391d3a484601926e23f6d90ef36e206238706aebf8ed36b5cd",
+    "benchmarks/src/kernels/gemm_naive.cu": "1990aaaac67237238ee25ce86a665104d09774e9775f797c2ed59b753f2ae9c4",
+    "benchmarks/src/kernels/gemm_tiled.cu": "57b57fef731c2209204c4594d258f2af513fbe2d1226ec3eec517b3c56a0d25f",
+    "benchmarks/src/kernels/memcpy_bandwidth.cu": "d9fd9db38dae8b0acc802a69b6ecd0c5cf6090e53fea6c15ae65e8ca13ffcfc4",
+    "benchmarks/src/kernels/reduction.cu": "21c35c9dc78533c62073b106e58787854574495d815ac1d62b9bbb750e378b15",
+    "benchmarks/src/kernels/stencil_1d.cu": "5550e38b22d0cc82aade12de5ed24090407a287706a7713d85b64825163a034c",
+    "benchmarks/src/kernels/vector_add.cu": "f715117feec49fc75d3efc6e42eccb956a336ba52d3b33ab882d7e46f28687f3",
+    "src/gpu_kernel_analyzer/scenarios.py": "f73778341bdeb9e1b99d10881cd67653ff1422290f8870d336396a38b6defd70",
+    "configs/benchmark_scenarios.yaml": "939c299649d41c1bf8d425897373171110afbfc759d265f83a3ba6326cd0b012",
+    "configs/correctness_edges.json": "e3903841274b8c66cfc912f341957cab06187cc3040e833ef1b01df508ef0a15"
+  }
+}

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import itertools
 import json
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -24,10 +25,6 @@ SUPPORTED_KERNELS = {
 # must be 16 (16x16 threads). Enforce this at config-expansion time to fail fast
 # instead of only failing inside the CUDA binary.
 FIXED_BLOCK_SIZE_KERNELS = {"gemm_tiled": 16}
-
-# Kernels that read a power-of-two-friendly reduction tree benefit from block
-# sizes that are a power of two; flag others as a soft warning.
-POWER_OF_TWO_BLOCK_KERNELS = {"reduction"}
 
 # Kernels launched with a 1D block, where block_size is the total thread count.
 # (GEMM kernels use a 2D block_size x block_size tile, so the warp-multiple check
@@ -80,10 +77,24 @@ def load_and_expand_scenarios(path: Path) -> list[Scenario]:
         _require(repeats > 0, "repeats must be > 0")
 
         for problem_size, block_size in itertools.product(problem_sizes, block_sizes):
-            ps = int(problem_size)
-            bs = int(block_size)
+            _require(isinstance(problem_size, int) and not isinstance(problem_size, bool), "problem_size must be an integer")
+            _require(isinstance(block_size, int) and not isinstance(block_size, bool), "block_size must be an integer")
+            ps = problem_size
+            bs = block_size
             _require(ps > 0, "problem_size must be > 0")
             _require(bs > 0, "block_size must be > 0")
+            _require(bs <= 1024, "block_size exceeds CUDA's maximum 1024 threads per block")
+            _require(ps <= sys.maxsize // 4, "problem_size exceeds safe float allocation size")
+            if kernel in ONE_D_BLOCK_KERNELS:
+                grid = (ps + bs - 1) // bs
+                _require(grid <= 2**31 - 1, "1D launch grid exceeds CUDA's maximum x dimension")
+            if kernel == "reduction":
+                _require((bs & (bs - 1)) == 0, "reduction block_size must be a power of two")
+            if kernel in {"gemm_naive", "gemm_tiled"}:
+                _require(bs * bs <= 1024, "GEMM block exceeds CUDA's maximum 1024 threads per block")
+                _require(ps <= 46340, "GEMM problem_size overflows signed linear kernel indexing")
+                _require(ps <= 65535 * bs, "GEMM launch grid exceeds CUDA's y dimension")
+                _require(ps <= int((sys.maxsize // 4) ** 0.5), "GEMM allocation size overflows")
             required_block = FIXED_BLOCK_SIZE_KERNELS.get(kernel)
             _require(
                 required_block is None or bs == required_block,
@@ -121,6 +132,4 @@ def scenario_warnings(scenarios: list[Scenario]) -> list[str]:
             warnings.append(f"{tag}: repeats={s.repeats} is low; statistics may be unstable.")
         if s.kernel in ONE_D_BLOCK_KERNELS and s.block_size % 32 != 0:
             warnings.append(f"{tag}: block_size is not a multiple of the 32-thread warp; expect underutilization.")
-        if s.kernel in POWER_OF_TWO_BLOCK_KERNELS and (s.block_size & (s.block_size - 1)) != 0:
-            warnings.append(f"{tag}: reduction block_size should be a power of two for the tree reduction.")
     return warnings

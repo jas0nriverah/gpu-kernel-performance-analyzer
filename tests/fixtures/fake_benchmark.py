@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 
 _FLOAT_BYTES = 4
 
@@ -54,6 +55,17 @@ def byte_and_flop_model(kernel: str, problem_size: int) -> tuple[int, float]:
 
 
 def main() -> None:
+    if "--device-info" in sys.argv[1:]:
+        print(json.dumps({"device": {
+            "metadata_available": True,
+            "name": "Fake GPU",
+            "uuid": "fixture-0",
+            "compute_capability_major": 9,
+            "compute_capability_minor": 0,
+            "multiprocessor_count": 32,
+            "total_global_mem_bytes": 16_000_000_000,
+        }}))
+        return
     args = parse_args()
     factor = _SPEED_FACTOR.get(args.kernel, 1.0)
     base = max(0.01, args.problem_size / 1_000_000.0) * factor

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import shlex
 import subprocess
 from datetime import datetime, timezone
@@ -49,7 +50,17 @@ from .perf_model import (
 from .plotting import generate_basic_plots, generate_roofline_plot
 from .power import add_power_parser
 from .report import write_markdown_report
-from .runner import run_binary_for_scenario
+from .resumability import (
+    CHECKPOINT_NAME,
+    current_device_identity,
+    digest,
+    load_checkpoint,
+    new_checkpoint,
+    probe_live_device_identity,
+    save_checkpoint,
+    sweep_lock,
+)
+from .runner import run_binary_for_scenario, validate_binary_output
 from .scenarios import load_and_expand_scenarios, scenario_warnings
 from .system_info import detect_ncu, runtime_environment
 
@@ -89,8 +100,6 @@ def run_sweep(args: argparse.Namespace) -> int:
     binary = Path(args.binary)
     scenario_file = Path(args.scenarios)
     run_dir = Path(args.outdir)
-    run_dir.mkdir(parents=True, exist_ok=True)
-
     scenarios = load_and_expand_scenarios(scenario_file)
     for warning in scenario_warnings(scenarios):
         print(f"WARNING: {warning}")
@@ -103,151 +112,256 @@ def run_sweep(args: argparse.Namespace) -> int:
             )
         return 0
 
-    if any(run_dir.iterdir()):
+    resume = bool(getattr(args, "resume", False))
+    run_dir.parent.mkdir(parents=True, exist_ok=True)
+    work_dir = run_dir.with_name(f".{run_dir.name}.partial")
+    if run_dir.exists() and any(run_dir.iterdir()):
         raise ValueError(f"Output directory is not empty; choose a new run directory: {run_dir}")
+    if resume:
+        if not work_dir.exists():
+            raise ValueError(f"Cannot resume: checkpoint directory does not exist: {work_dir}")
+    else:
+        if work_dir.exists() and any(work_dir.iterdir()):
+            raise ValueError(f"Interrupted sweep exists; pass --resume to continue: {work_dir}")
+        work_dir.mkdir(parents=True, exist_ok=True)
 
-    run_id = args.run_id or _new_run_id()
-    timing_rows: list[dict[str, Any]] = []
-    summary_rows: list[dict[str, Any]] = []
-    provenance_rows: list[dict[str, Any]] = []
-    first_device: dict[str, Any] | None = None
-
-    for scenario in scenarios:
-        binary_result = run_binary_for_scenario(
-            binary=binary, scenario=scenario, interpreter=args.binary_interpreter,
-            timeout_seconds=args.timeout_seconds,
-        )
-        raw = binary_result.raw
-
-        samples = binary_result.runtime_ms_samples
-        stats = summarize_runtime(samples)
-        bytes_moved = _ensure_int(raw.get("bytes_moved"), field="bytes_moved")
-        flops = _ensure_float(raw.get("flops"), field="flops")
-        derived = compute_derived_metrics(bytes_moved=bytes_moved, flops=flops, runtime_ms_mean=stats.runtime_ms_mean)
-
-        for idx, sample_ms in enumerate(samples):
-            timing_rows.append(
-                {
-                    "run_id": run_id,
-                    "kernel": scenario.kernel,
-                    "problem_size": scenario.problem_size,
-                    "block_size": scenario.block_size,
-                    "sample_index": idx,
-                    "runtime_ms": sample_ms,
-                }
-            )
-
-        summary_rows.append(
-            {
-                "run_id": run_id,
-                "kernel": scenario.kernel,
-                "problem_size": scenario.problem_size,
-                "block_size": scenario.block_size,
-                "warmups": scenario.warmups,
-                "repeats": scenario.repeats,
-                "verification_passed": scenario.verify and raw.get("verification_passed") is True,
-                "runtime_ms_mean": stats.runtime_ms_mean,
-                "runtime_ms_median": stats.runtime_ms_median,
-                "runtime_ms_min": stats.runtime_ms_min,
-                "runtime_ms_max": stats.runtime_ms_max,
-                "runtime_ms_p95": stats.runtime_ms_p95,
-                "runtime_ms_stddev": stats.runtime_ms_stddev,
-                "runtime_ms_cv": stats.runtime_ms_cv,
-                "effective_bandwidth_GBps": derived["effective_bandwidth_GBps"],
-                "effective_GFLOPs": derived["effective_GFLOPs"],
-                "arithmetic_intensity": derived["arithmetic_intensity"],
-            }
-        )
-
-        metric_entries = [
-            ("runtime_ms", stats.runtime_ms_mean, STATUS_MEASURED, "cuda_events"),
-            (
-                "effective_bandwidth_GBps",
-                derived["effective_bandwidth_GBps"],
-                STATUS_DERIVED,
-                "bytes_moved/runtime_ms",
-            ),
-            ("effective_GFLOPs", derived["effective_GFLOPs"], STATUS_DERIVED, "flops/runtime_ms"),
-            ("arithmetic_intensity", derived["arithmetic_intensity"], STATUS_DERIVED, "flops/bytes_moved"),
-        ]
-        for name, value, status, source in metric_entries:
-            provenance_rows.append(
-                {
-                    "run_id": run_id,
-                    "kernel": scenario.kernel,
-                    "problem_size": scenario.problem_size,
-                    "block_size": scenario.block_size,
-                    "metric_name": name,
-                    "metric_value": value,
-                    "status": status,
-                    "source": source,
-                }
-            )
-
-        device = raw.get("device", {})
-        if not isinstance(device, dict):
-            device = {}
-        if first_device is None:
-            first_device = device
-
-        metadata_available = bool(device.get("metadata_available", False))
-        provenance_rows.append(
-            {
-                "run_id": run_id,
-                "kernel": scenario.kernel,
-                "problem_size": scenario.problem_size,
-                "block_size": scenario.block_size,
-                "metric_name": "device_metadata",
-                "metric_value": json.dumps(device, sort_keys=True),
-                "status": STATUS_MEASURED if metadata_available else STATUS_UNAVAILABLE,
-                "source": "cuda_runtime_api",
-            }
-        )
-
-        for metric_name, status in default_unavailable_profiler_metrics().items():
-            provenance_rows.append(
-                {
-                    "run_id": run_id,
-                    "kernel": scenario.kernel,
-                    "problem_size": scenario.problem_size,
-                    "block_size": scenario.block_size,
-                    "metric_name": metric_name,
-                    "metric_value": "",
-                    "status": status,
-                    "source": "nsight_compute_not_run",
-                }
-            )
-
-    write_csv(run_dir / "timing_samples.csv", rows=timing_rows, fieldnames=TIMING_COLUMNS)
-    write_csv(run_dir / "benchmark_summary.csv", rows=summary_rows, fieldnames=SUMMARY_COLUMNS)
-    write_csv(run_dir / "metrics_provenance.csv", rows=provenance_rows, fieldnames=PROVENANCE_COLUMNS)
-
-    manifest = {
-        "run_id": run_id,
-        "created_at_utc": utc_now_iso(),
-        "metrics_policy_version": "mvp_v1",
-        "benchmark_binary": str(binary.resolve()),
-        "benchmark_binary_sha256": sha256_file(binary),
+    identity = {
+        "binary": str(binary.resolve()),
+        "binary_sha256": sha256_file(binary),
         "scenario_file": str(scenario_file.resolve()),
         "scenario_file_sha256": sha256_file(scenario_file),
-        "scenario_count": len(scenarios),
-        "git_commit": _get_git_commit(),
-        "source_sha256": {
-            str(path): sha256_file(path)
-            for root in (Path("benchmarks"), Path("src/gpu_kernel_analyzer"))
-            for path in sorted(root.rglob("*"))
-            if path.is_file() and path.suffix in {".py", ".cu", ".h", ".txt"}
+        "expanded_scenarios": [scenario.__dict__ for scenario in scenarios],
+        "binary_interpreter": args.binary_interpreter,
+        "timeout_seconds": args.timeout_seconds,
+        "protocol": "benchmark-json-v1",
+        "analyzer_code_sha256": {
+            name: sha256_file(Path(__file__).with_name(name))
+            for name in ("cli.py", "resumability.py", "runner.py", "metrics.py")
         },
-        "runtime_environment": runtime_environment(),
-        "device": first_device or {"metadata_available": False},
-        "nsight_compute": detect_ncu(),
     }
-    write_json(run_dir / "run_manifest.json", payload=manifest)
+    checkpoint_path = work_dir / CHECKPOINT_NAME
+    with sweep_lock(work_dir):
+        if run_dir.exists() and any(run_dir.iterdir()):
+            raise ValueError(f"Output directory became nonempty before sweep start: {run_dir}")
+        if resume and not work_dir.exists():
+            raise ValueError(f"Cannot resume: checkpoint directory disappeared: {work_dir}")
+        if not resume and checkpoint_path.exists():
+            raise ValueError(f"Interrupted sweep exists; pass --resume to continue: {work_dir}")
+        if resume:
+            if not checkpoint_path.exists():
+                raise ValueError(f"Cannot resume: missing checkpoint {checkpoint_path}")
+            checkpoint = load_checkpoint(checkpoint_path, identity)
+            run_id = checkpoint["run_id"]
+            if args.run_id and args.run_id != run_id:
+                raise ValueError("Requested --run-id does not match the interrupted sweep")
+        else:
+            run_id = args.run_id or _new_run_id()
+            checkpoint = new_checkpoint(identity, run_id)
+            save_checkpoint(checkpoint_path, checkpoint)
 
-    print(f"Wrote run artifacts to: {run_dir.resolve()}")
-    print(f"Scenarios executed: {len(scenarios)}")
-    return 0
+        completed = {entry["index"]: entry["raw"] for entry in checkpoint["completed"]}
+        for index, raw in completed.items():
+            if index >= len(scenarios):
+                raise ValueError("Sweep checkpoint contains a scenario index outside the current sweep")
+            validate_binary_output(raw, scenarios[index])
+        if completed:
+            current_identity = probe_live_device_identity(binary, args.binary_interpreter, args.timeout_seconds)
+            saved_identity = checkpoint.get("device_identity")
+            if current_identity is None:
+                raise ValueError("Cannot establish live GPU identity with --device-info; refusing to resume completed scenarios")
+            if saved_identity != current_identity:
+                raise ValueError("Current GPU identity differs from the checkpoint; refusing to mix devices")
+        results: list[dict[str, Any]] = []
+        prior_device = None
+        for raw in completed.values():
+            dev = raw.get("device", {})
+            if not isinstance(dev, dict):
+                dev = {}
+            if prior_device is None:
+                prior_device = dev
+            elif dev != prior_device:
+                raise ValueError("Checkpoint contains results from multiple devices")
+        for index, scenario in enumerate(scenarios):
+            if index in completed:
+                raw = completed[index]
+            else:
+                raw = run_binary_for_scenario(
+                    binary=binary, scenario=scenario, interpreter=args.binary_interpreter,
+                    timeout_seconds=args.timeout_seconds,
+                ).raw
+                device = raw.get("device", {})
+                if not isinstance(device, dict):
+                    device = {}
+                if prior_device is None:
+                    prior_device = device
+                    checkpoint["device_identity"] = current_device_identity(device)
+                    if device.get("metadata_available") and checkpoint["device_identity"] is None:
+                        raise RuntimeError("Cannot establish GPU UUID/PCI identity with nvidia-smi; refusing to checkpoint GPU evidence")
+                elif device != prior_device:
+                    raise RuntimeError("Sweep scenarios reported different devices; refusing to mix device evidence")
+                live_identity = current_device_identity(device)
+                if checkpoint.get("device_identity") is not None and live_identity != checkpoint["device_identity"]:
+                    raise RuntimeError("GPU identity changed during the sweep; refusing to mix device evidence")
+                entry = {"index": index, "raw": raw, "raw_sha256": digest(raw)}
+                checkpoint["completed"].append(entry)
+                checkpoint["completed"].sort(key=lambda item: item["index"])
+                save_checkpoint(checkpoint_path, checkpoint)
+                completed[index] = raw
+            results.append(raw)
 
+        # Build in a sibling directory. The checkpoint remains authoritative until an
+        # atomic rename publishes the complete, validated run directory.
+        staging = run_dir.with_name(f".{run_dir.name}.publish-{os.getpid()}")
+        if staging.exists():
+            import shutil
+            shutil.rmtree(staging)
+        staging.mkdir(parents=True)
+        timing_rows: list[dict[str, Any]] = []
+        summary_rows: list[dict[str, Any]] = []
+        provenance_rows: list[dict[str, Any]] = []
+        first_device: dict[str, Any] | None = None
+
+        for scenario_index, scenario in enumerate(scenarios):
+            raw = results[scenario_index]
+
+            samples = [float(v) for v in raw["runtime_ms_samples"]]
+            stats = summarize_runtime(samples)
+            bytes_moved = _ensure_int(raw.get("bytes_moved"), field="bytes_moved")
+            flops = _ensure_float(raw.get("flops"), field="flops")
+            derived = compute_derived_metrics(bytes_moved=bytes_moved, flops=flops, runtime_ms_mean=stats.runtime_ms_mean)
+
+            for idx, sample_ms in enumerate(samples):
+                timing_rows.append(
+                    {
+                        "run_id": run_id,
+                        "kernel": scenario.kernel,
+                        "problem_size": scenario.problem_size,
+                        "block_size": scenario.block_size,
+                        "sample_index": idx,
+                        "runtime_ms": sample_ms,
+                    }
+                )
+
+            summary_rows.append(
+                {
+                    "run_id": run_id,
+                    "kernel": scenario.kernel,
+                    "problem_size": scenario.problem_size,
+                    "block_size": scenario.block_size,
+                    "warmups": scenario.warmups,
+                    "repeats": scenario.repeats,
+                    "verification_passed": scenario.verify and raw.get("verification_passed") is True,
+                    "runtime_ms_mean": stats.runtime_ms_mean,
+                    "runtime_ms_median": stats.runtime_ms_median,
+                    "runtime_ms_min": stats.runtime_ms_min,
+                    "runtime_ms_max": stats.runtime_ms_max,
+                    "runtime_ms_p95": stats.runtime_ms_p95,
+                    "runtime_ms_stddev": stats.runtime_ms_stddev,
+                    "runtime_ms_cv": stats.runtime_ms_cv,
+                    "effective_bandwidth_GBps": derived["effective_bandwidth_GBps"],
+                    "effective_GFLOPs": derived["effective_GFLOPs"],
+                    "arithmetic_intensity": derived["arithmetic_intensity"],
+                }
+            )
+
+            metric_entries = [
+                ("runtime_ms", stats.runtime_ms_mean, STATUS_MEASURED, "cuda_events"),
+                (
+                    "effective_bandwidth_GBps",
+                    derived["effective_bandwidth_GBps"],
+                    STATUS_DERIVED,
+                    "bytes_moved/runtime_ms",
+                ),
+                ("effective_GFLOPs", derived["effective_GFLOPs"], STATUS_DERIVED, "flops/runtime_ms"),
+                ("arithmetic_intensity", derived["arithmetic_intensity"], STATUS_DERIVED, "flops/bytes_moved"),
+            ]
+            for name, value, status, source in metric_entries:
+                provenance_rows.append(
+                    {
+                        "run_id": run_id,
+                        "kernel": scenario.kernel,
+                        "problem_size": scenario.problem_size,
+                        "block_size": scenario.block_size,
+                        "metric_name": name,
+                        "metric_value": value,
+                        "status": status,
+                        "source": source,
+                    }
+                )
+
+            device = raw.get("device", {})
+            if not isinstance(device, dict):
+                device = {}
+            if first_device is None:
+                first_device = device
+            elif device != first_device:
+                raise RuntimeError("Sweep scenarios reported different devices; refusing to mix device evidence")
+
+            metadata_available = bool(device.get("metadata_available", False))
+            provenance_rows.append(
+                {
+                    "run_id": run_id,
+                    "kernel": scenario.kernel,
+                    "problem_size": scenario.problem_size,
+                    "block_size": scenario.block_size,
+                    "metric_name": "device_metadata",
+                    "metric_value": json.dumps(device, sort_keys=True),
+                    "status": STATUS_MEASURED if metadata_available else STATUS_UNAVAILABLE,
+                    "source": "cuda_runtime_api",
+                }
+            )
+
+            for metric_name, status in default_unavailable_profiler_metrics().items():
+                provenance_rows.append(
+                    {
+                        "run_id": run_id,
+                        "kernel": scenario.kernel,
+                        "problem_size": scenario.problem_size,
+                        "block_size": scenario.block_size,
+                        "metric_name": metric_name,
+                        "metric_value": "",
+                        "status": status,
+                        "source": "nsight_compute_not_run",
+                    }
+                )
+
+        write_csv(staging / "timing_samples.csv", rows=timing_rows, fieldnames=TIMING_COLUMNS)
+        write_csv(staging / "benchmark_summary.csv", rows=summary_rows, fieldnames=SUMMARY_COLUMNS)
+        write_csv(staging / "metrics_provenance.csv", rows=provenance_rows, fieldnames=PROVENANCE_COLUMNS)
+
+        manifest = {
+            "run_id": run_id,
+            "created_at_utc": utc_now_iso(),
+            "metrics_policy_version": "mvp_v1",
+            "benchmark_binary": str(binary.resolve()),
+            "benchmark_binary_sha256": sha256_file(binary),
+            "scenario_file": str(scenario_file.resolve()),
+            "scenario_file_sha256": sha256_file(scenario_file),
+            "scenario_count": len(scenarios),
+            "git_commit": _get_git_commit(),
+            "source_sha256": {
+                str(path): sha256_file(path)
+                for root in (Path("benchmarks"), Path("src/gpu_kernel_analyzer"))
+                for path in sorted(root.rglob("*"))
+                if path.is_file() and path.suffix in {".py", ".cu", ".h", ".txt"}
+            },
+            "runtime_environment": runtime_environment(),
+            "device": first_device or {"metadata_available": False},
+            "nsight_compute": detect_ncu(),
+        }
+        write_json(staging / "run_manifest.json", payload=manifest)
+
+        report = validate_run_directory(staging)
+        if not report.ok:
+            raise RuntimeError("Generated run artifacts failed validation: " + "; ".join(report.errors))
+        if run_dir.exists():
+            run_dir.rmdir()
+        os.replace(staging, run_dir)
+        import shutil
+        shutil.rmtree(work_dir)
+        print(f"Wrote run artifacts to: {run_dir.resolve()}")
+        print(f"Scenarios executed: {len(scenarios)}")
+        return 0
 
 def validate_artifacts(args: argparse.Namespace) -> int:
     run_dir = Path(args.run_dir)
@@ -559,6 +673,7 @@ def build_parser() -> argparse.ArgumentParser:
     sweep.add_argument("--outdir", required=True, help="Output run directory.")
     sweep.add_argument("--run-id", default=None, help="Optional run id override.")
     sweep.add_argument("--dry-run", action="store_true", help="Expand scenarios without executing benchmark binary.")
+    sweep.add_argument("--resume", action="store_true", help="Resume an interrupted sweep from its validated checkpoint.")
     sweep.add_argument("--timeout-seconds", type=float, default=120.0, help="Per-scenario subprocess timeout (default: 120s).")
     sweep.set_defaults(func=run_sweep)
 
@@ -758,6 +873,8 @@ def build_parser() -> argparse.ArgumentParser:
     advise_parser.set_defaults(func=advise)
 
     add_power_parser(sub)
+    from .autotune import add_autotune_parser
+    add_autotune_parser(sub)
     return parser
 
 

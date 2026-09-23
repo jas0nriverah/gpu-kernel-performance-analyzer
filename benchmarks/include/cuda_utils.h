@@ -4,6 +4,8 @@
 
 DeviceInfo query_device_info();
 void require_cuda_success(int code, const char* operation);
+int validate_1d_launch(std::size_t problem_size, int block_size);
+unsigned int validate_gemm_launch(std::size_t problem_size, int block_size);
 
 #include <functional>
 

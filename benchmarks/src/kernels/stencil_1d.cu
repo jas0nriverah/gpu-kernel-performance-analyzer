@@ -1,6 +1,7 @@
 #include "kernel_ops.h"
 
 #include "cuda_utils.h"
+#include "validation.h"
 
 #include <cuda_runtime.h>
 
@@ -40,20 +41,23 @@ BenchmarkRunOutput run_stencil_1d(std::size_t problem_size, int block_size, int 
     out.repeats = repeats;
     out.verify = verify;
     // Counts unique DRAM traffic: read N + write N elements.
+    const std::size_t bytes = checked_bytes(problem_size, sizeof(float));
+    const int grid = validate_1d_launch(problem_size, block_size);
+    if (problem_size > static_cast<std::size_t>(-1) / (2 * sizeof(float))) throw std::runtime_error("byte count overflows");
     out.bytes_moved = 2ULL * problem_size * sizeof(float);
     // 3 multiplies + 2 adds per element.
     out.flops = 5.0 * static_cast<double>(problem_size);
 
-    std::vector<float> h_in(problem_size, 1.0f);
+    std::vector<float> h_in(problem_size);
+    for (std::size_t i = 0; i < problem_size; ++i) h_in[i] = input_value(i, 4);
     std::vector<float> h_out(problem_size, 0.0f);
 
     float* d_in = nullptr;
     float* d_out = nullptr;
-    require_cuda_success(cudaMalloc(&d_in, problem_size * sizeof(float)), "cudaMalloc(d_in)");
-    require_cuda_success(cudaMalloc(&d_out, problem_size * sizeof(float)), "cudaMalloc(d_out)");
-    require_cuda_success(cudaMemcpy(d_in, h_in.data(), problem_size * sizeof(float), cudaMemcpyHostToDevice), "copy in");
+    require_cuda_success(cudaMalloc(&d_in, bytes), "cudaMalloc(d_in)");
+    require_cuda_success(cudaMalloc(&d_out, bytes), "cudaMalloc(d_out)");
+    require_cuda_success(cudaMemcpy(d_in, h_in.data(), bytes, cudaMemcpyHostToDevice), "copy in");
 
-    const int grid = static_cast<int>((problem_size + static_cast<std::size_t>(block_size) - 1) / static_cast<std::size_t>(block_size));
     cudaEvent_t start{};
     cudaEvent_t stop{};
     require_cuda_success(cudaEventCreate(&start), "cudaEventCreate(start)");
@@ -80,11 +84,13 @@ BenchmarkRunOutput run_stencil_1d(std::size_t problem_size, int block_size, int 
     }
 
     if (verify) {
-        require_cuda_success(cudaMemcpy(h_out.data(), d_out, problem_size * sizeof(float), cudaMemcpyDeviceToHost), "copy out");
-        // Input is uniform 1.0, so every interior and boundary output is exactly 1.0.
+        require_cuda_success(cudaMemcpy(h_out.data(), d_out, bytes, cudaMemcpyDeviceToHost), "copy out");
         out.verification_passed = true;
         for (std::size_t i = 0; i < problem_size; ++i) {
-            if (std::fabs(h_out[i] - 1.0f) > 1e-4f) {
+            const double left = (i > 0) ? h_in[i - 1] : h_in[i];
+            const double right = (i + 1 < problem_size) ? h_in[i + 1] : h_in[i];
+            const double expected = 0.25 * left + 0.50 * h_in[i] + 0.25 * right;
+            if (!close_enough(h_out[i], expected)) {
                 out.verification_passed = false;
                 break;
             }

@@ -1,6 +1,7 @@
 #include "kernel_ops.h"
 
 #include "cuda_utils.h"
+#include "validation.h"
 
 #include <cuda_runtime.h>
 
@@ -55,14 +56,19 @@ BenchmarkRunOutput run_gemm_tiled(std::size_t problem_size, int block_size, int 
     out.repeats = repeats;
     out.verify = verify;
 
-    const int n = static_cast<int>(problem_size);
+    const unsigned int grid_dim = validate_gemm_launch(problem_size, block_size);
+    const int n = checked_problem_int(problem_size);
+    if (problem_size > static_cast<std::size_t>(-1) / problem_size) throw std::runtime_error("GEMM element count overflows");
     const std::size_t matrix_elems = problem_size * problem_size;
-    const std::size_t matrix_bytes = matrix_elems * sizeof(float);
+    const std::size_t matrix_bytes = checked_bytes(matrix_elems, sizeof(float));
     out.bytes_moved = 3ULL * matrix_bytes;
     out.flops = 2.0 * static_cast<double>(problem_size) * static_cast<double>(problem_size) * static_cast<double>(problem_size);
 
-    std::vector<float> h_a(matrix_elems, 1.0f);
-    std::vector<float> h_b(matrix_elems, 1.0f);
+    std::vector<float> h_a(matrix_elems), h_b(matrix_elems);
+    for (std::size_t r = 0; r < problem_size; ++r) for (std::size_t k = 0; k < problem_size; ++k) {
+        h_a[r * problem_size + k] = problem_size <= 128 ? input_value(r * problem_size + k, 23) : row_factor(r) * gemm_x(k);
+        h_b[k * problem_size + r] = problem_size <= 128 ? input_value(k * problem_size + r, 37) : gemm_y(k) * col_factor(r);
+    }
     std::vector<float> h_c(matrix_elems, 0.0f);
 
     float* d_a = nullptr;
@@ -75,10 +81,7 @@ BenchmarkRunOutput run_gemm_tiled(std::size_t problem_size, int block_size, int 
     require_cuda_success(cudaMemcpy(d_b, h_b.data(), matrix_bytes, cudaMemcpyHostToDevice), "copy B");
 
     const dim3 block(TILE, TILE);
-    const dim3 grid(
-        static_cast<unsigned int>((n + TILE - 1) / TILE),
-        static_cast<unsigned int>((n + TILE - 1) / TILE)
-    );
+    const dim3 grid(grid_dim, grid_dim);
 
     cudaEvent_t start{};
     cudaEvent_t stop{};
@@ -107,11 +110,15 @@ BenchmarkRunOutput run_gemm_tiled(std::size_t problem_size, int block_size, int 
 
     if (verify) {
         require_cuda_success(cudaMemcpy(h_c.data(), d_c, matrix_bytes, cudaMemcpyDeviceToHost), "copy C");
-        const float expected = static_cast<float>(n);
         out.verification_passed = true;
-        for (std::size_t i = 0; i < matrix_elems; ++i) {
-            const float value = h_c[i];
-            if (!std::isfinite(value) || std::fabs(value - expected) > 1e-2f) {
+        double shared_dot = 0.0;
+        if (problem_size > 128) for (std::size_t k = 0; k < problem_size; ++k) shared_dot += static_cast<double>(gemm_x(k)) * gemm_y(k);
+        for (std::size_t r = 0; r < problem_size && out.verification_passed; ++r) for (std::size_t c = 0; c < problem_size; ++c) {
+            double expected = 0.0;
+            if (problem_size <= 128) for (std::size_t k = 0; k < problem_size; ++k)
+                expected += static_cast<double>(h_a[r * problem_size + k]) * h_b[k * problem_size + c];
+            else expected = static_cast<double>(row_factor(r)) * col_factor(c) * shared_dot;
+            if (!close_enough(h_c[r * problem_size + c], expected, 1e-3, 5e-4)) {
                 out.verification_passed = false;
                 break;
             }

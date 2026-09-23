@@ -1,0 +1,1 @@
+{"sweeps": [{"kernel": "vector_add", "problem_sizes": [67108864], "block_sizes": [128], "warmups": 10, "repeats": 30, "verify": true}]}
