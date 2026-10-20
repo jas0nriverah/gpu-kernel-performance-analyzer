@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="875" viewBox="0 0 1200 875" role="img" aria-labelledby="title desc">
+<title id="title">Research workflow and separation of development from tests</title><desc id="desc">Native verified CUDA workloads produce power samples, validation and SQL preserve data integrity, and two distinct objectives select models using H100/H200 development only before later H200 and external device evaluation.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#60768a"/></marker></defs>
+<rect width="1200" height="875" fill="white"/>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="40" y="47" font-size="30" font-weight="700" fill="#142638" text-anchor="start">Measured data → frozen models → independent tests</text>
+<text x="40" y="79" font-size="18" font-weight="400" fill="#506578" text-anchor="start">One evidence pipeline; separate claims for a known device and an unseen device.</text>
+<rect x="40" y="110" width="250" height="126" rx="15" fill="#f5f8fc" stroke="#d5e0ea"/>
+<rect x="330" y="110" width="250" height="126" rx="15" fill="#f5f8fc" stroke="#d5e0ea"/>
+<rect x="620" y="110" width="250" height="126" rx="15" fill="#f5f8fc" stroke="#d5e0ea"/>
+<rect x="910" y="110" width="250" height="126" rx="15" fill="#f5f8fc" stroke="#d5e0ea"/>
+<text x="60" y="141" font-size="14" font-weight="700" fill="#3158a8" text-anchor="start">NATIVE CUDA CAPTURE</text>
+<text x="60" y="172" font-size="17" font-weight="400" fill="#506578" text-anchor="start">Verified workload windows</text>
+<text x="60" y="200" font-size="17" font-weight="400" fill="#506578" text-anchor="start">Raw NVML power + sensors</text>
+<text x="350" y="141" font-size="14" font-weight="700" fill="#3158a8" text-anchor="start">STEADY SAMPLE ROWS</text>
+<text x="350" y="172" font-size="17" font-weight="400" fill="#506578" text-anchor="start">Trim window boundaries</text>
+<text x="350" y="200" font-size="17" font-weight="400" fill="#506578" text-anchor="start">Keep correlated row identity</text>
+<text x="640" y="141" font-size="14" font-weight="700" fill="#3158a8" text-anchor="start">HASH + SQL AUDIT</text>
+<text x="640" y="172" font-size="17" font-weight="400" fill="#506578" text-anchor="start">UUID, time, positive power</text>
+<text x="640" y="200" font-size="17" font-weight="400" fill="#506578" text-anchor="start">No training aggregation</text>
+<text x="930" y="141" font-size="14" font-weight="700" fill="#3158a8" text-anchor="start">DEVELOPMENT CSV</text>
+<text x="930" y="172" font-size="17" font-weight="400" fill="#506578" text-anchor="start">H100 + original H200</text>
+<text x="930" y="200" font-size="17" font-weight="400" fill="#506578" text-anchor="start">2,276 steady samples</text>
+<path d="M290 173L330 173" fill="none" stroke="#60768a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M580 173L620 173" fill="none" stroke="#60768a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M870 173L910 173" fill="none" stroke="#60768a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M1035 236V262H322V288M1035 262H878V288" fill="none" stroke="#60768a" stroke-width="2.2"/>
+<rect x="40" y="288" width="540" height="229" rx="15" fill="#edf4fd" stroke="#bed0eb"/>
+<text x="61" y="321" font-size="16" font-weight="700" fill="#3158a8" text-anchor="start">OBJECTIVE A · KNOWN DEVICE, NEW SESSION</text>
+<text x="61" y="355" font-size="18" font-weight="400" fill="#506578" text-anchor="start">Validate by six whole GPU/trial groups.</text>
+<text x="61" y="385" font-size="18" font-weight="400" fill="#506578" text-anchor="start">Fit preprocessing on training rows of each fold.</text>
+<text x="61" y="415" font-size="18" font-weight="400" fill="#506578" text-anchor="start">Select the lowest mean trial RMSE.</text>
+<rect x="61" y="444" width="498" height="52" rx="10" fill="white" stroke="#bed0eb"/>
+<text x="79" y="477" font-size="19" font-weight="700" fill="#3158a8" text-anchor="start">Selected: 64-tree RF · rf_unbounded_full</text>
+<rect x="620" y="288" width="540" height="229" rx="15" fill="#f4eff8" stroke="#d8cbe7"/>
+<text x="641" y="321" font-size="16" font-weight="700" fill="#7454a0" text-anchor="start">OBJECTIVE B · UNSEEN DEVICE</text>
+<text x="641" y="355" font-size="18" font-weight="400" fill="#506578" text-anchor="start">Validate with two whole-device holdouts.</text>
+<text x="641" y="385" font-size="18" font-weight="400" fill="#506578" text-anchor="start">Compare learned models with training-only baselines.</text>
+<text x="641" y="415" font-size="18" font-weight="400" fill="#506578" text-anchor="start">Select the lowest mean device RMSE.</text>
+<rect x="641" y="444" width="498" height="52" rx="10" fill="white" stroke="#d8cbe7"/>
+<text x="659" y="477" font-size="18" font-weight="700" fill="#7454a0" text-anchor="start">Selected: training workload mean baseline</text>
+<path d="M310 517L310 546" fill="none" stroke="#60768a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M890 517L890 546" fill="none" stroke="#60768a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="40" y="548" width="1120" height="71" rx="15" fill="#eef7f4" stroke="#a9cec2"/>
+<text x="60" y="576" font-size="15" font-weight="700" fill="#087f8c" text-anchor="start">FREEZE</text>
+<text x="180" y="575" font-size="18" font-weight="400" fill="#142638" text-anchor="start">Record selection, inputs, code and model hashes; refit on development data only.</text>
+<text x="180" y="601" font-size="16" font-weight="400" fill="#506578" text-anchor="start">No test-label tuning or adaptation. No uncertainty/probability calibration stage.</text>
+<path d="M310 619L310 651" fill="none" stroke="#60768a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M890 619L890 651" fill="none" stroke="#60768a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="40" y="653" width="540" height="139" rx="15" fill="#edf8f3" stroke="#b7d8ca"/>
+<text x="61" y="686" font-size="16" font-weight="700" fill="#087f8c" text-anchor="start">LATER H200 CAPTURE</text>
+<text x="61" y="716" font-size="17" font-weight="400" fill="#506578" text-anchor="start">New session collected after RF selection froze.</text>
+<text x="61" y="744" font-size="17" font-weight="400" fill="#506578" text-anchor="start">Frozen RF: MAE 2.32 W · RMSE 9.56 W · R² 0.949</text>
+<text x="61" y="772" font-size="17" font-weight="400" fill="#506578" text-anchor="start">Supports this known-device/session test only.</text>
+<rect x="620" y="653" width="540" height="139" rx="15" fill="#fff4ed" stroke="#e9c9ae"/>
+<text x="641" y="686" font-size="16" font-weight="700" fill="#a35b23" text-anchor="start">GH200 + GB10 STRESS TESTS</text>
+<text x="641" y="716" font-size="17" font-weight="400" fill="#506578" text-anchor="start">Both frozen policies evaluated without refitting.</text>
+<text x="641" y="744" font-size="17" font-weight="400" fill="#506578" text-anchor="start">General portability was not demonstrated.</text>
+<text x="641" y="772" font-size="17" font-weight="400" fill="#506578" text-anchor="start">Live API rejects devices outside its approved profile.</text>
+<text x="40" y="838" font-size="16" font-weight="400" fill="#506578" text-anchor="start">Models read steady CSVs, not SQL aggregates. Correlated rows and limited workloads constrain generalization.</text>
+</g></svg>

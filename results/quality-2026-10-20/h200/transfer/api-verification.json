@@ -1,0 +1,15 @@
+{
+  "scope": "In-process TestClient; no network or latency benchmark.",
+  "saved_model": "outputs/prizepicks-h200-2026-10-20/transfer/registry/linear_regression/20261020T201154Z",
+  "records": 1153,
+  "health": {
+    "status": "ok",
+    "model_loaded": true,
+    "model_name": "linear_regression",
+    "model_version": "20261020T201154Z"
+  },
+  "model_http_status": 200,
+  "predict_http_status": 200,
+  "max_absolute_difference_watts": 0.0,
+  "all_predictions_finite": true
+}

@@ -1,0 +1,26 @@
+{
+  "scope": "In-process TestClient; no network or latency benchmark.",
+  "saved_model": "outputs/quality-2026-10-20/known-device-development/registry/rf_unbounded_full/20261020T204029Z",
+  "records": 1153,
+  "health": {
+    "status": "ok",
+    "model_loaded": true,
+    "model_name": "rf_unbounded_full",
+    "model_version": "20261020T204029Z"
+  },
+  "model_http_status": 200,
+  "predict_http_status": 200,
+  "expected_unseen_gpu_rejection": false,
+  "max_absolute_difference_watts": 0.0,
+  "all_predictions_finite": true,
+  "served_records": 1153,
+  "metrics": {
+    "scope": "process",
+    "prediction_requests": 10,
+    "prediction_failures": 0,
+    "prediction_records": 1153,
+    "log_write_failures": 0,
+    "last_log_error": null
+  },
+  "telemetry_sha256": "6f06af8b7c70d8c5d441bc8780b946c37dd11779357f816e9c9bfe174e0e619f"
+}

@@ -1,0 +1,6 @@
+capture,raw_rows,steady_rows,workload_windows,trials,role
+H100,2023,1123,24,3,Development
+H200,2083,1153,24,3,Development
+GH200,2200,1237,24,3,External device
+Spark GB10,1905,1023,24,3,External device
+H200 new session,2090,1153,24,3,Prospective known GPU

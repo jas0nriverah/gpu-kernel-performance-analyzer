@@ -1,0 +1,21 @@
+-- Configuring done (0.0s)
+-- Generating done (0.4s)
+-- Build files have been written to: /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/build/h200-review
+[100%] Built target gpu_benchmark
+Wrote run artifacts to: /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/baseline
+Scenarios executed: 24
+Validation passed for /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/baseline
+Wrote run artifacts to: /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-1
+Scenarios executed: 74
+Validation passed for /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-1
+Wrote run artifacts to: /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-2
+Scenarios executed: 74
+Validation passed for /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-2
+Wrote run artifacts to: /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-3
+Scenarios executed: 74
+Validation passed for /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-3
+Wrote run artifacts to: /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/edges
+Scenarios executed: 18
+Validation passed for /home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/edges
+Aggregated 74 scenarios from 3 independent sweeps into outputs/prizepicks-h200-2026-10-20/timing
+Capture complete: outputs/prizepicks-h200-2026-10-20/timing. Run compare against the baseline GPU in a separate directory.

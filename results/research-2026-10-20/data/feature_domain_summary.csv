@@ -1,0 +1,21 @@
+capture,feature,available,missing,min,median,max
+H100,memory_utilization_pct,1123,0,0.0,84.0,100.0
+H200,memory_utilization_pct,1153,0,0.0,65.0,91.0
+GH200,memory_utilization_pct,1237,0,0.0,74.0,99.0
+Spark GB10,memory_utilization_pct,1023,0,0.0,0.0,0.0
+H200 new session,memory_utilization_pct,1153,0,0.0,65.0,91.0
+H100,temperature_c,1123,0,39.0,46.0,53.0
+H200,temperature_c,1153,0,39.0,45.0,49.0
+GH200,temperature_c,1237,0,38.0,50.0,56.0
+Spark GB10,temperature_c,1023,0,48.0,57.0,71.0
+H200 new session,temperature_c,1153,0,42.0,45.0,49.0
+H100,graphics_clock_mhz,1123,0,1980.0,1980.0,1980.0
+H200,graphics_clock_mhz,1153,0,1980.0,1980.0,1980.0
+GH200,graphics_clock_mhz,1237,0,1980.0,1980.0,1980.0
+Spark GB10,graphics_clock_mhz,1023,0,2405.0,2411.0,2548.0
+H200 new session,graphics_clock_mhz,1153,0,1980.0,1980.0,1980.0
+H100,memory_clock_mhz,1123,0,2619.0,2619.0,2619.0
+H200,memory_clock_mhz,1153,0,3201.0,3201.0,3201.0
+GH200,memory_clock_mhz,1237,0,2619.0,2619.0,2619.0
+Spark GB10,memory_clock_mhz,0,1023,,,
+H200 new session,memory_clock_mhz,1153,0,3201.0,3201.0,3201.0

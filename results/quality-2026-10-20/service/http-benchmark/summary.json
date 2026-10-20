@@ -1,0 +1,43 @@
+{
+  "scope": "Local HTTP microbenchmark of one running API; not production capacity.",
+  "created_utc": "2026-10-20T20:21:58.342161+00:00",
+  "url": "http://127.0.0.1:8765",
+  "telemetry": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/results/h100-power-2026-09-22/steady_telemetry.csv",
+  "model_name": "linear_regression",
+  "model_version": "20261020T201154Z",
+  "feature_order": [
+    "gpu_utilization_pct",
+    "memory_utilization_pct",
+    "temperature_c",
+    "graphics_clock_mhz",
+    "memory_clock_mhz",
+    "workload_type",
+    "gpu_name"
+  ],
+  "environment": {
+    "python": "3.11.9 (main, Oct  2 2024, 14:57:28) [GCC 12.3.0]",
+    "platform": "Linux-5.14.0-687.49.1.el9_8.x86_64-x86_64-with-glibc2.34",
+    "httpx": "0.28.1"
+  },
+  "requests": 100,
+  "concurrency": 4,
+  "batch_size": 16,
+  "warmups": 5,
+  "warmup_errors": 0,
+  "elapsed_wall_seconds": 0.6165179149247706,
+  "successful_requests": 100,
+  "error_count": 0,
+  "successful_records": 1600,
+  "successful_requests_per_second": 162.20128820133687,
+  "successful_records_per_second": 2595.22061122139,
+  "latency_ms_all_requests": {
+    "p50": 24.473564932122827,
+    "p95": 29.77638453012332,
+    "p99": 31.55329848406839
+  },
+  "latency_ms_successful_requests": {
+    "p50": 24.473564932122827,
+    "p95": 29.77638453012332,
+    "p99": 31.55329848406839
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "model": "linear_regression",
+  "random_state": 42,
+  "training_rows": 1123,
+  "test_rows": 1153,
+  "training_gpu_uuids": [
+    "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a"
+  ],
+  "test_gpu_uuids": [
+    "GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b"
+  ],
+  "inputs": {
+    "train": {
+      "path": "results/h100-power-2026-09-22/steady_telemetry.csv",
+      "sha256": "ae69eaf4b0c2ed794cdc8177380d7c732963eb3b3df812fd85d2ed91d98c768d"
+    },
+    "test": {
+      "path": "outputs/prizepicks-h200-2026-10-20/power/steady_telemetry.csv",
+      "sha256": "f068800d83400d1405d56582ed936ff840465c3f4caff7a345e4df938a47d4cb"
+    }
+  },
+  "feature_order": [
+    "gpu_utilization_pct",
+    "memory_utilization_pct",
+    "temperature_c",
+    "graphics_clock_mhz",
+    "memory_clock_mhz",
+    "workload_type",
+    "gpu_name"
+  ],
+  "scores": {
+    "linear_regression": {
+      "mae_w": 50.50667525355499,
+      "rmse_w": 56.77931783205406,
+      "r2": -0.7912562930365199
+    },
+    "training_mean": {
+      "mae_w": 38.65965589012828,
+      "rmse_w": 43.00035428334259,
+      "r2": -0.027357169039176954
+    },
+    "training_workload_mean": {
+      "mae_w": 26.336629332318125,
+      "rmse_w": 29.486645739723098,
+      "r2": 0.5169099056585666
+    }
+  },
+  "saved_model": "outputs/prizepicks-h200-2026-10-20/transfer/registry/linear_regression/20261020T201154Z",
+  "saved_model_sha256": "0b392a8e21c5df2d5b23f5d10058fd5282ed9a1869154a37c2b7d1679836e86a",
+  "evaluation_source_sha256": "51881024bb370aa260d34ec582488f9c7aabe682678c42d147ccd2c259158b16",
+  "git_commit": "335069725968e031ed82c1e847df4853eb9c5976",
+  "sklearn_version": "1.9.1",
+  "drift_warnings": 3,
+  "scope": "Fixed model fitted only on training GPU; test GPU used solely for evaluation. No clipping or adaptation. Correlated telemetry rows are not independent trials. Different capture dates and environments confound attribution to hardware alone."
+}

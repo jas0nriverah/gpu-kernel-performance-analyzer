@@ -1,0 +1,13 @@
+{
+  "rmse_improvement_vs_workload_mean_pct": 58.73437060269811,
+  "absolute_error_quantiles_w": {
+    "0.5": 0.814803530665074,
+    "0.9": 1.9275390476802725,
+    "0.95": 3.0941969522401522,
+    "0.99": 73.99773677377758,
+    "1.0": 75.26795114846578
+  },
+  "rows_absolute_error_above_25w": 24,
+  "top_10_rows_share_squared_error": 0.5319518769994366,
+  "scope": "Descriptive residual analysis after final evaluation; all rows retained and no model changes."
+}

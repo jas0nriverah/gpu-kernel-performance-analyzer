@@ -1,5 +1,7 @@
 # Captured benchmark evidence
 
+Start with the [research figure gallery](research-2026-10-20/README.md) and [research report](../docs/research-report.md). The [October quality archive](quality-2026-10-20/README.md) contains full H200/GH200/GB10 measurements, frozen model development and independent H200 validation, negative transfer results, API checks and SQL integrity receipts. All seven research figures have PNG/SVG exports, calculation CSVs and input/output hashes. New A100 collection remains queued; the earlier A100 capture below is historical.
+
 - [`a100-2026-04-28/`](a100-2026-04-28/): original 12-scenario A100 capture recovered from the earlier local checkout. Four original files are copied without rewriting values or the manifest. The historical schema lacks the newer min/max summary columns; use `compare` to validate its raw timing consistency rather than the current strict artifact-schema command.
 - [`h100-2026-09-22/`](h100-2026-09-22/): baseline, three 74-scenario sweeps, 18 boundary checks, and two separate profiler captures.
 - [`h100-autotune-2026-09-22/`](h100-autotune-2026-09-22/): correctness-gated H100 energy-aware vector-add search across 128/256/512-thread blocks. [`RUN.md`](h100-autotune-2026-09-22/RUN.md) records original selection, command and provenance; [`energy-review.md`](h100-autotune-2026-09-22/energy-review.md) records the b512 follow-up and final dispersion-limited outcome. `report.json` and nested captures retain raw telemetry and worker evidence.

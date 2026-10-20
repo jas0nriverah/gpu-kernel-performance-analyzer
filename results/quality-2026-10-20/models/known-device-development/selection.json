@@ -1,0 +1,28 @@
+{
+  "candidate": {
+    "id": "rf_unbounded_full",
+    "model": "random_forest",
+    "params": {
+      "n_estimators": 64,
+      "max_depth": null,
+      "min_samples_leaf": 3
+    },
+    "feature_set": "full",
+    "features": [
+      "gpu_utilization_pct",
+      "memory_utilization_pct",
+      "graphics_clock_mhz",
+      "memory_clock_mhz",
+      "temperature_c",
+      "workload_type",
+      "gpu_name"
+    ]
+  },
+  "mean_trial_rmse_w": 3.1079996506857253,
+  "worst_trial_rmse_w": 5.505154410419052,
+  "selection_rule": "minimum unweighted mean RMSE across six whole-device/trial groups; ties use frozen plan order",
+  "frozen_utc": "2026-10-20T20:40:29.710867+00:00",
+  "objective": "known_device_new_session",
+  "plan_sha256": "653eac2a563d4b11376bba582ff2f1339b3379c8995d27b34f0ae955a2b55450",
+  "scope": "Known H100/H200 GPUs, future session/capture. Whole-trial scores are development validation, not independent test evidence."
+}

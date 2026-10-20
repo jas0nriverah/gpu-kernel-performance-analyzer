@@ -1,0 +1,9 @@
+{
+  "selection_frozen_utc": "2026-10-20T20:40:29.710867+00:00",
+  "first_capture_epoch_s": 1792528884.9489164,
+  "last_capture_epoch_s": 1792529372.9994326,
+  "collection_began_after_selection_freeze": true,
+  "seed": 20261020,
+  "source_binary": "outputs/quality-2026-10-20/h200-smoke/build/gpu_benchmark",
+  "scope": "Same allocated H200, new prospective capture after selection; all measured rows retained; capture/row counts are not independent sample sizes."
+}

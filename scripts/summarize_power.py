@@ -90,7 +90,7 @@ def main():
     lines += ['', '## Measurement scope', '',
               'These are real `nvidia-smi:power.draw` readings, not model predictions. Energy is estimated by trapezoidal integration over covered steady samples. Every workload passed its deterministic correctness check.', '',
               f"Each workload executes batches of 100 launches in a persistent allocation for at least {manifest['protocol']['duration_seconds']:g} seconds. The first and last {manifest['protocol']['trim_seconds']:g} seconds are excluded from power summaries. Launch throughput uses the complete sustained window including batch synchronization and host launch overhead. Estimated energy per launch combines steady mean watts with whole-window launch rate; it is not an isolated per-kernel energy measurement. Effective bytes/FLOPs use the existing workload formulas, not hardware counters.", '',
-              'H100 power telemetry is approximately one-second averaged. Samples taken more often are correlated. Trial ranges are descriptive, not confidence intervals. Pre-workload idle readings include recent thermal history; no idle subtraction is applied. No clocks or power limits were changed. GPU-board power is not wall-socket or full-server power.', '',
+              'Sensor averaging depends on GPU architecture; on Hopper, power telemetry is approximately one-second averaged. Samples taken more often are correlated. Trial ranges are descriptive, not confidence intervals. Pre-workload idle readings include recent thermal history; no idle subtraction is applied. No clocks or power limits were changed. GPU-board power is not wall-socket or full-server power.', '',
               'Use same-workload, same-size comparisons for optimization. GEMM bytes count matrix sizes and do not measure actual DRAM traffic. These custom FP32 kernels do not use Tensor Cores or cuBLAS.', '',
               '## Evidence and regeneration', '',
               '- [Manifest, device, binary/source hashes and protocol](manifest.json)',
@@ -99,7 +99,7 @@ def main():
               '- [Per-trial summaries](summary.csv)',
               '- [Aggregates](aggregate.csv)',
               '- [Worker JSON and measurement boundaries](workers/)', '',
-              'From the repository root: `python scripts/summarize_power.py --run-dir results/h100-power-2026-09-22`.', '',
+              f'From the repository root: `python scripts/summarize_power.py --run-dir {root}`.', '',
               'Regeneration verifies artifact hashes and recomputes power/energy summaries from raw samples before writing the table and chart.']
     (root / 'REPORT.md').write_text('\n'.join(lines) + '\n')
     print(f'Validated {len(summaries)} windows and regenerated {root / "REPORT.md"}')

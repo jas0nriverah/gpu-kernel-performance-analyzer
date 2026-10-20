@@ -1,0 +1,65 @@
+{
+  "evaluated_utc": "2026-10-20T20:42:44.348412+00:00",
+  "evaluation_scope": "new-device",
+  "selection_scope": "Known H100/H200 GPUs, future session/capture. Whole-trial scores are development validation, not independent test evidence.",
+  "selection_objective": "known_device_new_session",
+  "selected_candidate": "rf_unbounded_full",
+  "training_rows": 2276,
+  "test_rows": 1237,
+  "training_gpu_uuids": [
+    "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
+    "GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b"
+  ],
+  "test_gpu_uuids": [
+    "GPU-d0a568f0-708f-e632-a937-78e43236ecab"
+  ],
+  "feature_order": [
+    "gpu_utilization_pct",
+    "memory_utilization_pct",
+    "graphics_clock_mhz",
+    "memory_clock_mhz",
+    "temperature_c",
+    "workload_type",
+    "gpu_name"
+  ],
+  "model_name": "rf_unbounded_full",
+  "model_version": "20261020T204029Z",
+  "saved_model": "outputs/quality-2026-10-20/known-device-development/registry/rf_unbounded_full/20261020T204029Z",
+  "saved_model_sha256": "c7c34c282e8a71421380f56f708f018c89b2de87a50cb6191dcdf4ba2f9f55ed",
+  "selection_sha256": "070871b4f8c83eeb910d6bd43f854a38c79db7681055f4730c086bd1cebfde0b",
+  "plan_sha256": "653eac2a563d4b11376bba582ff2f1339b3379c8995d27b34f0ae955a2b55450",
+  "development_inputs": [
+    {
+      "path": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/results/h100-power-2026-09-22/steady_telemetry.csv",
+      "sha256": "ae69eaf4b0c2ed794cdc8177380d7c732963eb3b3df812fd85d2ed91d98c768d"
+    },
+    {
+      "path": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/steady_telemetry.csv",
+      "sha256": "f068800d83400d1405d56582ed936ff840465c3f4caff7a345e4df938a47d4cb"
+    }
+  ],
+  "test_input": {
+    "path": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/steady_telemetry.csv",
+    "sha256": "7a22bc132871a2e61e9ae333e407ce065a6ba1002846b15e2761be3ed08afe76"
+  },
+  "evaluator_sha256": "43fa2812230a1ba4fcae3e768f02ffbfb21f458ede54f52c946b63d2dacdaeda",
+  "scores": {
+    "rf_unbounded_full": {
+      "mae_w": 37.0065092347121,
+      "rmse_w": 42.98956528267499,
+      "r2": -0.5321787103844715
+    },
+    "pooled_training_mean": {
+      "mae_w": 37.1302226956481,
+      "rmse_w": 46.521209285912384,
+      "r2": -0.7942597188235538
+    },
+    "pooled_training_workload_mean": {
+      "mae_w": 31.088941319928075,
+      "rmse_w": 34.71357054978087,
+      "r2": 0.0009622720645154903
+    }
+  },
+  "drift_warnings": 1,
+  "scope": "Frozen model loaded without refitting or adaptation. Evaluation scope is recorded separately; offline prediction does not change the API known-device guard. One new device/capture does not establish general portability; correlated rows and capture environments limit attribution."
+}

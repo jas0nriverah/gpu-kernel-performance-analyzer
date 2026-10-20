@@ -1,0 +1,218 @@
+{
+  "created_utc": "2026-10-20T20:37:10.720632+00:00",
+  "candidates": [
+    {
+      "id": "linear_full",
+      "model": "linear_regression",
+      "params": {},
+      "feature_set": "full",
+      "features": [
+        "gpu_utilization_pct",
+        "memory_utilization_pct",
+        "graphics_clock_mhz",
+        "memory_clock_mhz",
+        "temperature_c",
+        "workload_type",
+        "gpu_name"
+      ]
+    },
+    {
+      "id": "linear_portable",
+      "model": "linear_regression",
+      "params": {},
+      "feature_set": "portable",
+      "features": [
+        "gpu_utilization_pct",
+        "memory_utilization_pct",
+        "graphics_clock_mhz",
+        "temperature_c",
+        "workload_type"
+      ]
+    },
+    {
+      "id": "rf_depth6_full",
+      "model": "random_forest",
+      "params": {
+        "n_estimators": 64,
+        "max_depth": 6,
+        "min_samples_leaf": 3
+      },
+      "feature_set": "full",
+      "features": [
+        "gpu_utilization_pct",
+        "memory_utilization_pct",
+        "graphics_clock_mhz",
+        "memory_clock_mhz",
+        "temperature_c",
+        "workload_type",
+        "gpu_name"
+      ]
+    },
+    {
+      "id": "rf_depth6_portable",
+      "model": "random_forest",
+      "params": {
+        "n_estimators": 64,
+        "max_depth": 6,
+        "min_samples_leaf": 3
+      },
+      "feature_set": "portable",
+      "features": [
+        "gpu_utilization_pct",
+        "memory_utilization_pct",
+        "graphics_clock_mhz",
+        "temperature_c",
+        "workload_type"
+      ]
+    },
+    {
+      "id": "rf_unbounded_full",
+      "model": "random_forest",
+      "params": {
+        "n_estimators": 64,
+        "max_depth": null,
+        "min_samples_leaf": 3
+      },
+      "feature_set": "full",
+      "features": [
+        "gpu_utilization_pct",
+        "memory_utilization_pct",
+        "graphics_clock_mhz",
+        "memory_clock_mhz",
+        "temperature_c",
+        "workload_type",
+        "gpu_name"
+      ]
+    },
+    {
+      "id": "rf_unbounded_portable",
+      "model": "random_forest",
+      "params": {
+        "n_estimators": 64,
+        "max_depth": null,
+        "min_samples_leaf": 3
+      },
+      "feature_set": "portable",
+      "features": [
+        "gpu_utilization_pct",
+        "memory_utilization_pct",
+        "graphics_clock_mhz",
+        "temperature_c",
+        "workload_type"
+      ]
+    },
+    {
+      "id": "gb_lr005_full",
+      "model": "gradient_boosting",
+      "params": {
+        "n_estimators": 64,
+        "max_depth": 2,
+        "learning_rate": 0.05
+      },
+      "feature_set": "full",
+      "features": [
+        "gpu_utilization_pct",
+        "memory_utilization_pct",
+        "graphics_clock_mhz",
+        "memory_clock_mhz",
+        "temperature_c",
+        "workload_type",
+        "gpu_name"
+      ]
+    },
+    {
+      "id": "gb_lr005_portable",
+      "model": "gradient_boosting",
+      "params": {
+        "n_estimators": 64,
+        "max_depth": 2,
+        "learning_rate": 0.05
+      },
+      "feature_set": "portable",
+      "features": [
+        "gpu_utilization_pct",
+        "memory_utilization_pct",
+        "graphics_clock_mhz",
+        "temperature_c",
+        "workload_type"
+      ]
+    },
+    {
+      "id": "gb_lr01_full",
+      "model": "gradient_boosting",
+      "params": {
+        "n_estimators": 64,
+        "max_depth": 2,
+        "learning_rate": 0.1
+      },
+      "feature_set": "full",
+      "features": [
+        "gpu_utilization_pct",
+        "memory_utilization_pct",
+        "graphics_clock_mhz",
+        "memory_clock_mhz",
+        "temperature_c",
+        "workload_type",
+        "gpu_name"
+      ]
+    },
+    {
+      "id": "gb_lr01_portable",
+      "model": "gradient_boosting",
+      "params": {
+        "n_estimators": 64,
+        "max_depth": 2,
+        "learning_rate": 0.1
+      },
+      "feature_set": "portable",
+      "features": [
+        "gpu_utilization_pct",
+        "memory_utilization_pct",
+        "graphics_clock_mhz",
+        "temperature_c",
+        "workload_type"
+      ]
+    },
+    {
+      "id": "training_mean",
+      "model": "training_mean",
+      "params": {},
+      "feature_set": "baseline",
+      "features": [
+        "workload_type"
+      ]
+    },
+    {
+      "id": "training_workload_mean",
+      "model": "training_workload_mean",
+      "params": {},
+      "feature_set": "baseline",
+      "features": [
+        "workload_type"
+      ]
+    }
+  ],
+  "random_state": 42,
+  "threads": 1,
+  "selection": "mean whole-device holdout RMSE; whole-trial diagnostic does not select",
+  "inputs": [
+    {
+      "path": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/results/h100-power-2026-09-22/steady_telemetry.csv",
+      "sha256": "ae69eaf4b0c2ed794cdc8177380d7c732963eb3b3df812fd85d2ed91d98c768d"
+    },
+    {
+      "path": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/steady_telemetry.csv",
+      "sha256": "f068800d83400d1405d56582ed936ff840465c3f4caff7a345e4df938a47d4cb"
+    }
+  ],
+  "source_sha256": "0ed54f8d8cbe4fbad64597e33794e4473ba5eb93d79c9a89c7edb2be94ff4fa7",
+  "source_files_sha256": {
+    "generalization.py": "0ed54f8d8cbe4fbad64597e33794e4473ba5eb93d79c9a89c7edb2be94ff4fa7",
+    "preprocessing.py": "5d8d41d7cc90caa6ae2f7ccf8e041ce114194205ca6ab919482590435e73609f",
+    "data.py": "d5deeb47b4249c1375ce5c8c242c4689ac3486423cf5192d76756aa6fcbd3fb8",
+    "transfer.py": "51881024bb370aa260d34ec582488f9c7aabe682678c42d147ccd2c259158b16",
+    "persistence.py": "4a05b9fcb11e4262165d64a9cb1bad7750791de7dffeb1b63a6ee0402e46578c",
+    "inference.py": "6b007ce5e77f31906ecaff522fa39180ee7456423780170ef46528c4304ccc6b"
+  },
+  "sklearn_version": "1.9.1"
+}

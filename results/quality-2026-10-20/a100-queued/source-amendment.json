@@ -1,0 +1,26 @@
+{
+  "amended_utc": "2026-10-20T20:47:23.114944+00:00",
+  "reason": "Audited source-only corrections before queued job runtime; frozen model, selections and training data remain unchanged.",
+  "changes": [
+    {
+      "source": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/src/gpu_power_pipeline/final_evaluation.py",
+      "old_source_sha256": "43fa2812230a1ba4fcae3e768f02ffbfb21f458ede54f52c946b63d2dacdaeda",
+      "new_source_sha256": "c259012424df96a9e67c4b0c53c989d3319b846c6792a258dae748425b830596"
+    },
+    {
+      "source": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/src/gpu_power_pipeline/warehouse.py",
+      "old_source_sha256": "93409ac323cebf7b876042db94aea5f536a39ec692ad33a911e548c9370759f3",
+      "new_source_sha256": "7af8eebbaf155f7150237ae22d690f776162170b0369d5bc8dec943666d120ee"
+    }
+  ],
+  "details": {
+    "final_evaluation.py": "New-capture earliest timestamp must exceed UTC selection.frozen_utc as well as training timestamps. Default new-device behavior unchanged.21 focused tests pass and Ruff clean.",
+    "warehouse.py": "Allow absent optional clock/utilization/temperature sensor cells emitted by native captures; required power/time/identity and present sensor finite/physical checks remain strict.14 focused tests pass and Ruff clean. Approved by root after sql_quality audit."
+  },
+  "dependency_job": "6426680",
+  "gpu_job": "6426654",
+  "original_manifest": "cpu-followup-input-hashes.original.json",
+  "original_manifest_sha256": "d1c6568af374d96c50aa9f9622887b91b5bb6a2b6eadf5b71dd80ef509d6141a",
+  "original_submission_manifest": "followup-submission.json",
+  "original_submission_sha256": "56d5b56b4767713e3c5722b24ce3fbd30fcc9be8821f2d0a5f4169b1b6944476"
+}

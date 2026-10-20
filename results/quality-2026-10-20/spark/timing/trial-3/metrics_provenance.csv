@@ -1,0 +1,741 @@
+run_id,kernel,problem_size,block_size,metric_name,metric_value,status,source
+run_20261020T204642Z,vector_add,1048576,64,runtime_ms,0.01443136,measured,cuda_events
+run_20261020T204642Z,vector_add,1048576,64,effective_bandwidth_GBps,871.9144973169541,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,1048576,64,effective_GFLOPs,72.65954144307952,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,1048576,64,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,1048576,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,1048576,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,128,runtime_ms,0.00967424,measured,cuda_events
+run_20261020T204642Z,vector_add,1048576,128,effective_bandwidth_GBps,1300.6615506747817,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,1048576,128,effective_GFLOPs,108.3884625562318,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,1048576,128,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,1048576,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,1048576,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,256,runtime_ms,0.009747200000000001,measured,cuda_events
+run_20261020T204642Z,vector_add,1048576,256,effective_bandwidth_GBps,1290.9258043335522,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,1048576,256,effective_GFLOPs,107.57715036112936,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,1048576,256,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,1048576,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,1048576,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,512,runtime_ms,0.00968704,measured,cuda_events
+run_20261020T204642Z,vector_add,1048576,512,effective_bandwidth_GBps,1298.9429175475686,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,1048576,512,effective_GFLOPs,108.24524312896406,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,1048576,512,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,1048576,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,1048576,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,1048576,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,64,runtime_ms,0.19269824,measured,cuda_events
+run_20261020T204642Z,vector_add,4194304,64,effective_bandwidth_GBps,261.1941240355906,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,4194304,64,effective_GFLOPs,21.766177002965886,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,4194304,64,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,4194304,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,4194304,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,128,runtime_ms,0.18886656,measured,cuda_events
+run_20261020T204642Z,vector_add,4194304,128,effective_bandwidth_GBps,266.4931685100846,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,4194304,128,effective_GFLOPs,22.20776404250705,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,4194304,128,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,4194304,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,4194304,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,256,runtime_ms,0.19696639999999999,measured,cuda_events
+run_20261020T204642Z,vector_add,4194304,256,effective_bandwidth_GBps,255.53418247985442,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,4194304,256,effective_GFLOPs,21.294515206654538,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,4194304,256,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,4194304,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,4194304,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,512,runtime_ms,0.19223552,measured,cuda_events
+run_20261020T204642Z,vector_add,4194304,512,effective_bandwidth_GBps,261.8228306610558,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,4194304,512,effective_GFLOPs,21.81856922175465,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,4194304,512,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,4194304,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,4194304,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,4194304,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,64,runtime_ms,0.81412288,measured,cuda_events
+run_20261020T204642Z,vector_add,16777216,64,effective_bandwidth_GBps,247.29263474329576,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,16777216,64,effective_GFLOPs,20.607719561941316,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,16777216,64,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,16777216,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,16777216,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,128,runtime_ms,0.8228704,measured,cuda_events
+run_20261020T204642Z,vector_add,16777216,128,effective_bandwidth_GBps,244.66379152780317,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,16777216,128,effective_GFLOPs,20.388649293983597,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,16777216,128,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,16777216,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,16777216,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,256,runtime_ms,0.81753472,measured,cuda_events
+run_20261020T204642Z,vector_add,16777216,256,effective_bandwidth_GBps,246.26060162924946,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,16777216,256,effective_GFLOPs,20.521716802437457,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,16777216,256,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,16777216,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,16777216,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,512,runtime_ms,0.8144512,measured,cuda_events
+run_20261020T204642Z,vector_add,16777216,512,effective_bandwidth_GBps,247.1929466123937,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,16777216,512,effective_GFLOPs,20.599412217699477,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,16777216,512,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,16777216,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,16777216,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,16777216,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,64,runtime_ms,3.2812832,measured,cuda_events
+run_20261020T204642Z,vector_add,67108864,64,effective_bandwidth_GBps,245.42421940294577,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,67108864,64,effective_GFLOPs,20.452018283578816,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,67108864,64,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,67108864,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,67108864,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,128,runtime_ms,3.2953580799999997,measured,cuda_events
+run_20261020T204642Z,vector_add,67108864,128,effective_bandwidth_GBps,244.3759823515143,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,67108864,128,effective_GFLOPs,20.364665195959528,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,67108864,128,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,67108864,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,67108864,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,256,runtime_ms,3.27491392,measured,cuda_events
+run_20261020T204642Z,vector_add,67108864,256,effective_bandwidth_GBps,245.90153746697564,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,67108864,256,effective_GFLOPs,20.49179478891464,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,67108864,256,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,67108864,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,67108864,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,512,runtime_ms,3.27887616,measured,cuda_events
+run_20261020T204642Z,vector_add,67108864,512,effective_bandwidth_GBps,245.6043865956804,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,vector_add,67108864,512,effective_GFLOPs,20.467032216306702,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,vector_add,67108864,512,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,vector_add,67108864,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,vector_add,67108864,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,vector_add,67108864,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,64,runtime_ms,0.01469632,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,1048576,64,effective_bandwidth_GBps,570.7964987153247,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,1048576,64,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,1048576,64,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,1048576,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,1048576,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,128,runtime_ms,0.009648,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,1048576,128,effective_bandwidth_GBps,869.4660033167496,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,1048576,128,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,1048576,128,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,1048576,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,1048576,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,256,runtime_ms,0.0095744,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,1048576,256,effective_bandwidth_GBps,876.1497326203208,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,1048576,256,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,1048576,256,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,1048576,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,1048576,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,512,runtime_ms,0.009824639999999999,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,1048576,512,effective_bandwidth_GBps,853.8336264738456,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,1048576,512,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,1048576,512,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,1048576,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,1048576,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,1048576,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,64,runtime_ms,0.11762944,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,4194304,64,effective_bandwidth_GBps,285.2553918474831,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,4194304,64,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,4194304,64,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,4194304,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,4194304,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,128,runtime_ms,0.12603328,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,4194304,128,effective_bandwidth_GBps,266.23469610566355,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,4194304,128,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,4194304,128,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,4194304,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,4194304,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,256,runtime_ms,0.11690752,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,4194304,256,effective_bandwidth_GBps,287.0168830884446,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,4194304,256,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,4194304,256,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,4194304,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,4194304,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,512,runtime_ms,0.11823872,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,4194304,512,effective_bandwidth_GBps,283.78548076298523,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,4194304,512,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,4194304,512,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,4194304,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,4194304,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,4194304,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,64,runtime_ms,0.54107328,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,16777216,64,effective_bandwidth_GBps,248.05831845919283,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,16777216,64,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,16777216,64,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,16777216,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,16777216,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,128,runtime_ms,0.54260672,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,16777216,128,effective_bandwidth_GBps,247.35729037782653,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,16777216,128,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,16777216,128,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,16777216,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,16777216,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,256,runtime_ms,0.542368,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,16777216,256,effective_bandwidth_GBps,247.46616319546877,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,16777216,256,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,16777216,256,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,16777216,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,16777216,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,512,runtime_ms,0.5411744,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,16777216,512,effective_bandwidth_GBps,248.01196804579075,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,16777216,512,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,16777216,512,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,16777216,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,16777216,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,16777216,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,64,runtime_ms,2.19047232,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,67108864,64,effective_bandwidth_GBps,245.09367550465097,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,67108864,64,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,67108864,64,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,67108864,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,67108864,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,128,runtime_ms,2.1896172799999998,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,67108864,128,effective_bandwidth_GBps,245.189383963941,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,67108864,128,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,67108864,128,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,67108864,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,67108864,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,256,runtime_ms,2.18855872,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,67108864,256,effective_bandwidth_GBps,245.30797693196007,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,67108864,256,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,67108864,256,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,67108864,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,67108864,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,512,runtime_ms,2.17295552,measured,cuda_events
+run_20261020T204642Z,memcpy_bandwidth,67108864,512,effective_bandwidth_GBps,247.06944392492676,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,67108864,512,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,memcpy_bandwidth,67108864,512,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,memcpy_bandwidth,67108864,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,memcpy_bandwidth,67108864,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,memcpy_bandwidth,67108864,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,64,runtime_ms,0.01448384,measured,cuda_events
+run_20261020T204642Z,stencil_1d,1048576,64,effective_bandwidth_GBps,579.1701648181698,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,1048576,64,effective_GFLOPs,361.98135301135613,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,1048576,64,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,1048576,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,1048576,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,128,runtime_ms,0.00982336,measured,cuda_events
+run_20261020T204642Z,stencil_1d,1048576,128,effective_bandwidth_GBps,853.9448824027625,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,1048576,128,effective_GFLOPs,533.7155515017265,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,1048576,128,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,1048576,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,1048576,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,256,runtime_ms,0.00956544,measured,cuda_events
+run_20261020T204642Z,stencil_1d,1048576,256,effective_bandwidth_GBps,876.9704268700657,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,1048576,256,effective_GFLOPs,548.106516793791,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,1048576,256,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,1048576,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,1048576,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,512,runtime_ms,0.00963264,measured,cuda_events
+run_20261020T204642Z,stencil_1d,1048576,512,effective_bandwidth_GBps,870.8524350541494,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,1048576,512,effective_GFLOPs,544.2827719088433,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,1048576,512,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,1048576,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,1048576,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,1048576,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,64,runtime_ms,0.12089728,measured,cuda_events
+run_20261020T204642Z,stencil_1d,4194304,64,effective_bandwidth_GBps,277.54497040793643,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,4194304,64,effective_GFLOPs,173.46560650496025,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,4194304,64,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,4194304,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,4194304,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,128,runtime_ms,0.13372992,measured,cuda_events
+run_20261020T204642Z,stencil_1d,4194304,128,effective_bandwidth_GBps,250.91192756265764,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,4194304,128,effective_GFLOPs,156.81995472666102,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,4194304,128,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,4194304,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,4194304,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,256,runtime_ms,0.11716992,measured,cuda_events
+run_20261020T204642Z,stencil_1d,4194304,256,effective_bandwidth_GBps,286.37411376571737,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,4194304,256,effective_GFLOPs,178.98382110357335,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,4194304,256,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,4194304,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,4194304,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,512,runtime_ms,0.11984448,measured,cuda_events
+run_20261020T204642Z,stencil_1d,4194304,512,effective_bandwidth_GBps,279.9831247964028,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,4194304,512,effective_GFLOPs,174.98945299775175,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,4194304,512,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,4194304,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,4194304,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,4194304,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,64,runtime_ms,0.56863872,measured,cuda_events
+run_20261020T204642Z,stencil_1d,16777216,64,effective_bandwidth_GBps,236.0333956857528,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,16777216,64,effective_GFLOPs,147.5208723035955,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,16777216,64,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,16777216,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,16777216,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,128,runtime_ms,0.5588768,measured,cuda_events
+run_20261020T204642Z,stencil_1d,16777216,128,effective_bandwidth_GBps,240.1561990048612,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,16777216,128,effective_GFLOPs,150.09762437803823,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,16777216,128,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,16777216,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,16777216,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,256,runtime_ms,0.55529984,measured,cuda_events
+run_20261020T204642Z,stencil_1d,16777216,256,effective_bandwidth_GBps,241.70316346570533,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,16777216,256,effective_GFLOPs,151.0644771660658,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,16777216,256,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,16777216,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,16777216,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,512,runtime_ms,0.56253184,measured,cuda_events
+run_20261020T204642Z,stencil_1d,16777216,512,effective_bandwidth_GBps,238.59578864015947,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,16777216,512,effective_GFLOPs,149.12236790009968,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,16777216,512,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,16777216,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,16777216,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,16777216,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,64,runtime_ms,2.2915424,measured,cuda_events
+run_20261020T204642Z,stencil_1d,67108864,64,effective_bandwidth_GBps,234.28364755546312,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,67108864,64,effective_GFLOPs,146.42727972216443,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,67108864,64,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,67108864,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,67108864,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,128,runtime_ms,2.24362176,measured,cuda_events
+run_20261020T204642Z,stencil_1d,67108864,128,effective_bandwidth_GBps,239.28762038749352,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,67108864,128,effective_GFLOPs,149.55476274218344,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,67108864,128,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,67108864,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,67108864,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,256,runtime_ms,2.23027328,measured,cuda_events
+run_20261020T204642Z,stencil_1d,67108864,256,effective_bandwidth_GBps,240.71978838395987,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,67108864,256,effective_GFLOPs,150.4498677399749,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,67108864,256,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,67108864,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,67108864,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,512,runtime_ms,2.26473024,measured,cuda_events
+run_20261020T204642Z,stencil_1d,67108864,512,effective_bandwidth_GBps,237.0573335921898,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,stencil_1d,67108864,512,effective_GFLOPs,148.16083349511862,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,stencil_1d,67108864,512,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,stencil_1d,67108864,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,stencil_1d,67108864,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,stencil_1d,67108864,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,64,runtime_ms,0.01908864,measured,cuda_events
+run_20261020T204642Z,reduction,1048576,64,effective_bandwidth_GBps,223.1610004693891,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,1048576,64,effective_GFLOPs,54.93188618990142,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,1048576,64,arithmetic_intensity,0.24615361140324518,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,1048576,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,1048576,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,128,runtime_ms,0.01945664,measured,cuda_events
+run_20261020T204642Z,reduction,1048576,128,effective_bandwidth_GBps,217.25601131541723,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,1048576,128,effective_GFLOPs,53.89291265089963,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,1048576,128,arithmetic_intensity,0.2480617789335029,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,1048576,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,1048576,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,256,runtime_ms,0.0202304,measured,cuda_events
+run_20261020T204642Z,reduction,1048576,256,effective_bandwidth_GBps,208.13666561214805,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,1048576,256,effective_GFLOPs,51.83164939892439,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,1048576,256,arithmetic_intensity,0.24902699986320526,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,1048576,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,1048576,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,512,runtime_ms,0.02234176,measured,cuda_events
+run_20261020T204642Z,reduction,1048576,512,effective_bandwidth_GBps,188.10048984502566,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,1048576,512,effective_GFLOPs,46.933410796642704,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,1048576,512,arithmetic_intensity,0.2495124326114766,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,1048576,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,1048576,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,1048576,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,64,runtime_ms,0.06290752,measured,cuda_events
+run_20261020T204642Z,reduction,4194304,64,effective_bandwidth_GBps,270.8636423753472,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,4194304,64,effective_GFLOPs,66.6741114575809,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,4194304,64,arithmetic_intensity,0.2461537874661959,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,4194304,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,4194304,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,128,runtime_ms,0.06302464,measured,cuda_events
+run_20261020T204642Z,reduction,4194304,128,effective_bandwidth_GBps,268.2805962874203,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,4194304,128,effective_GFLOPs,66.55020956882895,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,4194304,128,arithmetic_intensity,0.2480619563612827,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,4194304,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,4194304,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,256,runtime_ms,0.06671679999999999,measured,cuda_events
+run_20261020T204642Z,reduction,4194304,256,effective_bandwidth_GBps,252.45143651973717,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,4194304,256,effective_GFLOPs,62.86726881385199,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,4194304,256,arithmetic_intensity,0.2490271779813655,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,4194304,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,4194304,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,512,runtime_ms,0.07510912,measured,cuda_events
+run_20261020T204642Z,reduction,4194304,512,effective_bandwidth_GBps,223.8074950152525,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,4194304,512,effective_GFLOPs,55.84279245982379,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,4194304,512,arithmetic_intensity,0.24951261107684575,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,4194304,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,4194304,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,4194304,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,64,runtime_ms,0.2651968,measured,cuda_events
+run_20261020T204642Z,reduction,16777216,64,effective_bandwidth_GBps,257.007022709173,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,16777216,64,effective_GFLOPs,63.26326335762725,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,16777216,64,arithmetic_intensity,0.2461538314819336,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,16777216,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,16777216,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,128,runtime_ms,0.2690624,measured,cuda_events
+run_20261020T204642Z,reduction,16777216,128,effective_bandwidth_GBps,251.36604742988993,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,16777216,128,effective_GFLOPs,62.354364638091404,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,16777216,128,arithmetic_intensity,0.24806200071822765,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,16777216,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,16777216,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,256,runtime_ms,0.2917696,measured,cuda_events
+run_20261020T204642Z,reduction,16777216,256,effective_bandwidth_GBps,230.90482353199232,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,16777216,256,effective_GFLOPs,57.50158686854285,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,16777216,256,arithmetic_intensity,0.2490272225109056,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,16777216,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,16777216,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,512,runtime_ms,0.33857728,measured,cuda_events
+run_20261020T204642Z,reduction,16777216,512,effective_bandwidth_GBps,198.59553482147416,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,16777216,512,effective_GFLOPs,49.552099302115025,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,16777216,512,arithmetic_intensity,0.24951265569318803,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,16777216,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,16777216,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,16777216,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,64,runtime_ms,1.08913536,measured,cuda_events
+run_20261020T204642Z,reduction,67108864,64,effective_bandwidth_GBps,250.317609741364,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,67108864,64,effective_GFLOPs,61.6166414797147,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,67108864,64,arithmetic_intensity,0.24615384248586802,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,67108864,64,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,67108864,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,128,runtime_ms,1.10455936,measured,cuda_events
+run_20261020T204642Z,reduction,67108864,128,effective_bandwidth_GBps,244.92355757141019,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,67108864,128,effective_GFLOPs,60.75623043020522,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,67108864,128,arithmetic_intensity,0.2480620118074639,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,67108864,128,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,67108864,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,256,runtime_ms,1.19314944,measured,cuda_events
+run_20261020T204642Z,reduction,67108864,256,effective_bandwidth_GBps,225.85941288293273,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,67108864,256,effective_GFLOPs,56.24514478253453,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,67108864,256,arithmetic_intensity,0.2490272336432906,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,67108864,256,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,67108864,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,512,runtime_ms,1.38936064,measured,cuda_events
+run_20261020T204642Z,reduction,67108864,512,effective_bandwidth_GBps,193.5852623549203,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,reduction,67108864,512,effective_GFLOPs,48.30197507250529,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,reduction,67108864,512,arithmetic_intensity,0.2495126668472736,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,reduction,67108864,512,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,reduction,67108864,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,reduction,67108864,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,128,16,runtime_ms,0.00816576,measured,cuda_events
+run_20261020T204642Z,gemm_naive,128,16,effective_bandwidth_GBps,24.077122031507173,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,gemm_naive,128,16,effective_GFLOPs,513.6452700054864,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,gemm_naive,128,16,arithmetic_intensity,21.333333333333332,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,gemm_naive,128,16,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,gemm_naive,128,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,128,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,128,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,128,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,128,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,256,16,runtime_ms,0.02795136,measured,cuda_events
+run_20261020T204642Z,gemm_naive,256,16,effective_bandwidth_GBps,28.135732930347572,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,gemm_naive,256,16,effective_GFLOPs,1200.4579383614964,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,gemm_naive,256,16,arithmetic_intensity,42.666666666666664,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,gemm_naive,256,16,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,gemm_naive,256,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,256,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,256,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,256,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,256,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,512,16,runtime_ms,0.15325952,measured,cuda_events
+run_20261020T204642Z,gemm_naive,512,16,effective_bandwidth_GBps,20.52549818764929,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,gemm_naive,512,16,effective_GFLOPs,1751.5091786794062,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,gemm_naive,512,16,arithmetic_intensity,85.33333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,gemm_naive,512,16,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,gemm_naive,512,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,512,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,512,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,512,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,512,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,1024,16,runtime_ms,1.15708224,measured,cuda_events
+run_20261020T204642Z,gemm_naive,1024,16,effective_bandwidth_GBps,10.874691154191426,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,gemm_naive,1024,16,effective_GFLOPs,1855.9472903153369,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,gemm_naive,1024,16,arithmetic_intensity,170.66666666666666,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,gemm_naive,1024,16,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,gemm_naive,1024,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,1024,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,1024,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,1024,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,1024,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,2048,16,runtime_ms,9.15873984,measured,cuda_events
+run_20261020T204642Z,gemm_naive,2048,16,effective_bandwidth_GBps,5.495477421487713,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,gemm_naive,2048,16,effective_GFLOPs,1875.789626534473,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,gemm_naive,2048,16,arithmetic_intensity,341.3333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,gemm_naive,2048,16,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,gemm_naive,2048,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,2048,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,2048,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,2048,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_naive,2048,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,128,16,runtime_ms,0.00823616,measured,cuda_events
+run_20261020T204642Z,gemm_tiled,128,16,effective_bandwidth_GBps,23.871318672779548,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,gemm_tiled,128,16,effective_GFLOPs,509.2547983526304,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,gemm_tiled,128,16,arithmetic_intensity,21.333333333333332,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,gemm_tiled,128,16,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,gemm_tiled,128,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,128,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,128,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,128,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,128,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,256,16,runtime_ms,0.0199648,measured,cuda_events
+run_20261020T204642Z,gemm_tiled,256,16,effective_bandwidth_GBps,39.390928033338675,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,gemm_tiled,256,16,effective_GFLOPs,1680.6795960891168,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,gemm_tiled,256,16,arithmetic_intensity,42.666666666666664,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,gemm_tiled,256,16,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,gemm_tiled,256,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,256,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,256,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,256,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,256,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,512,16,runtime_ms,0.11691328,measured,cuda_events
+run_20261020T204642Z,gemm_tiled,512,16,effective_bandwidth_GBps,26.906507113648683,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,gemm_tiled,512,16,effective_GFLOPs,2296.021940364688,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,gemm_tiled,512,16,arithmetic_intensity,85.33333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,gemm_tiled,512,16,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,gemm_tiled,512,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,512,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,512,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,512,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,512,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,1024,16,runtime_ms,0.86927296,measured,cuda_events
+run_20261020T204642Z,gemm_tiled,1024,16,effective_bandwidth_GBps,14.475213861477988,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,gemm_tiled,1024,16,effective_GFLOPs,2470.4364990255767,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,gemm_tiled,1024,16,arithmetic_intensity,170.66666666666666,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,gemm_tiled,1024,16,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,gemm_tiled,1024,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,1024,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,1024,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,1024,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,1024,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,2048,16,runtime_ms,6.83604864,measured,cuda_events
+run_20261020T204642Z,gemm_tiled,2048,16,effective_bandwidth_GBps,7.362681374952885,derived_estimate,bytes_moved/runtime_ms
+run_20261020T204642Z,gemm_tiled,2048,16,effective_GFLOPs,2513.1285759839184,derived_estimate,flops/runtime_ms
+run_20261020T204642Z,gemm_tiled,2048,16,arithmetic_intensity,341.3333333333333,derived_estimate,flops/bytes_moved
+run_20261020T204642Z,gemm_tiled,2048,16,device_metadata,"{""compute_capability_major"": 12, ""compute_capability_minor"": 1, ""metadata_available"": true, ""multiprocessor_count"": 48, ""name"": ""NVIDIA GB10"", ""total_global_mem_bytes"": 130663165952, ""uuid"": ""GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8""}",measured,cuda_runtime_api
+run_20261020T204642Z,gemm_tiled,2048,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,2048,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,2048,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,2048,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T204642Z,gemm_tiled,2048,16,sm_utilization,,unavailable,nsight_compute_not_run

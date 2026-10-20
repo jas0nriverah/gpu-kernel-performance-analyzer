@@ -1,0 +1,10 @@
+# Scientific dependency constraints for the recorded Python 3.11 environment.
+# Install with: pip install -e ".[power,api]" -c requirements-research.txt
+joblib==1.6.0
+matplotlib==3.11.2
+numpy==2.4.6
+pandas==3.0.6
+PyYAML==6.0.3
+scikit-learn==1.9.1
+scipy==1.17.1
+threadpoolctl==3.7.0

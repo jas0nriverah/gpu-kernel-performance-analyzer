@@ -1,0 +1,26 @@
+{
+  "scope": "In-process TestClient; no network or latency benchmark.",
+  "saved_model": "outputs/prizepicks-h200-2026-10-20/transfer/registry/linear_regression/20261020T201154Z",
+  "records": 1153,
+  "health": {
+    "status": "ok",
+    "model_loaded": true,
+    "model_name": "linear_regression",
+    "model_version": "20261020T201154Z"
+  },
+  "model_http_status": 200,
+  "predict_http_status": 422,
+  "expected_unseen_gpu_rejection": true,
+  "max_absolute_difference_watts": null,
+  "all_predictions_finite": null,
+  "served_records": 0,
+  "metrics": {
+    "scope": "process",
+    "prediction_requests": 10,
+    "prediction_failures": 10,
+    "prediction_records": 0,
+    "log_write_failures": 0,
+    "last_log_error": null
+  },
+  "telemetry_sha256": "f068800d83400d1405d56582ed936ff840465c3f4caff7a345e4df938a47d4cb"
+}

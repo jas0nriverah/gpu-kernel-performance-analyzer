@@ -1,0 +1,152 @@
+{
+  "categorical_features": [
+    "workload_type",
+    "gpu_name"
+  ],
+  "created_utc": "2026-10-20T20:40:30.003803+00:00",
+  "feature_order": [
+    "gpu_utilization_pct",
+    "memory_utilization_pct",
+    "graphics_clock_mhz",
+    "memory_clock_mhz",
+    "temperature_c",
+    "workload_type",
+    "gpu_name"
+  ],
+  "git_commit": null,
+  "metrics": {},
+  "model_name": "rf_unbounded_full",
+  "numeric_features": [
+    "gpu_utilization_pct",
+    "memory_utilization_pct",
+    "graphics_clock_mhz",
+    "memory_clock_mhz",
+    "temperature_c"
+  ],
+  "python_version": "3.11.9",
+  "reference_profile": {
+    "categorical": {
+      "gpu_name": {
+        "categories": [
+          "NVIDIA H200",
+          "NVIDIA H100 80GB HBM3"
+        ],
+        "categories_truncated": false,
+        "count": 2276,
+        "missing_rate": 0.0,
+        "top_values": {
+          "NVIDIA H100 80GB HBM3": 1123,
+          "NVIDIA H200": 1153
+        },
+        "unique_count": 2
+      },
+      "workload_type": {
+        "categories": [
+          "vector_add",
+          "gemm_naive",
+          "gemm_tiled",
+          "memcpy_bandwidth",
+          "stencil_1d",
+          "reduction"
+        ],
+        "categories_truncated": false,
+        "count": 2276,
+        "missing_rate": 0.0,
+        "top_values": {
+          "gemm_naive": 291,
+          "gemm_tiled": 290,
+          "memcpy_bandwidth": 285,
+          "reduction": 282,
+          "stencil_1d": 282,
+          "vector_add": 846
+        },
+        "unique_count": 6
+      }
+    },
+    "categorical_features": [
+      "workload_type",
+      "gpu_name"
+    ],
+    "feature_order": [
+      "gpu_utilization_pct",
+      "memory_utilization_pct",
+      "graphics_clock_mhz",
+      "memory_clock_mhz",
+      "temperature_c",
+      "workload_type",
+      "gpu_name"
+    ],
+    "numeric": {
+      "gpu_utilization_pct": {
+        "count": 2276,
+        "max": 100.0,
+        "mean": 100.0,
+        "min": 100.0,
+        "missing_rate": 0.0,
+        "p05": 100.0,
+        "p50": 100.0,
+        "p95": 100.0,
+        "std": 0.0
+      },
+      "graphics_clock_mhz": {
+        "count": 2276,
+        "max": 1980.0,
+        "mean": 1980.0,
+        "min": 1980.0,
+        "missing_rate": 0.0,
+        "p05": 1980.0,
+        "p50": 1980.0,
+        "p95": 1980.0,
+        "std": 0.0
+      },
+      "memory_clock_mhz": {
+        "count": 2276,
+        "max": 3201.0,
+        "mean": 2913.835676625659,
+        "min": 2619.0,
+        "missing_rate": 0.0,
+        "p05": 2619.0,
+        "p50": 3201.0,
+        "p95": 3201.0,
+        "std": 290.9747198380357
+      },
+      "memory_utilization_pct": {
+        "count": 2276,
+        "max": 100.0,
+        "mean": 56.20694200351494,
+        "min": 0.0,
+        "missing_rate": 0.0,
+        "p05": 0.0,
+        "p50": 67.0,
+        "p95": 100.0,
+        "std": 38.66865877545073
+      },
+      "temperature_c": {
+        "count": 2276,
+        "max": 53.0,
+        "mean": 45.94288224956063,
+        "min": 39.0,
+        "missing_rate": 0.0,
+        "p05": 43.0,
+        "p50": 46.0,
+        "p95": 51.0,
+        "std": 2.3914550846685803
+      }
+    },
+    "numeric_features": [
+      "gpu_utilization_pct",
+      "memory_utilization_pct",
+      "graphics_clock_mhz",
+      "memory_clock_mhz",
+      "temperature_c"
+    ],
+    "profile_version": 1,
+    "row_count": 2276,
+    "warnings": []
+  },
+  "sklearn_version": "1.9.1",
+  "source": "local_nvidia_smi",
+  "split_strategy": "known_device_whole_trial_validation_then_refit",
+  "target": "power_watts",
+  "version": "20261020T204029Z"
+}

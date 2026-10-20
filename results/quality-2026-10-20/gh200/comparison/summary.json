@@ -1,0 +1,83 @@
+[
+  {
+    "comparison": "h100-gh200",
+    "matched": 74,
+    "over_5pct_slower": 0,
+    "noisy": 1,
+    "gate_passed": false,
+    "median_change_pct": -5.022397787736798,
+    "max_change_pct": 0.7664414270286857
+  },
+  {
+    "comparison": "h100-gh200-trial-2",
+    "matched": 74,
+    "over_5pct_slower": 0,
+    "noisy": 3,
+    "gate_passed": false,
+    "median_change_pct": -5.0773149941172715,
+    "max_change_pct": 0.04881077374443432
+  },
+  {
+    "comparison": "h100-gh200-trial-3",
+    "matched": 74,
+    "over_5pct_slower": 0,
+    "noisy": 3,
+    "gate_passed": false,
+    "median_change_pct": -5.0076826536570245,
+    "max_change_pct": 0.10398225229870661
+  },
+  {
+    "comparison": "h100-h200",
+    "matched": 74,
+    "over_5pct_slower": 0,
+    "noisy": 0,
+    "gate_passed": false,
+    "median_change_pct": -0.0710448967404742,
+    "max_change_pct": 1.9916868721856718
+  },
+  {
+    "comparison": "h100-h200-trial-2",
+    "matched": 74,
+    "over_5pct_slower": 0,
+    "noisy": 2,
+    "gate_passed": false,
+    "median_change_pct": -0.4527192092950161,
+    "max_change_pct": 0.5907940011686152
+  },
+  {
+    "comparison": "h100-h200-trial-3",
+    "matched": 74,
+    "over_5pct_slower": 0,
+    "noisy": 1,
+    "gate_passed": false,
+    "median_change_pct": -0.31897983599560864,
+    "max_change_pct": 0.5756370100736374
+  },
+  {
+    "comparison": "h200-gh200",
+    "matched": 74,
+    "over_5pct_slower": 8,
+    "noisy": 1,
+    "gate_passed": false,
+    "median_change_pct": -1.2231457332269546,
+    "max_change_pct": 8.574513220698531
+  },
+  {
+    "comparison": "h200-gh200-trial-2",
+    "matched": 74,
+    "over_5pct_slower": 6,
+    "noisy": 3,
+    "gate_passed": false,
+    "median_change_pct": -0.9874920442443647,
+    "max_change_pct": 8.43157362136655
+  },
+  {
+    "comparison": "h200-gh200-trial-3",
+    "matched": 74,
+    "over_5pct_slower": 9,
+    "noisy": 3,
+    "gate_passed": false,
+    "median_change_pct": -1.0099064798372748,
+    "max_change_pct": 8.686634572166586
+  }
+]

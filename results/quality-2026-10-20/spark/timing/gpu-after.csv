@@ -1,0 +1,2 @@
+uuid, name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%], clocks.current.sm [MHz], clocks.current.memory [MHz], power.limit [W]
+GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8, NVIDIA GB10, 580.173.02, [N/A], [N/A], 0 %, 2411 MHz, [N/A], [N/A]

@@ -1,0 +1,16 @@
+{
+  "remote_login_service": "planetexpress-login.cc.gatech.edu",
+  "remote_compute_node": "hopper1.cc.gatech.edu",
+  "remote_source_directory": "/nethome/jriverah3/gpu-kernel-quality-20261020",
+  "allocation_job_id": 11542,
+  "allocation_policy": "Existing user allocation preserved; srun --jobid=11542 --overlap --ntasks=1 --cpus-per-task=4; no job cancellation or clock changes",
+  "native_python": "Python 3.12.3 aarch64 in fresh .venv-gh200",
+  "native_cuda": "/usr/local/cuda-12.8",
+  "gpu_uuid": "GPU-d0a568f0-708f-e632-a937-78e43236ecab",
+  "source_manifest": "source-manifest.json",
+  "source_snapshot_utc": "2026-10-20T20:25:03.622686+00:00",
+  "installation": "python3 -m venv .venv-gh200; .venv-gh200/bin/python -m pip install -e \".[dev]\" cmake",
+  "timing": "MODE=smoke and MODE=full scripts/cross_validate_gpu.sh, fresh separate output/build directories",
+  "power": "python -m gpu_kernel_analyzer power capture --binary outputs/gh200/timing/build/gpu_benchmark --scenarios configs/power_h100.yaml --outdir outputs/gh200/power --device GPU-d0a568f0-708f-e632-a937-78e43236ecab --duration-seconds 15 --trials 3",
+  "source_hash_check": "48 benchmark/config/analyzer files matched snapshot SHA256 locally; no kernel/protocol edits"
+}

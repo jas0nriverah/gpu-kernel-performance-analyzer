@@ -1,0 +1,72 @@
+{
+  "categorical_features": [
+    "workload_type"
+  ],
+  "created_utc": "2026-10-20T20:37:31.594183+00:00",
+  "feature_order": [
+    "workload_type"
+  ],
+  "git_commit": null,
+  "metrics": {},
+  "model_name": "training_workload_mean",
+  "numeric_features": [],
+  "python_version": "3.11.9",
+  "reference_profile": {
+    "categorical": {
+      "gpu_name": {
+        "categories": [
+          "NVIDIA H200",
+          "NVIDIA H100 80GB HBM3"
+        ],
+        "categories_truncated": false,
+        "count": 2276,
+        "missing_rate": 0.0,
+        "top_values": {
+          "NVIDIA H100 80GB HBM3": 1123,
+          "NVIDIA H200": 1153
+        },
+        "unique_count": 2
+      },
+      "workload_type": {
+        "categories": [
+          "vector_add",
+          "gemm_naive",
+          "gemm_tiled",
+          "memcpy_bandwidth",
+          "stencil_1d",
+          "reduction"
+        ],
+        "categories_truncated": false,
+        "count": 2276,
+        "missing_rate": 0.0,
+        "top_values": {
+          "gemm_naive": 291,
+          "gemm_tiled": 290,
+          "memcpy_bandwidth": 285,
+          "reduction": 282,
+          "stencil_1d": 282,
+          "vector_add": 846
+        },
+        "unique_count": 6
+      }
+    },
+    "categorical_features": [
+      "workload_type",
+      "gpu_name"
+    ],
+    "feature_order": [
+      "workload_type",
+      "gpu_name"
+    ],
+    "numeric": {},
+    "numeric_features": [],
+    "profile_version": 1,
+    "row_count": 2276,
+    "warnings": []
+  },
+  "sklearn_version": "1.9.1",
+  "source": "local_nvidia_smi",
+  "split_strategy": "two_device_development_after_frozen_selection",
+  "target": "power_watts",
+  "version": "20261020T203731Z"
+}

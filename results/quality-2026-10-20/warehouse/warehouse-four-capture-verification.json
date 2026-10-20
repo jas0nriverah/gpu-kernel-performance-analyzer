@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "runs": 4,
+    "artifacts": 216,
+    "trials": 96,
+    "samples": 8396,
+    "steady_samples": 4666
+  },
+  "first_inserted": true,
+  "repeat_inserted": false,
+  "integrity_check": "ok",
+  "foreign_key_check": [],
+  "scope": "Four captures on three physical GPUs, including prospective independent H200 capture."
+}

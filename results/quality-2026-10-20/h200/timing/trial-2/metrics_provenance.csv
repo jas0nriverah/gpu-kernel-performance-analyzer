@@ -1,0 +1,741 @@
+run_id,kernel,problem_size,block_size,metric_name,metric_value,status,source
+run_20261020T200054Z,vector_add,1048576,64,runtime_ms,0.0147552,measured,cuda_events
+run_20261020T200054Z,vector_add,1048576,64,effective_bandwidth_GBps,852.7781392322707,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,1048576,64,effective_GFLOPs,71.06484493602257,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,1048576,64,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,1048576,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,1048576,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,128,runtime_ms,0.00983488,measured,cuda_events
+run_20261020T200054Z,vector_add,1048576,128,effective_bandwidth_GBps,1279.4169323875838,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,1048576,128,effective_GFLOPs,106.61807769896532,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,1048576,128,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,1048576,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,1048576,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,256,runtime_ms,0.00745536,measured,cuda_events
+run_20261020T200054Z,vector_add,1048576,256,effective_bandwidth_GBps,1687.7671903167652,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,1048576,256,effective_GFLOPs,140.64726585973045,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,1048576,256,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,1048576,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,1048576,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,512,runtime_ms,0.00664448,measured,cuda_events
+run_20261020T200054Z,vector_add,1048576,512,effective_bandwidth_GBps,1893.7391639375842,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,1048576,512,effective_GFLOPs,157.8115969947987,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,1048576,512,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,1048576,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,1048576,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,1048576,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,64,runtime_ms,0.04450496,measured,cuda_events
+run_20261020T200054Z,vector_add,4194304,64,effective_bandwidth_GBps,1130.9222163102718,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,4194304,64,effective_GFLOPs,94.24351802585599,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,4194304,64,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,4194304,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,4194304,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,128,runtime_ms,0.02501376,measured,cuda_events
+run_20261020T200054Z,vector_add,4194304,128,effective_bandwidth_GBps,2012.1584280012282,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,4194304,128,effective_GFLOPs,167.67986900010237,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,4194304,128,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,4194304,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,4194304,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,256,runtime_ms,0.01941376,measured,cuda_events
+run_20261020T200054Z,vector_add,4194304,256,effective_bandwidth_GBps,2592.575987340938,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,4194304,256,effective_GFLOPs,216.04799894507818,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,4194304,256,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,4194304,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,4194304,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,512,runtime_ms,0.02037056,measured,cuda_events
+run_20261020T200054Z,vector_add,4194304,512,effective_bandwidth_GBps,2470.8033554305825,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,4194304,512,effective_GFLOPs,205.9002796192152,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,4194304,512,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,4194304,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,4194304,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,4194304,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,64,runtime_ms,0.16286912,measured,cuda_events
+run_20261020T200054Z,vector_add,16777216,64,effective_bandwidth_GBps,1236.1250063854952,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,16777216,64,effective_GFLOPs,103.01041719879127,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,16777216,64,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,16777216,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,16777216,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,128,runtime_ms,0.08443968,measured,cuda_events
+run_20261020T200054Z,vector_add,16777216,128,effective_bandwidth_GBps,2384.2652174901655,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,16777216,128,effective_GFLOPs,198.68876812418048,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,16777216,128,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,16777216,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,16777216,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,256,runtime_ms,0.06315008,measured,cuda_events
+run_20261020T200054Z,vector_add,16777216,256,effective_bandwidth_GBps,3188.065509972434,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,16777216,256,effective_GFLOPs,265.67212583103617,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,16777216,256,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,16777216,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,16777216,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,512,runtime_ms,0.06668864,measured,cuda_events
+run_20261020T200054Z,vector_add,16777216,512,effective_bandwidth_GBps,3018.9038492912737,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,16777216,512,effective_GFLOPs,251.57532077427283,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,16777216,512,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,16777216,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,16777216,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,16777216,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,64,runtime_ms,0.63510976,measured,cuda_events
+run_20261020T200054Z,vector_add,67108864,64,effective_bandwidth_GBps,1267.9798339109132,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,67108864,64,effective_GFLOPs,105.66498615924277,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,67108864,64,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,67108864,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,67108864,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,128,runtime_ms,0.3216512,measured,cuda_events
+run_20261020T200054Z,vector_add,67108864,128,effective_bandwidth_GBps,2503.6634963587885,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,67108864,128,effective_GFLOPs,208.63862469656573,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,67108864,128,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,67108864,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,67108864,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,256,runtime_ms,0.23653568,measured,cuda_events
+run_20261020T200054Z,vector_add,67108864,256,effective_bandwidth_GBps,3404.5872825613455,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,67108864,256,effective_GFLOPs,283.71560688011215,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,67108864,256,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,67108864,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,67108864,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,512,runtime_ms,0.25078848,measured,cuda_events
+run_20261020T200054Z,vector_add,67108864,512,effective_bandwidth_GBps,3211.0979260291383,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,vector_add,67108864,512,effective_GFLOPs,267.5914938357616,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,vector_add,67108864,512,arithmetic_intensity,0.08333333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,vector_add,67108864,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,vector_add,67108864,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,vector_add,67108864,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,64,runtime_ms,0.01472064,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,1048576,64,effective_bandwidth_GBps,569.853484631103,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,1048576,64,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,1048576,64,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,1048576,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,1048576,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,128,runtime_ms,0.00991616,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,1048576,128,effective_bandwidth_GBps,845.9532722344134,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,1048576,128,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,1048576,128,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,1048576,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,1048576,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,256,runtime_ms,0.0073216,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,1048576,256,effective_bandwidth_GBps,1145.7342657342658,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,1048576,256,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,1048576,256,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,1048576,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,1048576,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,512,runtime_ms,0.006496,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,1048576,512,effective_bandwidth_GBps,1291.3497536945813,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,1048576,512,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,1048576,512,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,1048576,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,1048576,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,1048576,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,64,runtime_ms,0.04436032,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,4194304,64,effective_bandwidth_GBps,756.4064461212182,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,4194304,64,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,4194304,64,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,4194304,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,4194304,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,128,runtime_ms,0.02454976,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,4194304,128,effective_bandwidth_GBps,1366.792669256237,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,4194304,128,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,4194304,128,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,4194304,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,4194304,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,256,runtime_ms,0.01488896,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,4194304,256,effective_bandwidth_GBps,2253.645116918845,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,4194304,256,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,4194304,256,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,4194304,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,4194304,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,512,runtime_ms,0.01233088,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,4194304,512,effective_bandwidth_GBps,2721.1709139980276,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,4194304,512,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,4194304,512,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,4194304,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,4194304,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,4194304,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,64,runtime_ms,0.16259776,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,16777216,64,effective_bandwidth_GBps,825.458653304941,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,16777216,64,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,16777216,64,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,16777216,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,16777216,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,128,runtime_ms,0.08411264,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,16777216,128,effective_bandwidth_GBps,1595.6903504633788,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,16777216,128,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,16777216,128,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,16777216,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,16777216,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,256,runtime_ms,0.054352,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,16777216,256,effective_bandwidth_GBps,2469.4165440094202,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,16777216,256,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,16777216,256,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,16777216,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,16777216,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,512,runtime_ms,0.05831936,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,16777216,512,effective_bandwidth_GBps,2301.426627452702,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,16777216,512,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,16777216,512,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,16777216,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,16777216,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,16777216,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,64,runtime_ms,0.63509312,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,67108864,64,effective_bandwidth_GBps,845.3420374007517,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,67108864,64,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,67108864,64,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,67108864,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,67108864,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,128,runtime_ms,0.32102272,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,67108864,128,effective_bandwidth_GBps,1672.3766841175607,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,67108864,128,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,67108864,128,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,67108864,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,67108864,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,256,runtime_ms,0.2011392,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,67108864,256,effective_bandwidth_GBps,2669.1510754741,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,67108864,256,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,67108864,256,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,67108864,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,67108864,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,512,runtime_ms,0.21719104,measured,cuda_events
+run_20261020T200054Z,memcpy_bandwidth,67108864,512,effective_bandwidth_GBps,2471.8833336771168,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,67108864,512,effective_GFLOPs,0.0,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,memcpy_bandwidth,67108864,512,arithmetic_intensity,0.0,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,memcpy_bandwidth,67108864,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,memcpy_bandwidth,67108864,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,memcpy_bandwidth,67108864,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,64,runtime_ms,0.014896,measured,cuda_events
+run_20261020T200054Z,stencil_1d,1048576,64,effective_bandwidth_GBps,563.1450053705694,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,1048576,64,effective_GFLOPs,351.9656283566058,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,1048576,64,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,1048576,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,1048576,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,128,runtime_ms,0.00991808,measured,cuda_events
+run_20261020T200054Z,stencil_1d,1048576,128,effective_bandwidth_GBps,845.7895076466414,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,1048576,128,effective_GFLOPs,528.6184422791508,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,1048576,128,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,1048576,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,1048576,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,256,runtime_ms,0.00747776,measured,cuda_events
+run_20261020T200054Z,stencil_1d,1048576,256,effective_bandwidth_GBps,1121.8076001369395,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,1048576,256,effective_GFLOPs,701.1297500855871,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,1048576,256,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,1048576,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,1048576,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,512,runtime_ms,0.00697856,measured,cuda_events
+run_20261020T200054Z,stencil_1d,1048576,512,effective_bandwidth_GBps,1202.0542920029347,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,1048576,512,effective_GFLOPs,751.2839325018342,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,1048576,512,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,1048576,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,1048576,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,1048576,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,64,runtime_ms,0.04441536,measured,cuda_events
+run_20261020T200054Z,stencil_1d,4194304,64,effective_bandwidth_GBps,755.4690989783716,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,4194304,64,effective_GFLOPs,472.1681868614822,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,4194304,64,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,4194304,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,4194304,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,128,runtime_ms,0.0247648,measured,cuda_events
+run_20261020T200054Z,stencil_1d,4194304,128,effective_bandwidth_GBps,1354.9244088383512,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,4194304,128,effective_GFLOPs,846.8277555239695,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,4194304,128,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,4194304,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,4194304,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,256,runtime_ms,0.01506816,measured,cuda_events
+run_20261020T200054Z,stencil_1d,4194304,256,effective_bandwidth_GBps,2226.8433571185865,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,4194304,256,effective_GFLOPs,1391.7770981991166,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,4194304,256,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,4194304,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,4194304,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,512,runtime_ms,0.01376896,measured,cuda_events
+run_20261020T200054Z,stencil_1d,4194304,512,effective_bandwidth_GBps,2436.961978246723,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,4194304,512,effective_GFLOPs,1523.101236404202,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,4194304,512,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,4194304,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,4194304,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,4194304,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,64,runtime_ms,0.16262656,measured,cuda_events
+run_20261020T200054Z,stencil_1d,16777216,64,effective_bandwidth_GBps,825.312470484526,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,16777216,64,effective_GFLOPs,515.8202940528288,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,16777216,64,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,16777216,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,16777216,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,128,runtime_ms,0.08424448,measured,cuda_events
+run_20261020T200054Z,stencil_1d,16777216,128,effective_bandwidth_GBps,1593.193144524128,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,16777216,128,effective_GFLOPs,995.74571532758,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,16777216,128,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,16777216,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,16777216,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,256,runtime_ms,0.05909248,measured,cuda_events
+run_20261020T200054Z,stencil_1d,16777216,256,effective_bandwidth_GBps,2271.316553307629,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,16777216,256,effective_GFLOPs,1419.572845817268,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,16777216,256,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,16777216,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,16777216,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,512,runtime_ms,0.06308928,measured,cuda_events
+run_20261020T200054Z,stencil_1d,16777216,512,effective_bandwidth_GBps,2127.425261470729,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,16777216,512,effective_GFLOPs,1329.6407884192054,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,16777216,512,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,16777216,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,16777216,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,16777216,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,64,runtime_ms,0.635024,measured,cuda_events
+run_20261020T200054Z,stencil_1d,67108864,64,effective_bandwidth_GBps,845.434049736703,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,67108864,64,effective_GFLOPs,528.3962810854393,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,67108864,64,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,67108864,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,67108864,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,128,runtime_ms,0.32146304,measured,cuda_events
+run_20261020T200054Z,stencil_1d,67108864,128,effective_bandwidth_GBps,1670.0859669590634,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,67108864,128,effective_GFLOPs,1043.8037293494147,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,67108864,128,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,67108864,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,67108864,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,256,runtime_ms,0.22005824,measured,cuda_events
+run_20261020T200054Z,stencil_1d,67108864,256,effective_bandwidth_GBps,2439.676478372271,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,67108864,256,effective_GFLOPs,1524.7977989826695,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,67108864,256,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,67108864,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,67108864,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,512,runtime_ms,0.23602304,measured,cuda_events
+run_20261020T200054Z,stencil_1d,67108864,512,effective_bandwidth_GBps,2274.65467778061,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,stencil_1d,67108864,512,effective_GFLOPs,1421.6591736128812,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,stencil_1d,67108864,512,arithmetic_intensity,0.625,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,stencil_1d,67108864,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,stencil_1d,67108864,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,stencil_1d,67108864,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,64,runtime_ms,0.01545472,measured,cuda_events
+run_20261020T200054Z,reduction,1048576,64,effective_bandwidth_GBps,275.63359284412786,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,1048576,64,effective_GFLOPs,67.84820430263375,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,1048576,64,arithmetic_intensity,0.24615361140324518,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,1048576,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,1048576,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,128,runtime_ms,0.0104544,measured,cuda_events
+run_20261020T200054Z,reduction,1048576,128,effective_bandwidth_GBps,404.33425160697885,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,1048576,128,effective_GFLOPs,100.29987373737372,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,1048576,128,arithmetic_intensity,0.2480617789335029,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,1048576,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,1048576,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,256,runtime_ms,0.0094912,measured,cuda_events
+run_20261020T200054Z,reduction,1048576,256,effective_bandwidth_GBps,443.6412677006069,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,1048576,256,effective_GFLOPs,110.47865391099123,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,1048576,256,arithmetic_intensity,0.24902699986320526,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,1048576,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,1048576,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,512,runtime_ms,0.01000512,measured,cuda_events
+run_20261020T200054Z,reduction,1048576,512,effective_bandwidth_GBps,420.03454231433506,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,1048576,512,effective_GFLOPs,104.80384043369794,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,1048576,512,arithmetic_intensity,0.2495124326114766,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,1048576,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,1048576,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,1048576,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,64,runtime_ms,0.04493824,measured,cuda_events
+run_20261020T200054Z,reduction,4194304,64,effective_bandwidth_GBps,379.1728380995784,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,4194304,64,effective_GFLOPs,93.33483020251795,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,4194304,64,arithmetic_intensity,0.2461537874661959,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,4194304,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,4194304,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,128,runtime_ms,0.02532288,measured,cuda_events
+run_20261020T200054Z,reduction,4194304,128,effective_bandwidth_GBps,667.7079384335432,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,4194304,128,effective_GFLOPs,165.6329374857836,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,4194304,128,arithmetic_intensity,0.2480619563612827,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,4194304,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,4194304,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,256,runtime_ms,0.02202496,measured,cuda_events
+run_20261020T200054Z,reduction,4194304,256,effective_bandwidth_GBps,764.7120357993839,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,4194304,256,effective_GFLOPs,190.43408024350555,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,4194304,256,arithmetic_intensity,0.2490271779813655,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,4194304,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,4194304,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,512,runtime_ms,0.0240128,measured,cuda_events
+run_20261020T200054Z,reduction,4194304,512,effective_bandwidth_GBps,700.0426439232409,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,4194304,512,effective_GFLOPs,174.66946795042642,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,4194304,512,arithmetic_intensity,0.24951261107684575,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,4194304,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,4194304,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,4194304,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,64,runtime_ms,0.16302848,measured,cuda_events
+run_20261020T200054Z,reduction,16777216,64,effective_bandwidth_GBps,418.07075671686323,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,16777216,64,effective_GFLOPs,102.90971859640722,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,16777216,64,arithmetic_intensity,0.2461538314819336,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,16777216,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,16777216,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,128,runtime_ms,0.08472512,measured,cuda_events
+run_20261020T200054Z,reduction,16777216,128,effective_bandwidth_GBps,798.2656383372488,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,16777216,128,effective_GFLOPs,198.0193713505511,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,16777216,128,arithmetic_intensity,0.24806200071822765,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,16777216,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,16777216,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,256,runtime_ms,0.0807136,measured,cuda_events
+run_20261020T200054Z,reduction,16777216,256,effective_bandwidth_GBps,834.69214605717,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,16777216,256,effective_GFLOPs,207.86106678428422,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,16777216,256,arithmetic_intensity,0.2490272225109056,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,16777216,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,16777216,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,512,runtime_ms,0.09140096,measured,cuda_events
+run_20261020T200054Z,reduction,16777216,512,effective_bandwidth_GBps,735.6589690086406,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,16777216,512,effective_GFLOPs,183.55622304185866,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,16777216,512,arithmetic_intensity,0.24951265569318803,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,16777216,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,16777216,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,16777216,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,64,runtime_ms,0.6354976,measured,cuda_events
+run_20261020T200054Z,reduction,67108864,64,effective_bandwidth_GBps,429.0020292759563,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,67108864,64,effective_GFLOPs,105.6004979405115,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,67108864,64,arithmetic_intensity,0.24615384248586802,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,67108864,64,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,67108864,64,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,64,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,64,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,64,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,64,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,128,runtime_ms,0.32130944,measured,cuda_events
+run_20261020T200054Z,reduction,67108864,128,effective_bandwidth_GBps,841.9690625958577,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,67108864,128,effective_GFLOPs,208.86053954717298,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,67108864,128,arithmetic_intensity,0.2480620118074639,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,67108864,128,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,67108864,128,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,128,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,128,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,128,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,128,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,256,runtime_ms,0.30589248,measured,cuda_events
+run_20261020T200054Z,reduction,67108864,256,effective_bandwidth_GBps,880.9763221377655,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,67108864,256,effective_GFLOPs,219.3870964072082,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,67108864,256,arithmetic_intensity,0.2490272336432906,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,67108864,256,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,67108864,256,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,256,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,256,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,256,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,256,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,512,runtime_ms,0.34777408,measured,cuda_events
+run_20261020T200054Z,reduction,67108864,512,effective_bandwidth_GBps,773.3748990149007,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,reduction,67108864,512,effective_GFLOPs,192.96683352594883,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,reduction,67108864,512,arithmetic_intensity,0.2495126668472736,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,reduction,67108864,512,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,reduction,67108864,512,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,512,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,512,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,512,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,reduction,67108864,512,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,128,16,runtime_ms,0.00854784,measured,cuda_events
+run_20261020T200054Z,gemm_naive,128,16,effective_bandwidth_GBps,23.00089847259659,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,gemm_naive,128,16,effective_GFLOPs,490.6858340820606,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,gemm_naive,128,16,arithmetic_intensity,21.333333333333332,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,gemm_naive,128,16,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,gemm_naive,128,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,128,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,128,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,128,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,128,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,256,16,runtime_ms,0.01354368,measured,cuda_events
+run_20261020T200054Z,gemm_naive,256,16,effective_bandwidth_GBps,58.066345335979584,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,gemm_naive,256,16,effective_GFLOPs,2477.497401001796,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,gemm_naive,256,16,arithmetic_intensity,42.666666666666664,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,gemm_naive,256,16,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,gemm_naive,256,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,256,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,256,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,256,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,256,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,512,16,runtime_ms,0.06057024,measured,cuda_events
+run_20261020T200054Z,gemm_naive,512,16,effective_bandwidth_GBps,51.93520778520937,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,gemm_naive,512,16,effective_GFLOPs,4431.804397671201,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,gemm_naive,512,16,arithmetic_intensity,85.33333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,gemm_naive,512,16,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,gemm_naive,512,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,512,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,512,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,512,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,512,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,1024,16,runtime_ms,0.41833472,measured,cuda_events
+run_20261020T200054Z,gemm_naive,1024,16,effective_bandwidth_GBps,30.078574400900788,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,gemm_naive,1024,16,effective_GFLOPs,5133.410031087068,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,gemm_naive,1024,16,arithmetic_intensity,170.66666666666666,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,gemm_naive,1024,16,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,gemm_naive,1024,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,1024,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,1024,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,1024,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,1024,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,2048,16,runtime_ms,3.17816768,measured,cuda_events
+run_20261020T200054Z,gemm_naive,2048,16,effective_bandwidth_GBps,15.836687383341587,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,gemm_naive,2048,16,effective_GFLOPs,5405.589293513929,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,gemm_naive,2048,16,arithmetic_intensity,341.3333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,gemm_naive,2048,16,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,gemm_naive,2048,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,2048,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,2048,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,2048,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_naive,2048,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,128,16,runtime_ms,0.00758272,measured,cuda_events
+run_20261020T200054Z,gemm_tiled,128,16,effective_bandwidth_GBps,25.928426738690074,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,gemm_tiled,128,16,effective_GFLOPs,553.1397704253883,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,gemm_tiled,128,16,arithmetic_intensity,21.333333333333332,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,gemm_tiled,128,16,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,gemm_tiled,128,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,128,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,128,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,128,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,128,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,256,16,runtime_ms,0.01163456,measured,cuda_events
+run_20261020T200054Z,gemm_tiled,256,16,effective_bandwidth_GBps,67.5944771439573,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,gemm_tiled,256,16,effective_GFLOPs,2884.0310248088454,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,gemm_tiled,256,16,arithmetic_intensity,42.666666666666664,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,gemm_tiled,256,16,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,gemm_tiled,256,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,256,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,256,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,256,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,256,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,512,16,runtime_ms,0.0420128,measured,cuda_events
+run_20261020T200054Z,gemm_tiled,512,16,effective_bandwidth_GBps,74.87546652448776,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,gemm_tiled,512,16,effective_GFLOPs,6389.373143422957,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,gemm_tiled,512,16,arithmetic_intensity,85.33333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,gemm_tiled,512,16,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,gemm_tiled,512,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,512,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,512,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,512,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,512,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,1024,16,runtime_ms,0.27911232,measured,cuda_events
+run_20261020T200054Z,gemm_tiled,1024,16,effective_bandwidth_GBps,45.08189391281617,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,gemm_tiled,1024,16,effective_GFLOPs,7693.976561120628,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,gemm_tiled,1024,16,arithmetic_intensity,170.66666666666666,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,gemm_tiled,1024,16,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,gemm_tiled,1024,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,1024,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,1024,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,1024,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,1024,16,sm_utilization,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,2048,16,runtime_ms,2.10619136,measured,cuda_events
+run_20261020T200054Z,gemm_tiled,2048,16,effective_bandwidth_GBps,23.896996709738666,derived_estimate,bytes_moved/runtime_ms
+run_20261020T200054Z,gemm_tiled,2048,16,effective_GFLOPs,8156.841543590798,derived_estimate,flops/runtime_ms
+run_20261020T200054Z,gemm_tiled,2048,16,arithmetic_intensity,341.3333333333333,derived_estimate,flops/bytes_moved
+run_20261020T200054Z,gemm_tiled,2048,16,device_metadata,"{""compute_capability_major"": 9, ""compute_capability_minor"": 0, ""metadata_available"": true, ""multiprocessor_count"": 132, ""name"": ""NVIDIA H200"", ""total_global_mem_bytes"": 150156607488, ""uuid"": ""GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b""}",measured,cuda_runtime_api
+run_20261020T200054Z,gemm_tiled,2048,16,l2_cache_hit_rate,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,2048,16,l2_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,2048,16,memory_throughput_pct,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,2048,16,occupancy,,unavailable,nsight_compute_not_run
+run_20261020T200054Z,gemm_tiled,2048,16,sm_utilization,,unavailable,nsight_compute_not_run

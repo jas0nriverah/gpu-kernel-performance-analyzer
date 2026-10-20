@@ -1,0 +1,2630 @@
+[
+  {
+    "file": "h200/timing/AGGREGATE.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/AGGREGATE.md",
+    "sha256": "b20d7a63fd5d406c1e52180817349db436ea3a17132b2cca8bea2928cb128bcf"
+  },
+  {
+    "file": "h200/timing/aggregate_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/aggregate_summary.csv",
+    "sha256": "bca41eacfe55ec9b0f2b4764fcf31ba7503d17bb7a48e54be126542faab474cc"
+  },
+  {
+    "file": "h200/timing/baseline/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/baseline/benchmark_summary.csv",
+    "sha256": "ef29b965edc38fc6104e5997e632c15f13eb688517e3a910e08ee4d79cb60ae9"
+  },
+  {
+    "file": "h200/timing/baseline/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/baseline/metrics_provenance.csv",
+    "sha256": "54720b380adbafddfa1d9bbf2f5175864d9b58765bbd7aafa308d705695fef35"
+  },
+  {
+    "file": "h200/timing/baseline/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/baseline/run_manifest.json",
+    "sha256": "506c34e0fa3cefbb5c3a9081120e0ad3ee52ff2e92a4c9a62521f44212830226"
+  },
+  {
+    "file": "h200/timing/baseline/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/baseline/timing_samples.csv",
+    "sha256": "931da638c6520fcbe480e5a62cf7a48e7a6e73a7837c0757ff53ccbcfc74fdb3"
+  },
+  {
+    "file": "h200/timing/edges/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/edges/benchmark_summary.csv",
+    "sha256": "eeb1de312a2b606097d4cc9a55694be0081f73aac0fc0f93e2d1cba3cda4a453"
+  },
+  {
+    "file": "h200/timing/edges/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/edges/metrics_provenance.csv",
+    "sha256": "0002898a3c1bf0c99a6dc81bf77ed3fb6f90eafc5aa1db87a2cd5ffaaa39ad52"
+  },
+  {
+    "file": "h200/timing/edges/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/edges/run_manifest.json",
+    "sha256": "78b64b0c878d25199529dd46df182e4e5527623c1221e412496afdf4564f67fa"
+  },
+  {
+    "file": "h200/timing/edges/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/edges/timing_samples.csv",
+    "sha256": "0c4a9b91b950e2b2918cc3eda3507192dc642f01497595d4c94ed10413b53ade"
+  },
+  {
+    "file": "h200/timing/gpu-after.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/gpu-after.csv",
+    "sha256": "063ca5c248b05d5837ddffe39e36b876295efa3fa36c5ff6440de094e62cfe71"
+  },
+  {
+    "file": "h200/timing/gpu-before.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/gpu-before.csv",
+    "sha256": "063ca5c248b05d5837ddffe39e36b876295efa3fa36c5ff6440de094e62cfe71"
+  },
+  {
+    "file": "h200/timing/nvcc-version.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/nvcc-version.txt",
+    "sha256": "4d71b53f1f4cc720e11f579207de9021c8690a99d9a7ddd57b6942873a1b90b3"
+  },
+  {
+    "file": "h200/timing/requirements-lock.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/requirements-lock.txt",
+    "sha256": "dfff8ea3d753bcafe5f0069c601f77c86e47fdd5c05304cb1736bde661c571d1"
+  },
+  {
+    "file": "h200/timing/trial-1/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-1/benchmark_summary.csv",
+    "sha256": "628dd9c11b398578888bd4ab996227033e7876a27d77a8dd3209129c14186b0e"
+  },
+  {
+    "file": "h200/timing/trial-1/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-1/metrics_provenance.csv",
+    "sha256": "933da07d0d2e846b67f1c2248eb04237203771ab943f476c6dbf4b762d89f62f"
+  },
+  {
+    "file": "h200/timing/trial-1/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-1/run_manifest.json",
+    "sha256": "4b99784b11d656b4695c2cac777bf65c1c77af56a1ae6138f557b2a7265f6be9"
+  },
+  {
+    "file": "h200/timing/trial-1/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-1/timing_samples.csv",
+    "sha256": "d854667a4bf70fc5d6202148cc97f87ca4410f2831f7f53ed695685524f2d2f0"
+  },
+  {
+    "file": "h200/timing/trial-2/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-2/benchmark_summary.csv",
+    "sha256": "77903c1ece989ea85136aa726b6baea6c1016b0235b76c5d52cd7f0ae9d745e5"
+  },
+  {
+    "file": "h200/timing/trial-2/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-2/metrics_provenance.csv",
+    "sha256": "9963bd8c1dfa59d84fdd68f303e053faf1cab526d77d8832894f483fd8800f38"
+  },
+  {
+    "file": "h200/timing/trial-2/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-2/run_manifest.json",
+    "sha256": "3f48363b22fd6554ccaaa699d6f62e232b87f52914cca763cc45c3a2c12f68a5"
+  },
+  {
+    "file": "h200/timing/trial-2/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-2/timing_samples.csv",
+    "sha256": "bc6ba8649ed220482a0d43ee7a59101e4eac3c0a90a5b049ad2326de598a46b9"
+  },
+  {
+    "file": "h200/timing/trial-3/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-3/benchmark_summary.csv",
+    "sha256": "3a3ab2a895b47d9a293f91dce768f37279f0b264bbeace13b965b6f540596a36"
+  },
+  {
+    "file": "h200/timing/trial-3/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-3/metrics_provenance.csv",
+    "sha256": "33e79e0a364c3f076f9f8fb45b8bfea3dbe1fc7a783b4744fb28796dd5acf447"
+  },
+  {
+    "file": "h200/timing/trial-3/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-3/run_manifest.json",
+    "sha256": "de4f1c4f711f84adaf43e3d751a615d676c1fc8efdf05764f33d54b3b3af2b36"
+  },
+  {
+    "file": "h200/timing/trial-3/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/timing/trial-3/timing_samples.csv",
+    "sha256": "eb1ce012c907a9791a4262e7ca722ead2b20b90497446c53696131fa666537a4"
+  },
+  {
+    "file": "h200/power/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/REPORT.md",
+    "sha256": "b712992778c2db2dc3f5427eecdd2507130b779b0f30412349d4c8470cef1c58"
+  },
+  {
+    "file": "h200/power/aggregate.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/aggregate.csv",
+    "sha256": "52faadbd6eb378634d212eaad54b24ac6ecb04e0c4faa9a63657aa3403156266"
+  },
+  {
+    "file": "h200/power/manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/manifest.json",
+    "sha256": "c2e9c84fd6310cc5de7930db9634f43046808db61466276094efa5d306a43b67"
+  },
+  {
+    "file": "h200/power/power.png",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/power.png",
+    "sha256": "71e2aeaaf2c11c335cfe1fd66b7de8bfaaf3d5a80e9e2b04f2ddcb5b4adbf775"
+  },
+  {
+    "file": "h200/power/steady_telemetry.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/steady_telemetry.csv",
+    "sha256": "f068800d83400d1405d56582ed936ff840465c3f4caff7a345e4df938a47d4cb"
+  },
+  {
+    "file": "h200/power/summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/summary.csv",
+    "sha256": "df68dfc70c65041f64ed296f762a10c49b326f481880a6572704967783b04879"
+  },
+  {
+    "file": "h200/power/summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/summary.json",
+    "sha256": "5e9dc98cdc12b2ffb2f37002dc91d99cc7c3b42bd8cbdddb1b5abf65715a742c"
+  },
+  {
+    "file": "h200/power/telemetry.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/telemetry.csv",
+    "sha256": "1e5b6cc63f6d1ed655cd45ce59202488b721796df3005abbe45b5bdc570698ed"
+  },
+  {
+    "file": "h200/power/workers/trial-1-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-gemm_naive-2048-16.json",
+    "sha256": "02bf63bd35805b97ba2f91a63495ce232c0f2623296d0e3b6851f46c1116087a"
+  },
+  {
+    "file": "h200/power/workers/trial-1-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-gemm_naive-2048-16.stderr",
+    "sha256": "5af45d5b1b3f255b9a3e74c12a0d5adc96b1bac92feb00cbe221317be209b900"
+  },
+  {
+    "file": "h200/power/workers/trial-1-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-gemm_tiled-2048-16.json",
+    "sha256": "ac4527b6ebef816016fd0d08277db61c441b06aedcf8444a6f2bb01bb4570d90"
+  },
+  {
+    "file": "h200/power/workers/trial-1-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-gemm_tiled-2048-16.stderr",
+    "sha256": "20548b7ce6d7f28babd662c9f8880d6311d6f5275f2ca34f09dc8c727477746b"
+  },
+  {
+    "file": "h200/power/workers/trial-1-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-memcpy_bandwidth-67108864-256.json",
+    "sha256": "ebdd62ec35dcc8ba04f859b824a593ef648ec4ded1b487ce51cfbc2efadf5e46"
+  },
+  {
+    "file": "h200/power/workers/trial-1-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "6fedb74b95cd3b85c287c5f99036dcd982101f595d06d0c3cdd4e2f670596bd2"
+  },
+  {
+    "file": "h200/power/workers/trial-1-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-reduction-67108864-256.json",
+    "sha256": "695ef73d6cdbb23892c59a63f0274f2e36ddb786ce7a2158074ed98d2d5d730a"
+  },
+  {
+    "file": "h200/power/workers/trial-1-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-reduction-67108864-256.stderr",
+    "sha256": "7ceb6b8054d715f996c6bebc1fb1edea08e851258c8f43feb2cd61a3ebaf23fc"
+  },
+  {
+    "file": "h200/power/workers/trial-1-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-stencil_1d-67108864-256.json",
+    "sha256": "4f4db46e1217464a2d787a1b88c6d1911b147ba02331c4de2b1332b28acd30cf"
+  },
+  {
+    "file": "h200/power/workers/trial-1-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-stencil_1d-67108864-256.stderr",
+    "sha256": "b7077e34012d777d3745863a92c2c87b5829315af15f7e5863534bfc2938da9c"
+  },
+  {
+    "file": "h200/power/workers/trial-1-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-vector_add-67108864-128.json",
+    "sha256": "4ef31c98394ac04a4119b6fc2cbf9a2ef6fdfb3b9e35b4fda3abf96ba8317670"
+  },
+  {
+    "file": "h200/power/workers/trial-1-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-vector_add-67108864-128.stderr",
+    "sha256": "636cdc48207ffe34a37730660cac350a1cbe31d0aa502acc2f30a6e44ecc696b"
+  },
+  {
+    "file": "h200/power/workers/trial-1-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-vector_add-67108864-256.json",
+    "sha256": "e9fc037a837723404b7b52b68991ca14fc5450f1fe59d694107c1de398f6fcb4"
+  },
+  {
+    "file": "h200/power/workers/trial-1-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-vector_add-67108864-256.stderr",
+    "sha256": "7feb524028a17b22b8ad7586921960efd889f82cfa0ecfbc1dc4d0fc2ffc4620"
+  },
+  {
+    "file": "h200/power/workers/trial-1-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-vector_add-67108864-512.json",
+    "sha256": "aad63f2b8e72624f9bd654261b597d12874e85ff93736315bca46c2e3d9ab4a7"
+  },
+  {
+    "file": "h200/power/workers/trial-1-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-1-vector_add-67108864-512.stderr",
+    "sha256": "b3f97d3424b4ec2d454237d3b021d179369074caf9b61a6781a953f3280479e9"
+  },
+  {
+    "file": "h200/power/workers/trial-2-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-gemm_naive-2048-16.json",
+    "sha256": "cc6a419f43a35e459ac2b422e8c2b40da5cf336d5d9ecc84adb8c8e8235bdf8f"
+  },
+  {
+    "file": "h200/power/workers/trial-2-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-gemm_naive-2048-16.stderr",
+    "sha256": "d796e75eb6210dfa102b9697f15f29172511bbdfa732137d87844d3ef0d3caa8"
+  },
+  {
+    "file": "h200/power/workers/trial-2-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-gemm_tiled-2048-16.json",
+    "sha256": "73b640a41708b285d9e4152f8fe4bb7ff315386cf926388167911d5687304265"
+  },
+  {
+    "file": "h200/power/workers/trial-2-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-gemm_tiled-2048-16.stderr",
+    "sha256": "ff7603a0928bdcbe20c0568ec137a1bc48badbeccdd0f4ae2920af00ceac05bb"
+  },
+  {
+    "file": "h200/power/workers/trial-2-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-memcpy_bandwidth-67108864-256.json",
+    "sha256": "fa3a8ca858d8c1c9cb0bfde82b2c7f590dded945f40c2bd651cb6b5b7a546aa0"
+  },
+  {
+    "file": "h200/power/workers/trial-2-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "79b32dfe4e3e10b74e6862784358523aa1211ecfa6e6758156a189354a4e8a4b"
+  },
+  {
+    "file": "h200/power/workers/trial-2-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-reduction-67108864-256.json",
+    "sha256": "6610977f02328965eae316221a877d28657095bc31fbf67ae25d23d6c8669bca"
+  },
+  {
+    "file": "h200/power/workers/trial-2-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-reduction-67108864-256.stderr",
+    "sha256": "ed28b538b8c701965e45b6a7b9863b9099d109fbed6e0390cb19debe0ea8638e"
+  },
+  {
+    "file": "h200/power/workers/trial-2-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-stencil_1d-67108864-256.json",
+    "sha256": "6ce3af5fc687ddc1e16869d5be3a83bb80524c3a323d776879d48f733fec2ce6"
+  },
+  {
+    "file": "h200/power/workers/trial-2-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-stencil_1d-67108864-256.stderr",
+    "sha256": "215b8587f4bda9594cf280d6ad40f89d52f5a87c3440db0a5a69acf992bc353b"
+  },
+  {
+    "file": "h200/power/workers/trial-2-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-vector_add-67108864-128.json",
+    "sha256": "076274ad239ae10e02205789587b2ae26f27fc5cf36376e39aee314d9b48dcfb"
+  },
+  {
+    "file": "h200/power/workers/trial-2-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-vector_add-67108864-128.stderr",
+    "sha256": "59260dc0378deb732cd5291a5d998907ccb22a24aebdf6eb9c549cf070581d3f"
+  },
+  {
+    "file": "h200/power/workers/trial-2-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-vector_add-67108864-256.json",
+    "sha256": "f63f8382bfb604c2e133cf5868614624f233ed47c24820710a18ece57e9ee9ed"
+  },
+  {
+    "file": "h200/power/workers/trial-2-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-vector_add-67108864-256.stderr",
+    "sha256": "a7464af66e8ba768ed9660fa1b9ffecea5b351644aa1616968ee88536f1f55cc"
+  },
+  {
+    "file": "h200/power/workers/trial-2-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-vector_add-67108864-512.json",
+    "sha256": "0968bbe8f1b0453fd14802965d0d162aa351eff1b80d9939584b933ed6e75c9b"
+  },
+  {
+    "file": "h200/power/workers/trial-2-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-2-vector_add-67108864-512.stderr",
+    "sha256": "35415fe4a93d744b59434ee623eeb592895fc1e99fa6ea82117e1113e5b157ab"
+  },
+  {
+    "file": "h200/power/workers/trial-3-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-gemm_naive-2048-16.json",
+    "sha256": "80401b824d3a88f4b236017d87fb07828fa0eb4a02d9ccf8bc49917b41c6d6e6"
+  },
+  {
+    "file": "h200/power/workers/trial-3-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-gemm_naive-2048-16.stderr",
+    "sha256": "170ccab041adb0d25595a56d64de31e4a54ff4504a0d0db8fa796a0545e70368"
+  },
+  {
+    "file": "h200/power/workers/trial-3-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-gemm_tiled-2048-16.json",
+    "sha256": "b7db072eddb4391632e261e92b3cee589aff295eb95f3ce658deaafc84eb713f"
+  },
+  {
+    "file": "h200/power/workers/trial-3-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-gemm_tiled-2048-16.stderr",
+    "sha256": "fae7556908897494e042f299eec82afca5e222fc5fdf8930d1e01d4feb677d04"
+  },
+  {
+    "file": "h200/power/workers/trial-3-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-memcpy_bandwidth-67108864-256.json",
+    "sha256": "db5a0177b1782d41f35713a7727e92efbd0cf0e4f84ccb86675d5df91b1990f4"
+  },
+  {
+    "file": "h200/power/workers/trial-3-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "287fed295b2201720d238ce8e1ca133cae67811553a096346e1395693faed6e4"
+  },
+  {
+    "file": "h200/power/workers/trial-3-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-reduction-67108864-256.json",
+    "sha256": "b2193daeff4797260ecaa58645e658aba6f42c3152b3f854067fa8012c99fb5b"
+  },
+  {
+    "file": "h200/power/workers/trial-3-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-reduction-67108864-256.stderr",
+    "sha256": "ccaf517b8a9810f8ece1fb3e6f02bdf86267415ea2409bd760bc694f911b9af8"
+  },
+  {
+    "file": "h200/power/workers/trial-3-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-stencil_1d-67108864-256.json",
+    "sha256": "42ad9c9da09ddd96ea70e8d1a735bdffdeebda00164bac2870b55f7d18e6586f"
+  },
+  {
+    "file": "h200/power/workers/trial-3-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-stencil_1d-67108864-256.stderr",
+    "sha256": "86e0553e6e7544003ff09af762569461d6e2b0a3b764e6f63d6f71fa9fc68906"
+  },
+  {
+    "file": "h200/power/workers/trial-3-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-vector_add-67108864-128.json",
+    "sha256": "58f436fe2ec73b36d92593c5882099be3adfdef15e4687bc02acd458aa2f760d"
+  },
+  {
+    "file": "h200/power/workers/trial-3-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-vector_add-67108864-128.stderr",
+    "sha256": "08a86c236b71b248d7995850ee9c646b3d93bf29f9769507508003ee27112707"
+  },
+  {
+    "file": "h200/power/workers/trial-3-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-vector_add-67108864-256.json",
+    "sha256": "45906158cbb505dc593d4659688dcf9613e234e40b95b41c5969ee742e92c877"
+  },
+  {
+    "file": "h200/power/workers/trial-3-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-vector_add-67108864-256.stderr",
+    "sha256": "85ff4cff6abfe2d7efefe4e0539276780bfdb55025351986737ef42ff5137e26"
+  },
+  {
+    "file": "h200/power/workers/trial-3-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-vector_add-67108864-512.json",
+    "sha256": "6de34d652c7c8a37a077091c981547a67ad6cf628996990ab8c4a92efed98bb1"
+  },
+  {
+    "file": "h200/power/workers/trial-3-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/workers/trial-3-vector_add-67108864-512.stderr",
+    "sha256": "57b0fc9e01efd3a6e7327fe148dcd8aca42d3b90e2ac552842a94c632c54e992"
+  },
+  {
+    "file": "h200/transfer/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/transfer/REPORT.md",
+    "sha256": "036adeaef515c69fab31b83434bf696f93a0c5a1ffee6809c8b3868db1174b00"
+  },
+  {
+    "file": "h200/transfer/api-verification.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/transfer/api-verification.json",
+    "sha256": "6cf8600a4bc3841770e59ffdca277d7e2d3605367789acb6e2af70da7425eb97"
+  },
+  {
+    "file": "h200/transfer/evaluation.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/transfer/evaluation.json",
+    "sha256": "333e0d2eed35b719be38f8c142d08f6bdc22dcceb0e780aabcc62dedbacf4410"
+  },
+  {
+    "file": "h200/transfer/monitoring/drift_report.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/transfer/monitoring/drift_report.csv",
+    "sha256": "b47705d97cdf0a4e3fb4a1139ac8cd66ee66b014bbe7a59aee3c1dd416ccca42"
+  },
+  {
+    "file": "h200/transfer/monitoring/monitoring_report.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/transfer/monitoring/monitoring_report.md",
+    "sha256": "262961f923d35e91e81893b9d9c2acd545d0cf071df6e6c4041e59df4cfa987a"
+  },
+  {
+    "file": "h200/transfer/per_workload.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/transfer/per_workload.csv",
+    "sha256": "3689af0f428372172028f548a971660a1e8f47ff4c062617cd3b2aad92871801"
+  },
+  {
+    "file": "h200/transfer/predictions.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/transfer/predictions.csv",
+    "sha256": "faeccd505a594d65acdf642dd9868a5c34ce9d6b3ff90b879c5fe4270f164d02"
+  },
+  {
+    "file": "h200/transfer/registry/linear_regression/20261020T201154Z/metadata.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/transfer/registry/linear_regression/20261020T201154Z/metadata.json",
+    "sha256": "f8d680780b5e5e8a3bd3eef86aa9c9ef52e6546bd1f2d5641e20480534ce07b8"
+  },
+  {
+    "file": "h200/transfer/registry/registry.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/transfer/registry/registry.json",
+    "sha256": "8000bd0be918e057ebd2b01b08d566a72a398c6a7bf7dd6b3ec3aa79ebd61561"
+  },
+  {
+    "file": "h200/h100-h200-comparison/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/h100-h200-comparison/REPORT.md",
+    "sha256": "7ddfd1364a35e4810d0df32bab48afba0cb7183da7223ca6dbe78e2077562d58"
+  },
+  {
+    "file": "h200/h100-h200-comparison/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/h100-h200-comparison/comparison.csv",
+    "sha256": "37027c35c7f230fbbbde325c14cd3612da8e1594e6f86a0f08441160b9a4e133"
+  },
+  {
+    "file": "h200/h100-h200-comparison/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/h100-h200-comparison/comparison.json",
+    "sha256": "3b89c6c916ca87a3ab49eea41cc5fedaa13399fa7448182776e486caa980b4bb"
+  },
+  {
+    "file": "h200/smoke/build.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-smoke/build.log",
+    "sha256": "8c2eeef6f0230ea1820d033ec612ee802a8730be627e4357d8e0280d3bbdf1a5"
+  },
+  {
+    "file": "h200/smoke/configure.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-smoke/configure.log",
+    "sha256": "3d85e8cc618080e34b257e3375dcebcfeae3f7b7c798e84a12cf33380ed58fc4"
+  },
+  {
+    "file": "h200/smoke/edges/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-smoke/edges/benchmark_summary.csv",
+    "sha256": "805985b0fac950a087d7540d3e949724d0aa3d8dcd327230af7b04d305417815"
+  },
+  {
+    "file": "h200/smoke/edges/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-smoke/edges/metrics_provenance.csv",
+    "sha256": "17acbbcbad170c50cf0957a0437e86c99e3e886ca005a5d8cd46467ff0c2e19b"
+  },
+  {
+    "file": "h200/smoke/edges/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-smoke/edges/run_manifest.json",
+    "sha256": "caddeb76b95063b47b60939a727dedfec91b8ca347160b3e6c5aeeebe1b30dcf"
+  },
+  {
+    "file": "h200/smoke/edges/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-smoke/edges/timing_samples.csv",
+    "sha256": "2d3063ca80b111e6ccd62a4e299abd2542f7cb137b2764457e0ec8f61fa7e1fe"
+  },
+  {
+    "file": "h200/smoke/gpu-after.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-smoke/gpu-after.csv",
+    "sha256": "c0ce459bfa2e90e5dbea261d91007942194a318a9eaa95ffa9e03c23d726788d"
+  },
+  {
+    "file": "h200/smoke/preflight.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-smoke/preflight.json",
+    "sha256": "5f0d89d6ab0d9db9fb4f55aea4cb1c2d79b10401dd513682443062cecf5b6c29"
+  },
+  {
+    "file": "h200/smoke/requirements-lock.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-smoke/requirements-lock.txt",
+    "sha256": "4434c5f1e0dbab088bda982358c136e870683a212ee95f99063eca629b66282b"
+  },
+  {
+    "file": "h200/prizepicks-h200-timing.log",
+    "original": "/tmp/prizepicks-h200-timing.log",
+    "sha256": "90e6fe612e59f4d69f87d0e781098dbdb77ffeed097fc7f336b8f27d7caa2f6f"
+  },
+  {
+    "file": "h200/prizepicks-h200-power.log",
+    "original": "/tmp/prizepicks-h200-power.log",
+    "sha256": "9dad61a1198036e374594b8d837d11c3632c5bd98d25383d816b131bc840c9f7"
+  },
+  {
+    "file": "gh200/smoke/build.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/smoke/build.log",
+    "sha256": "76dae4bdbb41d056b2142d6259f063112a4df7db1f30e5595d4219f88a453d7a"
+  },
+  {
+    "file": "gh200/smoke/configure.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/smoke/configure.log",
+    "sha256": "ac37ddcd9ba832022995f6239bd2d742092d7ef68a025739af8a137f74f69ccc"
+  },
+  {
+    "file": "gh200/smoke/edges/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/smoke/edges/benchmark_summary.csv",
+    "sha256": "e3ecbeb4a40306b9dba764d2f3749ddbf96dc76b6ea54d4d30fd43d83e9ef6ac"
+  },
+  {
+    "file": "gh200/smoke/edges/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/smoke/edges/metrics_provenance.csv",
+    "sha256": "7da5181b5e6919481ed6486c7a291002bde06bb065e07e9b1c2f64c60f2b6a62"
+  },
+  {
+    "file": "gh200/smoke/edges/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/smoke/edges/run_manifest.json",
+    "sha256": "d8f145dd0c9766ba7df88351c5487d918d215ebfa379cb7dcd9b734571a5886f"
+  },
+  {
+    "file": "gh200/smoke/edges/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/smoke/edges/timing_samples.csv",
+    "sha256": "01ee54eb61b2121f8f3545e8717f2f6f4b6a8e29e04b16d4407dc4b6cc8baa6e"
+  },
+  {
+    "file": "gh200/smoke/gpu-after.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/smoke/gpu-after.csv",
+    "sha256": "ce495d770be438e47f38a0548d00b4d26c35b25716a34b2a58fd08db92985117"
+  },
+  {
+    "file": "gh200/smoke/preflight.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/smoke/preflight.json",
+    "sha256": "a78ccb4c2104b13a33a116ca7ec5ef665e441cdc71ab8eb197807e39984cbb76"
+  },
+  {
+    "file": "gh200/smoke/requirements-lock.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/smoke/requirements-lock.txt",
+    "sha256": "7b35d78fe59245ffc1c84789493590cb24b534d822040be9a7932e0384301360"
+  },
+  {
+    "file": "gh200/timing/AGGREGATE.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/AGGREGATE.md",
+    "sha256": "e9ca41fe3e8ec7bcde7c69340666818e27eb77b3ba426a1b214f83144ef6c1bf"
+  },
+  {
+    "file": "gh200/timing/aggregate_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/aggregate_summary.csv",
+    "sha256": "4a73b7ebad06a43482de18bd19c63ab09370d08d1389902df9ba1a9a3fc1d7bf"
+  },
+  {
+    "file": "gh200/timing/baseline/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/baseline/benchmark_summary.csv",
+    "sha256": "10a4debe1ac0f23a9028083786ff24b6675a8ea1558f537b8b7e353dbff26569"
+  },
+  {
+    "file": "gh200/timing/baseline/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/baseline/metrics_provenance.csv",
+    "sha256": "6b56074b864a02f516aa5f841d2e9dbbc41074b4230d1a5f7e3faa2b0dd884cc"
+  },
+  {
+    "file": "gh200/timing/baseline/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/baseline/run_manifest.json",
+    "sha256": "f3a22dfc7fd47a4dacf1fa34ce7959208540f3e27473d9de226e7e12606d8c0d"
+  },
+  {
+    "file": "gh200/timing/baseline/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/baseline/timing_samples.csv",
+    "sha256": "b25fb4bd966a58d18f7986a275f4e64c3fc2f704e94a0bf9a67a47993f814ca3"
+  },
+  {
+    "file": "gh200/timing/build.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/build.log",
+    "sha256": "76dae4bdbb41d056b2142d6259f063112a4df7db1f30e5595d4219f88a453d7a"
+  },
+  {
+    "file": "gh200/timing/configure.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/configure.log",
+    "sha256": "43bd2330e2444f6598a8a7c0ec42153a7e94f89ce741371f795bf4dcfc0d0fd9"
+  },
+  {
+    "file": "gh200/timing/edges/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/edges/benchmark_summary.csv",
+    "sha256": "342644239790952cce2236ac1cd9d87a76137c6b68df460ac4ee9be0b2c95024"
+  },
+  {
+    "file": "gh200/timing/edges/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/edges/metrics_provenance.csv",
+    "sha256": "ab5480df3fac284850b80ef68b8e47ac1fa0a5de22dc550fdacb1d23f6d40bfd"
+  },
+  {
+    "file": "gh200/timing/edges/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/edges/run_manifest.json",
+    "sha256": "a3b5802609f16ee8744fa9535de08837aa70e78d798a86d4a357b49602e93038"
+  },
+  {
+    "file": "gh200/timing/edges/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/edges/timing_samples.csv",
+    "sha256": "eb35ae523778341ce96779f67a9985ee02758a42bb2244c811c4bce676f2231e"
+  },
+  {
+    "file": "gh200/timing/gpu-after.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/gpu-after.csv",
+    "sha256": "4adf2ee3683ace405e539816d09d03f3d3e3a622f39b71f015c61729d68814e6"
+  },
+  {
+    "file": "gh200/timing/preflight.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/preflight.json",
+    "sha256": "10b2bf97d9ef657ab793fd22b328747d2432d0c257e5697c544dd74c7ebbe56f"
+  },
+  {
+    "file": "gh200/timing/requirements-lock.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/requirements-lock.txt",
+    "sha256": "7b35d78fe59245ffc1c84789493590cb24b534d822040be9a7932e0384301360"
+  },
+  {
+    "file": "gh200/timing/trial-1/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-1/benchmark_summary.csv",
+    "sha256": "20d4c9b283bc741639bf2d71110e5119ad0847969cfc5bfe855caa847fe56d76"
+  },
+  {
+    "file": "gh200/timing/trial-1/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-1/metrics_provenance.csv",
+    "sha256": "a728117729b8a9a293d369a5247fab9c888e2900e4a49be0f532b20f3f9d87f9"
+  },
+  {
+    "file": "gh200/timing/trial-1/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-1/run_manifest.json",
+    "sha256": "48a3bbe769e2c41447a20ef2222e128bb73208bf444c98212e85993f9b9d5cb2"
+  },
+  {
+    "file": "gh200/timing/trial-1/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-1/timing_samples.csv",
+    "sha256": "b81823c42f379e7929bca2f52ea27a435b9dc42ead2ab8268eeb967d072a1c78"
+  },
+  {
+    "file": "gh200/timing/trial-2/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-2/benchmark_summary.csv",
+    "sha256": "cc4e62c7444a55f4e116a25abbbae97d519a12e460a93cbf28bd0601b819bfa5"
+  },
+  {
+    "file": "gh200/timing/trial-2/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-2/metrics_provenance.csv",
+    "sha256": "7bc4118fc4384bcc25258e9f185a33da61f4d59f9a6c0c5154a0b96e50b0bcf4"
+  },
+  {
+    "file": "gh200/timing/trial-2/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-2/run_manifest.json",
+    "sha256": "ba01632c8f5df4df60a99903f6c3e0d777284f2beed1dc61f8dafcb2e04fb8a7"
+  },
+  {
+    "file": "gh200/timing/trial-2/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-2/timing_samples.csv",
+    "sha256": "30e060dfc3f30cef418e8bdb18f2d2ed3d92a64ffe28c34690379915feac7778"
+  },
+  {
+    "file": "gh200/timing/trial-3/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-3/benchmark_summary.csv",
+    "sha256": "e7ce2d10585bdbf605eba95a77ea5406ce423e0b86be875091409418403ca538"
+  },
+  {
+    "file": "gh200/timing/trial-3/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-3/metrics_provenance.csv",
+    "sha256": "14f51ec3f3b0a9614c44871c034b072cac414c381b90440fe599fef9e145f62c"
+  },
+  {
+    "file": "gh200/timing/trial-3/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-3/run_manifest.json",
+    "sha256": "6dfe6c265d08dc4f6e4425ca1f8d0cd744bdd367083981715fd0ba16c6d6ff70"
+  },
+  {
+    "file": "gh200/timing/trial-3/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing/trial-3/timing_samples.csv",
+    "sha256": "9da1ba88c035e8ddee4fd6802e9a3fca1fb17adc5b533f2f29e5ddb02bdb146e"
+  },
+  {
+    "file": "gh200/comparison/README.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/README.md",
+    "sha256": "992b25782005bcf9cec820fc10fd9fb2b2c936b410d1dffeabcc5218410fd319"
+  },
+  {
+    "file": "gh200/comparison/h100-gh200/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-gh200/REPORT.md",
+    "sha256": "83a5bbfb6fb122b19f0c685a43a58f47d157ba11c5ac4c88a0a7690ba17a517c"
+  },
+  {
+    "file": "gh200/comparison/h100-gh200/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-gh200/comparison.csv",
+    "sha256": "a793e4e569ac4a0d8b42225d46d155a5aaf77f1ee1a35d8b7f4ea5b489e1e0ca"
+  },
+  {
+    "file": "gh200/comparison/h100-gh200/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-gh200/comparison.json",
+    "sha256": "7826f52f4d9178754f5cf39528993cd0341694b8c25a1f242cad36f1ddd1e8e8"
+  },
+  {
+    "file": "gh200/comparison/h100-gh200-trial-2/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-gh200-trial-2/REPORT.md",
+    "sha256": "caeb0349100aeb626dc78a2d121fd3ba86640e0a0ac04646a937703d885f8e67"
+  },
+  {
+    "file": "gh200/comparison/h100-gh200-trial-2/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-gh200-trial-2/comparison.csv",
+    "sha256": "1d2809fb5d7bf76c94a722e2dd39be53c5e020e39d4fa840a44c1e41c0856323"
+  },
+  {
+    "file": "gh200/comparison/h100-gh200-trial-2/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-gh200-trial-2/comparison.json",
+    "sha256": "9be52ad2cb5ac49a649232cd04ed945446592436bc96061660022b564ede6dd4"
+  },
+  {
+    "file": "gh200/comparison/h100-gh200-trial-3/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-gh200-trial-3/REPORT.md",
+    "sha256": "d5b52020e90a989631b9a9c0cfd4dce5e53ba0e9b204986165345b3c43f398a0"
+  },
+  {
+    "file": "gh200/comparison/h100-gh200-trial-3/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-gh200-trial-3/comparison.csv",
+    "sha256": "454e6a60a8abc4cb0a1eb60d945002dce85ad0ad4d01f6db07e8738a863131f7"
+  },
+  {
+    "file": "gh200/comparison/h100-gh200-trial-3/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-gh200-trial-3/comparison.json",
+    "sha256": "59b6e9b4dd38c6444e6fe5573b8483ad4313e446ff6926f1bdfff2751aadcf1f"
+  },
+  {
+    "file": "gh200/comparison/h100-h200/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-h200/REPORT.md",
+    "sha256": "7ddfd1364a35e4810d0df32bab48afba0cb7183da7223ca6dbe78e2077562d58"
+  },
+  {
+    "file": "gh200/comparison/h100-h200/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-h200/comparison.csv",
+    "sha256": "37027c35c7f230fbbbde325c14cd3612da8e1594e6f86a0f08441160b9a4e133"
+  },
+  {
+    "file": "gh200/comparison/h100-h200/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-h200/comparison.json",
+    "sha256": "3b89c6c916ca87a3ab49eea41cc5fedaa13399fa7448182776e486caa980b4bb"
+  },
+  {
+    "file": "gh200/comparison/h100-h200-trial-2/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-h200-trial-2/REPORT.md",
+    "sha256": "4f355ef959816966fcaaa174a8bf69c00cb36fc1260656d9aab481e9ca4a87c8"
+  },
+  {
+    "file": "gh200/comparison/h100-h200-trial-2/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-h200-trial-2/comparison.csv",
+    "sha256": "75d7dc619f0abf11cd8b84f4832185446e0be4fb9a46c7e9fb01c0d0f7d5e53a"
+  },
+  {
+    "file": "gh200/comparison/h100-h200-trial-2/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-h200-trial-2/comparison.json",
+    "sha256": "8712178891cd0759f746db9f52e026d7f07842b16be81cd3d7613017020c0630"
+  },
+  {
+    "file": "gh200/comparison/h100-h200-trial-3/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-h200-trial-3/REPORT.md",
+    "sha256": "33cb51442d9c58b83b9d449e65a332f5f74f7eb9ba86d402442561fc8809cfda"
+  },
+  {
+    "file": "gh200/comparison/h100-h200-trial-3/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-h200-trial-3/comparison.csv",
+    "sha256": "08ee25a6984960d76c623db1b097fc59e1d4ea5587e9aa49f4ada2c990a9d54d"
+  },
+  {
+    "file": "gh200/comparison/h100-h200-trial-3/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h100-h200-trial-3/comparison.json",
+    "sha256": "e825e529f3a9919071045cfd53d3fe1224f5654b8bd0a4d6cf6e1390d893cec3"
+  },
+  {
+    "file": "gh200/comparison/h200-gh200/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h200-gh200/REPORT.md",
+    "sha256": "052ae8b5a47677d1c63e2f81e0638b3455515509b7b670bab2761adb187da472"
+  },
+  {
+    "file": "gh200/comparison/h200-gh200/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h200-gh200/comparison.csv",
+    "sha256": "c3c48c9e6d0cbd711821b0659cece8464a1d4a085f10b859e6f265010ad1733f"
+  },
+  {
+    "file": "gh200/comparison/h200-gh200/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h200-gh200/comparison.json",
+    "sha256": "afe5dc8c666d0144d613766db50f329a87e82fac42f6c2dec81dd6a8a7413061"
+  },
+  {
+    "file": "gh200/comparison/h200-gh200-trial-2/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h200-gh200-trial-2/REPORT.md",
+    "sha256": "bbe6633926853b145e67a534cd9bde4b4b13e80e8bc5817291691154d7f677e9"
+  },
+  {
+    "file": "gh200/comparison/h200-gh200-trial-2/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h200-gh200-trial-2/comparison.csv",
+    "sha256": "b9e957ae6a13b3d4f421e68dfdd370069a8f788e2e3f68cbd0e49f4bb5e32592"
+  },
+  {
+    "file": "gh200/comparison/h200-gh200-trial-2/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h200-gh200-trial-2/comparison.json",
+    "sha256": "de2d05904b54382f3af510bbe9c16a36981b118ee10619835e1d18358d6a1a89"
+  },
+  {
+    "file": "gh200/comparison/h200-gh200-trial-3/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h200-gh200-trial-3/REPORT.md",
+    "sha256": "07a724b4884d574ed93a6c4b36170bcbbb674120b6a6e5461a0796083fea4b2d"
+  },
+  {
+    "file": "gh200/comparison/h200-gh200-trial-3/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h200-gh200-trial-3/comparison.csv",
+    "sha256": "3d892b31dae7a43b5edb6a8aac0e3943646919cdc3fcb38ec03dd5bd92782d77"
+  },
+  {
+    "file": "gh200/comparison/h200-gh200-trial-3/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/h200-gh200-trial-3/comparison.json",
+    "sha256": "d86744a9b10f2ba3a10f23cc378b5c0d29fa89a0c49196f98e5662e80fbfc305"
+  },
+  {
+    "file": "gh200/comparison/summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/comparison/summary.json",
+    "sha256": "33ecadae52c636912c455e42d5b24da2805daf682bf45690f8833cf842317b8e"
+  },
+  {
+    "file": "gh200/install.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/install.log",
+    "sha256": "d926be187a17c35686798efdf04e955347e677620121ca6a691517db223163c7"
+  },
+  {
+    "file": "gh200/preflight-tests.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/preflight-tests.log",
+    "sha256": "ebf302f1eb8a6cd74d7a77fe3ffd8012b525db1cd45cc9d82b753dc770614df0"
+  },
+  {
+    "file": "gh200/smoke.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/smoke.log",
+    "sha256": "f14b29d7e734ccdc0dea3f79b37ae1c0fceed4057ecba49db090b4ae419a65fb"
+  },
+  {
+    "file": "gh200/timing.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/timing.log",
+    "sha256": "f6bdeccfba7d8fd73078b692fa9adf650af9c19b0f927a4b173c7e3d85f3b1d3"
+  },
+  {
+    "file": "gh200/environment.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/environment.txt",
+    "sha256": "7b35d78fe59245ffc1c84789493590cb24b534d822040be9a7932e0384301360"
+  },
+  {
+    "file": "gh200/native-host.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/native-host.txt",
+    "sha256": "e7ced3b6887e81ae02f18ead077019d429db9bb67b89da6a783ebadc8a9d266a"
+  },
+  {
+    "file": "gh200/source-manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/source-manifest.json",
+    "sha256": "7719f1efb353c69028565e131ee40867d0d4f0b4e09e938de784a56ded832aae"
+  },
+  {
+    "file": "service/api-h100.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/api-h100.json",
+    "sha256": "c9deb4d1dc96d4f9e0490c1cd8fc2d28c4185c91286da38f842c35299c7ab942"
+  },
+  {
+    "file": "service/api-h200-rejection.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/api-h200-rejection.json",
+    "sha256": "fb19c799e0ef36bc180cc37098b24f9e7b619777de1a102030566a8e11450595"
+  },
+  {
+    "file": "service/http-benchmark/requests.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/http-benchmark/requests.csv",
+    "sha256": "f903bf8d72fcb045080daa9ddc2faf644f7a49de14497fc2c108a7eeccf9a725"
+  },
+  {
+    "file": "service/http-benchmark/summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/http-benchmark/summary.json",
+    "sha256": "09bd52863e35f4b21152d14df326526f329b105bbce75a1a2c37b725bb0736af"
+  },
+  {
+    "file": "service/http-benchmark/warmups.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/http-benchmark/warmups.csv",
+    "sha256": "51f75c8a5a6c6fea66519c3cca561dcad59947846c42828b206c2a39fad3b111"
+  },
+  {
+    "file": "warehouse/warehouse-summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/warehouse-summary.json",
+    "sha256": "d30335379410788b511f2b39bcd5ae718bc8c40b30d030770728f6c21fffd625"
+  },
+  {
+    "file": "warehouse/warehouse-verification.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/warehouse-verification.json",
+    "sha256": "df13eced745b31652014a480a414e7e26a5a788be2c77125a691c8b4217b73cb"
+  },
+  {
+    "file": "source/gh200-quality-source-overlay.tar.gz",
+    "original": "/tmp/gh200-quality-source-overlay.tar.gz",
+    "sha256": "b825c86a2441bbdd967df85035284597a7103b6a48483011eda72dd9fb86b46e"
+  },
+  {
+    "file": "source/gh200-quality-source-manifest.json",
+    "original": "/tmp/gh200-quality-source-manifest.json",
+    "sha256": "7719f1efb353c69028565e131ee40867d0d4f0b4e09e938de784a56ded832aae"
+  },
+  {
+    "file": "gh200/power/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/REPORT.md",
+    "sha256": "ae5d7312357e48da4ce52faf85cf85e80202d4abe4f400b1a549cfae8c054064"
+  },
+  {
+    "file": "gh200/power/aggregate.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/aggregate.csv",
+    "sha256": "6d1f23ecd7f29e1918719e039172b88ad5f7032ea91d700c8cd78759f988f249"
+  },
+  {
+    "file": "gh200/power/manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/manifest.json",
+    "sha256": "fcb26fa6ba26935041a90d48903f26cd710e021d878f95bf1aafeb0b47b5cf24"
+  },
+  {
+    "file": "gh200/power/power.png",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/power.png",
+    "sha256": "0841a13ae37c688fe99930760ecf99cadab19ca4141691c2d636256ecb5a516e"
+  },
+  {
+    "file": "gh200/power/steady_telemetry.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/steady_telemetry.csv",
+    "sha256": "7a22bc132871a2e61e9ae333e407ce065a6ba1002846b15e2761be3ed08afe76"
+  },
+  {
+    "file": "gh200/power/summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/summary.csv",
+    "sha256": "fb567ddece54b3f163b97931b5a39133965dad1b550edd20b961d7773f28045a"
+  },
+  {
+    "file": "gh200/power/summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/summary.json",
+    "sha256": "e6be851996c977a7611d6f77ac4556fa54f70f52fd6cfb12f318f75652ddb4d5"
+  },
+  {
+    "file": "gh200/power/telemetry.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/telemetry.csv",
+    "sha256": "15ffdd476a0646d73604ca33215162370cab81366b585378ea1299963b80143c"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-gemm_naive-2048-16.json",
+    "sha256": "4b51b8ec46baf292a05e87ed740475990736d8af40123c37b0bf62c855150f28"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-gemm_naive-2048-16.stderr",
+    "sha256": "e481c15cec7ff2fc7fdf04cdd98091a253d94c62ee098d97f3ee4d343b77fe8e"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-gemm_tiled-2048-16.json",
+    "sha256": "89011a850fc5d09feb66889a5c39930648ba21d3682147b30c3b47ed31417197"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-gemm_tiled-2048-16.stderr",
+    "sha256": "b285d065489a9a8fb0ed2b86ede41910d23b90954d4f0fb018f10085ec13a634"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-memcpy_bandwidth-67108864-256.json",
+    "sha256": "80adc42280c36b1f36d46cafa50ce93cfa176bcc62263bc51ede57d5481400c0"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "5bccb77ab6419c00c042f64ccd038896187273f4ac9ac051339a1841d4baf1ab"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-reduction-67108864-256.json",
+    "sha256": "c55db2d63a7d43940d4092f7ff08d42bd9c5d42d630c1995ba4390660018761b"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-reduction-67108864-256.stderr",
+    "sha256": "87dfdcdd1378226813a26614fcf489d02bfbd9de947f280d27ba1ff00c0a03eb"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-stencil_1d-67108864-256.json",
+    "sha256": "0de7feb93109247414c6c26abcc04134b590c3df496518b6740c407ec5a20e60"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-stencil_1d-67108864-256.stderr",
+    "sha256": "de27837e2725b8dc9a1e8a24a688c682127362d4c3b3ecdb4030d53d405e275b"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-vector_add-67108864-128.json",
+    "sha256": "1d8f986e96bf9f9460b753e8912bdcb4a79f9783055ddd79180604d8e635a24f"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-vector_add-67108864-128.stderr",
+    "sha256": "49492690bef02b0179e32e0a7d4ba5b7c02697dfcf5abaae7b52b28cb58aa70b"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-vector_add-67108864-256.json",
+    "sha256": "258080c02e2b732eb0472722e0b5db2cb39b20d29d8bda7303f8d9131a659b55"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-vector_add-67108864-256.stderr",
+    "sha256": "1685f0c515bb2430446dc06bf9686b81d17a6bdacb1340c9628f79c3f624cdaf"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-vector_add-67108864-512.json",
+    "sha256": "deda5141c5e84930cda8b01e9861e46d0731e2fb3c7cf8a0cc17b816ed569260"
+  },
+  {
+    "file": "gh200/power/workers/trial-1-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-1-vector_add-67108864-512.stderr",
+    "sha256": "75ff684101403c8ccb8279d086ef85a39b644e7334cba2eeedbdf530ce4f9206"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-gemm_naive-2048-16.json",
+    "sha256": "6c8f8da16ff659ef5ddb4368eae8887e8081c9efc04b87d6539573c33292f583"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-gemm_naive-2048-16.stderr",
+    "sha256": "e6f01d25117410b6f1cd4796db01cf4a518d6c252e7f02f20ec2990377690c01"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-gemm_tiled-2048-16.json",
+    "sha256": "5c72d3c65d363377470bd414fad2982e919aed4bbb24d7a72d1a43623d585db3"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-gemm_tiled-2048-16.stderr",
+    "sha256": "d59b6bd779a794dc4495cb2a4341fef9e66ec172f10203167261e750bf97206e"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-memcpy_bandwidth-67108864-256.json",
+    "sha256": "bb8c8a7fd1c9a1464b41ea8592afd4d297c821b314835fdae49f928523f4189a"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "77af28cd6cc81953e5a8e02a6eb21b90e1b0df6d72fcbf0770d4a0a7bd53a2fb"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-reduction-67108864-256.json",
+    "sha256": "3425f7b3b2371af9a2e33e5556e522e445f7ca270aec5e4535082e8a3ee2cf44"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-reduction-67108864-256.stderr",
+    "sha256": "76d0ec1143e5c2c02551cd34f932f6e2b50ff74c8f2e9551d7be8251e01cfbad"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-stencil_1d-67108864-256.json",
+    "sha256": "c672fe5413030154ee419af40d22bd64d5046922a15b968d19716e1eaadb566b"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-stencil_1d-67108864-256.stderr",
+    "sha256": "28d5def0d29084e8534e6e3adf6ae73a7e8d8ccb69994c2dfb3d53abe0d2952b"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-vector_add-67108864-128.json",
+    "sha256": "a768c84e3464e5a2111911e381ec2f8b20c6a1fdd3e42ea79fbe0e26da4b68cc"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-vector_add-67108864-128.stderr",
+    "sha256": "5403abb7b18aa3e55183163f7ea493817c6f6271ecb17c1faf874a41f2b8521f"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-vector_add-67108864-256.json",
+    "sha256": "adc2db3a1095ad8812e87f4d14dea7406119dd31f99a8864dce69112b999c321"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-vector_add-67108864-256.stderr",
+    "sha256": "5ae1bc373b602a360e087e8c62930e21d746016fde172bb33bb68338a174f0e8"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-vector_add-67108864-512.json",
+    "sha256": "fed12dcae47c86bcfe1d1402fd93a14874662c32b0e6971cf5402bff24342bdd"
+  },
+  {
+    "file": "gh200/power/workers/trial-2-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-2-vector_add-67108864-512.stderr",
+    "sha256": "f98fe3ff3e79710fb9ec965ad3b566575c44b5035805614a079379267535f9d1"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-gemm_naive-2048-16.json",
+    "sha256": "d089964f5476ee59c7e05245da78f6389ad76b496735ca6dffa1a525f9ad77ca"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-gemm_naive-2048-16.stderr",
+    "sha256": "fe18e3f07520892e70ce105306e6ac61c1b87c2400f270a6c82d36809f748c12"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-gemm_tiled-2048-16.json",
+    "sha256": "21213251cccd609486ed1ddae10b78fdfe48bfbbd6849799df6bfb4711e23275"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-gemm_tiled-2048-16.stderr",
+    "sha256": "725a21037b1532a5c78232d94ff68162117ec27e7b60960d56d228efc9f2bff5"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-memcpy_bandwidth-67108864-256.json",
+    "sha256": "a930fbf7e026b47bde59d77b15cc936018b82f62c011b0675c726debc403b3b7"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "1b31e41018c6cfc390f244b02e6c2106ce28348adbed6d2880418a264e84e78f"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-reduction-67108864-256.json",
+    "sha256": "a2217f3bd6b3f2be9a93dbf945b7949e0f5388ed6d90ad77cb9172b36ddaab75"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-reduction-67108864-256.stderr",
+    "sha256": "d07d4c013a6c235bce42edabe6559e1bbf31efafb7d961802e53d0959ae5e087"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-stencil_1d-67108864-256.json",
+    "sha256": "8f28d38ea5c3ac1e4cfa0f5ab84ea6f955c66e32aa2afae1094f332968fecb78"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-stencil_1d-67108864-256.stderr",
+    "sha256": "83021e40b6144cd58d2867b4a6ad105b4e8b5a98d3dd85ccc6aeed2b8dfaf454"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-vector_add-67108864-128.json",
+    "sha256": "e48b072faed1d71d52e40ae08fc0f2342892671ab176857c88e881c5183f7abd"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-vector_add-67108864-128.stderr",
+    "sha256": "93e68c61c071047e0b9d1317cb18bab5244ca6c8c9eb2f91ac54cdf9d401a137"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-vector_add-67108864-256.json",
+    "sha256": "7a549803c36597813bffa18bccb19dc85debc6b70878a8b3e4c6be5f1ed94c0c"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-vector_add-67108864-256.stderr",
+    "sha256": "bc2201e9dec06b5a11fc6daf4b408d7972af03a6ed451ec0e7812248b64ccd66"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-vector_add-67108864-512.json",
+    "sha256": "93ed0c56f31363331120104ba323959f6c9a8b900407ae613f2d49931ef05903"
+  },
+  {
+    "file": "gh200/power/workers/trial-3-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power/workers/trial-3-vector_add-67108864-512.stderr",
+    "sha256": "2e46ca8d5a8ccebbb2ef071512f99a63b71bf517feb16f440e6ad49ae7f93802"
+  },
+  {
+    "file": "gh200/power-preflight.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power-preflight.json",
+    "sha256": "64f4fa4c425ecfa461b8fc3fcaa7070292811c69fa895e1caa5df179051ca057"
+  },
+  {
+    "file": "gh200/execution-receipt.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/execution-receipt.json",
+    "sha256": "75b11b9ba3652a93102332eb3fee823d293a30ffb01add666e8cfaa9c8db94c5"
+  },
+  {
+    "file": "gh200/power.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/power.log",
+    "sha256": "55d02b9917ac318ff371c6e1c8374b6b1c7111a0a000b51c3b413c7e0c4c99e2"
+  },
+  {
+    "file": "warehouse/warehouse-three-gpu-summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/warehouse-three-gpu-summary.json",
+    "sha256": "df9f0a56ff63fc920855ddb1aea97ce0692e746cbd12de549e696e39fa33a1e5"
+  },
+  {
+    "file": "warehouse/warehouse-three-gpu-verification.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/warehouse-three-gpu-verification.json",
+    "sha256": "2adff5e257dc153948c2188097580bf3e9fc8409d5f4d95cd66bbdf3acc4b5b0"
+  },
+  {
+    "file": "validation/final-cpu-tests.log",
+    "original": "/tmp/gpu-quality-final-cpu-tests.log",
+    "sha256": "726111d78ffb940b7facc55d0d96bae01bb48d5e65c8de13f0f0fc3dc1515014"
+  },
+  {
+    "file": "models/model-development/api-contract-check.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/api-contract-check.json",
+    "sha256": "ae5209271b0c529f7aa5024bada6267bfb4e7aa455a5684d1afab3dd28456842"
+  },
+  {
+    "file": "models/model-development/fit.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/fit.json",
+    "sha256": "763a9ea939ab598ded676533bbcb4b29ae78caadd6818f97c79109bdc4050ed8"
+  },
+  {
+    "file": "models/model-development/fold_metrics.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/fold_metrics.csv",
+    "sha256": "eb0c8b572925a0360f770e234d0ed59323ea577fe4be06deb1e7f945aaf95078"
+  },
+  {
+    "file": "models/model-development/leaderboard.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/leaderboard.csv",
+    "sha256": "37dbec596b22fb9bf35be87746302a437438756fa6fb7220204a31d6838393b7"
+  },
+  {
+    "file": "models/model-development/out_of_fold_predictions.csv.gz",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/out_of_fold_predictions.csv",
+    "sha256": "76cbe4a81426b945a78b4cede8807bf209475a8401e94a61209b66864414d48e",
+    "encoding": "gzip",
+    "stored_sha256": "454dcc4b50575d0e07b4799dfe2f5c39e6032d0320e17fd6b30113f64a028082",
+    "original_bytes": 8802823
+  },
+  {
+    "file": "models/model-development/plan.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/plan.json",
+    "sha256": "127f92e8d0b3d72e975b54172e79ec7272e66a1c5d79bdd66e970664c076070b"
+  },
+  {
+    "file": "models/model-development/registry/registry.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/registry/registry.json",
+    "sha256": "c71ed2fbb9ce3ad1849a68559bd7faa2bb7b19b05df7c533476a95e6241afd61"
+  },
+  {
+    "file": "models/model-development/registry/training_workload_mean/20261020T203731Z/metadata.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/registry/training_workload_mean/20261020T203731Z/metadata.json",
+    "sha256": "7383989744032a605f7469edad365b8f6054f90035822da47f529db693b495b9"
+  },
+  {
+    "file": "models/model-development/selection.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/selection.json",
+    "sha256": "18edb6bf047ca6112d03e9656e18469ded21ff48b6b6debbc5e93af95ea2cb98"
+  },
+  {
+    "file": "models/known-device-development/fit.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/known-device-development/fit.json",
+    "sha256": "1650033ed77ee138b2b8bcc04cbc430bf7cf2bb979dba88918a6308217d53bb7"
+  },
+  {
+    "file": "models/known-device-development/plan.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/known-device-development/plan.json",
+    "sha256": "653eac2a563d4b11376bba582ff2f1339b3379c8995d27b34f0ae955a2b55450"
+  },
+  {
+    "file": "models/known-device-development/registry/registry.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/known-device-development/registry/registry.json",
+    "sha256": "2a1ce2738a7ca55f7a030f01b93afab1970c3add9bb51383020063ef9c567e4c"
+  },
+  {
+    "file": "models/known-device-development/registry/rf_unbounded_full/20261020T204029Z/metadata.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/known-device-development/registry/rf_unbounded_full/20261020T204029Z/metadata.json",
+    "sha256": "41c7128c51187d5db94e170d72fcc112679193c139ebe1381fdec82d64bd03b1"
+  },
+  {
+    "file": "models/known-device-development/selection.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/known-device-development/selection.json",
+    "sha256": "070871b4f8c83eeb910d6bd43f854a38c79db7681055f4730c086bd1cebfde0b"
+  },
+  {
+    "file": "gh200/frozen-evaluation/evaluation.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/frozen-evaluation/evaluation.json",
+    "sha256": "bba70ec3a9faa686041b414981d70bcbdb855f5f6b4624c75ecf54ced49a7053"
+  },
+  {
+    "file": "gh200/frozen-evaluation/monitoring/drift_report.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/frozen-evaluation/monitoring/drift_report.csv",
+    "sha256": "8301bc3e4a544e57b26a9f40227b4981633ab69c739b0a27308d7078fe66ad2d"
+  },
+  {
+    "file": "gh200/frozen-evaluation/monitoring/monitoring_report.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/frozen-evaluation/monitoring/monitoring_report.md",
+    "sha256": "11d678c4811745f2b7f4f66ae3b7d4810d6816078d7dc1a363f65a68f611b70b"
+  },
+  {
+    "file": "gh200/frozen-evaluation/per_trial.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/frozen-evaluation/per_trial.csv",
+    "sha256": "78427915eca58e3661fdabf9dc35805f4312e3ac47d126e481c6ec94e8fcb516"
+  },
+  {
+    "file": "gh200/frozen-evaluation/per_workload.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/frozen-evaluation/per_workload.csv",
+    "sha256": "ac4363a97db7ea2ba6180a951134298e70198d85cb53a9954502327e4a00d1dd"
+  },
+  {
+    "file": "gh200/frozen-evaluation/predictions.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/frozen-evaluation/predictions.csv",
+    "sha256": "070d048aa73f351d610f3e0bdbd07e9fb4795377a35d7e6ed81a2ea9fbd15209"
+  },
+  {
+    "file": "gh200/known-device-challenge/evaluation.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/known-device-challenge/evaluation.json",
+    "sha256": "2e9559fcf86e34f50ad4a57eb45a666e802a80795e46b9fe389a8390beea4945"
+  },
+  {
+    "file": "gh200/known-device-challenge/monitoring/drift_report.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/known-device-challenge/monitoring/drift_report.csv",
+    "sha256": "4f03b0725aa7a9cbfbfe8dbf0dac62ee5a3038dd19d32c52cc0ca6edf209b286"
+  },
+  {
+    "file": "gh200/known-device-challenge/monitoring/monitoring_report.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/known-device-challenge/monitoring/monitoring_report.md",
+    "sha256": "49fd9d2a827e9c6d61b8ac28ff35820a9deecfe270869e8fcce63e009ae7399d"
+  },
+  {
+    "file": "gh200/known-device-challenge/per_trial.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/known-device-challenge/per_trial.csv",
+    "sha256": "5e68d9b87740667ac3a74807e897a1f96aa9fb6725c8601fb96cb9fc820643a2"
+  },
+  {
+    "file": "gh200/known-device-challenge/per_workload.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/known-device-challenge/per_workload.csv",
+    "sha256": "2b03abec5773a6b2607212551acb2aa43e876ed26509eafe43520bae1a252f37"
+  },
+  {
+    "file": "gh200/known-device-challenge/predictions.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/known-device-challenge/predictions.csv",
+    "sha256": "9e17e476d6651aef25ff138aae01832c3396ac5328e09eb88e34f08935aeca7f"
+  },
+  {
+    "file": "gh200/transfer/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/transfer/REPORT.md",
+    "sha256": "a33bee6720bec46e6eaa7d5fb972f691dc3eb461c7bf13b33104c028df86149e"
+  },
+  {
+    "file": "gh200/transfer/evaluation.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/transfer/evaluation.json",
+    "sha256": "ee6a870b05914ad8aa9fe550c655ef4669140ae9df9509cde70267a9e77e7a05"
+  },
+  {
+    "file": "gh200/transfer/monitoring/drift_report.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/transfer/monitoring/drift_report.csv",
+    "sha256": "e82b0ac7f3864eb96d6ac72e1c1dca115f63899f46a944d78aa3a8b515bda234"
+  },
+  {
+    "file": "gh200/transfer/monitoring/monitoring_report.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/transfer/monitoring/monitoring_report.md",
+    "sha256": "cc852cf908eef69612745c9f323260511e3cc7c202a98443468708a3a5932457"
+  },
+  {
+    "file": "gh200/transfer/per_workload.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/transfer/per_workload.csv",
+    "sha256": "1b58dc09c058caa8b41f0c9a3e09cb5c69de0c343a6d7cd9858fe089037ecd2c"
+  },
+  {
+    "file": "gh200/transfer/predictions.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/transfer/predictions.csv",
+    "sha256": "b742cce24b2fa061b4410f419b8a6a5ae6534b5de2b304d0a10c57c093b31ebc"
+  },
+  {
+    "file": "gh200/transfer/registry/linear_regression/20261020T204239Z/metadata.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/transfer/registry/linear_regression/20261020T204239Z/metadata.json",
+    "sha256": "cc28e9b63778547a8a49c664331d5a957fa33a86946d84a5861c558b259dd809"
+  },
+  {
+    "file": "gh200/transfer/registry/registry.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/transfer/registry/registry.json",
+    "sha256": "44862e0636a3836b6b2784fac7c98c8dec52a95d5ca475be5a1e36724c50fd71"
+  },
+  {
+    "file": "gh200/api-rejection.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/api-rejection.json",
+    "sha256": "831a8908afc80f101223a68ece9194b1f68ddb4543d071e27d586a43c460fbba"
+  },
+  {
+    "file": "gh200/api-forest-rejection.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/gh200/api-forest-rejection.json",
+    "sha256": "26370d209a348021541d2c063ad867936095a334c162528be194c111b71575d3"
+  },
+  {
+    "file": "source/modeling/src/gpu_power_pipeline/generalization.py",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/src/gpu_power_pipeline/generalization.py",
+    "sha256": "0ed54f8d8cbe4fbad64597e33794e4473ba5eb93d79c9a89c7edb2be94ff4fa7"
+  },
+  {
+    "file": "source/modeling/src/gpu_power_pipeline/final_evaluation.py",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/src/gpu_power_pipeline/final_evaluation.py",
+    "sha256": "c259012424df96a9e67c4b0c53c989d3319b846c6792a258dae748425b830596"
+  },
+  {
+    "file": "source/modeling/scripts/fit_known_device_model.py",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/scripts/fit_known_device_model.py",
+    "sha256": "aa165c5c69178c52d8f1333d2e8fe1c05da0cb144b8154a1c1fe25a544c4838c"
+  },
+  {
+    "file": "h200-independent/api-parity.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/api-parity.json",
+    "sha256": "4b1e9a5781bb282f7633dc57bc70a4c2a7dc1f02e8cde0117e075f4bb3376a09"
+  },
+  {
+    "file": "h200-independent/capture.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/capture.log",
+    "sha256": "48f41b731a861afb48a63d3c6d72fad6cd45b3d22bc7010c0fb6594197309d76"
+  },
+  {
+    "file": "h200-independent/evaluation/evaluation.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/evaluation/evaluation.json",
+    "sha256": "a0f9965a10f1609366cf1e0a3f694a66eda993bd840d12009ad0593cc364a841"
+  },
+  {
+    "file": "h200-independent/evaluation/monitoring/drift_report.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/evaluation/monitoring/drift_report.csv",
+    "sha256": "236357e53ad2e96650048476eca92324620b3ff7aec00bb2aeaa28c64a0e223d"
+  },
+  {
+    "file": "h200-independent/evaluation/monitoring/monitoring_report.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/evaluation/monitoring/monitoring_report.md",
+    "sha256": "5c070310edb26311c05d3f862fe4c877d237de06d39e8f084d772e1138c535c8"
+  },
+  {
+    "file": "h200-independent/evaluation/per_trial.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/evaluation/per_trial.csv",
+    "sha256": "80e444c48b796f7aeaace6277ccb3183eec2b56c1529fa10cdbd04586dd68b0d"
+  },
+  {
+    "file": "h200-independent/evaluation/per_workload.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/evaluation/per_workload.csv",
+    "sha256": "7183cada45e8c28d4a05eb5ead860e9a46ae321524b8df56fde78bc38bce336d"
+  },
+  {
+    "file": "h200-independent/evaluation/predictions.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/evaluation/predictions.csv",
+    "sha256": "653f3ca428eb8472ab942c92533203df34b8d25fad4fb07dcdfcc52037594814"
+  },
+  {
+    "file": "h200-independent/evaluation/residual-analysis.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/evaluation/residual-analysis.json",
+    "sha256": "53bb45b8f11eb6553ccdc0d1ffc94d94950e37eff2ce4ed9dd6047943e569cbe"
+  },
+  {
+    "file": "h200-independent/evaluation/validation.png",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/evaluation/validation.png",
+    "sha256": "e5efcd06eb7759abf5157432aef5d1c3fe43b7577d116f32bb3954593f410ddc"
+  },
+  {
+    "file": "h200-independent/evaluation/validation.svg",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/evaluation/validation.svg",
+    "sha256": "d3f2f394235a5c180c800b7c9b063a613301ebc5de0c89bcbac0fb7774aa9e64"
+  },
+  {
+    "file": "h200-independent/evaluation.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/evaluation.log",
+    "sha256": "a0f9965a10f1609366cf1e0a3f694a66eda993bd840d12009ad0593cc364a841"
+  },
+  {
+    "file": "h200-independent/execution-receipt.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/execution-receipt.json",
+    "sha256": "47296d9ac8832f6698d06f94429da91ccd46179db4e6dd0f39e222cabd0c4801"
+  },
+  {
+    "file": "h200-independent/power/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/REPORT.md",
+    "sha256": "8344d87007dfa9310328c088942788794e17414504be615e072d6cecb0cf5c4d"
+  },
+  {
+    "file": "h200-independent/power/aggregate.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/aggregate.csv",
+    "sha256": "245771cb0a22efff8e99fddc01d928b1987b15c67bf12f83dff2c2792669caa9"
+  },
+  {
+    "file": "h200-independent/power/manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/manifest.json",
+    "sha256": "de199eb0e4e59d658601fc8609c5f6cc29024ddc7c947b74f6d8cc79abd07242"
+  },
+  {
+    "file": "h200-independent/power/power.png",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/power.png",
+    "sha256": "94e6997085cf2bcf00a4fa7c71463ae2e08551b95aa03851752521f56f46ba25"
+  },
+  {
+    "file": "h200-independent/power/steady_telemetry.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/steady_telemetry.csv",
+    "sha256": "6f06af8b7c70d8c5d441bc8780b946c37dd11779357f816e9c9bfe174e0e619f"
+  },
+  {
+    "file": "h200-independent/power/summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/summary.csv",
+    "sha256": "db68537a4e439211d47ca2dfa5f1f901197cf253e16a5b011f7aadb081a293a1"
+  },
+  {
+    "file": "h200-independent/power/summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/summary.json",
+    "sha256": "c4b01d529de3773950056f7bf4c22a6925972b49f296d0671c227ff7a9cbd6d4"
+  },
+  {
+    "file": "h200-independent/power/telemetry.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/telemetry.csv",
+    "sha256": "2d5e09e9119e3a07db91cb8d7f7829d3d5b8564a026ca20ccd4f8b78fbf683c7"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-gemm_naive-2048-16.json",
+    "sha256": "41a4be644dda9d6a5c2b346a21d68079c814ca4862c3ee8587492c5f7e519986"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-gemm_naive-2048-16.stderr",
+    "sha256": "d72a97729ccf02a5e38f6fe8030912dedc3b4b746f2ac76c59aa811aef5af803"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-gemm_tiled-2048-16.json",
+    "sha256": "dbbc30eae0c2d1ac11af3c0892c896be67139540978a6702612a0ef9e2c5ae2a"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-gemm_tiled-2048-16.stderr",
+    "sha256": "a27722f4b48ac50dbf8cbd3a72afae5ddf0c7edd0352724945159f2d4c619b91"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-memcpy_bandwidth-67108864-256.json",
+    "sha256": "79ad244cb580d63a84db302783eaf53794f0fa79b98835ccdeab7da6a49c3ec6"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "32e983d6c5c38e737d040bddabb3ecfade268ecdf8a076756e19c84c6587d0a1"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-reduction-67108864-256.json",
+    "sha256": "77390b961fad4360a31b43a480a74e31136eee88994259cda3998d21e4f7ae99"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-reduction-67108864-256.stderr",
+    "sha256": "66d09c2fc530fb602f0dac4e78a242856c2c6df284d3f4a497eee117d272aad8"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-stencil_1d-67108864-256.json",
+    "sha256": "1a78378e65ff60793de0e72cd983e029f50d926c33061679a98f695d9e94e83e"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-stencil_1d-67108864-256.stderr",
+    "sha256": "5d16de5a7d74c5d0473b5519b1588c8fe2b1be1173b81f5dfe188000bfc7fa1b"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-vector_add-67108864-128.json",
+    "sha256": "17cbc55e205b79dc9f4b3801397d71c9b99cba303c8505542f0c9187f31c6e63"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-vector_add-67108864-128.stderr",
+    "sha256": "3b347335e5ab514bbd72ef748e6ce4c4cc238f0664fc82db6dd8214f4b3f5442"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-vector_add-67108864-256.json",
+    "sha256": "46c10cd73d11ce313c6d5c4c0fb3cc3c80ca5b32c004f3244f134284df77a114"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-vector_add-67108864-256.stderr",
+    "sha256": "0ca2e20b0046bcb6205c98e4b1c7bba331ffb10a6c56072598093cff3743df00"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-vector_add-67108864-512.json",
+    "sha256": "5a32d05e8894768d1ee2dd165e096b7c9057e9309f64511962e7b52b03f4daca"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-1-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-1-vector_add-67108864-512.stderr",
+    "sha256": "32998e01ad62c915294d982a90a1bccb115ed83744e6d9a19ba6749ae1767474"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-gemm_naive-2048-16.json",
+    "sha256": "1b44b8011a0d486c20f723648366953dea3269d8f1e30d0b35f832f1a04ed78e"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-gemm_naive-2048-16.stderr",
+    "sha256": "86e0e3467c17c006496f72a8a74377844be2f731dab622be974ca154db7c2108"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-gemm_tiled-2048-16.json",
+    "sha256": "9af0cf68436e4f1fe0f3e7fd10643b51bbb28facc810f09b7d3b5c61c3dcceeb"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-gemm_tiled-2048-16.stderr",
+    "sha256": "a053cff10495b7f5dfa4244776267312ac99a3d7d13424277d60acaaf55ef677"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-memcpy_bandwidth-67108864-256.json",
+    "sha256": "74117bac180c91cdebaf472036544215f1781a11d7ada12311e511c6e8c816b0"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "4537b0888a21ea87ddd1196d48f8c77037b284adf61c2db526e9b671e2f952e9"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-reduction-67108864-256.json",
+    "sha256": "1de4d8e23ed792aa3c52aff6f8a34a72888e56528030ed0afde918cba19cdf4a"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-reduction-67108864-256.stderr",
+    "sha256": "57164cab9558a6e51441e93fe56ce946917358abaa67fe11dee883b1b23f0377"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-stencil_1d-67108864-256.json",
+    "sha256": "7b4d6a45f26c9b4140d96ace6fc8fc267039385dbeb2121778b5ef17efbb5064"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-stencil_1d-67108864-256.stderr",
+    "sha256": "a7684ee79afdb4913ec804cf2de321a9a9be7c99fb3bd2ce1e39056231bb51fb"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-vector_add-67108864-128.json",
+    "sha256": "404c0ccdc90a3f5270a50bb902544144e0dbbc3a3e18c5ccd6b90122b0a675bf"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-vector_add-67108864-128.stderr",
+    "sha256": "87a20ac322a363c464c7e171f3f94a1d387115201918cdbcaf65632641004614"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-vector_add-67108864-256.json",
+    "sha256": "fa16a22bc4821f2032f9a18d6c33f447271314ebc019c97b1049badceed87ed5"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-vector_add-67108864-256.stderr",
+    "sha256": "5cdae349b4a423d0fbbdd13b78ef04b49f2b1efa45cb8032ce0e14116d91ade6"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-vector_add-67108864-512.json",
+    "sha256": "17fabac0c175c3c828ca79374b77aea793fbb9a4e54b1043cd94e2f918206343"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-2-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-2-vector_add-67108864-512.stderr",
+    "sha256": "2042e14c08e05ecaf33f79d18ea742f58eba6bbc5c6eeecb9c8bc2d416dc0526"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-gemm_naive-2048-16.json",
+    "sha256": "d178289ab9ae1cd69ae6788d5a1c544cb3290b85426cf56c992acaf67b78bb0f"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-gemm_naive-2048-16.stderr",
+    "sha256": "bd3173f412054ece2d9af1cca7ca01eee3c468eb1f963fe8243f2345fcd17df6"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-gemm_tiled-2048-16.json",
+    "sha256": "031a4414b7987257337b8415b9a96a8a4db9e8a42b4029e464d47247dbbad6d2"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-gemm_tiled-2048-16.stderr",
+    "sha256": "43ef1640e48bb7b9266df3f9335911e9e76173c9357d3f5183d0e03c2883662c"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-memcpy_bandwidth-67108864-256.json",
+    "sha256": "d1c746e19486df581c196f5fd08303f604b9a6ca3b1a71c0a13f631242e9883a"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "69bb0984812142c01c84171228f12229fd5a80778566aa895623d6124f45a5ed"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-reduction-67108864-256.json",
+    "sha256": "51e23f1d1906554b637a122f4a15cd20966f6a1ff6b44fd8be648d5c05c2bfb7"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-reduction-67108864-256.stderr",
+    "sha256": "c9ac0d0c9b2bb1ab57467c00281b04484d1dc41805d74f4a831fa7e4a10e15ff"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-stencil_1d-67108864-256.json",
+    "sha256": "bb8c66778dd5494a208f72a85d3b7b5339eee64fea1fb406ec69658c82ca9191"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-stencil_1d-67108864-256.stderr",
+    "sha256": "96595576e84903d4fea1e6244412d9ed2d98372f4bc183ea1e2443e2358c3af6"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-vector_add-67108864-128.json",
+    "sha256": "37330f6b1df84ff3e1c43312eaa92a1a2197e3f1daf64eb8b93f15845edcc2d7"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-vector_add-67108864-128.stderr",
+    "sha256": "c77f6f099e85984714e26929887b91dbe5e66e5774da1c45a1bff8197165ba1c"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-vector_add-67108864-256.json",
+    "sha256": "8e6cdb49d367a300b9d285bfba0cb9f4328364ca0715bd0876571ab26bd9c436"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-vector_add-67108864-256.stderr",
+    "sha256": "0205d3f9b3e8094913ec6136e904b6fbcda0e3032ead2dc3d043ad87e3dff2d7"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-vector_add-67108864-512.json",
+    "sha256": "0dfbd24c86c52b641a9e899fd89d1943e1a9b2c5d01608e14083817f7e419187"
+  },
+  {
+    "file": "h200-independent/power/workers/trial-3-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/power/workers/trial-3-vector_add-67108864-512.stderr",
+    "sha256": "75d35b337c2322b989edf2f3b6164f35e7826ab9b7184da3ebd26a6dfbc28561"
+  },
+  {
+    "file": "h200-independent/preflight.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/preflight.json",
+    "sha256": "e83ef015d26405c08e1583603b05fd1578b51b9f54c1ae93ce57e482165c16d2"
+  },
+  {
+    "file": "h200-independent/summary-validation.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/h200-independent/summary-validation.log",
+    "sha256": "4b9bca5a81c75a444536cfe9ee1ac0faab16530f27108823320f478eee8639e6"
+  },
+  {
+    "file": "warehouse/warehouse-four-capture-verification.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/warehouse-four-capture-verification.json",
+    "sha256": "1f5d268f7f3b6c61f21e3fa8212ba84f24d6566216aa8cbb9c00073cacf21c2d"
+  },
+  {
+    "file": "warehouse/warehouse-four-capture-summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/warehouse-four-capture-summary.json",
+    "sha256": "4631177d310e20dffb9c8e1bd476056633d39e1f7e21d4091359246d0d1ea32e"
+  },
+  {
+    "file": "validation/final-cpu-verification.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/final-cpu-verification.json",
+    "sha256": "b5c4fdbe64d2a49e51528c3ee4862475be91fb2027fd3dc0069faf1eeedf00f6"
+  },
+  {
+    "file": "validation/final-cpu-verification-full-suite-original.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/final-cpu-verification-full-suite-original.json",
+    "sha256": "43d9fde30ead0a598965ccc0ab1ed0ae923543b9a9d70ab3739f63196513ccf0"
+  },
+  {
+    "file": "source/final-quality/src/gpu_power_pipeline/api.py",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/src/gpu_power_pipeline/api.py",
+    "sha256": "997ea01a9957271acb0d749e2456592b64634ee69057e638eabd1bd702324ae4"
+  },
+  {
+    "file": "source/final-quality/src/gpu_power_pipeline/warehouse.py",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/src/gpu_power_pipeline/warehouse.py",
+    "sha256": "7af8eebbaf155f7150237ae22d690f776162170b0369d5bc8dec943666d120ee"
+  },
+  {
+    "file": "source/final-quality/scripts/hardware_preflight.py",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/scripts/hardware_preflight.py",
+    "sha256": "f1afdbab53f15adac513c00ef78849942dc2fba29c49bb28f6cfa16116f8468c"
+  },
+  {
+    "file": "source/final-quality/scripts/verify_saved_api.py",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/scripts/verify_saved_api.py",
+    "sha256": "cbebe9ba18686bc5301f6559024ce5a135b7f19c8aab424b1415cc30922fd144"
+  },
+  {
+    "file": "source/final-quality/scripts/plot_independent_validation.py",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/scripts/plot_independent_validation.py",
+    "sha256": "4d9b68681b24aeb9c592b2a60952dd218cd1bfb7483cd7a05fd14ce1e165ba7c"
+  },
+  {
+    "file": "validation/gpu-quality-complete-cpu-tests.log",
+    "original": "/tmp/gpu-quality-complete-cpu-tests.log",
+    "sha256": "39ceddfb653512bef185fd3d988d06ba5a7cb289f0b93fe442980cf4bcc86249"
+  },
+  {
+    "file": "validation/gpu-quality-complete-ruff.log",
+    "original": "/tmp/gpu-quality-complete-ruff.log",
+    "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  {
+    "file": "spark/smoke/build.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/smoke/build.log",
+    "sha256": "4f63f7acdaf51c1d1ff79453007b338fa80391b74d4dc2755abb87e648f864c6"
+  },
+  {
+    "file": "spark/smoke/configure.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/smoke/configure.log",
+    "sha256": "582937c5e325ee4beb00237dc7281d765d078297cb9ed6fe8e697b835d548089"
+  },
+  {
+    "file": "spark/smoke/edges/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/smoke/edges/benchmark_summary.csv",
+    "sha256": "805114d267b74950c5b04e34798e6987dbee4e43c74624fb51bbb5881a1bf861"
+  },
+  {
+    "file": "spark/smoke/edges/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/smoke/edges/metrics_provenance.csv",
+    "sha256": "50ae8e250e65f5cce855cba2a57bbe60b3d43613e8e0b7ba48943623f3718195"
+  },
+  {
+    "file": "spark/smoke/edges/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/smoke/edges/run_manifest.json",
+    "sha256": "0132fddb86dd47208bc9184d153b4832900d3f6c0db72c07c2a1d78bcd0141a9"
+  },
+  {
+    "file": "spark/smoke/edges/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/smoke/edges/timing_samples.csv",
+    "sha256": "1d6b4e0a56d094fa2a635102fe6c74ad8903bf96db9a717f72049af10c6b48e2"
+  },
+  {
+    "file": "spark/smoke/gpu-after.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/smoke/gpu-after.csv",
+    "sha256": "5f4dd3d2d0daec77ad35ec4ff0169ee764ed49b27a6c491c1a5a0c79357f1f2f"
+  },
+  {
+    "file": "spark/smoke/preflight.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/smoke/preflight.json",
+    "sha256": "0892423c615a0b254630518263eb84431260d71bd26567216c7f8e94b2b41516"
+  },
+  {
+    "file": "spark/smoke/requirements-lock.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/smoke/requirements-lock.txt",
+    "sha256": "3508641becdad2559bab7872f23cafa4a123f849118697b20dea72c0de215c2b"
+  },
+  {
+    "file": "spark/timing/AGGREGATE.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/AGGREGATE.md",
+    "sha256": "9f811f4da290c821a16306dc8d5067b669961153f44dc6cd40af118d5301487c"
+  },
+  {
+    "file": "spark/timing/aggregate_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/aggregate_summary.csv",
+    "sha256": "919aab76a197c87fe017321716eb17943d62f4cf1f599eb042d66fbc11c6cbd2"
+  },
+  {
+    "file": "spark/timing/baseline/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/baseline/benchmark_summary.csv",
+    "sha256": "babcfa06fefd694c6ebbbc8829f3b78944301ba787ae91e1d0600a3500c0809e"
+  },
+  {
+    "file": "spark/timing/baseline/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/baseline/metrics_provenance.csv",
+    "sha256": "be3f3e3447d284bcd7a85afe76d781a2a417427ed32194b643398ebbdb5e2d12"
+  },
+  {
+    "file": "spark/timing/baseline/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/baseline/run_manifest.json",
+    "sha256": "08f24906e7b5fe7a4df5593d0f7e394086e8fe5021f88aa63923000a02118978"
+  },
+  {
+    "file": "spark/timing/baseline/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/baseline/timing_samples.csv",
+    "sha256": "facd91955ac22cf4cd33d291014c36d407459b418fa776fb3faca387ad3379f1"
+  },
+  {
+    "file": "spark/timing/build.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/build.log",
+    "sha256": "76dae4bdbb41d056b2142d6259f063112a4df7db1f30e5595d4219f88a453d7a"
+  },
+  {
+    "file": "spark/timing/configure.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/configure.log",
+    "sha256": "1ba14095b911c707741e86235f9ba6a050a557984c00e2ce7f3627e0d029b8b8"
+  },
+  {
+    "file": "spark/timing/edges/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/edges/benchmark_summary.csv",
+    "sha256": "adc295805ae7f5906d903313511fcbb96eecc1cf9682048360cf75262c5f6e4f"
+  },
+  {
+    "file": "spark/timing/edges/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/edges/metrics_provenance.csv",
+    "sha256": "39a8b328985313f2b54f1402a2103aa5373028ecc4b9d2e972a0ebebd93ea5a0"
+  },
+  {
+    "file": "spark/timing/edges/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/edges/run_manifest.json",
+    "sha256": "db426d73a5c925ff86f80eb59209d85598cc6970e32916ec0148f6e9c0960a0d"
+  },
+  {
+    "file": "spark/timing/edges/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/edges/timing_samples.csv",
+    "sha256": "4701532efad10dace8d80af27586b7956b151013a0cb1e5b6702037394e2e8ba"
+  },
+  {
+    "file": "spark/timing/gpu-after.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/gpu-after.csv",
+    "sha256": "428049cb0253c4028a957eebb0fba536d75e2ff107e4924147d82bdbffc7889d"
+  },
+  {
+    "file": "spark/timing/preflight.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/preflight.json",
+    "sha256": "2e08f077aba6bb1139cd6a46123b075f210fdcf105c7eabcbf4aaad8a8720cdf"
+  },
+  {
+    "file": "spark/timing/requirements-lock.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/requirements-lock.txt",
+    "sha256": "3508641becdad2559bab7872f23cafa4a123f849118697b20dea72c0de215c2b"
+  },
+  {
+    "file": "spark/timing/trial-1/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-1/benchmark_summary.csv",
+    "sha256": "a601ee23d535f9541fb2ec1ed7b4c85025684a71cbcb22d02024e50102156f5c"
+  },
+  {
+    "file": "spark/timing/trial-1/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-1/metrics_provenance.csv",
+    "sha256": "e947865d4e1222b06a467f0922a26a1e85a8122a0f704757d62cf5bdb9b648e4"
+  },
+  {
+    "file": "spark/timing/trial-1/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-1/run_manifest.json",
+    "sha256": "e506074c9145cd0cbad85a5f684937c72855315deddd067e247b113738f001b6"
+  },
+  {
+    "file": "spark/timing/trial-1/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-1/timing_samples.csv",
+    "sha256": "2c8bcbd322b492dbf1155208edbed279bf8e5e23601259ef40aa96d4fcfebb34"
+  },
+  {
+    "file": "spark/timing/trial-2/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-2/benchmark_summary.csv",
+    "sha256": "f6a7a301462db906d1f214e1387d4a723e5ef1b0e25fb95db4cb7b9ad68a16b2"
+  },
+  {
+    "file": "spark/timing/trial-2/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-2/metrics_provenance.csv",
+    "sha256": "8d7ba963ac5e22b1ba3769413847e1eb60f42bb3bd8dc77c5580d1190b082d62"
+  },
+  {
+    "file": "spark/timing/trial-2/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-2/run_manifest.json",
+    "sha256": "4e4f3bc7895e80bd88adccb2e3e1d788b621bcdf03001af50d20fca86be7e7a0"
+  },
+  {
+    "file": "spark/timing/trial-2/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-2/timing_samples.csv",
+    "sha256": "83dfc5f6bb9078d80150141f2b3d10cf40d1c4308a31f7e5dfa9a5512f4c13b6"
+  },
+  {
+    "file": "spark/timing/trial-3/benchmark_summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-3/benchmark_summary.csv",
+    "sha256": "bc0d438d5b673c4e7cce12b5bcddf197811e4510c9f6c63be3c7dac592943b7b"
+  },
+  {
+    "file": "spark/timing/trial-3/metrics_provenance.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-3/metrics_provenance.csv",
+    "sha256": "64e38c3fab53a36d8b26ff955927b55a9bb56dae6eb4bb79d2dc0871ed8997c0"
+  },
+  {
+    "file": "spark/timing/trial-3/run_manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-3/run_manifest.json",
+    "sha256": "7d7587d4ea969ae8cbf295defe20c42234e4698efdbf4a845192fb12ea03f4fa"
+  },
+  {
+    "file": "spark/timing/trial-3/timing_samples.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing/trial-3/timing_samples.csv",
+    "sha256": "812a3e3678201e02cd5fd79850d97b6566422d427967a4dd487559c4a022ca6d"
+  },
+  {
+    "file": "spark/power/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/REPORT.md",
+    "sha256": "08d386977f4076facd608ea71fe59f775ab2de6823b79b979459edb5b41eb65d"
+  },
+  {
+    "file": "spark/power/aggregate.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/aggregate.csv",
+    "sha256": "03e05279e0899ca044e7c8d8a173430a26aaac62ddba57570a26cd169a8bcd98"
+  },
+  {
+    "file": "spark/power/manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/manifest.json",
+    "sha256": "e290ec0c5aec24cec2d0cfafae2d6a4045ad76baf58de54133af268a8fbb185a"
+  },
+  {
+    "file": "spark/power/power.png",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/power.png",
+    "sha256": "f1ac39b933b770ae362702868ea7f930ce68c15353f5a3f15a321bd4d5e22ab2"
+  },
+  {
+    "file": "spark/power/steady_telemetry.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/steady_telemetry.csv",
+    "sha256": "34af62ceb328d0659e190f00cde415f307d7226c7db470a0d5fdf82cf6cb1506"
+  },
+  {
+    "file": "spark/power/summary.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/summary.csv",
+    "sha256": "a3bb5b65a59e89727ea2bf4fa09eab928bf5c39b4ee88e63cac5aeb358db675f"
+  },
+  {
+    "file": "spark/power/summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/summary.json",
+    "sha256": "8245cae817fb5b7a4909bb115ad871992609975166634759851290bb70cefd41"
+  },
+  {
+    "file": "spark/power/telemetry.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/telemetry.csv",
+    "sha256": "d90c54f0af0e559d23f2114b849b5d122e2321ee26a43705c9611ac3b25482c4"
+  },
+  {
+    "file": "spark/power/workers/trial-1-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-gemm_naive-2048-16.json",
+    "sha256": "3efce842e0ade05dda5d0461bf28c221d10798dd70d27d7fceec42d57f495a0f"
+  },
+  {
+    "file": "spark/power/workers/trial-1-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-gemm_naive-2048-16.stderr",
+    "sha256": "e54e9ee83013cd76905406d1943985a229671b85ebeb6cb296e934ba7d3470d0"
+  },
+  {
+    "file": "spark/power/workers/trial-1-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-gemm_tiled-2048-16.json",
+    "sha256": "c97e02952c466568b2d7cc882722ad47baf775a1df19344246e9d71a46297889"
+  },
+  {
+    "file": "spark/power/workers/trial-1-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-gemm_tiled-2048-16.stderr",
+    "sha256": "4066f3dba5df9db314cb49efb904052471e4d838eb98e92d7b7c2778be8390a2"
+  },
+  {
+    "file": "spark/power/workers/trial-1-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-memcpy_bandwidth-67108864-256.json",
+    "sha256": "f81fef9ef0e42ea55b90cbf521d408467b9a01c06587ad48771931b50f2391ad"
+  },
+  {
+    "file": "spark/power/workers/trial-1-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "fbfe8f9a6571b3a8d0757a145690ee60b9c37c16295bfa21d7b2391100b7c5e8"
+  },
+  {
+    "file": "spark/power/workers/trial-1-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-reduction-67108864-256.json",
+    "sha256": "0aaa3fb038b80b1040c1e170e06dd0ba38a7e08374c3c361311bb566fd5a2726"
+  },
+  {
+    "file": "spark/power/workers/trial-1-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-reduction-67108864-256.stderr",
+    "sha256": "38cef57979df1e11586faac92befec3296512c26e9a87f803845a8d023a27e80"
+  },
+  {
+    "file": "spark/power/workers/trial-1-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-stencil_1d-67108864-256.json",
+    "sha256": "d7d5bc3d045be4ab62de2b8b10d70c477a065a6112ffc7ad1bcaef7863540bac"
+  },
+  {
+    "file": "spark/power/workers/trial-1-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-stencil_1d-67108864-256.stderr",
+    "sha256": "fe63d1ef4f14c24aeab7af3c6e147920c5ca2113a5432762daa3bcac1bac19e7"
+  },
+  {
+    "file": "spark/power/workers/trial-1-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-vector_add-67108864-128.json",
+    "sha256": "82c5e92fbff62d712589863d01eaa643dfce1a0aa878abfcbe5ba8b01bd094be"
+  },
+  {
+    "file": "spark/power/workers/trial-1-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-vector_add-67108864-128.stderr",
+    "sha256": "adc8dbebab5a721c7b65c57bba6d7aff9813745015eb3c1fa471553c4ff1c818"
+  },
+  {
+    "file": "spark/power/workers/trial-1-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-vector_add-67108864-256.json",
+    "sha256": "9be0b1e9b9c228c21649afd1cc4dbfe8964e45cb801205e9e1ea67b6022d528d"
+  },
+  {
+    "file": "spark/power/workers/trial-1-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-vector_add-67108864-256.stderr",
+    "sha256": "cba9ab65d993befe341d79f0f761449f05f4186221cb261f86e45caa5a192219"
+  },
+  {
+    "file": "spark/power/workers/trial-1-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-vector_add-67108864-512.json",
+    "sha256": "dd481180256becf84c18a5b711ef9e206231df9601e00be8189cd2f515cd128c"
+  },
+  {
+    "file": "spark/power/workers/trial-1-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-1-vector_add-67108864-512.stderr",
+    "sha256": "5257b6a2df96b394ebdf46db740bf4350689fdd04bf440911d135ccbca7be5ef"
+  },
+  {
+    "file": "spark/power/workers/trial-2-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-gemm_naive-2048-16.json",
+    "sha256": "5a06a976c5e93b7d163f7f12112578db0d97c08bd164bed0e59e6cbb93b57618"
+  },
+  {
+    "file": "spark/power/workers/trial-2-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-gemm_naive-2048-16.stderr",
+    "sha256": "8e6f0a39296475dcb06d50aae1164586cc19d717a3f2cb63b08e8fc5c9fe2e25"
+  },
+  {
+    "file": "spark/power/workers/trial-2-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-gemm_tiled-2048-16.json",
+    "sha256": "bff00a6f15910d4cd1e8142dc79d6afce2cb8ab6842ea33daa42b339982e00ae"
+  },
+  {
+    "file": "spark/power/workers/trial-2-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-gemm_tiled-2048-16.stderr",
+    "sha256": "676876dcf8ac5848bcd2affa9fa62542ae02f20c0b66219c5f0aa686dd2093c5"
+  },
+  {
+    "file": "spark/power/workers/trial-2-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-memcpy_bandwidth-67108864-256.json",
+    "sha256": "be3246a365b003d5f0015dc7497f32df26fb2baaeb60236341d5846ba2343adf"
+  },
+  {
+    "file": "spark/power/workers/trial-2-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "6dca5d7004a62c22aa719eb9641c37946eb3189fcefff019f9b7227a4600e8e9"
+  },
+  {
+    "file": "spark/power/workers/trial-2-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-reduction-67108864-256.json",
+    "sha256": "94c8a9659ffb4cdbb162c1729462aff15d21d8aee34f478e721843642e14d909"
+  },
+  {
+    "file": "spark/power/workers/trial-2-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-reduction-67108864-256.stderr",
+    "sha256": "260fba4e3991382f96c9cb224063eab62c189e05c8569265313b112b81c3599e"
+  },
+  {
+    "file": "spark/power/workers/trial-2-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-stencil_1d-67108864-256.json",
+    "sha256": "9793b99b2ff51c777318424555102d005ab259483d8dbe6ff3dfea539ec3ab23"
+  },
+  {
+    "file": "spark/power/workers/trial-2-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-stencil_1d-67108864-256.stderr",
+    "sha256": "a1f8e8ffbd42831562a765702026fd4852dbcb91be1de6896bade93ad356d0ea"
+  },
+  {
+    "file": "spark/power/workers/trial-2-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-vector_add-67108864-128.json",
+    "sha256": "59ae566c3bd781be3bbfd9b1517a7e0080172435bfd4a882b0f13211a920f8ee"
+  },
+  {
+    "file": "spark/power/workers/trial-2-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-vector_add-67108864-128.stderr",
+    "sha256": "81dc75562c0022774f04e4adf6892a18cceadc7fc061b53ef65548ebd663d381"
+  },
+  {
+    "file": "spark/power/workers/trial-2-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-vector_add-67108864-256.json",
+    "sha256": "5dfd21c1cdc6d9a7aef1eb9479a9938c672c96626326efb3c1c3b08f9d098dd8"
+  },
+  {
+    "file": "spark/power/workers/trial-2-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-vector_add-67108864-256.stderr",
+    "sha256": "c4f844dd973c31e5ef75a307962daf49fe77428ceb0dec2dbe97a2957e3716d8"
+  },
+  {
+    "file": "spark/power/workers/trial-2-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-vector_add-67108864-512.json",
+    "sha256": "a139b0438aece1f50255848356253df36dd4f5e21fd0a84698f98abcd0931149"
+  },
+  {
+    "file": "spark/power/workers/trial-2-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-2-vector_add-67108864-512.stderr",
+    "sha256": "84bd09dac1d3c69758be4fcd6e5af500a47be80dff323b6964a543ceeaa7845a"
+  },
+  {
+    "file": "spark/power/workers/trial-3-gemm_naive-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-gemm_naive-2048-16.json",
+    "sha256": "1f85bc551dbf6b63cc16b2b5dd7fa636c6b795b897e5ab11dff3b5c0dd01b97a"
+  },
+  {
+    "file": "spark/power/workers/trial-3-gemm_naive-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-gemm_naive-2048-16.stderr",
+    "sha256": "5a38911f7598ed10b685cac793c552e9b83e3b4546fb4b0667e26aa3523c3844"
+  },
+  {
+    "file": "spark/power/workers/trial-3-gemm_tiled-2048-16.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-gemm_tiled-2048-16.json",
+    "sha256": "a05e5c882016be4b527250958477deeb6471db652bc0f99242ac25d257d00e7a"
+  },
+  {
+    "file": "spark/power/workers/trial-3-gemm_tiled-2048-16.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-gemm_tiled-2048-16.stderr",
+    "sha256": "957f1eca4f1a52657530f40bbc4792128bfc5bd4c7de237510e45271f32d06ed"
+  },
+  {
+    "file": "spark/power/workers/trial-3-memcpy_bandwidth-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-memcpy_bandwidth-67108864-256.json",
+    "sha256": "f4e2d3e3d01da49b4a6c98fd6e885b37c69f3706967059a051a7e4b8ac20fa6a"
+  },
+  {
+    "file": "spark/power/workers/trial-3-memcpy_bandwidth-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-memcpy_bandwidth-67108864-256.stderr",
+    "sha256": "c68874cbe1d4417cc6c55efa7ac598c87289bb20e9aea6da6b31ac9bc80d2fa2"
+  },
+  {
+    "file": "spark/power/workers/trial-3-reduction-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-reduction-67108864-256.json",
+    "sha256": "cd1b776f6424a9190776d7a226cb2c436f208c796441aaaf746929959c7c360e"
+  },
+  {
+    "file": "spark/power/workers/trial-3-reduction-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-reduction-67108864-256.stderr",
+    "sha256": "7bf896e442d5996769be0f381c55ac4e687dcf8b067103c573266b35b88df6b9"
+  },
+  {
+    "file": "spark/power/workers/trial-3-stencil_1d-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-stencil_1d-67108864-256.json",
+    "sha256": "5f339b2eb0530ed0be8261f0a96afa1c9c726b874cd3e36aaf640f378d61de3e"
+  },
+  {
+    "file": "spark/power/workers/trial-3-stencil_1d-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-stencil_1d-67108864-256.stderr",
+    "sha256": "fe6da821ea3bbd1d822642e4821f69f3dc4b49d2a8bd176fdea050654256767c"
+  },
+  {
+    "file": "spark/power/workers/trial-3-vector_add-67108864-128.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-vector_add-67108864-128.json",
+    "sha256": "149628296619ec0dc349ff6c54a4a112affe454ac3a4006da6720c1cee787b71"
+  },
+  {
+    "file": "spark/power/workers/trial-3-vector_add-67108864-128.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-vector_add-67108864-128.stderr",
+    "sha256": "b83b9126899ec9fb933a54db8d1b50efdf76801eae24ddf2a6be5c2fbd684b22"
+  },
+  {
+    "file": "spark/power/workers/trial-3-vector_add-67108864-256.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-vector_add-67108864-256.json",
+    "sha256": "30463b9ea5dd5b96eacb122540cb7357b387e2250cc73cc1d41c923bf12960d6"
+  },
+  {
+    "file": "spark/power/workers/trial-3-vector_add-67108864-256.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-vector_add-67108864-256.stderr",
+    "sha256": "7c0ae1bc2d18b6f7d0a0a06c8ed869082cf554cd78155eee37c47d51160915d7"
+  },
+  {
+    "file": "spark/power/workers/trial-3-vector_add-67108864-512.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-vector_add-67108864-512.json",
+    "sha256": "00296ef51b827e1a344c20a6a7767f8c4fe98f612123b6ddac8d4842f0148709"
+  },
+  {
+    "file": "spark/power/workers/trial-3-vector_add-67108864-512.stderr",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/workers/trial-3-vector_add-67108864-512.stderr",
+    "sha256": "cab53ad5a322ca8e7a1b61909825c993c40293a31bbfcd61c1e253504593d7eb"
+  },
+  {
+    "file": "spark/comparison/README.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/README.md",
+    "sha256": "dc09fa81044b2fed6c039f2e3d61b96ba9d7039dc7b539a841949bfd91c978e1"
+  },
+  {
+    "file": "spark/comparison/h200-spark-trial-1/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/h200-spark-trial-1/REPORT.md",
+    "sha256": "05b769393fc7a1b31214459d335bb2ffdc5b49a2040730a3667b20412bc97f0e"
+  },
+  {
+    "file": "spark/comparison/h200-spark-trial-1/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/h200-spark-trial-1/comparison.csv",
+    "sha256": "a7b1d002297fbaaf382efb9f6f9ab33396b540f21b99680218b6d98b11e74a25"
+  },
+  {
+    "file": "spark/comparison/h200-spark-trial-1/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/h200-spark-trial-1/comparison.json",
+    "sha256": "6f87b93171b896740ad20adf2c2eb4bda4afb13d30eb8183a94df85edefe3f40"
+  },
+  {
+    "file": "spark/comparison/h200-spark-trial-2/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/h200-spark-trial-2/REPORT.md",
+    "sha256": "fe54a1d1eecda487e0aa35b9cc75b5f09f15ea1e8cf257c5407f5dc890ca772d"
+  },
+  {
+    "file": "spark/comparison/h200-spark-trial-2/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/h200-spark-trial-2/comparison.csv",
+    "sha256": "15f34ba697139b57d750939da29dc217305fc7b9f73b56fec77bb97b1f40e9fa"
+  },
+  {
+    "file": "spark/comparison/h200-spark-trial-2/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/h200-spark-trial-2/comparison.json",
+    "sha256": "39ec22eb60d045a0a63520065dacf3aba89b3fcc5fb368e3e9d7e05f893d1a4c"
+  },
+  {
+    "file": "spark/comparison/h200-spark-trial-3/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/h200-spark-trial-3/REPORT.md",
+    "sha256": "2e0219697e6415c84151d991cd84f15f7b345c99e3764de6e47be255823c8b24"
+  },
+  {
+    "file": "spark/comparison/h200-spark-trial-3/comparison.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/h200-spark-trial-3/comparison.csv",
+    "sha256": "8aff26d7773422641963e991e52ad36b52521825ea44048913eb75d3ebfa1cd4"
+  },
+  {
+    "file": "spark/comparison/h200-spark-trial-3/comparison.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/h200-spark-trial-3/comparison.json",
+    "sha256": "5616f5edd33865f7d165cddf529c313d51c88c300dd829562e2a9324b3c82ad2"
+  },
+  {
+    "file": "spark/comparison/summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/comparison/summary.json",
+    "sha256": "8c71f62b43d376fdee6cf527557856ae0a7a58bcbca838b312b521b48eed8fdb"
+  },
+  {
+    "file": "spark/source-manifest.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/source-manifest.json",
+    "sha256": "c2498bc2f0bb85f53b12e05a8bc649a90881383a56c9461a4ae9bca22f0bd3d5"
+  },
+  {
+    "file": "spark/execution-receipt.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/execution-receipt.json",
+    "sha256": "84da106e215d41609376ec236fad5300943fab12767581017411a517b610321a"
+  },
+  {
+    "file": "spark/allocation-before-release.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/allocation-before-release.txt",
+    "sha256": "f991e34f764f8a43b750242998c839660d0088ad99a9f7bf272ead5b29299aa7"
+  },
+  {
+    "file": "spark/allocation-after-release.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/allocation-after-release.txt",
+    "sha256": "47b02d973f7a7822fb5be50595b517eb5439428c97f3df2688136cbddc7018b6"
+  },
+  {
+    "file": "spark/install.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/install.log",
+    "sha256": "0bef8ac5706c6bc8b81e1aa8b157e9f4958d453a4cc2175de045136bb82f256c"
+  },
+  {
+    "file": "spark/preflight-tests.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/preflight-tests.log",
+    "sha256": "4cfcd66179ed487df4129ec54d6a4740d94fe60875b0ec11d0bc2f339f5866b4"
+  },
+  {
+    "file": "spark/smoke.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/smoke.log",
+    "sha256": "ef30ba2402bdeac273d47f566089ed1852d540c7f6d67851a168f472235fc590"
+  },
+  {
+    "file": "spark/timing.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/timing.log",
+    "sha256": "24310540cc230496f0f834e7e3546e04c182cb1a0cbbe27f3cf7a697805e58d0"
+  },
+  {
+    "file": "spark/power.log",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power.log",
+    "sha256": "b7a83634615b1619e8b686f25bf1395bb9b2332bf1a7c62025c62d64ac9306b2"
+  },
+  {
+    "file": "spark/environment.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/environment.txt",
+    "sha256": "3508641becdad2559bab7872f23cafa4a123f849118697b20dea72c0de215c2b"
+  },
+  {
+    "file": "spark/native-host.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/native-host.txt",
+    "sha256": "e71f82b6af516d6b0c7670904da332e818e687f8ab42cd7fedf2431396c06b20"
+  },
+  {
+    "file": "spark/power-preflight.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power-preflight.json",
+    "sha256": "85b8259c4007a51379ee7d1f6f8e41a737cd04a4deb058bacdb28421a166e0ab"
+  },
+  {
+    "file": "spark/source-overrides/scripts/hardware_preflight.py",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/source-overrides/scripts/hardware_preflight.py",
+    "sha256": "f1afdbab53f15adac513c00ef78849942dc2fba29c49bb28f6cfa16116f8468c"
+  },
+  {
+    "file": "spark/source-overrides/tests/test_hardware_preflight.py",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/source-overrides/tests/test_hardware_preflight.py",
+    "sha256": "8720647edfa58747483dae914190fd2364c8c479dfb93f8be9bac133fd48a891"
+  },
+  {
+    "file": "spark/frozen-evaluation/evaluation.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/frozen-evaluation/evaluation.json",
+    "sha256": "9f82635a131aac222d039f0133e48a8ead9b102b8dd738efa47ac7b076655840"
+  },
+  {
+    "file": "spark/frozen-evaluation/monitoring/drift_report.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/frozen-evaluation/monitoring/drift_report.csv",
+    "sha256": "8301bc3e4a544e57b26a9f40227b4981633ab69c739b0a27308d7078fe66ad2d"
+  },
+  {
+    "file": "spark/frozen-evaluation/monitoring/monitoring_report.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/frozen-evaluation/monitoring/monitoring_report.md",
+    "sha256": "83ec4c30be5f190d1a42b10cd974edd465c397a9afe6c565884f386c73bc98fc"
+  },
+  {
+    "file": "spark/frozen-evaluation/per_trial.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/frozen-evaluation/per_trial.csv",
+    "sha256": "f5163ef61c182ba9bff6de7da56a4ab8d61d98e30249759cc4e940b99ed195ce"
+  },
+  {
+    "file": "spark/frozen-evaluation/per_workload.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/frozen-evaluation/per_workload.csv",
+    "sha256": "2bb21ce871f00cd7387890bec3d73cb287aa181d956d637e27d08cf938c63c55"
+  },
+  {
+    "file": "spark/frozen-evaluation/predictions.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/frozen-evaluation/predictions.csv",
+    "sha256": "44935bccc2914069a7e272016153b0661b50b0e4a491a60101170c86554524b8"
+  },
+  {
+    "file": "spark/known-device-challenge/evaluation.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/known-device-challenge/evaluation.json",
+    "sha256": "e403b14f351757b4a25cf8a9e6b64205cb245cd3040000650ed736f334392c4d"
+  },
+  {
+    "file": "spark/known-device-challenge/monitoring/drift_report.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/known-device-challenge/monitoring/drift_report.csv",
+    "sha256": "39389174703f18e4e413484e332fafd163367c132f01ae4170a5ce87aec8dcf6"
+  },
+  {
+    "file": "spark/known-device-challenge/monitoring/monitoring_report.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/known-device-challenge/monitoring/monitoring_report.md",
+    "sha256": "bb9801d1c19cdf0cea930b3479cfc0fbe473df758c3ad41a00311ab5553692c5"
+  },
+  {
+    "file": "spark/known-device-challenge/per_trial.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/known-device-challenge/per_trial.csv",
+    "sha256": "83fdd45d6d01f8e9824f89070cf4c4079d0b9a57d2b1d61c1d2ce357585535a4"
+  },
+  {
+    "file": "spark/known-device-challenge/per_workload.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/known-device-challenge/per_workload.csv",
+    "sha256": "45934f52b6e511225e75a770f1a7040b79a0645badf8e62ebe5641a2388bfdc2"
+  },
+  {
+    "file": "spark/known-device-challenge/predictions.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/known-device-challenge/predictions.csv",
+    "sha256": "de0ea76a483a057946d5b7ad62d109537fb247f99e9b01ae0d90b8f2497db5ed"
+  },
+  {
+    "file": "spark/transfer/REPORT.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/transfer/REPORT.md",
+    "sha256": "820dde1d6301019236f8c9373d05dc9334c1dc9682576e81a38e22c5e4b1894c"
+  },
+  {
+    "file": "spark/transfer/evaluation.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/transfer/evaluation.json",
+    "sha256": "242c5d11c81ffc830e925e0143c621a9630453ea1a9c83d52da5bc138c483b8e"
+  },
+  {
+    "file": "spark/transfer/monitoring/drift_report.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/transfer/monitoring/drift_report.csv",
+    "sha256": "b3376aefc2cfcd0905c1262ec2eec4759edc5e56e004e454444ff5388d2d6a54"
+  },
+  {
+    "file": "spark/transfer/monitoring/monitoring_report.md",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/transfer/monitoring/monitoring_report.md",
+    "sha256": "94cb926be31570583f68df4f4f3c44922ecd2623d3e21c8fe6daa2c75ecc987a"
+  },
+  {
+    "file": "spark/transfer/per_workload.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/transfer/per_workload.csv",
+    "sha256": "88b8c85f38993fbbefc5f948aee4ab66f6ead881b8aad01cf59e4402bf7cc20c"
+  },
+  {
+    "file": "spark/transfer/predictions.csv",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/transfer/predictions.csv",
+    "sha256": "576faa169cf1d538dabf6fe236e505ef2c9fa1727ce99f7eb5495e5b05a8b92d"
+  },
+  {
+    "file": "spark/transfer/registry/linear_regression/20261020T205735Z/metadata.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/transfer/registry/linear_regression/20261020T205735Z/metadata.json",
+    "sha256": "c06e27c41c3189154c3b46aa82f123dc95d5b2d6c6b2a9bb29e53102608729c1"
+  },
+  {
+    "file": "spark/transfer/registry/registry.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/transfer/registry/registry.json",
+    "sha256": "325a052b227f9cd06ad0ea5e323a7daf31ac64b9db92669d3e81ac47ec0d8b97"
+  },
+  {
+    "file": "spark/api-rejection.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/api-rejection.json",
+    "sha256": "fbbca0e6629e30353085e708d5490a2c9d1b8de5b9d4975721a66268a10bad91"
+  },
+  {
+    "file": "spark/api-forest-rejection.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/api-forest-rejection.json",
+    "sha256": "8d82cd0152ef0a0836237f4f1e532932403f83e38e5c08040683880199b2f590"
+  },
+  {
+    "file": "warehouse/warehouse-final-verification.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/warehouse-final-verification.json",
+    "sha256": "dbd29ad28e5b86de2d0788947a82c70ca58f9f53aed00d14cbbe5cc48c3c7f64"
+  },
+  {
+    "file": "warehouse/warehouse-final-summary.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/warehouse-final-summary.json",
+    "sha256": "510c2b440320ae266d6f8697b9555dce09a655b8ed8d4cb0d5e4aad7dde8a306"
+  },
+  {
+    "file": "validation/ssh-cleanup.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/ssh-cleanup.json",
+    "sha256": "2c00b9123a10b23fab2afba72bc4fa12d5dcb35d86ddf03c5dbcf7e5513034dc"
+  },
+  {
+    "file": "a100-queued/cpu-followup-input-hashes.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/cpu-followup-input-hashes.json",
+    "sha256": "37b25ceb67eb456b44c8f5ea972b6ee7d8b8f643e169fa803362a104f293be0e"
+  },
+  {
+    "file": "a100-queued/cpu-followup-input-hashes.original.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/cpu-followup-input-hashes.original.json",
+    "sha256": "d1c6568af374d96c50aa9f9622887b91b5bb6a2b6eadf5b71dd80ef509d6141a"
+  },
+  {
+    "file": "a100-queued/followup-a100.sbatch",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/followup-a100.sbatch",
+    "sha256": "2b47e4235c23ad60e1449fe8ed79ffdd4adb77c71caab1df2a81ff6b21685c36"
+  },
+  {
+    "file": "a100-queued/followup-submission.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/followup-submission.json",
+    "sha256": "56d5b56b4767713e3c5722b24ce3fbd30fcc9be8821f2d0a5f4169b1b6944476"
+  },
+  {
+    "file": "a100-queued/followup-submitted-job.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/followup-submitted-job.txt",
+    "sha256": "d699edf9f92bf8a8c2742ecfdd5f551ebf5f90947099d334c078dabdbbf28d8f"
+  },
+  {
+    "file": "a100-queued/queue-discovery.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/queue-discovery.txt",
+    "sha256": "cff0c93e638f58b4990a52543f5aeb9d456334ea8cecf4041e7090ebf98b8493"
+  },
+  {
+    "file": "a100-queued/run-a100.sbatch",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/run-a100.sbatch",
+    "sha256": "ae80f0419eff1fc9668bc1d4c2549d6524d457b7ef46c63b5c5116b274578529"
+  },
+  {
+    "file": "a100-queued/source-amendment.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/source-amendment.json",
+    "sha256": "9970a9ebf474349e2b0ffd754bbfa62369ec8c61d71df892bd63fa5b008a194a"
+  },
+  {
+    "file": "a100-queued/submission.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/submission.json",
+    "sha256": "6c13de78d209d790923ad0ac0167709cd6a7b5a41109989823491146781a93f6"
+  },
+  {
+    "file": "a100-queued/submitted-job.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/submitted-job.txt",
+    "sha256": "2c1efdbd6cf9cfa7d895a750e6ed1f6915d5e71ceed8e289b69ea3773199153e"
+  },
+  {
+    "file": "a100-queued/user-association.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/a100/user-association.txt",
+    "sha256": "54d839b3acd5ced792bcaa63aa1ac927e985f9ab9f18cad1def159bd94278b43"
+  },
+  {
+    "file": "validation/archive-verification.json",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/archive-verification.json",
+    "sha256": "50aaa62463bc5f400cf3692776830c9efe5a9cc991d57f574350a39b392a7117"
+  },
+  {
+    "file": "models/requirements-lock.txt",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/modeling-requirements-lock.txt",
+    "sha256": "4434c5f1e0dbab088bda982358c136e870683a212ee95f99063eca629b66282b"
+  },
+  {
+    "file": "source/final-quality/pyproject.toml",
+    "original": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/pyproject.toml",
+    "sha256": "89320631f5f19ffb7e9dc3fe4b45a2f28ba3eff88144c1fc7539941ccdd121df"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "candidate": {
+    "id": "training_workload_mean",
+    "model": "training_workload_mean",
+    "params": {},
+    "feature_set": "baseline",
+    "features": [
+      "workload_type"
+    ]
+  },
+  "mean_device_rmse_w": 25.47657233782094,
+  "selection_rule": "minimum unweighted mean of two whole-device holdout RMSE values; ties use plan order",
+  "frozen_utc": "2026-10-20T20:37:19.920069+00:00",
+  "plan_sha256": "127f92e8d0b3d72e975b54172e79ec7272e66a1c5d79bdd66e970664c076070b",
+  "scope": "H100/H200 are development devices; only a later untouched external GPU can test selection. Rows are correlated."
+}

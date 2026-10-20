@@ -1,5 +1,47 @@
 # Reproducibility
 
+## Research figures, model and SQL on CPU
+
+The [research report](research-report.md) describes the hypotheses, split policy, frozen selection and limits. Use Python 3.11 for the recorded scientific dependencies; the general package supports Python 3.10+.
+
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[power,api]" -c requirements-research.txt
+python scripts/plot_research_results.py
+python scripts/reproduce_frozen_model.py --outdir outputs/model-replay
+```
+
+The figure generator reads checked-in CSV/JSON only, verifies key counts and scores, and exports seven PNG/SVG pairs plus calculation CSVs. [The gallery manifest](../results/research-2026-10-20/figure-manifest.json) records each input/output SHA-256 and the plotting environment. Rendering bytes may vary with library/font versions; scientific calculations and input identity are checked separately.
+
+Model replay verifies the archived plan, selection, training-source and training-input hashes, relocates the two development inputs by content, and reconstructs the exact selected configuration. It saves a loadable registry, verifies save/reload parity, and checks every archived final prediction and metric for H200, GH200 and GB10 within 0.000001 W numerical tolerance. The recorded environment reproduced the original model's serialized SHA-256 and all 3,413 final predictions to within 6 × 10⁻¹⁴ W. A different software environment may fail this strict comparison; inspect that difference rather than altering the historical results.
+
+This is **retrospective numerical reproduction**, not a newly collected test. The replay does not rewrite historical freeze timestamps or claim the old captures happened after the new fit. For a new experiment, freeze a new selection and collect another independent capture; the strict prospective evaluator rejects earlier captures. No downloaded pickle is needed: weights are rebuilt from the checked-in measured data. Use a new or empty output directory.
+
+To serve the reconstructed model:
+
+```bash
+GPU_POWER_REGISTRY_DIR=outputs/model-replay/registry \
+  GPU_POWER_MODEL_NAME=rf_unbounded_full GPU_POWER_MODEL_VERSION=latest \
+  python -m uvicorn gpu_power_pipeline.api:app --host 127.0.0.1 --port 8000
+```
+
+Open `http://127.0.0.1:8000/docs` for the API and `/model` for required inputs and accepted GPU names. See the [serving contract](serving.md).
+
+Rebuild the complete measured power warehouse without CUDA:
+
+```bash
+python -m gpu_power_pipeline.warehouse ingest --database outputs/research-power.sqlite \
+  results/h100-power-2026-09-22 \
+  results/quality-2026-10-20/h200/power \
+  results/quality-2026-10-20/gh200/power \
+  results/quality-2026-10-20/h200-independent/power \
+  results/quality-2026-10-20/spark/power
+python -m gpu_power_pipeline.warehouse query --database outputs/research-power.sqlite
+```
+
+Expected totals: 5 captures, 120 workload windows, 10,301 raw samples and 5,689 steady rows. Repeating ingestion adds no duplicates. Verify the curated evidence using `sha256sum -c SHA256SUMS` from `results/quality-2026-10-20/`. The original manifests retain capture-time paths; the archive README explains relocation and omitted executables. Scientific dependency constraints are in `requirements-research.txt`; full capture environments remain in the evidence archive.
+
 ## Environment
 
 - Python 3.10+
