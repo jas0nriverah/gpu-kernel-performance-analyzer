@@ -1,0 +1,8 @@
+JobID|JobName|State|ExitCode|Elapsed|AllocCPUS|ReqMem|NodeList
+11546|gpu-quality-spark|RUNNING|0:0|00:14:58|4|16G|dgx-spark1
+11546.batch|batch|RUNNING|0:0|00:14:58|4||dgx-spark1
+11546.extern|extern|RUNNING|0:0|00:14:58|4||dgx-spark1
+11546.0|bash|COMPLETED|0:0|00:00:01|4||dgx-spark1
+11546.1|bash|COMPLETED|0:0|00:00:00|4||dgx-spark1
+11546.2|bash|COMPLETED|0:0|00:00:32|4||dgx-spark1
+11546.3|bash|COMPLETED|0:0|00:11:22|4||dgx-spark1

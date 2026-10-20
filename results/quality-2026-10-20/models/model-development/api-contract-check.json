@@ -1,0 +1,21 @@
+{
+  "bundle": "registry/training_workload_mean/20261020T203731Z",
+  "feature_order": [
+    "workload_type"
+  ],
+  "required_fields": [
+    "workload_type",
+    "gpu_name"
+  ],
+  "approved_gpu_names": [
+    "NVIDIA H200",
+    "NVIDIA H100 80GB HBM3"
+  ],
+  "checks": {
+    "both_approved_gpus_predict": true,
+    "missing_gpu_rejected_422": true,
+    "synthetic_unknown_gpu_rejected_422": true
+  },
+  "holdout_targets_inspected": false,
+  "method": "Actual saved/reloaded frozen bundle through FastAPI TestClient; no predictions or target values persisted in this receipt"
+}

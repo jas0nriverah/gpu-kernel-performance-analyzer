@@ -1,0 +1,212 @@
+{
+  "generator": "scripts/plot_research_results.py",
+  "generator_sha256": "f4b0d2e3d1fb96ed220be08df27e76f79312cd573d2c8353afcd5e46467e0610",
+  "environment": {
+    "python": "3.11.9",
+    "matplotlib": "3.11.2",
+    "numpy": "2.4.6",
+    "pandas": "3.0.6"
+  },
+  "input_sha256": {
+    "results/h100-power-2026-09-22/manifest.json": "474799ac5ef826bd82a4a84cf277e71e1efad2328b57290c750bbf2e3a635cdb",
+    "results/h100-power-2026-09-22/telemetry.csv": "66a2e1a946bd68d76aea3540bf1afb9d2e3e5661bc0d5f1afd863cdbf51611ac",
+    "results/h100-power-2026-09-22/steady_telemetry.csv": "ae69eaf4b0c2ed794cdc8177380d7c732963eb3b3df812fd85d2ed91d98c768d",
+    "results/h100-power-2026-09-22/summary.csv": "6f32b1afa0ef5f814f0eef8edc4d045d621ca4cac06846683fb4d29765da2697",
+    "results/quality-2026-10-20/h200/power/manifest.json": "c2e9c84fd6310cc5de7930db9634f43046808db61466276094efa5d306a43b67",
+    "results/quality-2026-10-20/h200/power/telemetry.csv": "1e5b6cc63f6d1ed655cd45ce59202488b721796df3005abbe45b5bdc570698ed",
+    "results/quality-2026-10-20/h200/power/steady_telemetry.csv": "f068800d83400d1405d56582ed936ff840465c3f4caff7a345e4df938a47d4cb",
+    "results/quality-2026-10-20/h200/power/summary.csv": "df68dfc70c65041f64ed296f762a10c49b326f481880a6572704967783b04879",
+    "results/quality-2026-10-20/gh200/power/manifest.json": "fcb26fa6ba26935041a90d48903f26cd710e021d878f95bf1aafeb0b47b5cf24",
+    "results/quality-2026-10-20/gh200/power/telemetry.csv": "15ffdd476a0646d73604ca33215162370cab81366b585378ea1299963b80143c",
+    "results/quality-2026-10-20/gh200/power/steady_telemetry.csv": "7a22bc132871a2e61e9ae333e407ce065a6ba1002846b15e2761be3ed08afe76",
+    "results/quality-2026-10-20/gh200/power/summary.csv": "fb567ddece54b3f163b97931b5a39133965dad1b550edd20b961d7773f28045a",
+    "results/quality-2026-10-20/spark/power/manifest.json": "e290ec0c5aec24cec2d0cfafae2d6a4045ad76baf58de54133af268a8fbb185a",
+    "results/quality-2026-10-20/spark/power/telemetry.csv": "d90c54f0af0e559d23f2114b849b5d122e2321ee26a43705c9611ac3b25482c4",
+    "results/quality-2026-10-20/spark/power/steady_telemetry.csv": "34af62ceb328d0659e190f00cde415f307d7226c7db470a0d5fdf82cf6cb1506",
+    "results/quality-2026-10-20/spark/power/summary.csv": "a3bb5b65a59e89727ea2bf4fa09eab928bf5c39b4ee88e63cac5aeb358db675f",
+    "results/quality-2026-10-20/h200-independent/power/manifest.json": "de199eb0e4e59d658601fc8609c5f6cc29024ddc7c947b74f6d8cc79abd07242",
+    "results/quality-2026-10-20/h200-independent/power/telemetry.csv": "2d5e09e9119e3a07db91cb8d7f7829d3d5b8564a026ca20ccd4f8b78fbf683c7",
+    "results/quality-2026-10-20/h200-independent/power/steady_telemetry.csv": "6f06af8b7c70d8c5d441bc8780b946c37dd11779357f816e9c9bfe174e0e619f",
+    "results/quality-2026-10-20/h200-independent/power/summary.csv": "db68537a4e439211d47ca2dfa5f1f901197cf253e16a5b011f7aadb081a293a1",
+    "results/h100-2026-09-22/trial-1/benchmark_summary.csv": "21a33255136fc93f1e2c916cfca4b48c0e86919862332e65fe426c1e491c27d6",
+    "results/quality-2026-10-20/h200/timing/trial-1/benchmark_summary.csv": "628dd9c11b398578888bd4ab996227033e7876a27d77a8dd3209129c14186b0e",
+    "results/quality-2026-10-20/gh200/timing/trial-1/benchmark_summary.csv": "20d4c9b283bc741639bf2d71110e5119ad0847969cfc5bfe855caa847fe56d76",
+    "results/quality-2026-10-20/spark/timing/trial-1/benchmark_summary.csv": "a601ee23d535f9541fb2ec1ed7b4c85025684a71cbcb22d02024e50102156f5c",
+    "results/h100-2026-09-22/trial-2/benchmark_summary.csv": "1138d35a65c899df10a19c4a938acf3a9fe3231695a26e0c09be90c4c56b2c00",
+    "results/quality-2026-10-20/h200/timing/trial-2/benchmark_summary.csv": "77903c1ece989ea85136aa726b6baea6c1016b0235b76c5d52cd7f0ae9d745e5",
+    "results/quality-2026-10-20/gh200/timing/trial-2/benchmark_summary.csv": "cc4e62c7444a55f4e116a25abbbae97d519a12e460a93cbf28bd0601b819bfa5",
+    "results/quality-2026-10-20/spark/timing/trial-2/benchmark_summary.csv": "f6a7a301462db906d1f214e1387d4a723e5ef1b0e25fb95db4cb7b9ad68a16b2",
+    "results/h100-2026-09-22/trial-3/benchmark_summary.csv": "e1e6ae13cb49743f2158ded27aad5a225726b99bb10649fd1ff0af3ac2efef30",
+    "results/quality-2026-10-20/h200/timing/trial-3/benchmark_summary.csv": "3a3ab2a895b47d9a293f91dce768f37279f0b264bbeace13b965b6f540596a36",
+    "results/quality-2026-10-20/gh200/timing/trial-3/benchmark_summary.csv": "e7ce2d10585bdbf605eba95a77ea5406ce423e0b86be875091409418403ca538",
+    "results/quality-2026-10-20/spark/timing/trial-3/benchmark_summary.csv": "bc0d438d5b673c4e7cce12b5bcddf197811e4510c9f6c63be3c7dac592943b7b",
+    "results/quality-2026-10-20/models/model-development/fold_metrics.csv": "eb0c8b572925a0360f770e234d0ed59323ea577fe4be06deb1e7f945aaf95078",
+    "results/quality-2026-10-20/models/model-development/selection.json": "18edb6bf047ca6112d03e9656e18469ded21ff48b6b6debbc5e93af95ea2cb98",
+    "results/quality-2026-10-20/models/known-device-development/selection.json": "070871b4f8c83eeb910d6bd43f854a38c79db7681055f4730c086bd1cebfde0b",
+    "results/quality-2026-10-20/h200-independent/evaluation/predictions.csv": "653f3ca428eb8472ab942c92533203df34b8d25fad4fb07dcdfcc52037594814",
+    "results/quality-2026-10-20/h200-independent/evaluation/evaluation.json": "a0f9965a10f1609366cf1e0a3f694a66eda993bd840d12009ad0593cc364a841",
+    "results/quality-2026-10-20/gh200/frozen-evaluation/evaluation.json": "bba70ec3a9faa686041b414981d70bcbdb855f5f6b4624c75ecf54ced49a7053",
+    "results/quality-2026-10-20/gh200/known-device-challenge/evaluation.json": "2e9559fcf86e34f50ad4a57eb45a666e802a80795e46b9fe389a8390beea4945",
+    "results/quality-2026-10-20/gh200/transfer/evaluation.json": "ee6a870b05914ad8aa9fe550c655ef4669140ae9df9509cde70267a9e77e7a05",
+    "results/quality-2026-10-20/gh200/frozen-evaluation/predictions.csv": "070d048aa73f351d610f3e0bdbd07e9fb4795377a35d7e6ed81a2ea9fbd15209",
+    "results/quality-2026-10-20/gh200/known-device-challenge/predictions.csv": "9e17e476d6651aef25ff138aae01832c3396ac5328e09eb88e34f08935aeca7f",
+    "results/quality-2026-10-20/gh200/transfer/predictions.csv": "b742cce24b2fa061b4410f419b8a6a5ae6534b5de2b304d0a10c57c093b31ebc",
+    "results/quality-2026-10-20/spark/frozen-evaluation/evaluation.json": "9f82635a131aac222d039f0133e48a8ead9b102b8dd738efa47ac7b076655840",
+    "results/quality-2026-10-20/spark/known-device-challenge/evaluation.json": "e403b14f351757b4a25cf8a9e6b64205cb245cd3040000650ed736f334392c4d",
+    "results/quality-2026-10-20/spark/transfer/evaluation.json": "242c5d11c81ffc830e925e0143c621a9630453ea1a9c83d52da5bc138c483b8e",
+    "results/quality-2026-10-20/spark/frozen-evaluation/predictions.csv": "44935bccc2914069a7e272016153b0661b50b0e4a491a60101170c86554524b8",
+    "results/quality-2026-10-20/spark/known-device-challenge/predictions.csv": "de0ea76a483a057946d5b7ad62d109537fb247f99e9b01ae0d90b8f2497db5ed",
+    "results/quality-2026-10-20/spark/transfer/predictions.csv": "576faa169cf1d538dabf6fe236e505ef2c9fa1727ce99f7eb5495e5b05a8b92d"
+  },
+  "calculation_checks": {
+    "capture_counts": [
+      {
+        "capture": "H100",
+        "raw_rows": 2023,
+        "steady_rows": 1123,
+        "workload_windows": 24,
+        "trials": 3,
+        "role": "Development"
+      },
+      {
+        "capture": "H200",
+        "raw_rows": 2083,
+        "steady_rows": 1153,
+        "workload_windows": 24,
+        "trials": 3,
+        "role": "Development"
+      },
+      {
+        "capture": "GH200",
+        "raw_rows": 2200,
+        "steady_rows": 1237,
+        "workload_windows": 24,
+        "trials": 3,
+        "role": "External device"
+      },
+      {
+        "capture": "Spark GB10",
+        "raw_rows": 1905,
+        "steady_rows": 1023,
+        "workload_windows": 24,
+        "trials": 3,
+        "role": "External device"
+      },
+      {
+        "capture": "H200 new session",
+        "raw_rows": 2090,
+        "steady_rows": 1153,
+        "workload_windows": 24,
+        "trials": 3,
+        "role": "Prospective known GPU"
+      }
+    ],
+    "timing_ratio_full_range": [
+      0.8086195508586526,
+      11.284509430430619
+    ],
+    "matched_timing_scenarios_per_device_trial": 74,
+    "cross_device_winner_mean_rmse_w": 25.47657233782094,
+    "known_device_winner_mean_rmse_w": 3.1079996506857253,
+    "prospective_h200": {
+      "rows": 1153,
+      "rmse_w": 9.556006527553995,
+      "errors_over_25w": 24,
+      "max_absolute_error_w": 75.26795114846578
+    },
+    "gh200_training_workload_mean_rmse_w": 34.71357054978089,
+    "gh200_rf_unbounded_full_rmse_w": 42.98956528267499,
+    "gh200_linear_regression_rmse_w": 30.83819525659587,
+    "spark_training_workload_mean_rmse_w": 391.2666715972326,
+    "spark_rf_unbounded_full_rmse_w": 379.27733565526853,
+    "spark_linear_regression_rmse_w": 250.1105105017044
+  },
+  "figures": {
+    "01_capture_coverage": {
+      "caption": "Captured observations and retained steady rows, with development and external/prospective roles explicitly separated. Each capture contains 24 verified workload windows across three trials.",
+      "files": {
+        "png": "8b0c2d553aa56afeee9ae2a1d6ce20f84eeb4a7be677f0dcb34883e08f50e5b5",
+        "svg": "e0ef09ac5f4487e4e3c16797324e7178d8aabce1975667fe6a6c27c9820feb1a"
+      }
+    },
+    "02_matched_timing": {
+      "caption": "Each dot is one scenario's median runtime ratio across three corresponding trial pairs; vertical segments span those three ratios. All 74 scenario identities match for every device and trial. The dashed line is H100 parity.",
+      "files": {
+        "png": "a5f8095408c67396c81cd83a6cf4cf4eab89ff0770a20119226ae654508680ae",
+        "svg": "dd7df5ae33c0730fe060eb5b9f941b8f82878278839b8a926933422ffbeee45c"
+      }
+    },
+    "03_power_energy_tradeoffs": {
+      "caption": "Each point represents a device/configuration; points and ranges are the median and full range of three trial summaries. Estimated joules per launch equal steady mean sensor watts divided by whole-window launch rate. Runtime includes host launch and synchronization overhead.",
+      "files": {
+        "png": "04aac12f30fa0bc5bab45b41cb2a0e9319f1a42df8381ab1548a8c0f6f1a59b0",
+        "svg": "1bd936b4db9d49a432682b7276dc9a3f86df840188f9e3032026194f457637dc"
+      }
+    },
+    "04_model_selection": {
+      "caption": "Bars are unweighted mean fold RMSE; dots show every held-out fold. A workload mean wins the two-device objective. A forest wins the separate known-device objective. Both selections were frozen before their subsequent external/prospective tests.",
+      "files": {
+        "png": "8bec691f30c387c67d13fbc7f3aacd0a5480c6a7d6229630ddf5ab963fe61168",
+        "svg": "b2613850175aa1aca9750a4db981262a28b5ca6004aa65eb1b443c2b50f793f4"
+      }
+    },
+    "05_prospective_h200": {
+      "caption": "A frozen forest evaluated once on a later H200 capture: calibration, a logarithmic-count residual histogram, and per-workload signed-error distributions. All 1,153 rows are retained, including 24 errors above 25 W. Box whiskers span the full observed minimum/maximum; boxes span quartiles.",
+      "files": {
+        "png": "1d2fea092d2ef48aabb6b7b6d593354cebd34fc4c0e72f659b5ec94b9f65a7ea",
+        "svg": "e70e2ffe5a0d52819d0dea045784f6c669ea970a4ab23d0cdee970b058789223"
+      }
+    },
+    "06_external_device_failure": {
+      "caption": "Final RMSE on GH200 and Spark with separate axis ranges. The historical fixed H100 linear reference is shown retrospectively, not promoted to a new winner. The known-device forest is challenged off device without refitting; its low within-device score does not transfer.",
+      "files": {
+        "png": "0956147f4fccad0b3a810658cdd6d5be95c31494b98a067bb8f3dff333065d1b",
+        "svg": "fc6e0c58e0790eb0c5fad41a6d5be3360204b87f8ad6bd6ba4b6e6a8c58d6e77"
+      }
+    },
+    "07_feature_domains": {
+      "caption": "Observed telemetry feature distributions by capture. Boxes span quartiles; whiskers include the full minimum/maximum. Static memory clocks distinguish the development GPUs. Spark's unsupported memory-clock sensor remains missing, not zero.",
+      "files": {
+        "png": "ed958a433c0bbdf14033e5f47ab5472b851623480d38c7072cb0d739c55626d3",
+        "svg": "a6ff694981ae93bd9ff62510bd0c436935d2b841ff33bdd6d7d8c7bb3d168937"
+      }
+    }
+  },
+  "data_sha256": {
+    "data/capture_coverage.csv": "fbe34709d0117b8aff6acb798658a007dd6feea1a66b04ee3932df6ce6828e74",
+    "data/external_device_metrics.csv": "064d44633082939eecbc87d4c2e140c242bab44e441dfad3527d9d466f763ebc",
+    "data/feature_domain_summary.csv": "d90dbfe4543d343fc8b402701620a0bb1d9a87b8dc388b59fd8c9e64d66136c5",
+    "data/matched_timing_ranges.csv": "f4b916afc0aac995e2313a285fa3a333642c44ef8fb8affd2d1234d7a836f380",
+    "data/matched_timing_trials.csv": "6deb8a9661665f2a10210da1262aabb0145cb8e0a4039245e30078d5ac8e8430",
+    "data/model_selection_summary.csv": "55a9274b2691016dac009f184ade8dffa30febdd863394df860efb56bbbc3b3a",
+    "data/power_tradeoff_ranges.csv": "a52057519868208b56617e8f73c053f3e02d7d5679a8014e3ab9e4a8af4801fb",
+    "data/power_tradeoff_trials.csv": "1bf4bdf2c48c009d3e380de1be10d05c7bac92b01e816da3072ad1d4dba61f10",
+    "data/prospective_h200_errors.csv": "f8d611cf9d36ae99943d65997ce39bcbeb8c50b6a08e23314c6bfc2b49df3cdd"
+  },
+  "output_sha256": {
+    "results/research-2026-10-20/01_capture_coverage.png": "8b0c2d553aa56afeee9ae2a1d6ce20f84eeb4a7be677f0dcb34883e08f50e5b5",
+    "results/research-2026-10-20/01_capture_coverage.svg": "e0ef09ac5f4487e4e3c16797324e7178d8aabce1975667fe6a6c27c9820feb1a",
+    "results/research-2026-10-20/02_matched_timing.png": "a5f8095408c67396c81cd83a6cf4cf4eab89ff0770a20119226ae654508680ae",
+    "results/research-2026-10-20/02_matched_timing.svg": "dd7df5ae33c0730fe060eb5b9f941b8f82878278839b8a926933422ffbeee45c",
+    "results/research-2026-10-20/03_power_energy_tradeoffs.png": "04aac12f30fa0bc5bab45b41cb2a0e9319f1a42df8381ab1548a8c0f6f1a59b0",
+    "results/research-2026-10-20/03_power_energy_tradeoffs.svg": "1bd936b4db9d49a432682b7276dc9a3f86df840188f9e3032026194f457637dc",
+    "results/research-2026-10-20/04_model_selection.png": "8bec691f30c387c67d13fbc7f3aacd0a5480c6a7d6229630ddf5ab963fe61168",
+    "results/research-2026-10-20/04_model_selection.svg": "b2613850175aa1aca9750a4db981262a28b5ca6004aa65eb1b443c2b50f793f4",
+    "results/research-2026-10-20/05_prospective_h200.png": "1d2fea092d2ef48aabb6b7b6d593354cebd34fc4c0e72f659b5ec94b9f65a7ea",
+    "results/research-2026-10-20/05_prospective_h200.svg": "e70e2ffe5a0d52819d0dea045784f6c669ea970a4ab23d0cdee970b058789223",
+    "results/research-2026-10-20/06_external_device_failure.png": "0956147f4fccad0b3a810658cdd6d5be95c31494b98a067bb8f3dff333065d1b",
+    "results/research-2026-10-20/06_external_device_failure.svg": "fc6e0c58e0790eb0c5fad41a6d5be3360204b87f8ad6bd6ba4b6e6a8c58d6e77",
+    "results/research-2026-10-20/07_feature_domains.png": "ed958a433c0bbdf14033e5f47ab5472b851623480d38c7072cb0d739c55626d3",
+    "results/research-2026-10-20/07_feature_domains.svg": "a6ff694981ae93bd9ff62510bd0c436935d2b841ff33bdd6d7d8c7bb3d168937",
+    "results/research-2026-10-20/README.md": "16ea49aaad5f1a256d8ed93cc3e50d972bbddceb33141d16f71abbf7bfa45152",
+    "results/research-2026-10-20/data/capture_coverage.csv": "fbe34709d0117b8aff6acb798658a007dd6feea1a66b04ee3932df6ce6828e74",
+    "results/research-2026-10-20/data/external_device_metrics.csv": "064d44633082939eecbc87d4c2e140c242bab44e441dfad3527d9d466f763ebc",
+    "results/research-2026-10-20/data/feature_domain_summary.csv": "d90dbfe4543d343fc8b402701620a0bb1d9a87b8dc388b59fd8c9e64d66136c5",
+    "results/research-2026-10-20/data/matched_timing_ranges.csv": "f4b916afc0aac995e2313a285fa3a333642c44ef8fb8affd2d1234d7a836f380",
+    "results/research-2026-10-20/data/matched_timing_trials.csv": "6deb8a9661665f2a10210da1262aabb0145cb8e0a4039245e30078d5ac8e8430",
+    "results/research-2026-10-20/data/model_selection_summary.csv": "55a9274b2691016dac009f184ade8dffa30febdd863394df860efb56bbbc3b3a",
+    "results/research-2026-10-20/data/power_tradeoff_ranges.csv": "a52057519868208b56617e8f73c053f3e02d7d5679a8014e3ab9e4a8af4801fb",
+    "results/research-2026-10-20/data/power_tradeoff_trials.csv": "1bf4bdf2c48c009d3e380de1be10d05c7bac92b01e816da3072ad1d4dba61f10",
+    "results/research-2026-10-20/data/prospective_h200_errors.csv": "f8d611cf9d36ae99943d65997ce39bcbeb8c50b6a08e23314c6bfc2b49df3cdd"
+  }
+}

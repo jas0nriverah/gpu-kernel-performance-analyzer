@@ -1,0 +1,26 @@
+{
+  "scope": "In-process TestClient; no network or latency benchmark.",
+  "saved_model": "outputs/quality-2026-10-20/model-development/registry/training_workload_mean/20261020T203731Z",
+  "records": 1023,
+  "health": {
+    "status": "ok",
+    "model_loaded": true,
+    "model_name": "training_workload_mean",
+    "model_version": "20261020T203731Z"
+  },
+  "model_http_status": 200,
+  "predict_http_status": 422,
+  "expected_unseen_gpu_rejection": true,
+  "max_absolute_difference_watts": null,
+  "all_predictions_finite": null,
+  "served_records": 0,
+  "metrics": {
+    "scope": "process",
+    "prediction_requests": 8,
+    "prediction_failures": 8,
+    "prediction_records": 0,
+    "log_write_failures": 0,
+    "last_log_error": null
+  },
+  "telemetry_sha256": "34af62ceb328d0659e190f00cde415f307d7226c7db470a0d5fdf82cf6cb1506"
+}

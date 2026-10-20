@@ -1,0 +1,18 @@
+{
+  "frozen_utc": "2026-10-20T20:45:00.294646+00:00",
+  "files": {
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/plan.json": "127f92e8d0b3d72e975b54172e79ec7272e66a1c5d79bdd66e970664c076070b",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/selection.json": "18edb6bf047ca6112d03e9656e18469ded21ff48b6b6debbc5e93af95ea2cb98",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/fit.json": "763a9ea939ab598ded676533bbcb4b29ae78caadd6818f97c79109bdc4050ed8",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/registry/training_workload_mean/20261020T203731Z/model.joblib": "3c1980b783511d8b70a5426b7a8ea6b4490066b79833548e675b1b021d026a6b",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/model-development/registry/training_workload_mean/20261020T203731Z/metadata.json": "7383989744032a605f7469edad365b8f6054f90035822da47f529db693b495b9",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/known-device-development/plan.json": "653eac2a563d4b11376bba582ff2f1339b3379c8995d27b34f0ae955a2b55450",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/known-device-development/selection.json": "070871b4f8c83eeb910d6bd43f854a38c79db7681055f4730c086bd1cebfde0b",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/known-device-development/fit.json": "1650033ed77ee138b2b8bcc04cbc430bf7cf2bb979dba88918a6308217d53bb7",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/known-device-development/registry/rf_unbounded_full/20261020T204029Z/model.joblib": "c7c34c282e8a71421380f56f708f018c89b2de87a50cb6191dcdf4ba2f9f55ed",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/known-device-development/registry/rf_unbounded_full/20261020T204029Z/metadata.json": "41c7128c51187d5db94e170d72fcc112679193c139ebe1381fdec82d64bd03b1",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/src/gpu_power_pipeline/final_evaluation.py": "43fa2812230a1ba4fcae3e768f02ffbfb21f458ede54f52c946b63d2dacdaeda",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/src/gpu_power_pipeline/transfer.py": "51881024bb370aa260d34ec582488f9c7aabe682678c42d147ccd2c259158b16",
+    "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/src/gpu_power_pipeline/warehouse.py": "93409ac323cebf7b876042db94aea5f536a39ec692ad33a911e548c9370759f3"
+  }
+}

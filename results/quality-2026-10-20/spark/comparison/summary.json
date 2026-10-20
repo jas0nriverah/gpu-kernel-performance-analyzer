@@ -1,0 +1,102 @@
+{
+  "created_utc": "2026-10-20T20:53:41.477263+00:00",
+  "scope": "Descriptive corresponding-trial H200 to GB10 Spark timing comparisons; not CI gate or hardware causal effect.",
+  "statistic": "mean",
+  "slowdown_threshold_pct": 5,
+  "max_cv": 0.1,
+  "comparisons": [
+    {
+      "comparison": "h200-spark-trial-1",
+      "trial": 1,
+      "baseline_device": "NVIDIA H200",
+      "candidate_device": "NVIDIA GB10",
+      "matched": 74,
+      "over_5pct_slower": 66,
+      "noisy": 2,
+      "median_change_pct": 244.3057627833128,
+      "min_change_pct": -7.803297997644298,
+      "max_change_pct": 1286.5944930893033,
+      "gate_eligible": false,
+      "gate_passed": false,
+      "gate_reasons": [
+        "GPU metadata differs",
+        "2 matched scenarios exceed the CV limit (0.1)",
+        "66 matched scenarios exceed the slowdown threshold"
+      ],
+      "inputs": {
+        "baseline": {
+          "path": "outputs/prizepicks-h200-2026-10-20/timing/trial-1",
+          "run_manifest_sha256": "4b99784b11d656b4695c2cac777bf65c1c77af56a1ae6138f557b2a7265f6be9",
+          "timing_samples_sha256": "d854667a4bf70fc5d6202148cc97f87ca4410f2831f7f53ed695685524f2d2f0"
+        },
+        "candidate": {
+          "path": "outputs/quality-2026-10-20/spark/timing/trial-1",
+          "run_manifest_sha256": "e506074c9145cd0cbad85a5f684937c72855315deddd067e247b113738f001b6",
+          "timing_samples_sha256": "2c8bcbd322b492dbf1155208edbed279bf8e5e23601259ef40aa96d4fcfebb34"
+        }
+      }
+    },
+    {
+      "comparison": "h200-spark-trial-2",
+      "trial": 2,
+      "baseline_device": "NVIDIA H200",
+      "candidate_device": "NVIDIA GB10",
+      "matched": 74,
+      "over_5pct_slower": 66,
+      "noisy": 3,
+      "median_change_pct": 243.02292794934914,
+      "min_change_pct": -11.455525606468997,
+      "max_change_pct": 1280.2125074745595,
+      "gate_eligible": false,
+      "gate_passed": false,
+      "gate_reasons": [
+        "GPU metadata differs",
+        "3 matched scenarios exceed the CV limit (0.1)",
+        "66 matched scenarios exceed the slowdown threshold"
+      ],
+      "inputs": {
+        "baseline": {
+          "path": "outputs/prizepicks-h200-2026-10-20/timing/trial-2",
+          "run_manifest_sha256": "3f48363b22fd6554ccaaa699d6f62e232b87f52914cca763cc45c3a2c12f68a5",
+          "timing_samples_sha256": "bc6ba8649ed220482a0d43ee7a59101e4eac3c0a90a5b049ad2326de598a46b9"
+        },
+        "candidate": {
+          "path": "outputs/quality-2026-10-20/spark/timing/trial-2",
+          "run_manifest_sha256": "4e4f3bc7895e80bd88adccb2e3e1d788b621bcdf03001af50d20fca86be7e7a0",
+          "timing_samples_sha256": "83dfc5f6bb9078d80150141f2b3d10cf40d1c4308a31f7e5dfa9a5512f4c13b6"
+        }
+      }
+    },
+    {
+      "comparison": "h200-spark-trial-3",
+      "trial": 3,
+      "baseline_device": "NVIDIA H200",
+      "candidate_device": "NVIDIA GB10",
+      "matched": 74,
+      "over_5pct_slower": 67,
+      "noisy": 4,
+      "median_change_pct": 244.33132952272751,
+      "min_change_pct": -4.326634673065399,
+      "max_change_pct": 1285.5111744096002,
+      "gate_eligible": false,
+      "gate_passed": false,
+      "gate_reasons": [
+        "GPU metadata differs",
+        "4 matched scenarios exceed the CV limit (0.1)",
+        "67 matched scenarios exceed the slowdown threshold"
+      ],
+      "inputs": {
+        "baseline": {
+          "path": "outputs/prizepicks-h200-2026-10-20/timing/trial-3",
+          "run_manifest_sha256": "de4f1c4f711f84adaf43e3d751a615d676c1fc8efdf05764f33d54b3b3af2b36",
+          "timing_samples_sha256": "eb1ce012c907a9791a4262e7ca722ead2b20b90497446c53696131fa666537a4"
+        },
+        "candidate": {
+          "path": "outputs/quality-2026-10-20/spark/timing/trial-3",
+          "run_manifest_sha256": "7d7587d4ea969ae8cbf295defe20c42234e4698efdbf4a845192fb12ea03f4fa",
+          "timing_samples_sha256": "812a3e3678201e02cd5fd79850d97b6566422d427967a4dd487559c4a022ca6d"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">How the selected GPU power model predicts</title><desc id="desc">Actual known-device pipeline: strict serving validation, training-only numerical and categorical preprocessing, a 64-tree random forest, mean prediction in watts, and monitoring. Tree icons are conceptual.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#60768a"/></marker></defs>
+<rect width="1200" height="820" fill="white"/>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="40" y="47" font-size="31" font-weight="700" fill="#142638" text-anchor="start">How the selected power model predicts</text>
+<text x="40" y="78" font-size="18" font-weight="400" fill="#506578" text-anchor="start">rf_unbounded_full · known H100/H200 devices · one telemetry row → one prediction</text>
+<rect x="40" y="103" width="1120" height="66" rx="15" fill="#edf8f5" stroke="#b4d9d0"/>
+<text x="60" y="130" font-size="14" font-weight="700" fill="#087f8c" text-anchor="start">LIVE API GATE</text>
+<text x="220" y="130" font-size="17" font-weight="400" fill="#142638" text-anchor="start">Validate required fields, finite values, physical ranges and approved GPU name.</text>
+<text x="220" y="153" font-size="15" font-weight="400" fill="#506578" text-anchor="start">Reject unsupported devices before preprocessing; offline evaluation is a separate path.</text>
+<rect x="40" y="207" width="230" height="371" rx="15" fill="#f5f8fc" stroke="#d5e0ea"/>
+<rect x="305" y="207" width="260" height="371" rx="15" fill="#f5f8fc" stroke="#d5e0ea"/>
+<rect x="600" y="207" width="320" height="371" rx="15" fill="#f5f8fc" stroke="#d5e0ea"/>
+<rect x="955" y="207" width="205" height="371" rx="15" fill="#f5f8fc" stroke="#d5e0ea"/>
+<text x="58" y="239" font-size="15" font-weight="700" fill="#3158a8" text-anchor="start">1  TELEMETRY</text>
+<text x="58" y="271" font-size="19" font-weight="700" fill="#142638" text-anchor="start">Five numeric inputs</text>
+<text x="58" y="303" font-size="16" font-weight="400" fill="#506578" text-anchor="start">GPU utilization (%)</text>
+<text x="58" y="330" font-size="16" font-weight="400" fill="#506578" text-anchor="start">Memory utilization (%)</text>
+<text x="58" y="357" font-size="16" font-weight="400" fill="#506578" text-anchor="start">Graphics clock (MHz)</text>
+<text x="58" y="384" font-size="16" font-weight="400" fill="#506578" text-anchor="start">Memory clock (MHz)</text>
+<text x="58" y="411" font-size="16" font-weight="400" fill="#506578" text-anchor="start">Temperature (°C)</text>
+<text x="58" y="465" font-size="17" font-weight="700" fill="#142638" text-anchor="start">Two categorical inputs</text>
+<text x="58" y="495" font-size="16" font-weight="400" fill="#506578" text-anchor="start">Workload type</text>
+<text x="58" y="522" font-size="16" font-weight="400" fill="#506578" text-anchor="start">GPU name</text>
+<text x="325" y="239" font-size="15" font-weight="700" fill="#3158a8" text-anchor="start">2  PREPROCESS</text>
+<text x="325" y="274" font-size="20" font-weight="700" fill="#142638" text-anchor="start">ColumnTransformer</text>
+<rect x="323" y="294" width="224" height="94" rx="10" fill="#edf4fd" stroke="#c8d8ed"/>
+<text x="338" y="320" font-size="16" font-weight="700" fill="#3158a8" text-anchor="start">Numeric branch</text>
+<text x="338" y="346" font-size="16" font-weight="400" fill="#506578" text-anchor="start">Median imputation</text>
+<text x="338" y="371" font-size="16" font-weight="400" fill="#506578" text-anchor="start">StandardScaler</text>
+<rect x="323" y="405" width="224" height="108" rx="10" fill="#f2eef8" stroke="#dacee9"/>
+<text x="338" y="432" font-size="16" font-weight="700" fill="#7454a0" text-anchor="start">Categorical branch</text>
+<text x="338" y="457" font-size="15" font-weight="400" fill="#506578" text-anchor="start">Most-frequent imputation</text>
+<text x="338" y="482" font-size="15" font-weight="400" fill="#506578" text-anchor="start">One-hot encoding</text>
+<text x="325" y="548" font-size="14" font-weight="400" fill="#506578" text-anchor="start">Statistics learned on train only</text>
+<text x="620" y="239" font-size="15" font-weight="700" fill="#3158a8" text-anchor="start">3  RANDOM FOREST</text>
+<text x="620" y="271" font-size="21" font-weight="700" fill="#142638" text-anchor="start">64 regression trees</text>
+<text x="651" y="311" font-size="14" font-weight="400" fill="#506578" text-anchor="middle">Tree 1</text>
+<path d="M651 332L627 367" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M651 332L675 367" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M627 367L618 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M627 367L639 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M675 367L663 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M675 367L684 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<circle cx="651" cy="332" r="7" fill="#dce7f7" stroke="#6e8db5"/>
+<circle cx="627" cy="367" r="7" fill="#dce7f7" stroke="#6e8db5"/>
+<circle cx="675" cy="367" r="7" fill="#dce7f7" stroke="#6e8db5"/>
+<rect x="611" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<rect x="632" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<rect x="656" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<rect x="677" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<text x="651" y="438" font-size="14" font-weight="400" fill="#506578" text-anchor="middle">watts</text>
+<text x="745" y="311" font-size="14" font-weight="400" fill="#506578" text-anchor="middle">Tree 2</text>
+<path d="M745 332L721 367" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M745 332L769 367" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M721 367L712 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M721 367L733 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M769 367L757 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M769 367L778 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<circle cx="745" cy="332" r="7" fill="#dce7f7" stroke="#6e8db5"/>
+<circle cx="721" cy="367" r="7" fill="#dce7f7" stroke="#6e8db5"/>
+<circle cx="769" cy="367" r="7" fill="#dce7f7" stroke="#6e8db5"/>
+<rect x="705" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<rect x="726" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<rect x="750" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<rect x="771" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<text x="745" y="438" font-size="14" font-weight="400" fill="#506578" text-anchor="middle">watts</text>
+<text x="839" y="311" font-size="14" font-weight="400" fill="#506578" text-anchor="middle">Tree 64</text>
+<path d="M839 332L815 367" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M839 332L863 367" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M815 367L806 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M815 367L827 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M863 367L851 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<path d="M863 367L872 404" stroke="#879fbe" fill="none" stroke-width="2"/>
+<circle cx="839" cy="332" r="7" fill="#dce7f7" stroke="#6e8db5"/>
+<circle cx="815" cy="367" r="7" fill="#dce7f7" stroke="#6e8db5"/>
+<circle cx="863" cy="367" r="7" fill="#dce7f7" stroke="#6e8db5"/>
+<rect x="799" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<rect x="820" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<rect x="844" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<rect x="865" y="400" width="14" height="12" rx="3" fill="#b9dcd7" stroke="#6baba0"/>
+<text x="839" y="438" font-size="14" font-weight="400" fill="#506578" text-anchor="middle">watts</text>
+<text x="777" y="355" font-size="22" font-weight="400" fill="#506578" text-anchor="start">…</text>
+<rect x="620" y="466" width="280" height="65" rx="10" fill="#eaf5f3" stroke="#b8d8d1"/>
+<text x="760" y="494" font-size="16" font-weight="700" fill="#087f8c" text-anchor="middle">Average all 64 tree outputs</text>
+<text x="760" y="517" font-size="15" font-weight="400" fill="#087f8c" text-anchor="middle">ŷ = (T₁(x) + … + T₆₄(x)) / 64</text>
+<text x="620" y="553" font-size="14" font-weight="400" fill="#506578" text-anchor="start">Tree sketches are conceptual.</text>
+<text x="975" y="239" font-size="15" font-weight="700" fill="#3158a8" text-anchor="start">4  OUTPUT</text>
+<text x="1058" y="320" font-size="35" font-weight="700" fill="#087f8c" text-anchor="middle">Watts</text>
+<text x="1058" y="351" font-size="15" font-weight="400" fill="#506578" text-anchor="middle">GPU sensor estimate</text>
+<text x="975" y="408" font-size="15" font-weight="400" fill="#506578" text-anchor="start">Pinned model identity</text>
+<text x="975" y="438" font-size="15" font-weight="400" fill="#506578" text-anchor="start">Finite output check</text>
+<text x="975" y="468" font-size="15" font-weight="400" fill="#506578" text-anchor="start">Prediction log</text>
+<text x="975" y="498" font-size="15" font-weight="400" fill="#506578" text-anchor="start">Drift + service metrics</text>
+<text x="975" y="550" font-size="14" font-weight="400" fill="#506578" text-anchor="start">No confidence interval</text>
+<path d="M270 393L305 393" fill="none" stroke="#60768a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M565 393L600 393" fill="none" stroke="#60768a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<path d="M920 393L955 393" fill="none" stroke="#60768a" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="40" y="609" width="1120" height="77" rx="15" fill="#f2f5fa" stroke="#d5e0ea"/>
+<text x="60" y="637" font-size="14" font-weight="700" fill="#3158a8" text-anchor="start">FROZEN TRAINING CONTRACT</text>
+<text x="60" y="664" font-size="18" font-weight="400" fill="#142638" text-anchor="start">64 trees · min_samples_leaf=3 · max_depth=None · random_state=42 · n_jobs=1</text>
+<text x="40" y="727" font-size="17" font-weight="400" fill="#142638" text-anchor="start">Fit preprocessing and trees inside each training fold; freeze the selected pipeline before the later H200 capture.</text>
+<text x="40" y="756" font-size="16" font-weight="400" fill="#506578" text-anchor="start">Targets are individual steady power samples. Trial aggregates summarize measurements; they are not the ML rows.</text>
+<text x="40" y="787" font-size="15" font-weight="400" fill="#506578" text-anchor="start">No fitted-tree visualization, feature attribution, uncertainty calibration or causal explanation is claimed.</text>
+</g></svg>

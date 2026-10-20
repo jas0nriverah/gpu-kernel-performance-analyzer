@@ -1,0 +1,15 @@
+{
+  "submitted_utc": "2026-10-20T20:43:20.610891+00:00",
+  "job_id": "6426654",
+  "resources": {
+    "partition": "ice-gpu",
+    "account": "ece",
+    "qos": "coe-ice",
+    "gpu": "a100:1",
+    "cpus": 4,
+    "memory_gb": 16,
+    "time_minutes": 45
+  },
+  "script_sha256": "ae80f0419eff1fc9668bc1d4c2549d6524d457b7ef46c63b5c5116b274578529",
+  "original_h200_job_untouched": "6425996"
+}

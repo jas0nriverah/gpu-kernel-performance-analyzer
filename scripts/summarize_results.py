@@ -27,6 +27,8 @@ def main() -> None:
     keys = set(runs[0].rows)
     if any(set(run.rows) != keys or run.manifest["device"] != runs[0].manifest["device"] for run in runs):
         raise ValueError("Trial scenarios and devices must match")
+    device_name = runs[0].manifest["device"].get("name", "Unknown GPU")
+    trial_count = len(runs)
     rows = []
     for key in sorted(keys):
         values = [run.rows[key] for run in runs]
@@ -64,7 +66,7 @@ def main() -> None:
         ax.grid(alpha=0.18)
         ax.legend(frameon=False)
         ax.set_ylim(bottom=0)
-    fig.suptitle("H100 80GB · median of three run means · 50 samples per scenario", fontsize=14, fontweight="bold")
+    fig.suptitle(f"{device_name} · median of {trial_count} independent run means", fontsize=14, fontweight="bold")
     fig.savefig(out / "scaling.png", dpi=170)
     plt.close(fig)
 
@@ -81,7 +83,7 @@ def main() -> None:
     fig.savefig(out / "block_sizes.png", dpi=170)
     plt.close(fig)
 
-    lines = ["# H100 aggregate results", "", "Median of three independent run means; ranges span those means, not confidence intervals.", "",
+    lines = [f"# {device_name} aggregate results", "", f"Median of {trial_count} independent run means; ranges span those means, not confidence intervals.", "",
              "| Kernel | Size | Block | Mean ms (median) | Range ms | Effective GB/s | Effective GFLOP/s | Max CV |",
              "| --- | ---: | ---: | ---: | --- | ---: | ---: | ---: |"]
     for r in rows:

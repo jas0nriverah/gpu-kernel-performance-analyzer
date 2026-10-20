@@ -1,0 +1,2 @@
+uuid, name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%], clocks.current.sm [MHz], clocks.current.memory [MHz], power.limit [W]
+GPU-d0a568f0-708f-e632-a937-78e43236ecab, NVIDIA GH200 480GB, 570.211.01, 97871 MiB, 7 MiB, 0 %, 1980 MHz, 2619 MHz, 900.00 W

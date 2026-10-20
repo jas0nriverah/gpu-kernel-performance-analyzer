@@ -1,0 +1,25 @@
+Trial 1: memcpy_bandwidth-67108864-256: 25.5 W, 40 samples, verified
+Trial 1: stencil_1d-67108864-256: 28.8 W, 40 samples, verified
+Trial 1: gemm_naive-2048-16: 101.9 W, 49 samples, verified
+Trial 1: gemm_tiled-2048-16: 80.0 W, 49 samples, verified
+Trial 1: vector_add-67108864-512: 25.7 W, 39 samples, verified
+Trial 1: reduction-67108864-256: 45.7 W, 47 samples, verified
+Trial 1: vector_add-67108864-128: 26.1 W, 39 samples, verified
+Trial 1: vector_add-67108864-256: 25.4 W, 39 samples, verified
+Trial 2: memcpy_bandwidth-67108864-256: 26.2 W, 40 samples, verified
+Trial 2: gemm_tiled-2048-16: 79.1 W, 50 samples, verified
+Trial 2: vector_add-67108864-512: 25.6 W, 40 samples, verified
+Trial 2: vector_add-67108864-128: 26.1 W, 38 samples, verified
+Trial 2: stencil_1d-67108864-256: 29.6 W, 40 samples, verified
+Trial 2: gemm_naive-2048-16: 102.1 W, 48 samples, verified
+Trial 2: reduction-67108864-256: 46.5 W, 47 samples, verified
+Trial 2: vector_add-67108864-256: 26.0 W, 39 samples, verified
+Trial 3: memcpy_bandwidth-67108864-256: 26.7 W, 40 samples, verified
+Trial 3: reduction-67108864-256: 45.8 W, 47 samples, verified
+Trial 3: vector_add-67108864-512: 25.5 W, 39 samples, verified
+Trial 3: stencil_1d-67108864-256: 29.7 W, 40 samples, verified
+Trial 3: vector_add-67108864-256: 25.7 W, 37 samples, verified
+Trial 3: gemm_naive-2048-16: 102.1 W, 49 samples, verified
+Trial 3: gemm_tiled-2048-16: 80.7 W, 50 samples, verified
+Trial 3: vector_add-67108864-128: 26.8 W, 37 samples, verified
+Validated 24 windows and regenerated outputs/spark/power/REPORT.md

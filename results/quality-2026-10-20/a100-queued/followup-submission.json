@@ -1,0 +1,24 @@
+{
+  "submitted_utc": "2026-10-20T20:45:17.407549+00:00",
+  "job_id": "6426680",
+  "dependency": "afterok:6426654",
+  "kill_on_invalid_dependency": true,
+  "resources": {
+    "partition": "ice-cpu",
+    "account": "ece",
+    "qos": "coe-ice",
+    "cpus": 4,
+    "memory_gb": 16,
+    "time_minutes": 10,
+    "gpus": 0
+  },
+  "script_sha256": "2b47e4235c23ad60e1449fe8ed79ffdd4adb77c71caab1df2a81ff6b21685c36",
+  "outputs": [
+    "frozen-evaluation",
+    "known-device-challenge",
+    "transfer",
+    "warehouse-verification.json",
+    "warehouse-summary.json"
+  ],
+  "frozen_input_manifest": "cpu-followup-input-hashes.json"
+}

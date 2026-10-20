@@ -1,0 +1,21 @@
+{
+  "runs": 2,
+  "artifacts": 110,
+  "trials": 48,
+  "samples": 4106,
+  "steady_samples": 2276,
+  "foreign_key_check": [],
+  "integrity_check": "ok",
+  "per_gpu": [
+    {
+      "gpu_name": "NVIDIA H100 80GB HBM3",
+      "rows": 2023,
+      "steady_rows": 1123
+    },
+    {
+      "gpu_name": "NVIDIA H200",
+      "rows": 2083,
+      "steady_rows": 1153
+    }
+  ]
+}

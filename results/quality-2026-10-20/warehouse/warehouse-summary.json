@@ -1,0 +1,122 @@
+[
+  {
+    "gpu_uuid": "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "workload": "gemm_naive",
+    "trial_count": 3,
+    "sample_count": 144,
+    "mean_power_w": 471.42484260673007,
+    "energy_j": 15532.906161146162,
+    "span_s": 32.94884943962097
+  },
+  {
+    "gpu_uuid": "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "workload": "gemm_tiled",
+    "trial_count": 3,
+    "sample_count": 143,
+    "mean_power_w": 407.99395157280895,
+    "energy_j": 13345.033060507772,
+    "span_s": 32.70889925956726
+  },
+  {
+    "gpu_uuid": "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "workload": "memcpy_bandwidth",
+    "trial_count": 3,
+    "sample_count": 141,
+    "mean_power_w": 415.54814600070443,
+    "energy_j": 13390.7944496274,
+    "span_s": 32.224411487579346
+  },
+  {
+    "gpu_uuid": "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "workload": "reduction",
+    "trial_count": 3,
+    "sample_count": 141,
+    "mean_power_w": 405.64244962802525,
+    "energy_j": 13103.96543290019,
+    "span_s": 32.30422616004944
+  },
+  {
+    "gpu_uuid": "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "workload": "stencil_1d",
+    "trial_count": 3,
+    "sample_count": 138,
+    "mean_power_w": 481.6072170192886,
+    "energy_j": 15397.629546087981,
+    "span_s": 31.97134304046631
+  },
+  {
+    "gpu_uuid": "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "workload": "vector_add",
+    "trial_count": 9,
+    "sample_count": 416,
+    "mean_power_w": 450.6592799657587,
+    "energy_j": 43490.28194716096,
+    "span_s": 96.50368666648865
+  },
+  {
+    "gpu_uuid": "GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b",
+    "gpu_name": "NVIDIA H200",
+    "workload": "gemm_naive",
+    "trial_count": 3,
+    "sample_count": 147,
+    "mean_power_w": 432.8644376222422,
+    "energy_j": 14367.233677768709,
+    "span_s": 33.19106960296631
+  },
+  {
+    "gpu_uuid": "GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b",
+    "gpu_name": "NVIDIA H200",
+    "workload": "gemm_tiled",
+    "trial_count": 3,
+    "sample_count": 147,
+    "mean_power_w": 385.55936084426463,
+    "energy_j": 12769.108070448638,
+    "span_s": 33.11839723587036
+  },
+  {
+    "gpu_uuid": "GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b",
+    "gpu_name": "NVIDIA H200",
+    "workload": "memcpy_bandwidth",
+    "trial_count": 3,
+    "sample_count": 144,
+    "mean_power_w": 423.3808072248657,
+    "energy_j": 13846.595681378842,
+    "span_s": 32.70482611656189
+  },
+  {
+    "gpu_uuid": "GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b",
+    "gpu_name": "NVIDIA H200",
+    "workload": "reduction",
+    "trial_count": 3,
+    "sample_count": 141,
+    "mean_power_w": 372.8576740541512,
+    "energy_j": 11914.269313265086,
+    "span_s": 31.953933477401733
+  },
+  {
+    "gpu_uuid": "GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b",
+    "gpu_name": "NVIDIA H200",
+    "workload": "stencil_1d",
+    "trial_count": 3,
+    "sample_count": 144,
+    "mean_power_w": 487.77219215359275,
+    "energy_j": 15918.63597577572,
+    "span_s": 32.635390520095825
+  },
+  {
+    "gpu_uuid": "GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b",
+    "gpu_name": "NVIDIA H200",
+    "workload": "vector_add",
+    "trial_count": 9,
+    "sample_count": 430,
+    "mean_power_w": 458.2163146700506,
+    "energy_j": 44644.941111871005,
+    "span_s": 97.43201994895935
+  }
+]

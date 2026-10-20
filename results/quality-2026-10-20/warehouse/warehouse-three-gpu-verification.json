@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "runs": 3,
+    "artifacts": 163,
+    "trials": 72,
+    "samples": 6306,
+    "steady_samples": 3513
+  },
+  "gh200_first_inserted": true,
+  "gh200_repeat_inserted": false,
+  "integrity_check": "ok",
+  "foreign_key_check": [],
+  "scope": "Capture integrity only; GH200 targets not used for model development."
+}

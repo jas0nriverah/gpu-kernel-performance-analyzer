@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "gpu-kernel-performance-analyzer"
 version = "0.1.0"
-description = "CUDA/C++ kernel benchmarking with Python artifact validation and analysis."
+description = "Reproducible CUDA benchmarks, measured GPU telemetry, validated power models, SQL ingestion and inference."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -18,6 +18,9 @@ keywords = [
     "roofline",
     "nsight-compute",
     "hpc",
+    "machine-learning",
+    "power-modeling",
+    "mlops",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -65,10 +68,13 @@ where = ["src"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 addopts = "--import-mode=importlib"
+testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 120
 target-version = "py310"
+# Historical source snapshots in results are immutable, hash-verified evidence.
+extend-exclude = ["results"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]

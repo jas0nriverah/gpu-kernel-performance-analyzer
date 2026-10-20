@@ -1,0 +1,2 @@
+uuid, name, driver_version, memory.total [MiB], memory.used [MiB], utilization.gpu [%], clocks.current.sm [MHz], clocks.current.memory [MHz], power.limit [W]
+GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b, NVIDIA H200, 615.71.09, 143771 MiB, 0 MiB, 0 %, 345 MHz, 3201 MHz, 700.00 W

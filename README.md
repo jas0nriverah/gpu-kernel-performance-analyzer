@@ -1,12 +1,33 @@
 # GPU Performance & Power Analyzer
 
-A reproducible GPU benchmarking toolkit that connects kernel speed, measured board power, and power-model validation. Run CUDA experiments, compare performance and energy tradeoffs, and retain the raw evidence behind every result.
+An end-to-end GPU telemetry ML workflow: collect correctness-verified CUDA measurements, build a provenance-checked SQL dataset, evaluate models on held-out sessions and devices, and serve versioned artifacts through a validated API. Kernel timing and measured power connect model results to reproducible hardware experiments.
 
-[Timing results](docs/real_gpu_validation.md) · [Power results](results/h100-power-2026-09-22/REPORT.md) · [Correctness validation](docs/correctness.md) · [Engineering decisions](docs/engineering.md) · [Compare runs](docs/comparisons.md) · [Reproduce](docs/reproducibility.md)
+[Research report](docs/research-report.md) · [Figure gallery](results/research-2026-10-20/README.md) · [Model card](docs/model-card.md) · [Methodology](docs/methodology.md) · [Reproduce](docs/reproducibility.md)
+
+**Python · SQL · scikit-learn · FastAPI · CUDA/C++ · GitHub Actions**
+
+| Evidence | Measured outcome |
+| --- | --- |
+| Prospective ML evaluation | **9.56 W RMSE**, **58.7% lower** than the workload baseline on a new H200 session |
+| Hardware experiments | **44,400** scaling timings across H100, H200, GH200 and DGX Spark GB10 |
+| Verified dataset | **5 captures**, **120 workload windows**, **10,301 raw readings** |
+| Inference contract | All **1,153** new H200 rows match saved-model predictions; unknown GPU names are rejected |
+
+Start with the [research report](docs/research-report.md) for the question, experiment design, all seven figures and limitations. The [model card](docs/model-card.md) explains the actual inputs, forest and supported scope; the [engineering guide](docs/engineering.md) explains implementation choices.
+
+## Model result you can inspect
+
+A random forest selected on whole-trial H100/H200 development folds was frozen before a **new H200 capture: 24 verified workload windows and 1,153 steady telemetry rows**. It achieved **9.56 W RMSE**, improving **58.7%** over a training-workload-mean baseline (23.16 W). All rows were retained: 24 errors exceeded 25 W, primarily on stencil workloads. This is one prospective session on a known GPU; it does not establish unseen-GPU accuracy. [Final metrics and residuals →](results/quality-2026-10-20/h200-independent/evaluation/evaluation.json)
+
+On independent GH200 data, the frozen cross-device workload-mean winner scored **34.71 W RMSE**, the known-device forest scored **42.99 W**, and a historical H100 linear reference scored **30.84 W**. No test-driven winner change was made. On DGX Spark GB10, transfer failed: the frozen cross-device baseline scored **391.27 W RMSE** and the known-device forest **379.28 W**. Collection compatibility across four GPUs does not establish model portability; the serving guard limits these models to their H100/H200 reference identities. [Model selection and limits →](docs/model-generalization.md)
+
+![Frozen forest versus training baselines and every untrimmed H200 residual](results/quality-2026-10-20/h200-independent/evaluation/validation.png)
+
+The warehouse currently contains **5 captures across 4 GPUs**, **10,301 raw readings**, **5,689 steady rows** and **120 verified workload windows**, with integrity checks and idempotent ingestion. API replay of all **1,153 new H200 rows** exactly matched the saved model (**0 W difference**). [Curated validation archive](results/quality-2026-10-20/README.md) · [SQL contract](docs/warehouse.md) · [Serving contract](docs/serving.md)
 
 ## Results you can inspect
 
-Validated on **NVIDIA H100 80GB HBM3**, with recovered **A100 80GB PCIe** evidence for comparison. The H100 study covers **74 configurations × 3 independent sweeps × 50 samples = 11,100 raw timings**, plus a 24-scenario compatibility run and 18 boundary correctness cases. All requested correctness checks passed.
+Validated on **NVIDIA H100 80GB HBM3**, with recovered **A100 80GB PCIe** evidence for comparison. Additional [H200](docs/h200-review.md) and native Arm [GH200 validation](docs/gh200-validation.md) each completed the 74-configuration, three-sweep timing protocol and 18 boundary cases; their selected captures and validation receipts are retained in the [repository evidence archive](results/quality-2026-10-20/README.md). Native Arm [DGX Spark GB10](docs/dgx-spark-validation.md) also completed the same full timing protocol; its 24-window power capture also passed artifact validation. Across H100, H200, GH200 and GB10, the three scaling sweeps retain **44,400 timing samples**. The H100 study covers **74 configurations × 3 independent sweeps × 50 samples = 11,100 raw timings**, plus a 24-scenario compatibility run and 18 boundary correctness cases. All requested correctness checks passed.
 
 | H100 workload | Result | Evidence |
 | --- | --- | --- |
@@ -30,37 +51,52 @@ The H100 power study covers **8 configurations × 3 randomized trials**, with **
 
 Tiled GEMM achieved **1.51× throughput and 42.8% lower estimated energy per launch**. Power is sampled board telemetry; energy per launch combines steady mean power with sustained launch rate. [Raw evidence, all workloads, and sampling limits →](results/h100-power-2026-09-22/REPORT.md)
 
-Power models use separate artifacts and hold out entire trials. Linear regression achieved **3.11 W mean held-out RMSE** across three folds. This validates repeat-session behavior on one H100; cross-GPU generalization remains future work. [Model evidence →](results/h100-power-model-2026-09-22/REPORT.md) [Methodology and commands](docs/power_measurement.md) · [Integration review](docs/repository_integration.md) · [GPU validation plan](docs/gpu_validation_plan.md)
+Power models use separate artifacts and hold out entire trials. Linear regression achieved **3.11 W mean held-out RMSE** across three folds. This validates repeat-session behavior on one H100; a fixed H100-trained model subsequently scored **56.78 W RMSE on H200**, underperforming both training-only mean baselines. [External-device evaluation →](docs/h200-review.md) [Model evidence →](results/h100-power-model-2026-09-22/REPORT.md) [Methodology and commands](docs/power_measurement.md) · [Integration review](docs/repository_integration.md) · [GPU validation plan](docs/gpu_validation_plan.md)
 
-## How it works
+## The machine learning model
 
-![System architecture showing Python orchestration, artifact storage, offline analysis, and the CUDA execution boundary](docs/assets/system-flow.svg)
+The selected model predicts contemporaneous GPU sensor power from five numeric telemetry fields and two categorical fields. Training-only preprocessing feeds a 64-tree random forest; the prediction is the mean of its tree outputs. A separate device-transfer objective selected a workload-mean baseline.
+
+![Actual telemetry features, training-only preprocessing, 64 regression trees, and guarded power prediction](docs/assets/ml-model.svg)
+
+[Complete model card](docs/model-card.md) · [All 12 candidates and validation folds](results/research-2026-10-20/04_model_selection.png) · [Full prospective residual analysis](results/research-2026-10-20/05_prospective_h200.png) · [External-device failures](results/research-2026-10-20/06_external_device_failure.png)
+
+## How the research works
+
+![Measured data, separate validation objectives, frozen models and independent evaluation](docs/assets/research-workflow.svg)
 
 - **Bounded worker execution:** subprocess timeouts, checked JSON responses, exact scenario matching, and fail-fast correctness checks.
 - **Reproducible evidence:** every timing sample, GPU UUID and metadata, binary/config/source hashes, and separate metric provenance.
 - **Regression checks:** compare matching configurations, flag missing coverage and noisy measurements, export JSON/CSV/Markdown, and return CI exit codes.
+- **Data and serving contracts:** verified artifact hashes, atomic SQL ingestion, bounded inference batches, readiness checks, and rejection of unseen GPU identities.
 - **Portable validation:** CPU-only fixtures exercise orchestration and analysis; CUDA runs validate kernel behavior separately.
 
-The system uses local files and a CLI. [Design decisions and current limits →](docs/engineering.md) · [Resume sweeps safely](docs/resumability.md) · [Tune block sizes](docs/autotuning.md)
+The system retains raw files, supports transactional SQLite ingestion, and serves versioned models through a validated FastAPI contract. [SQL warehouse](docs/warehouse.md) · [Serving contract](docs/serving.md) · [Quality validation](docs/quality-validation.md). [Design decisions and current limits →](docs/engineering.md) · [Resume sweeps safely](docs/resumability.md) · [Tune block sizes](docs/autotuning.md)
 
-## Try it without a GPU
+## Reproduce without a GPU
 
-Requires Python 3.10+. From a checkout:
+Use Python 3.11 for the recorded research environment. These commands read only checked-in measurements:
 
 ```bash
-python -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e ".[dev]"
+python -m pip install -e ".[power,api]" -c requirements-research.txt
 
-# Rebuild the comparison from committed raw A100 and H100 evidence.
-python -m gpu_kernel_analyzer compare \
-  --baseline results/a100-2026-04-28 \
-  --candidate results/h100-2026-09-22/baseline \
-  --allow-device-mismatch --statistic mean \
-  --outdir outputs/a100-h100
+# Rebuild all seven figures and their calculation tables.
+python scripts/plot_research_results.py
+
+# Reconstruct the frozen forest and verify every archived final prediction.
+python scripts/reproduce_frozen_model.py --outdir outputs/model-replay
+
+# Serve the reconstructed model; visit http://127.0.0.1:8000/docs.
+GPU_POWER_REGISTRY_DIR=outputs/model-replay/registry \
+  GPU_POWER_MODEL_NAME=rf_unbounded_full GPU_POWER_MODEL_VERSION=latest \
+  python -m uvicorn gpu_power_pipeline.api:app --host 127.0.0.1 --port 8000
 ```
 
-Open `outputs/a100-h100/REPORT.md` to inspect all 12 matching scenarios. No GPU is needed to compare or analyze existing runs. A [fixture demo](docs/demo.md) also exercises the full pipeline with explicitly synthetic timings.
+Model replay verifies the original input/configuration/source hashes, trains on the 2,276 development rows, and compares all 3,413 archived H200/GH200/GB10 predictions. It is retrospective reproduction; the original prospective result retains its original freeze and capture records. Use a fresh output directory for each replay. [SQL rebuild, checksums and complete reproduction guide →](docs/reproducibility.md)
+
+Open the [figure gallery](results/research-2026-10-20/README.md) for PNG/SVG exports and underlying CSV calculations. No CUDA installation is needed for this path. The [fixture demo](docs/demo.md) separately exercises orchestration with explicitly synthetic timings.
 
 ## Run on your GPU
 
@@ -118,9 +154,9 @@ Nsight Compute supplies optional hardware counters for exact scenarios. Model pr
 ```text
 benchmarks/                CUDA kernels, event timing, JSON worker
 src/gpu_kernel_analyzer/   Timing, sustained power capture, comparison, reporting
-src/gpu_power_pipeline/    Power models, telemetry adapters, registry, API
+src/gpu_power_pipeline/    Power models, telemetry adapters, SQL warehouse, registry, API
 configs/                   Baseline, scaling, and boundary suites
-results/                   Captured A100/H100 evidence and generated charts
+results/                   Raw multi-GPU evidence, frozen evaluations, scientific figures
 scripts/                   GPU validation and result regeneration
 tests/                    CPU tests and deterministic worker fixture
 docs/                     Methodology, design, reproduction, and results
@@ -132,6 +168,6 @@ python -m pytest -q
 ruff check .
 ```
 
-GitHub Actions runs CPU tests on Python 3.10–3.12 and lint checks. The published H100 capture was validated locally; GPU performance is not tested by hosted CPU CI.
+The final local check passed **254 CPU tests**. GitHub Actions runs CPU tests on Python 3.10–3.12 and lint checks. Research checks verify archive/figure hashes and reconstruct the selected forest against archived predictions. Native GPU performance is measured separately from hosted CPU CI.
 
 [MIT license](LICENSE) · [Power-pipeline attribution](third_party/gpu-power-modeling/ORIGIN.md)

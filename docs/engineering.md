@@ -1,6 +1,6 @@
 # Engineering decisions
 
-The project is a local batch system with a CUDA execution worker and a Python control layer. Its useful backend properties are explicit contracts, bounded execution, traceable artifacts, and automated regression checks.
+The project combines local batch collection with a CUDA execution worker, a Python control layer, an analytical SQLite warehouse, and optional CPU model serving. Its useful backend properties are explicit contracts, bounded execution, traceable artifacts, and automated regression checks.
 
 ## Execution boundary
 
@@ -20,7 +20,7 @@ This boundary lets CPU-only tests replace the CUDA executable with a determinist
 | `metrics_provenance.csv` | Distinguishes measured values, estimates, and unavailable counters |
 | `comparison.json` / `.csv` | Machine-readable scenario matches, deltas, noise flags, missing coverage, gate decision |
 
-Flat files keep a small experiment portable and inspectable. A database or queue would add operating cost without helping the current single-GPU workflow. Concurrent workers would require explicit scheduling and resource ownership because simultaneous workloads distort timings.
+Flat files keep experiments portable and inspectable. The [SQLite warehouse](warehouse.md) validates completed power captures against artifact hashes, checks identities and physical values, and atomically inserts runs, artifacts, trial windows, and samples. Exact re-ingestion is idempotent; conflicting run content fails. SQL window functions reproduce trapezoidal steady-power summaries. This analytical store preserves the source files and does not schedule collection. Concurrent workers would require explicit scheduling and resource ownership because simultaneous workloads distort timings.
 
 ## Regression policy
 
@@ -54,9 +54,15 @@ Long sweeps can save atomic per-scenario checkpoints and resume after a process 
 
 The optional block-size tuner performs a small correctness-checked candidate sweep and records its choice separately from the fixed benchmark configurations. It is an experiment helper, not a replacement for repeated, controlled performance studies. See [autotuning](autotuning.md).
 
+## Serving and hardware contracts
+
+The [FastAPI service](serving.md) validates the loaded feature contract, finite physical inputs and bounded batches. It rejects GPU identities outside the saved reference profile. Liveness and readiness have separate endpoints; model loading failures return unavailable readiness. Each process pins its loaded model version and exposes request, failure and logging-failure counters. These metrics reset on restart. Offline transfer evaluation remains separate from serving acceptance.
+
+The hardware preflight records host architecture, CUDA compiler, device identity, memory, build configuration and source hashes before choosing smoke or full validation. Fresh H200 compilation and 18 edge cases were checked after these changes. CPU tests and short localhost HTTP measurements have different scopes from GPU correctness or sustained service capacity; see [recorded quality validation](quality-validation.md).
+
 ## Remaining engineering priorities
 
 1. **Controlled performance CI.** Run identical suites on a dedicated GPU runner with recorded clocks, temperature, power, compiler flags, and multiple randomized independent trials. Hardware availability should remain separate from portable unit tests.
 2. **Model evaluation by held-out workload.** The optional ridge model is exploratory. Evaluate by held-out sizes/runs and report a simple baseline before using predictions to drive tuning. Do not pool A100/H100 training rows: the current features do not encode GPU identity.
 
-These are follow-up improvements, not implemented features. A REST API, scheduler, or database becomes useful when there are multiple users or remote workers; it is not required to demonstrate the current system's behavior.
+These priorities remain follow-up work. The current API and local SQL warehouse are implemented; a scheduler, distributed database, cloud deployment and sustained capacity study are not demonstrated.

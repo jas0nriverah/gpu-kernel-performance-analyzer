@@ -1,0 +1,1 @@
+Linux hopper1.cc.gatech.edu 6.8.0-1064-nvidia-64k #67-Ubuntu SMP PREEMPT_DYNAMIC Tue Sep 15 00:32:01 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux

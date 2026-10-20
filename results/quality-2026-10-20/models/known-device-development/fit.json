@@ -1,0 +1,14 @@
+{
+  "selection_sha256": "070871b4f8c83eeb910d6bd43f854a38c79db7681055f4730c086bd1cebfde0b",
+  "saved_model": "outputs/quality-2026-10-20/known-device-development/registry/rf_unbounded_full/20261020T204029Z",
+  "saved_model_sha256": "c7c34c282e8a71421380f56f708f018c89b2de87a50cb6191dcdf4ba2f9f55ed",
+  "training_rows": 2276,
+  "training_gpu_uuids": [
+    "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
+    "GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b"
+  ],
+  "selected_candidate": "rf_unbounded_full",
+  "saved_reload_parity": true,
+  "objective": "known_device_new_session",
+  "frozen_utc": "2026-10-20T20:40:29.710867+00:00"
+}

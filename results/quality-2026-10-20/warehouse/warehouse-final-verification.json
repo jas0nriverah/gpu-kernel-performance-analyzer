@@ -1,0 +1,15 @@
+{
+  "counts": {
+    "runs": 5,
+    "artifacts": 269,
+    "trials": 120,
+    "samples": 10301,
+    "steady_samples": 5689,
+    "physical_gpus": 4
+  },
+  "spark_first_inserted": true,
+  "spark_repeat_inserted": false,
+  "integrity_check": "ok",
+  "foreign_key_check": [],
+  "scope": "Five completed captures on H100, H200, GH200 and GB10, including a second prospective H200 capture. Spark optional unsupported sensors remain missing."
+}

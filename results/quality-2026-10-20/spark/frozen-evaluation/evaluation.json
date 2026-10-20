@@ -1,0 +1,59 @@
+{
+  "evaluated_utc": "2026-10-20T20:57:35.327549+00:00",
+  "evaluation_scope": "new-device",
+  "selection_scope": "H100/H200 are development devices; only a later untouched external GPU can test selection. Rows are correlated.",
+  "selection_objective": null,
+  "selected_candidate": "training_workload_mean",
+  "training_rows": 2276,
+  "test_rows": 1023,
+  "training_gpu_uuids": [
+    "GPU-91e942dc-edbb-7f2a-9cea-167356bbd86a",
+    "GPU-c3ce36e6-9e77-7ff0-521c-c3155f0a713b"
+  ],
+  "test_gpu_uuids": [
+    "GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8"
+  ],
+  "feature_order": [
+    "workload_type"
+  ],
+  "model_name": "training_workload_mean",
+  "model_version": "20261020T203731Z",
+  "saved_model": "outputs/quality-2026-10-20/model-development/registry/training_workload_mean/20261020T203731Z",
+  "saved_model_sha256": "3c1980b783511d8b70a5426b7a8ea6b4490066b79833548e675b1b021d026a6b",
+  "selection_sha256": "18edb6bf047ca6112d03e9656e18469ded21ff48b6b6debbc5e93af95ea2cb98",
+  "plan_sha256": "127f92e8d0b3d72e975b54172e79ec7272e66a1c5d79bdd66e970664c076070b",
+  "development_inputs": [
+    {
+      "path": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/results/h100-power-2026-09-22/steady_telemetry.csv",
+      "sha256": "ae69eaf4b0c2ed794cdc8177380d7c732963eb3b3df812fd85d2ed91d98c768d"
+    },
+    {
+      "path": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/prizepicks-h200-2026-10-20/power/steady_telemetry.csv",
+      "sha256": "f068800d83400d1405d56582ed936ff840465c3f4caff7a345e4df938a47d4cb"
+    }
+  ],
+  "test_input": {
+    "path": "/home/hice1/jriverah3/gpu-kernel-performance-analyzer-1/outputs/quality-2026-10-20/spark/power/steady_telemetry.csv",
+    "sha256": "34af62ceb328d0659e190f00cde415f307d7226c7db470a0d5fdf82cf6cb1506"
+  },
+  "evaluator_sha256": "c259012424df96a9e67c4b0c53c989d3319b846c6792a258dae748425b830596",
+  "scores": {
+    "training_workload_mean": {
+      "mae_w": 388.29232661871345,
+      "rmse_w": 391.2666715972326,
+      "r2": -183.68220286079637
+    },
+    "pooled_training_mean": {
+      "mae_w": 390.2154014004779,
+      "rmse_w": 391.2761107582155,
+      "r2": -183.6911137453546
+    },
+    "pooled_training_workload_mean": {
+      "mae_w": 388.29232661871345,
+      "rmse_w": 391.2666715972326,
+      "r2": -183.68220286079637
+    }
+  },
+  "drift_warnings": 1,
+  "scope": "Frozen model loaded without refitting or adaptation. Evaluation scope is recorded separately; offline prediction does not change the API known-device guard. One new device/capture does not establish general portability; correlated rows and capture environments limit attribution."
+}

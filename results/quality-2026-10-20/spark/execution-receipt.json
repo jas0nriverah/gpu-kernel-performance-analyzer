@@ -1,0 +1,43 @@
+{
+  "slurm_job_id": 11546,
+  "allocation_request": "sbatch --parsable --partition=general --account=futurama --gres=gpu:gb10:1 --cpus-per-task=4 --mem=16G --time=00:45:00 --job-name=gpu-quality-spark --output=/nethome/jriverah3/gpu-quality-spark-%j.log --wrap=\"sleep 2700\"",
+  "compute_node": "electro1.cc.gatech.edu",
+  "slurm_node": "dgx-spark1",
+  "gpu_uuid": "GPU-9f2fd704-a95c-d8c5-04b9-7bd72af1bdb8",
+  "source_snapshot": "2026-10-20T20:43:40.400212Z",
+  "source_directory": "/nethome/jriverah3/gpu-kernel-quality-spark-20261020",
+  "native_environment": ".venv-spark Python3.12.3 aarch64, no previous venv/build reuse",
+  "cuda": "13.0.88, explicit sm_121 support",
+  "unsupported_nvml_fields": [
+    "memory.total",
+    "memory.used",
+    "clocks.mem",
+    "mig.mode.current",
+    "power.limit"
+  ],
+  "memory_fallback": "cudaMemGetInfo runtime-visible shared/device capacity, not NVML framebuffer capacity",
+  "power_source": "nvidia-smi:power.draw",
+  "legacy_power_scope": "gpu_board",
+  "power_scope_clarification": "GPU-only sensor on integrated GB10; excludes CPU and total SoC/system",
+  "primary_sources": [
+    "https://developer.nvidia.com/cuda/gpus",
+    "https://docs.nvidia.com/dgx/dgx-spark/known-issues.html",
+    "https://forums.developer.nvidia.com/t/dgx-spark-power-clarification/349668"
+  ],
+  "frozen_model_selection_before_capture": true,
+  "target_values_inspected_by_capture_agent": false,
+  "benchmark_protocol_files_matching_gh200_snapshot": 48,
+  "native_smoke_scenarios": 18,
+  "native_full_timing_scenarios": {
+    "baseline": 24,
+    "scaling_trials": 3,
+    "scaling_scenarios_per_trial": 74,
+    "edges": 18
+  },
+  "runtime_memory_capacity_source_verified": "cudaMemGetInfo",
+  "power_capture_status": "complete",
+  "power_windows": 24,
+  "raw_telemetry_rows": 1905,
+  "integrity_checks": "Remote and local artifact hashes verified; all 24 summaries independently recomputed from raw telemetry",
+  "allocation_release": "scancel 11546 issued after all capture steps completed, raw/native evidence downloaded, and local integrity check passed; user job 11542 preserved"
+}
