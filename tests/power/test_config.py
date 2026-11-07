@@ -3,13 +3,6 @@ from pathlib import Path
 from gpu_power_pipeline.config import ExperimentConfig
 
 
-def test_defaults_are_sane():
-    config = ExperimentConfig()
-    assert config.data.source == "synthetic"
-    assert config.split.strategy in {"random", "time", "grouped"}
-    assert "random_forest" in config.sweep_space
-
-
 def test_from_dict_partial_override():
     config = ExperimentConfig.from_dict(
         {

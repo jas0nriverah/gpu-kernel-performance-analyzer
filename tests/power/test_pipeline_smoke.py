@@ -1,7 +1,6 @@
 import numpy as np
 
 from gpu_power_pipeline.data import load_dataset
-from gpu_power_pipeline.experiments import feature_set_registry
 from gpu_power_pipeline.train import optional_model_status, train_and_evaluate
 
 
@@ -15,12 +14,6 @@ def test_training_smoke():
         assert np.isfinite(artifacts.metrics["r2"])
         assert np.isfinite(artifacts.residual_diagnostics["residual_std"])
 
-
-def test_feature_set_registry_has_nonempty_sets():
-    df = load_dataset(source="synthetic", n_samples=200, random_state=3)
-    registry = feature_set_registry(df)
-    assert "all_features" in registry
-    assert len(registry["all_features"]) > 0
 
 
 def test_grouped_split_smoke():

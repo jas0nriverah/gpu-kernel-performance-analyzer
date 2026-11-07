@@ -1,6 +1,6 @@
 # Serving contract and local HTTP measurement
 
-Reconstruct the archived known-device forest on CPU, then start the API with the resulting registry. Model weights are deliberately omitted from the repository; the replay verifies the recorded inputs/configuration and archived predictions. Use a new output directory:
+Reconstruct the archived known-device forest on CPU, then start the API with the resulting registry. Model weights are deliberately omitted from the repository; the replay verifies the recorded inputs/configuration and archived predictions. Use the [Linux replay environment](reproducibility.md) and a new output directory. Start serving only after replay succeeds:
 
 ```bash
 python -m pip install -e '.[power,api]'

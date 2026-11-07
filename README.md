@@ -58,7 +58,7 @@ python scripts/plot_research_results.py
 python scripts/reproduce_frozen_model.py --outdir outputs/model-replay
 ```
 
-Figures use checked-in measurements. Model replay rebuilds the frozen forest and checks archived predictions. See [reproduction](docs/reproducibility.md), [API serving](docs/serving.md), and the [CPU fixture demo](docs/usage.md#cpu-fixture).
+Figures use checked-in measurements. Model replay rebuilds the frozen forest and checks archived predictions; strict numerical parity is validated on Linux. See [reproduction](docs/reproducibility.md), [API serving](docs/serving.md), and the [CPU fixture demo](docs/usage.md#cpu-fixture).
 
 ## Development
 

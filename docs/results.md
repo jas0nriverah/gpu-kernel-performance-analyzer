@@ -2,7 +2,7 @@
 
 ## Kernel timing
 
-H100, H200, GH200, and GB10 each have 74 configurations × 3 trials × 50 timings: 44,400 samples. All requested correctness checks passed. Hosts, toolkits, and capture dates differ; ratios describe these runs, not an isolated architecture effect.
+H100, H200, GH200, and GB10 each have 74 configurations × 3 trials × 50 timings: 44,400 samples. Hosts, toolkits, and capture dates differ; ratios describe these runs, not an isolated architecture effect.
 
 ![Runtime versus H100](../results/research-2026-10-20/02_matched_timing.png)
 
