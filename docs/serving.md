@@ -10,7 +10,7 @@ GPU_POWER_REGISTRY_DIR=outputs/model-replay/registry \
   python -m uvicorn gpu_power_pipeline.api:app --host 127.0.0.1 --port 8000
 ```
 
-Visit `http://127.0.0.1:8000/docs` or inspect `/model` before constructing requests. This is retrospective model reproduction and local serving, not a new prospective experiment. [Model card](model-card.md) · [Research report](research-report.md).
+Visit `http://127.0.0.1:8000/docs` or inspect `/model` before constructing requests. This is retrospective model reproduction and local serving, not a new prospective experiment. [Model card](model-card.md) · [Research report](results.md).
 
 Each application instance loads its bundle once. `latest` resolves at creation and the resulting version stays pinned until restart. If loading fails, the instance remains unavailable until restarted. A newly published bundle does not change an existing instance.
 

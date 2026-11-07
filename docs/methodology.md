@@ -1,6 +1,6 @@
 # Measurement and evaluation methodology
 
-The [research report](research-report.md) connects the complete experiment, results and threats to validity. This page defines the measurement contracts; [modeling](modeling.md) describes the predictive tasks and [power methodology](power_measurement.md) gives collection commands.
+The [research report](results.md) connects the complete experiment, results and threats to validity. This page defines the measurement contracts; [modeling](usage.md#exploratory-runtime-model) describes the predictive tasks and [power methodology](usage.md#capture-power) gives collection commands.
 
 ## Timing, correctness and units
 
@@ -27,7 +27,7 @@ Declared counts describe logical work, not measured DRAM traffic. Both GEMM impl
 
 Eight configurations run for three randomized trials, with at least 15 seconds sustained execution per window. Power queries request 0.2-second spacing; query duration adds overhead. Steady-window rows exclude the first and last two seconds. Trapezoidal integration of consecutive observations gives joules; dividing by covered span gives time-weighted mean watts. Coverage and excessive-gap checks prevent extrapolating across missing boundaries. No row or outlier trimming follows capture.
 
-Estimated joules per launch combines steady GPU watts with sustained whole-window launch throughput, including synchronization/launch overhead. It is not isolated kernel energy or whole-server energy. Sensor averaging and correlated rows limit temporal interpretation. GB10's integrated GPU has unsupported memory-clock/framebuffer fields: these remain unavailable; GPU sensor watts exclude CPU/total SoC power. See [sensor scope and primary documentation](dgx-spark-validation.md).
+Estimated joules per launch combines steady GPU watts with sustained whole-window launch throughput, including synchronization/launch overhead. It is not isolated kernel energy or whole-server energy. Sensor averaging and correlated rows limit temporal interpretation. GB10's integrated GPU has unsupported memory-clock/framebuffer fields: these remain unavailable; GPU sensor watts exclude CPU/total SoC power. See [sensor scope and primary documentation](methodology.md#gb10-sensor-scope).
 
 ## Data integrity
 
@@ -44,10 +44,18 @@ Two separate objectives use the fixed twelve-candidate grid:
 
 Numeric imputation/scaling and categorical imputation/encoding fit only training-fold rows. Baseline global/workload means use training targets only, with global fallback for unknown workloads. Full-data refitting occurs only after the selected configuration is frozen. The saved bundle is reloaded and checked for prediction parity.
 
-The independent H200 session begins after the known-device freeze, uses a known GPU and new run/session IDs, and retains all 1,153 steady rows across 24 windows. GH200/GB10 are external-device evaluations; no final-target fitting, selection changes or clipping follow their scores. A reproduction using already-known outcomes is explicitly retrospective. [Detailed chronology and metrics](model-generalization.md).
+The independent H200 session begins after the known-device freeze, uses a known GPU and new run/session IDs, and retains all 1,153 steady rows across 24 windows. GH200/GB10 are external-device evaluations; no final-target fitting, selection changes or clipping follow their scores. A reproduction using already-known outcomes is explicitly retrospective. [Detailed chronology and metrics](model-card.md).
 
 ## Statistical interpretation
 
 Published timing aggregates use the median of three separate run means. Their min/max range is descriptive, not a confidence interval. Comparison defaults to within-run median runtime; `--statistic mean` is available. Cross-device gates are ineligible and their ratios cannot isolate hardware effects when host/build/date differ.
 
 RMSE, MAE and R² are computed over all retained final rows. Rows/windows are correlated; row counts are not independent sample sizes. One prospective session and two development GPUs limit generalization. Error quantiles, per-workload/trial scores and complete residuals accompany headline metrics so rare large errors remain visible. No uncertainty calibration or broad population inference is claimed.
+
+## Metric provenance
+
+`metrics_provenance.csv` distinguishes `measured`, `derived_estimate`, and `unavailable` values. Nsight counters require an exact kernel/size/block match and source metadata; unprofiled scenarios stay unavailable. Predictions are stored separately in `model_predictions.csv` and cannot appear as measured provenance.
+
+## GB10 sensor scope
+
+GB10 shares system memory; unsupported framebuffer and memory-clock fields stay unavailable, never zero-filled at ingestion. NVIDIA documents [shared-memory limitations](https://docs.nvidia.com/dgx/dgx-spark/known-issues.html) and [GPU-only power reporting](https://forums.developer.nvidia.com/t/dgx-spark-power-clarification/349668). The historical `gpu_board` schema label does not include CPU or total system power on this device.

@@ -2,7 +2,7 @@
 
 ## Research figures, model and SQL on CPU
 
-The [research report](research-report.md) describes the hypotheses, split policy, frozen selection and limits. Use Python 3.11 for the recorded scientific dependencies; the general package supports Python 3.10+.
+The [research report](results.md) describes the hypotheses, split policy, frozen selection and limits. Use Python 3.11 for the recorded scientific dependencies; the general package supports Python 3.10+.
 
 ```bash
 python3.11 -m venv .venv
@@ -132,10 +132,10 @@ Nsight Compute timings are not used for benchmark `runtime_ms` claims.
 
 ## Real-GPU limitation
 
-If `nvcc` and an NVIDIA GPU are unavailable, use the fixture demo in `docs/demo.md` for non-CUDA workflow validation only.
+If `nvcc` and an NVIDIA GPU are unavailable, use the fixture demo in `docs/usage.md#cpu-fixture` for non-CUDA workflow validation only.
 Do not treat fixture outputs as real benchmark evidence.
 
-See `docs/demo.md` for demo workflows and `docs/real_gpu_validation.md` for the H100 study and historical A100 comparison.
+See `docs/usage.md#cpu-fixture` for demo workflows and `docs/results.md` for the H100 study and historical A100 comparison.
 
 ## Repeat the expanded cross-GPU study
 

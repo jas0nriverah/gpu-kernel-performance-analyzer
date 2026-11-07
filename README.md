@@ -38,7 +38,7 @@ python -m gpu_kernel_analyzer artifacts validate --run-dir outputs/run
 python -m gpu_kernel_analyzer analyze full --run-dir outputs/run
 ```
 
-Use a fresh output directory, or follow the [resume guide](docs/resumability.md). CUDA events time kernel execution only. GEMM uses FP32 arithmetic, not Tensor Cores; reduction excludes final CPU aggregation.
+Use a fresh output directory, or follow the [resume guide](docs/usage.md#resume-a-sweep). CUDA events time kernel execution only. GEMM uses FP32 arithmetic, not Tensor Cores; reduction excludes final CPU aggregation.
 
 ## Measured results
 
@@ -46,7 +46,7 @@ Use a fresh output directory, or follow the [resume guide](docs/resumability.md)
 
 ![Runtime change versus H100, with a separate linear scale for each GPU](results/research-2026-10-20/02_matched_timing.png)
 
-These are captured-run comparisons: hosts, toolkits, and collection dates differ. Use matching hardware and settings for [regression gates](docs/comparisons.md).
+These are captured-run comparisons: hosts, toolkits, and collection dates differ. Use matching hardware and settings for [regression gates](docs/usage.md#compare-runs).
 
 The frozen random forest achieved **9.56 W RMSE** on a new H200 session, versus **23.16 W** for the training workload-mean baseline. Transfer to unseen GPUs was poor: **42.99 W** on GH200 and **379.28 W** on GB10. The API restricts this model to its H100/H200 reference identities. See the [model card](docs/model-card.md) and [full results](results/research-2026-10-20/README.md), including residuals and baselines.
 
@@ -58,7 +58,7 @@ python scripts/plot_research_results.py
 python scripts/reproduce_frozen_model.py --outdir outputs/model-replay
 ```
 
-Figures use checked-in measurements. Model replay rebuilds the frozen forest and checks archived predictions. See [reproduction](docs/reproducibility.md), [API serving](docs/serving.md), and the [CPU fixture demo](docs/demo.md).
+Figures use checked-in measurements. Model replay rebuilds the frozen forest and checks archived predictions. See [reproduction](docs/reproducibility.md), [API serving](docs/serving.md), and the [CPU fixture demo](docs/usage.md#cpu-fixture).
 
 ## Development
 
@@ -70,4 +70,4 @@ ruff check .
 
 CI runs CPU tests on Python 3.10–3.12, lint, artifact checks, and model replay. CUDA correctness and performance require separate GPU validation. The API requires deployment-level authentication, TLS, and resource limits; see [serving](docs/serving.md).
 
-[Architecture](docs/engineering.md) · [Measurement methodology](docs/methodology.md) · [SQL warehouse](docs/warehouse.md) · [Autotuning](docs/autotuning.md) · [MIT license](LICENSE) · [Attribution](third_party/gpu-power-modeling/ORIGIN.md)
+[Documentation](docs/README.md) · [Architecture](docs/engineering.md) · [Measurement methodology](docs/methodology.md) · [SQL warehouse](docs/warehouse.md) · [Autotuning](docs/usage.md#tune-block-sizes) · [MIT license](LICENSE) · [Attribution](third_party/gpu-power-modeling/ORIGIN.md)

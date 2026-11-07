@@ -10,7 +10,7 @@ The tree sketches illustrate ensemble averaging. They are not fitted trees, feat
 
 Each example is one trimmed, steady telemetry sample. The target is `power_watts` from `nvidia-smi:power.draw`, aligned with utilization, clocks, temperature, workload and device name. Models load the captured **steady CSV rows**, not window-aggregate or SQL-aggregate rows. Window summaries support measurement reporting and integrity checks; SQL provides a validated evidence mirror.
 
-The supported serving scope is the approved H100/H200 GPU profile under the measured workloads. This is an exploratory estimator, not a power controller or a full-server energy model. On integrated GB10, NVIDIA identifies this sensor as GPU-only, excluding CPU and full SoC/system power; the historical `gpu_board` schema label does not expand that measurement scope. See the [Spark sensor clarification](dgx-spark-validation.md).
+The supported serving scope is the approved H100/H200 GPU profile under the measured workloads. This is an exploratory estimator, not a power controller or a full-server energy model. On integrated GB10, NVIDIA identifies this sensor as GPU-only, excluding CPU and full SoC/system power; the historical `gpu_board` schema label does not expand that measurement scope. See the [Spark sensor clarification](methodology.md#gb10-sensor-scope).
 
 ## Inputs and preprocessing
 
