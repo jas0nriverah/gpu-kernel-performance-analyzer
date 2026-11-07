@@ -1,8 +1,8 @@
 {
   "generator": "scripts/plot_research_results.py",
-  "generator_sha256": "f4b0d2e3d1fb96ed220be08df27e76f79312cd573d2c8353afcd5e46467e0610",
+  "generator_sha256": "c90c88f0362ffa2f09430d1f23dd4b0924293c0f59f5af2247ac626a6da391c6",
   "environment": {
-    "python": "3.11.9",
+    "python": "3.11.17",
     "matplotlib": "3.11.2",
     "numpy": "2.4.6",
     "pandas": "3.0.6"
@@ -114,9 +114,9 @@
       "errors_over_25w": 24,
       "max_absolute_error_w": 75.26795114846578
     },
-    "gh200_training_workload_mean_rmse_w": 34.71357054978089,
-    "gh200_rf_unbounded_full_rmse_w": 42.98956528267499,
-    "gh200_linear_regression_rmse_w": 30.83819525659587,
+    "gh200_training_workload_mean_rmse_w": 34.71357054978087,
+    "gh200_rf_unbounded_full_rmse_w": 42.98956528267498,
+    "gh200_linear_regression_rmse_w": 30.838195256595863,
     "spark_training_workload_mean_rmse_w": 391.2666715972326,
     "spark_rf_unbounded_full_rmse_w": 379.27733565526853,
     "spark_linear_regression_rmse_w": 250.1105105017044
@@ -125,50 +125,50 @@
     "01_capture_coverage": {
       "caption": "Captured observations and retained steady rows, with development and external/prospective roles explicitly separated. Each capture contains 24 verified workload windows across three trials.",
       "files": {
-        "png": "8b0c2d553aa56afeee9ae2a1d6ce20f84eeb4a7be677f0dcb34883e08f50e5b5",
-        "svg": "e0ef09ac5f4487e4e3c16797324e7178d8aabce1975667fe6a6c27c9820feb1a"
+        "png": "fa762769433eddecea571292a8a61f09012e07bdf4427679c17016a094171b7e",
+        "svg": "54329835829b44c9b39b70e0f88bb5daa3689f5a3bbfaf84a9d846727840ed31"
       }
     },
     "02_matched_timing": {
-      "caption": "Each dot is one scenario's median runtime ratio across three corresponding trial pairs; vertical segments span those three ratios. All 74 scenario identities match for every device and trial. The dashed line is H100 parity.",
+      "caption": "Runtime change = (GPU runtime / H100 runtime \u2212 1) \u00d7 100%. Each dot is one matched scenario's median across three trial pairs; lines span the three values. All 74 scenarios per GPU are shown. Each panel uses its own linear range; 0% is H100 parity.",
       "files": {
-        "png": "a5f8095408c67396c81cd83a6cf4cf4eab89ff0770a20119226ae654508680ae",
-        "svg": "dd7df5ae33c0730fe060eb5b9f941b8f82878278839b8a926933422ffbeee45c"
+        "png": "951ec107ecdcace7d48583274a8e473f4299d5daf4354dffa2b7a45050b32157",
+        "svg": "33318e3436aa52eccd24be5f4a77283c21ff7d8fbe30ce3de170c97361f4986b"
       }
     },
     "03_power_energy_tradeoffs": {
       "caption": "Each point represents a device/configuration; points and ranges are the median and full range of three trial summaries. Estimated joules per launch equal steady mean sensor watts divided by whole-window launch rate. Runtime includes host launch and synchronization overhead.",
       "files": {
-        "png": "04aac12f30fa0bc5bab45b41cb2a0e9319f1a42df8381ab1548a8c0f6f1a59b0",
-        "svg": "1bd936b4db9d49a432682b7276dc9a3f86df840188f9e3032026194f457637dc"
+        "png": "e25e27af49259d96d04b94a72feefe5d1c0b834d8a6ea65bfc3aace9e57d7ed7",
+        "svg": "19d414f17c75f9530d4f5936569e99adcd9b2c7b0d3eb0f95c757189d7240489"
       }
     },
     "04_model_selection": {
       "caption": "Bars are unweighted mean fold RMSE; dots show every held-out fold. A workload mean wins the two-device objective. A forest wins the separate known-device objective. Both selections were frozen before their subsequent external/prospective tests.",
       "files": {
-        "png": "8bec691f30c387c67d13fbc7f3aacd0a5480c6a7d6229630ddf5ab963fe61168",
-        "svg": "b2613850175aa1aca9750a4db981262a28b5ca6004aa65eb1b443c2b50f793f4"
+        "png": "ee9797c0e06bfed59bcf6ecb789b5e0e8479c82fb5fcb5761a252d2d2feb23f1",
+        "svg": "18963beda45c7b099783759c5ad2e379cf80b5ee881e5e2d2459e4a2e89d09a2"
       }
     },
     "05_prospective_h200": {
       "caption": "A frozen forest evaluated once on a later H200 capture: calibration, a logarithmic-count residual histogram, and per-workload signed-error distributions. All 1,153 rows are retained, including 24 errors above 25 W. Box whiskers span the full observed minimum/maximum; boxes span quartiles.",
       "files": {
-        "png": "1d2fea092d2ef48aabb6b7b6d593354cebd34fc4c0e72f659b5ec94b9f65a7ea",
-        "svg": "e70e2ffe5a0d52819d0dea045784f6c669ea970a4ab23d0cdee970b058789223"
+        "png": "b31e1a0f9f7a9dae2dc22f1388bdd583b9c8e47021b2325e99a9cf2832b63686",
+        "svg": "1a37fc1292124eb5ef600b0b176492de5a1f3357281fab024d619d86c1c3f7fa"
       }
     },
     "06_external_device_failure": {
       "caption": "Final RMSE on GH200 and Spark with separate axis ranges. The historical fixed H100 linear reference is shown retrospectively, not promoted to a new winner. The known-device forest is challenged off device without refitting; its low within-device score does not transfer.",
       "files": {
-        "png": "0956147f4fccad0b3a810658cdd6d5be95c31494b98a067bb8f3dff333065d1b",
-        "svg": "fc6e0c58e0790eb0c5fad41a6d5be3360204b87f8ad6bd6ba4b6e6a8c58d6e77"
+        "png": "2f12b7b67096de6990f40ab425e1e7b69866148e21c110cfd7fbc6abba7cd88f",
+        "svg": "539f92a42f942b7561804678c8b01349298bf6c89af689b7453720263e5566ad"
       }
     },
     "07_feature_domains": {
       "caption": "Observed telemetry feature distributions by capture. Boxes span quartiles; whiskers include the full minimum/maximum. Static memory clocks distinguish the development GPUs. Spark's unsupported memory-clock sensor remains missing, not zero.",
       "files": {
-        "png": "ed958a433c0bbdf14033e5f47ab5472b851623480d38c7072cb0d739c55626d3",
-        "svg": "a6ff694981ae93bd9ff62510bd0c436935d2b841ff33bdd6d7d8c7bb3d168937"
+        "png": "b17d25557089c8b83010434d6080ad5ef14852e0e7e901b6f43a8c449beca2d1",
+        "svg": "2072511aceb6189095517ad0e29016c316e56ff1195179a62d23f49b43f64df9"
       }
     }
   },
@@ -177,36 +177,36 @@
     "data/external_device_metrics.csv": "064d44633082939eecbc87d4c2e140c242bab44e441dfad3527d9d466f763ebc",
     "data/feature_domain_summary.csv": "d90dbfe4543d343fc8b402701620a0bb1d9a87b8dc388b59fd8c9e64d66136c5",
     "data/matched_timing_ranges.csv": "f4b916afc0aac995e2313a285fa3a333642c44ef8fb8affd2d1234d7a836f380",
-    "data/matched_timing_trials.csv": "6deb8a9661665f2a10210da1262aabb0145cb8e0a4039245e30078d5ac8e8430",
-    "data/model_selection_summary.csv": "55a9274b2691016dac009f184ade8dffa30febdd863394df860efb56bbbc3b3a",
-    "data/power_tradeoff_ranges.csv": "a52057519868208b56617e8f73c053f3e02d7d5679a8014e3ab9e4a8af4801fb",
-    "data/power_tradeoff_trials.csv": "1bf4bdf2c48c009d3e380de1be10d05c7bac92b01e816da3072ad1d4dba61f10",
-    "data/prospective_h200_errors.csv": "f8d611cf9d36ae99943d65997ce39bcbeb8c50b6a08e23314c6bfc2b49df3cdd"
+    "data/matched_timing_trials.csv": "5e7dc111d458a0c63f5261e9ade0a1db1147aeda9d3c3bddfd9c744215c869b8",
+    "data/model_selection_summary.csv": "9a8c1d7ad3b9aa0175f6bc9b13f34bcc053866700982535e46abc6709244aadc",
+    "data/power_tradeoff_ranges.csv": "12be394e21c91eb1cbf95432998a251666dfcd8b38c947b131e682196bed2073",
+    "data/power_tradeoff_trials.csv": "99b3bcd0a80c07db36f0a8140e43255842aa512caac8623534ec4556a2913279",
+    "data/prospective_h200_errors.csv": "0966c013109706d907ca1b6845b2a3339344f8c4bf34f5e7c23c680431262891"
   },
   "output_sha256": {
-    "results/research-2026-10-20/01_capture_coverage.png": "8b0c2d553aa56afeee9ae2a1d6ce20f84eeb4a7be677f0dcb34883e08f50e5b5",
-    "results/research-2026-10-20/01_capture_coverage.svg": "e0ef09ac5f4487e4e3c16797324e7178d8aabce1975667fe6a6c27c9820feb1a",
-    "results/research-2026-10-20/02_matched_timing.png": "a5f8095408c67396c81cd83a6cf4cf4eab89ff0770a20119226ae654508680ae",
-    "results/research-2026-10-20/02_matched_timing.svg": "dd7df5ae33c0730fe060eb5b9f941b8f82878278839b8a926933422ffbeee45c",
-    "results/research-2026-10-20/03_power_energy_tradeoffs.png": "04aac12f30fa0bc5bab45b41cb2a0e9319f1a42df8381ab1548a8c0f6f1a59b0",
-    "results/research-2026-10-20/03_power_energy_tradeoffs.svg": "1bd936b4db9d49a432682b7276dc9a3f86df840188f9e3032026194f457637dc",
-    "results/research-2026-10-20/04_model_selection.png": "8bec691f30c387c67d13fbc7f3aacd0a5480c6a7d6229630ddf5ab963fe61168",
-    "results/research-2026-10-20/04_model_selection.svg": "b2613850175aa1aca9750a4db981262a28b5ca6004aa65eb1b443c2b50f793f4",
-    "results/research-2026-10-20/05_prospective_h200.png": "1d2fea092d2ef48aabb6b7b6d593354cebd34fc4c0e72f659b5ec94b9f65a7ea",
-    "results/research-2026-10-20/05_prospective_h200.svg": "e70e2ffe5a0d52819d0dea045784f6c669ea970a4ab23d0cdee970b058789223",
-    "results/research-2026-10-20/06_external_device_failure.png": "0956147f4fccad0b3a810658cdd6d5be95c31494b98a067bb8f3dff333065d1b",
-    "results/research-2026-10-20/06_external_device_failure.svg": "fc6e0c58e0790eb0c5fad41a6d5be3360204b87f8ad6bd6ba4b6e6a8c58d6e77",
-    "results/research-2026-10-20/07_feature_domains.png": "ed958a433c0bbdf14033e5f47ab5472b851623480d38c7072cb0d739c55626d3",
-    "results/research-2026-10-20/07_feature_domains.svg": "a6ff694981ae93bd9ff62510bd0c436935d2b841ff33bdd6d7d8c7bb3d168937",
-    "results/research-2026-10-20/README.md": "16ea49aaad5f1a256d8ed93cc3e50d972bbddceb33141d16f71abbf7bfa45152",
+    "results/research-2026-10-20/01_capture_coverage.png": "fa762769433eddecea571292a8a61f09012e07bdf4427679c17016a094171b7e",
+    "results/research-2026-10-20/01_capture_coverage.svg": "54329835829b44c9b39b70e0f88bb5daa3689f5a3bbfaf84a9d846727840ed31",
+    "results/research-2026-10-20/02_matched_timing.png": "951ec107ecdcace7d48583274a8e473f4299d5daf4354dffa2b7a45050b32157",
+    "results/research-2026-10-20/02_matched_timing.svg": "33318e3436aa52eccd24be5f4a77283c21ff7d8fbe30ce3de170c97361f4986b",
+    "results/research-2026-10-20/03_power_energy_tradeoffs.png": "e25e27af49259d96d04b94a72feefe5d1c0b834d8a6ea65bfc3aace9e57d7ed7",
+    "results/research-2026-10-20/03_power_energy_tradeoffs.svg": "19d414f17c75f9530d4f5936569e99adcd9b2c7b0d3eb0f95c757189d7240489",
+    "results/research-2026-10-20/04_model_selection.png": "ee9797c0e06bfed59bcf6ecb789b5e0e8479c82fb5fcb5761a252d2d2feb23f1",
+    "results/research-2026-10-20/04_model_selection.svg": "18963beda45c7b099783759c5ad2e379cf80b5ee881e5e2d2459e4a2e89d09a2",
+    "results/research-2026-10-20/05_prospective_h200.png": "b31e1a0f9f7a9dae2dc22f1388bdd583b9c8e47021b2325e99a9cf2832b63686",
+    "results/research-2026-10-20/05_prospective_h200.svg": "1a37fc1292124eb5ef600b0b176492de5a1f3357281fab024d619d86c1c3f7fa",
+    "results/research-2026-10-20/06_external_device_failure.png": "2f12b7b67096de6990f40ab425e1e7b69866148e21c110cfd7fbc6abba7cd88f",
+    "results/research-2026-10-20/06_external_device_failure.svg": "539f92a42f942b7561804678c8b01349298bf6c89af689b7453720263e5566ad",
+    "results/research-2026-10-20/07_feature_domains.png": "b17d25557089c8b83010434d6080ad5ef14852e0e7e901b6f43a8c449beca2d1",
+    "results/research-2026-10-20/07_feature_domains.svg": "2072511aceb6189095517ad0e29016c316e56ff1195179a62d23f49b43f64df9",
+    "results/research-2026-10-20/README.md": "8441d77deb64e789aa521947baaf9163f021834e59492cc38be39179d3fcff8f",
     "results/research-2026-10-20/data/capture_coverage.csv": "fbe34709d0117b8aff6acb798658a007dd6feea1a66b04ee3932df6ce6828e74",
     "results/research-2026-10-20/data/external_device_metrics.csv": "064d44633082939eecbc87d4c2e140c242bab44e441dfad3527d9d466f763ebc",
     "results/research-2026-10-20/data/feature_domain_summary.csv": "d90dbfe4543d343fc8b402701620a0bb1d9a87b8dc388b59fd8c9e64d66136c5",
     "results/research-2026-10-20/data/matched_timing_ranges.csv": "f4b916afc0aac995e2313a285fa3a333642c44ef8fb8affd2d1234d7a836f380",
-    "results/research-2026-10-20/data/matched_timing_trials.csv": "6deb8a9661665f2a10210da1262aabb0145cb8e0a4039245e30078d5ac8e8430",
-    "results/research-2026-10-20/data/model_selection_summary.csv": "55a9274b2691016dac009f184ade8dffa30febdd863394df860efb56bbbc3b3a",
-    "results/research-2026-10-20/data/power_tradeoff_ranges.csv": "a52057519868208b56617e8f73c053f3e02d7d5679a8014e3ab9e4a8af4801fb",
-    "results/research-2026-10-20/data/power_tradeoff_trials.csv": "1bf4bdf2c48c009d3e380de1be10d05c7bac92b01e816da3072ad1d4dba61f10",
-    "results/research-2026-10-20/data/prospective_h200_errors.csv": "f8d611cf9d36ae99943d65997ce39bcbeb8c50b6a08e23314c6bfc2b49df3cdd"
+    "results/research-2026-10-20/data/matched_timing_trials.csv": "5e7dc111d458a0c63f5261e9ade0a1db1147aeda9d3c3bddfd9c744215c869b8",
+    "results/research-2026-10-20/data/model_selection_summary.csv": "9a8c1d7ad3b9aa0175f6bc9b13f34bcc053866700982535e46abc6709244aadc",
+    "results/research-2026-10-20/data/power_tradeoff_ranges.csv": "12be394e21c91eb1cbf95432998a251666dfcd8b38c947b131e682196bed2073",
+    "results/research-2026-10-20/data/power_tradeoff_trials.csv": "99b3bcd0a80c07db36f0a8140e43255842aa512caac8623534ec4556a2913279",
+    "results/research-2026-10-20/data/prospective_h200_errors.csv": "0966c013109706d907ca1b6845b2a3339344f8c4bf34f5e7c23c680431262891"
   }
 }

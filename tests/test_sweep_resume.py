@@ -143,21 +143,24 @@ def test_resume_rejects_binary_change(tmp_path, monkeypatch):
         cli.run_sweep(_args(binary, scenario, outdir, resume=True))
 
 
+def _hold_sweep_lock(run_dir, ready, release):
+    from gpu_kernel_analyzer.resumability import sweep_lock
+
+    with sweep_lock(run_dir):
+        ready.set()
+        release.wait(10)
+
+
 def test_sweep_lock_releases_after_process_exit(tmp_path):
     import multiprocessing
 
     from gpu_kernel_analyzer.resumability import sweep_lock
 
     run_dir = tmp_path / "run"
-    ready = multiprocessing.Event()
-    release = multiprocessing.Event()
-
-    def hold_lock():
-        with sweep_lock(run_dir):
-            ready.set()
-            release.wait(10)
-
-    process = multiprocessing.Process(target=hold_lock)
+    context = multiprocessing.get_context("spawn")
+    ready = context.Event()
+    release = context.Event()
+    process = context.Process(target=_hold_sweep_lock, args=(run_dir, ready, release))
     process.start()
     assert ready.wait(5)
     with pytest.raises(RuntimeError, match="Another sweep"):

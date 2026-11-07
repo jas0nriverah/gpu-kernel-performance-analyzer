@@ -16,6 +16,7 @@ import numpy as np
 import pandas as pd
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
+from matplotlib.ticker import FuncFormatter, MaxNLocator
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results/research-2026-10-20"
@@ -62,11 +63,14 @@ def data(name: str, frame: pd.DataFrame) -> None:
     frame.to_csv(OUT / "data" / (name + ".csv"), index=False)
 
 
-def save(fig, name: str, caption: str, footnote: str, bottom: float = 0.22) -> None:
+def save(fig, name: str, caption: str, footnote: str, bottom: float = 0.22, top: float = 0.82) -> None:
     fig.text(0.015, 0.012, footnote, fontsize=8.3, color="#475569", va="bottom")
-    fig.subplots_adjust(bottom=bottom, top=0.82, wspace=0.34, hspace=0.6)
+    fig.subplots_adjust(bottom=bottom, top=top, wspace=0.34, hspace=0.6)
     for extension in ["png", "svg"]:
-        fig.savefig(OUT / f"{name}.{extension}", dpi=180, bbox_inches="tight", facecolor="white")
+        path = OUT / f"{name}.{extension}"
+        fig.savefig(path, dpi=180, bbox_inches="tight", facecolor="white", metadata={"Date": None} if extension == "svg" else None)
+        if extension == "svg":
+            path.write_text("\n".join(line.rstrip() for line in path.read_text().splitlines()) + "\n")
     plt.close(fig)
     CAPTIONS[name] = caption
 
@@ -164,29 +168,41 @@ def timing() -> None:
     data("matched_timing_ranges", grouped)
     CHECKS["timing_ratio_full_range"] = [float(all_rows["ratio"].min()), float(all_rows["ratio"].max())]
     CHECKS["matched_timing_scenarios_per_device_trial"] = 74
-    fig, axes = plt.subplots(1, 3, figsize=(14.5, 5.0), sharey=True)
+    fig, axes = plt.subplots(3, 1, figsize=(10, 12))
     for ax, device in zip(axes, ["H200", "GH200", "Spark GB10"], strict=True):
         frame = grouped[grouped["device"] == device]
         for index, workload in enumerate(WORKLOADS):
             group = frame[frame["kernel"] == workload].sort_values(["problem_size", "block_size"])
             positions = index + np.linspace(-0.30, 0.30, len(group))
-            ax.vlines(positions, group["min"], group["max"], colors=COLORS[device], alpha=0.35, lw=1)
-            ax.scatter(positions, group["median"], color=COLORS[device], s=16, zorder=3)
-        ax.axhline(1, color="#475569", lw=1, linestyle="--")
-        ax.set_yscale("log")
-        ax.set_xticks(range(len(WORKLOADS)), [SHORT[w] for w in WORKLOADS], rotation=55, ha="right", fontsize=8)
-        ax.set_title(device, color=COLORS[device], weight="bold")
-        ax.set_ylim(float(all_rows["ratio"].min()) * 0.88, float(all_rows["ratio"].max()) * 1.15)
-        ax.grid(axis="y", alpha=0.2, which="both")
-    axes[0].set_ylabel("Mean runtime / corresponding H100 runtime\n(log scale; lower is faster)")
-    fig.suptitle(
-        "All 74 matched timing scenarios, with three-trial variation", x=0.015, ha="left", fontsize=16, weight="bold"
-    )
+            ax.axhspan(index - 0.45, index + 0.45, color="#f1f5f9", zorder=0)
+            ax.hlines(positions, (group["min"] - 1) * 100, (group["max"] - 1) * 100,
+                      colors=COLORS[device], alpha=0.65, lw=1.5)
+            ax.scatter((group["median"] - 1) * 100, positions, color=COLORS[device], s=24, zorder=3)
+        low = min(0, float((frame["min"].min() - 1) * 100))
+        high = max(0, float((frame["max"].max() - 1) * 100))
+        padding = max((high - low) * 0.08, 1)
+        ax.set_xlim(low - padding, high + padding)
+        ax.axvline(0, color="#334155", lw=1.2, linestyle="--")
+        ax.set_yticks(range(len(WORKLOADS)), [SHORT[w] for w in WORKLOADS], fontsize=12)
+        ax.set_ylim(len(WORKLOADS) - 0.5, -0.5)
+        ax.set_title(device, color=COLORS[device], weight="bold", loc="left", fontsize=15)
+        ax.xaxis.set_major_locator(MaxNLocator(nbins=6))
+        ax.xaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{value:+g}%" if value else "0%"))
+        ax.tick_params(axis="x", labelsize=11)
+        ax.tick_params(axis="y", length=0)
+        ax.set_xlabel("Runtime change vs H100 · negative = faster", fontsize=11)
+        ax.grid(axis="x", alpha=0.2)
+        ax.set_axisbelow(True)
+    fig.suptitle("Kernel runtime compared with H100", x=0.015, y=0.98,
+                 ha="left", fontsize=19, weight="bold")
+    fig.text(0.015, 0.945, "74 scenarios per GPU · dots: median · lines: range across 3 trials", fontsize=12)
     save(
         fig,
         "02_matched_timing",
-        "Each dot is one scenario's median runtime ratio across three corresponding trial pairs; vertical segments span those three ratios. All 74 scenario identities match for every device and trial. The dashed line is H100 parity.",
-        "Ranges are descriptive, not confidence intervals. Devices, host CPU, toolkit and capture dates differ; cross-device CI gates are ineligible.",
+        "Runtime change = (GPU runtime / H100 runtime − 1) × 100%. Each dot is one matched scenario's median across three trial pairs; lines span the three values. All 74 scenarios per GPU are shown. Each panel uses its own linear range; 0% is H100 parity.",
+        "Independent x-axis ranges. Trial ranges are not confidence intervals. Hosts, toolkits and capture dates differ.",
+        bottom=0.07,
+        top=0.90,
     )
 
 
@@ -553,6 +569,7 @@ def main() -> None:
             "axes.spines.right": False,
             "axes.titlepad": 12,
             "svg.fonttype": "none",
+            "svg.hashsalt": "gpu-kernel-analyzer",
             "savefig.facecolor": "white",
         }
     )

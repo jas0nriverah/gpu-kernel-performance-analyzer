@@ -16,7 +16,7 @@ Captured observations and retained steady rows, with development and external/pr
 
 ![02_matched_timing](02_matched_timing.png)
 
-Each dot is one scenario's median runtime ratio across three corresponding trial pairs; vertical segments span those three ratios. All 74 scenario identities match for every device and trial. The dashed line is H100 parity.
+Runtime change = (GPU runtime / H100 runtime − 1) × 100%. Each dot is one matched scenario's median across three trial pairs; lines span the three values. All 74 scenarios per GPU are shown. Each panel uses its own linear range; 0% is H100 parity.
 
 [SVG](02_matched_timing.svg) · [PNG](02_matched_timing.png)
 
